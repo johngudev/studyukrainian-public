@@ -1,0 +1,41 @@
+<main class="container" role="main">
+<div id="grammar-content-original" class="foreign-script">
+<h3>Verbal aspect</h3>
+<p>To understand the concept of verbal aspect, it&rsquo;s helpful to think of two different ways of capturing a given moment on camera:</p>
+<ul>
+<li>📷 with a photograph</li>
+<li>🎥 with video</li>
+</ul>
+<p>A photograph captures a specific event at a specific moment in time. A video captures a continuous action that occurs over a period of time.</p>
+<p>Analogously, in Ukrainian there are two aspects that a given verb may have:</p>
+<ul>
+<li>perfect</li>
+<li>imperfect</li>
+</ul>
+<p>More precisely, we typically say that every verb in the Ukrainian language falls into one of these two categories.</p>
+<table class="table table-sm table-bordered">
+<thead class="thead-light">
+<tr>
+<th>Perfect Verbs</th>
+<th>Imperfect Verbs</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>позвати (to call)</td>
+<td>звати (to call)</td>
+</tr>
+<tr>
+<td>написати (to write)</td>
+<td>писати (to write)</td>
+</tr>
+<tr>
+<td>навчити (to teach)</td>
+<td>навчати (to teach)</td>
+</tr>
+</tbody>
+</table>
+<p>Perfect verbs are verbs that are used to describe completed actions. You can think of these as specific actions that happened at a specific moment in time (actions that can be expressed with a photograph). Imperfect verbs are verbs used to describe continuous actions or habitual actions (i.e. actions that can be expressed via video).</p>
+<p>If you have studied French or Spanish, you will have encountered the perfect and imperfect aspects in the preterite tense and the imperfect tense.</p>
+</div>
+</main>
