@@ -16,9 +16,11 @@
 <div class="bg-light my-5 p-5 flex flex-col">
     <ul>
 
-    @php
-        $flashcards_owned_ids = $flashcard_study_records->pluck('flashcard_id')->toArray();
-    @endphp
+    @isset($flashcard_study_records)
+        @php
+            $flashcards_owned_ids = $flashcard_study_records->pluck('flashcard_id')->toArray();
+        @endphp
+    @endisset
 
     @foreach($flashcards as $flashcard)
         <div class="flex flex-row justify-content-between my-2">
@@ -53,6 +55,18 @@
     </ul>
 </div>
 @endisset
+
+<div class="bg-light my-5 p-5 flex flex-col">
+    @foreach($flashcard_study_records as $flashcard_study_record)
+
+    <div class="flex flex-row justify-content-between my-2 justify-content-end align-items-center">
+        <button style="width: 50px" class="btn btn-sm btn-success">Pass</button>
+        <button style="width: 50px" class="btn btn-sm btn-danger">Fail</button>
+        <span class="ml-3">{{$flashcard_study_record->flashcard->english_phrase}} | <a target="_blank" href="{{$flashcard_study_record->flashcard->sound_file_path}}"> {{ $flashcard_study_record->flashcard->ukrainian_phrase}} </a></span>
+    </div>
+
+    @endforeach
+</div>
 
 
 @endsection

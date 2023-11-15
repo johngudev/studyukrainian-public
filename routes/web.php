@@ -177,7 +177,7 @@ Route::get('flashcard-studying', function() {
     return view('flashcard_studying_panel', 
     [
     'flashcards' => Flashcard::all(), 
-    'flashcard_study_records' => FlashcardStudyRecord::where('user_id', '=', Auth::user()->id)
+    'flashcard_study_records' => FlashcardStudyRecord::where('user_id', '=', Auth::user()->id)->with('flashcard')->get()
     ]);
 })->middleware(['auth']);
 
