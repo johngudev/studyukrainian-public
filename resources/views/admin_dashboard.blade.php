@@ -16,6 +16,7 @@
         <div class="">
             <ul>
                 <li><a href="/admin/grammar/create">Create a new grammar lesson</a></li>
+                <li><a href="/admin/flashcard/create">Create a new flashcard</a></li>
             </ul>
         </div>
     </div>
