@@ -174,6 +174,7 @@ Route::get('/admin/flashcard/all', function() {
 
 
 Route::get('flashcard-studying', function() {
+    return view('flashcard_studying_panel', ['flashcards' => Flashcard::all()]);
 })->middleware(['auth']);
 
 Route::post('flashcard-studying/store', function() {
@@ -186,6 +187,8 @@ Route::post('flashcard-studying/store', function() {
     $flashcard_study_record->last_tested = Carbon::now();
 
     $flashcard_study_record->save();
+
+    return redirect('flashcard-studying');
 
 })->middleware(['auth']);
 
