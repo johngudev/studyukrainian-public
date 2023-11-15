@@ -15,20 +15,35 @@
 @isset($flashcards)
 <div class="bg-light my-5 p-5 flex flex-col">
     <ul>
+
+    @php
+        $flashcards_owned_ids = $flashcard_study_records->pluck('flashcard_id')->toArray();
+    @endphp
+
     @foreach($flashcards as $flashcard)
         <div class="flex flex-row justify-content-between my-2">
         
+                @isset($flashcard_study_records)
+
                 <form class="d-inline"
                     action="/flashcard-studying/store"
                     method="POST"
+
                     >
 
                     @csrf
 
                     <input style="display: none" type="text" name="id" value="{{$flashcard->id}}"></input>
 
-                    <button class="btn text-success" type="submit">+</button>
+                    <button 
+                        class="btn text-success" 
+                        type="submit"
+                        @if(in_array($flashcard->id, $flashcards_owned_ids))
+                            disabled style="color:gray"
+                        @endif
+                        >+</button>
                 </form>
+                @endisset
 
             <span class="ml-3">{{$flashcard->english_phrase}} | <a target="_blank" href="{{$flashcard->sound_file_path}}"> {{ $flashcard->ukrainian_phrase}} </a></span>
 

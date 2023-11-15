@@ -174,7 +174,11 @@ Route::get('/admin/flashcard/all', function() {
 
 
 Route::get('flashcard-studying', function() {
-    return view('flashcard_studying_panel', ['flashcards' => Flashcard::all()]);
+    return view('flashcard_studying_panel', 
+    [
+    'flashcards' => Flashcard::all(), 
+    'flashcard_study_records' => FlashcardStudyRecord::where('user_id', '=', Auth::user()->id)
+    ]);
 })->middleware(['auth']);
 
 Route::post('flashcard-studying/store', function() {
