@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Http\Requests\StoreFlashcardStudyRecordRequest;
 use App\Http\Requests\UpdateFlashcardStudyRecordRequest;
 use App\Models\FlashcardStudyRecord;
+use Carbon\Carbon;
 
 class FlashcardStudyRecordController extends Controller
 {
@@ -83,4 +84,32 @@ class FlashcardStudyRecordController extends Controller
     {
         //
     }
+
+
+    public function test() {
+        $studyRecords = FlashcardStudyRecord::where('user_id', '=', auth()->id())->with('flashcard')->get()->toArray(); //->where('next_test_date', '<', Carbon::now())->with('flashcard')->get()->toArray();
+
+        // dd($studyRecords);
+
+        return view('study_record_test' ,['flashcardStudyRecordsJSON' => json_encode($studyRecords)]);
+    }
+
+    public function pass() {
+        $flashcard_study_record = FlashcardStudyRecord::find(request()->id);
+        $flashcard_study_record->study_level =  $flashcard_study_record->study_level + 1;
+        $flashcard_study_record->last_tested = Carbon::now();
+        $flashcard_study_record->next_test_date = Carbon::now()->addMinutes(pow(2,$flashcard_study_record->study_level)); 
+    
+        $flashcard_study_record->save();
+    }
+
+    public function fail() {
+        $flashcard_study_record = FlashcardStudyRecord::find(request()->id);
+        $flashcard_study_record->study_level =  max($flashcard_study_record->study_level - 1, 0);
+        $flashcard_study_record->last_tested = Carbon::now();
+        $flashcard_study_record->next_test_date = Carbon::now();
+    
+        $flashcard_study_record->save();
+    }
+
 }

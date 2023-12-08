@@ -8,6 +8,9 @@ use App\Models\Flashcard;
 use App\Models\FlashcardStudyRecord;
 use Carbon\Carbon;
 
+use App\Http\Controllers\FlashcardStudyRecordController;
+
+
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -196,6 +199,11 @@ Route::post('flashcard-studying/store', function() {
 
 })->middleware(['auth']);
 
+Route::get('study-record/test', [FlashcardStudyRecordController::class, 'test'])->middleware(['auth']);
+Route::post('study-record/pass', [FlashcardStudyRecordController::class, 'pass'])->middleware(['auth']);
+Route::post('study-record/fail', [FlashcardStudyRecordController::class, 'fail'])->middleware(['auth']);
+
+/*
 Route::post('flashcard-studying/passed', function() {
     //get flashcard id from request
     //get user id from session
@@ -209,7 +217,7 @@ Route::post('flashcard-studying/failed', function() {
     //set last_tested property to now() and decrement study_level by one
 
 
-})->middleware(['auth']);
+})->middleware(['auth']);*/
 
 
 //blog routes
