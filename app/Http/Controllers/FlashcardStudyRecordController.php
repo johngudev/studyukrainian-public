@@ -87,7 +87,7 @@ class FlashcardStudyRecordController extends Controller
 
 
     public function test() {
-        $studyRecords = FlashcardStudyRecord::where('user_id', '=', auth()->id())->with('flashcard')->get()->toArray(); //->where('next_test_date', '<', Carbon::now())->with('flashcard')->get()->toArray();
+        $studyRecords = FlashcardStudyRecord::where('user_id', '=', auth()->id())->with('flashcard')->where('next_test_date', '<', Carbon::now())->with('flashcard')->get()->toArray();
 
         // dd($studyRecords);
 
