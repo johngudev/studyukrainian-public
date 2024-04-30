@@ -36,3 +36,12 @@
   color: #ccc;
   font-size: 3em;
 }
+
+.hero__top-left-color-blur {
+  box-shadow: -250px -150px 300px 150px #95C7FF;
+  ;
+}
+
+.hero__bottom-right-color-blur {
+  box-shadow: 300px 0px  300px 150px #FACD49;
+}

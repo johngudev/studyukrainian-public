@@ -4,7 +4,7 @@
 
       <header>
         <!-- Fixed navbar -->
-        <nav class="navbar navbar-expand navbar-light fixed-top bg-white">
+        <nav class="navbar navbar-expand navbar-light">
 
             <ul class="navbar-nav navbar-right  ml-auto">
 

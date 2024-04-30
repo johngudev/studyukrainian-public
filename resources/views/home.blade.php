@@ -15,33 +15,48 @@
 
 @section('content')
 
-  <div class="row mt-5">
-    <div class="col-sm-12 col-md-6 text-center">
-      <div>
-        <img class="img-fluid mx-auto" src="/img/logo.png"></img>
-      </div>
-      <div>
-        <img class="img-fluid" src="/img/ctp.jpg"></img>
-      </div>
-    </div>
+<div class="hero">
+  <div class="hero__top">
+    <span class="hero__top-left-color-blur">
+  </div>
 
-    <div class="col-sm-12 col-md-6">
+  <div class="hero__content">
 
-      <div class="pt-5">
-        <h1 class="mb-md-3">The most complete resource for learning Ukrainian language online</h1>
-
-        <ul>
-        <li>Learn Ukrainian naturally by listening to dialogues.</li>
-        <li>Learn how to manage day-to-day situations in Ukrainian.</li>
-        <li>Full grammar explanations and word-for-word translations of all dialogues.</li>
-        </ul>
-        <div class="text-center">
-          <a href="/lessons" class="btn btn-sm btn-secondary mx-auto">Start learning now</a>
+    <div class="row">
+      <div class="col-sm-12 col-md-6 text-center">
+        <div>
+          <img class="img-fluid mx-auto" src="/img/logo.png"></img>
+        </div>
+        <div>
+          <img class="img-fluid" src="/img/ctp.jpg"></img>
         </div>
       </div>
 
-    </div>
+      <div class="col-sm-12 col-md-6">
 
+        <div class="pt-5">
+          <h1 class="mb-md-3">The most complete resource for learning Ukrainian language online</h1>
+
+          <ul>
+          <li>Learn Ukrainian naturally by listening to dialogues.</li>
+          <li>Learn how to manage day-to-day situations in Ukrainian.</li>
+          <li>Full grammar explanations and word-for-word translations of all dialogues.</li>
+          </ul>
+          <div class="text-center">
+            <a href="/lessons" class="btn btn-sm btn-secondary mx-auto">Start learning now</a>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </div>
+
+  <div class="d-flex justify-content-end">
+    <span class="hero__bottom-right-color-blur">
+  </div>
+</div>
+
+  <div class="row mt-5">
     <hr class="mt-5 mb-5" style="width: 80%; color: black; height: 1px;" />
 
       <blockquote class="blockquote col-sm-12 col-md-4">
