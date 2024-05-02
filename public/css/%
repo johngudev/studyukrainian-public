@@ -1,0 +1,81 @@
+/* =================================
+  Home
+==================================== */
+.container {
+}
+
+.splash {
+  margin-bottom: auto;
+}
+
+.testimonial-quotation{
+
+  font-family: "Times New Roman", Times, serif;
+  quotes: "\201C""\201D""\2018""\2019";
+}
+
+.testimonial-quotation:before {
+  content: open-quote;
+  display: inline;
+  height: 0;
+  line-height: 0;
+  left: -10px;
+  position: relative;
+  top: 10px;
+  color: #ccc;
+  font-size: 3em;
+}
+.testimonial-quotation::after {
+  content: close-quote;
+  display: inline;
+  height: 0;
+  line-height: 0;
+  left: 10px;
+  position: relative;
+  top: 20px;
+  color: #ccc;
+  font-size: 3em;
+}
+
+.hero__top-left-color-blur {
+  box-shadow: -250px -150px 300px 150px #95C7FF;
+  ;
+}
+
+.hero__bottom-right-color-blur {
+  box-shadow: 300px 0px  300px 150px #FACD49;
+}
+
+.hero__image {
+  border-radius: 1rem;
+}
+
+.hero__cta-button {
+  background: rgba(0, 101, 213, 1);
+  color:white;
+  border-radius: 100px;
+
+  padding: 20px 32px 20px 32px;  
+  text-decoration: none;
+}
+
+.hero__cta-button:hover {
+  color: white;
+  background: rgba(0, 101, 213, .8);
+  text-decoration: none;
+}
+
+.testimonial-block {
+
+  padding-top: 100px;
+  padding-bottom: 100px;
+
+  background: radial-gradient(circle at -25% 0%,white, white 50%, lightblue 80%, rgba(255, 255, 255, 1) 100%);
+  /* box-shadow: 0 0 50px 20px rgba(255, 0, 0, 0.7); Creates the glowing effect */
+
+
+}
+
+.premium-block {
+
+}

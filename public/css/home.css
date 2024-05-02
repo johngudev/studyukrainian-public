@@ -38,10 +38,134 @@
 }
 
 .hero__top-left-color-blur {
-  box-shadow: -250px -150px 300px 150px #95C7FF;
+  box-shadow: -250px -150px 300px 200px #95C7FF;
   ;
 }
 
 .hero__bottom-right-color-blur {
-  box-shadow: 300px 0px  300px 150px #FACD49;
+  box-shadow: 375px -100px  300px 200px #FACD49;
+}
+
+.hero__image {
+  border-radius: 1rem;
+}
+
+.hero__cta-button {
+  background: rgba(0, 101, 213, 1);
+  color:white;
+  border-radius: 100px;
+
+  padding: 16px 32px 16px 32px;  
+  text-decoration: none;
+}
+
+.hero__cta-button:hover {
+  color: white;
+  background: rgba(0, 101, 213, .8);
+  text-decoration: none;
+}
+
+.testimonial-block {
+
+  padding-top: 100px;
+  padding-bottom: 100px;
+
+  background-image: radial-gradient(circle at top left,rgba(213, 231, 237, 0.75) , rgba(173,216,230,25%) 50%, lightblue 80%, rgba(255, 255, 255, 1) 100%),
+   radial-gradient(circle at bottom left, rgba(144,238,144,75%), white 50%, white 80%, rgba(255, 255, 255, 1) 100%);
+
+
+}
+
+.testimonial-block blockquote {
+  background-color: white;
+  padding: 1.5rem;
+  border-radius: 1rem;
+}
+
+.testimonial-block__flex-gap {
+  gap: 20px;
+}
+
+.premium-block {
+  padding-top: 100px;
+  padding-bottom: 100px;
+
+}
+.premium-block__flex {
+  gap: 1rem;
+}
+
+.premium-block h2 {
+  font-weight: 700;
+}
+
+.premium-card {
+  border-radius: 1rem;
+  background-color: gray;
+  color: white;
+  padding-left: 1.5rem;
+  padding-right: 1.5rem;
+
+  padding-top: 1.5rem;
+  padding-bottom: 1.5rem;
+
+  max-width: 250px;
+  min-height: 300px;
+}
+
+.premium-card__alternate {
+  background-color: lightgrey;
+  color: black;
+}
+
+.premium-card__title {
+  /* text-align: center; */
+  font-size: 1.5rem;
+  font-weight: 700;
+  line-height: 1.4rem;
+  margin-bottom: 1.5rem;
+}
+
+.premium-card__content {
+  font-size: 1rem;
+  font-weight: 400;
+  /* line-height: 1rem; */
+}
+
+.sample-lessons-block {
+  padding-top: 50px;
+}
+
+.sample-lessons-block__flex-gap {
+  gap: 0.75rem;
+}
+
+.sample-lessons-block__lesson-card {
+  max-width: 200px;
+  box-shadow: 0 .25rem 0.25rem rgba(0,0,0, .15);;
+}
+
+.sample-lesson-block__lesson-card-first {
+  transform: rotate(-10deg);
+  /* z-index: -4; */
+}
+
+.sample-lesson-block__lesson-card-second {
+  transform: rotate(-5deg);
+  /* z-index: -3; */
+
+}
+
+.sample-lesson-block__lesson-card-third {
+  transform: rotate(8deg);
+  /* z-index: -2; */
+
+}
+
+.sample-lesson-block__lesson-card-fourth {
+  transform: rotate(13deg);
+}
+
+.sample-lesson-block__lesson-card-fifth {
+  transform: rotate(-8deg);
 }

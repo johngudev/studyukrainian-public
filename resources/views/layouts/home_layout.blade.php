@@ -37,7 +37,7 @@
       @include('layouts.home_header')
 
       <!-- Begin page content -->
-      <main role="main" class="container">
+      <main role="main" class="">
 
         @yield('content')
 
