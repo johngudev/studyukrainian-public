@@ -184,20 +184,42 @@
   <div class="container ">
     <div class="row justify-content-center testimonial-block__flex-gap px-3 px-md-0">
 
-      <blockquote class="blockquote col-sm-12 col-md-3">
+      <blockquote class="blockquote col-sm-12 col-md-4">
+        <div class="d-flex justify-content-center mb-3">
+          <div class="testimonial-block__quote-cube"> 
+            <img src="/img/right-quote-sign.svg">
+          </div>
+          <div class="testimonial-block__source-name">
+            Derick          </div>
+        </div>
       <p class="testimonial-quotation mb-0 text-secondary">Thanks a lot for the website!  My grandparents were born in Ukraine and came to Brazil. Now I am trying to learn the language in honor of them.</p>
-      <footer class="blockquote-footer">Derick</footer>
       </blockquote>
 
       <blockquote class="blockquote col-sm-12 col-md-3">
-      <p class="testimonial-quotation mb-0 text-secondary">Hello, I wish to say thank you on behalf of my teacher. You have a wonderful training resource and we use your site to teach me Ukrainian 3 days per week.</p>
-      <footer class="blockquote-footer">Alec</footer>
-      </blockquote>
-
-      <blockquote class="blockquote col-sm-12 col-md-3">
+      <div class="d-flex justify-content-center mb-3">
+          <div class="testimonial-block__quote-cube testimonial-block__quote-cube-orange"> 
+            <img src="/img/right-quote-sign.svg">
+          </div>
+          <div class="testimonial-block__source-name">
+            Milad
+          </div>
+        </div>
       <p class="testimonial-quotation mb-0 text-secondary">I really like your method for teaching Ukrainian. I am living in Kiev, and it is very helpful to me.</p>
-      <footer class="blockquote-footer">Milad</footer>
       </blockquote>
+
+      <blockquote class="blockquote col-sm-12 col-md-4">
+      <div class="d-flex justify-content-center mb-3">
+          <div class="testimonial-block__quote-cube testimonial-block__quote-cube-purple"> 
+            <img src="/img/right-quote-sign.svg">
+          </div>
+          <div class="testimonial-block__source-name">
+            Alec
+          </div>
+        </div>
+      <p class="testimonial-quotation mb-0 text-secondary">Hello, I wish to say thank you on behalf of my teacher. You have a wonderful training resource and we use your site to teach me Ukrainian 3 days per week.</p>
+      </blockquote>
+
+
 
     </div>
 
