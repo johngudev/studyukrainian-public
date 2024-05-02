@@ -143,6 +143,7 @@
 .sample-lessons-block__lesson-card {
   max-width: 200px;
   box-shadow: 0 .25rem 0.25rem rgba(0,0,0, .15);;
+  z-index: 3;
 }
 
 .sample-lesson-block__lesson-card-first {
@@ -200,14 +201,18 @@
 }
 
 .sample-lessons-block-sticker-1 {
-  transform: rotate(-2deg);
-  translate(-4rem, 0.75rem);
+  transform: rotate(-2deg) translate(-4rem, 0.8375rem);
   background: #FF62B3; 
 }
 
 .sample-lessons-block-sticker-2 {
-  transform: rotate(3deg) translate(0, 1.5rem);  
+  transform: rotate(3deg) translate(0, 1.625rem);  
   background:  #00B8A2;
+}
+
+.sample-lessons-block-sticker-3 {
+  transform: rotate(-2deg) translate(15.375rem, 0.375rem);  
+  background: rgba(0, 101, 213, 1);
 }
 
 @media (max-width: 600px) {

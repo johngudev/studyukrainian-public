@@ -69,11 +69,11 @@
 <div class="sample-lessons-block">
   <div class="container">
 
-  <div class="row justify-content-center justify-content-md-between">
-  <h2 class="sample-lessons-block-sticker sample-lessons-block-sticker-1" style="z-index: -2; ">Practical Lessons in Spoken Ukrainian</h2>
+    <div class="row justify-content-center justify-content-md-between">
+      <h2 class="sample-lessons-block-sticker sample-lessons-block-sticker-1" style="z-index: -2; ">Practical Lessons in Spoken Ukrainian</h2>
 
-  <h2 class="sample-lessons-block-sticker sample-lessons-block-sticker-2" style="z-index: -2; ">Full Audio Recorded by Native Speakers</h2>
-</div>
+      <h2 class="sample-lessons-block-sticker sample-lessons-block-sticker-2" style="z-index: -2; ">Full Audio Recorded by Native Speakers</h2>
+    </div>
     <!-- <h2 class="mb-5 text-center bg-primary text-white" style="font-weight:700">Practical Lessons in Spoken Ukrainian </h2> -->
     <div class="row sample-lessons-block__flex-gap justify-content-center">
 
@@ -123,6 +123,9 @@
       </div>
 
     </div>
+
+    <h2 class="d-none d-md-inline-block sample-lessons-block-sticker sample-lessons-block-sticker-3" style="z-index: -2; ">Comprehensive Grammar Explanations</h2>
+
     
   </div>
 </div>
