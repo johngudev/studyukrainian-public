@@ -69,10 +69,10 @@
 <div class="sample-lessons-block">
   <div class="container">
 
-  <div class="row justify-content-between">
-  <h2 class="sample-lessons-block-sticker sample-lessons-block-sticker-1" style="z-index: -2; display: inline-block; transform: rotate(-2deg) translate(-4rem, 0.75rem);font-weight: 700; font-size:1.5rem; padding: 1rem; background: #FF62B3; color: white; z-index: 9999 !important; border-radius: 0.125rem">Practical Lessons in Spoken Ukrainian</h2>
+  <div class="row justify-content-center justify-content-md-between">
+  <h2 class="sample-lessons-block-sticker sample-lessons-block-sticker-1" style="z-index: -2; ">Practical Lessons in Spoken Ukrainian</h2>
 
-  <h2 class="sample-lessons-block-sticker sample-lessons-block-sticker-2" style="z-index: -2; display: inline-block; transform: rotate(3deg) translate(0, 1.5rem);font-weight: 700; font-size:1.5rem; padding: 1rem; background:  #00B8A2; color: white; z-index: 9999 !important; border-radius: 0.125rem">Full Audio Recorded by Native Speakers</h2>
+  <h2 class="sample-lessons-block-sticker sample-lessons-block-sticker-2" style="z-index: -2; ">Full Audio Recorded by Native Speakers</h2>
 </div>
     <!-- <h2 class="mb-5 text-center bg-primary text-white" style="font-weight:700">Practical Lessons in Spoken Ukrainian </h2> -->
     <div class="row sample-lessons-block__flex-gap justify-content-center">
@@ -179,7 +179,7 @@
 <div class=" mt-5 testimonial-block">
 
   <div class="container ">
-    <div class="row justify-content-center testimonial-block__flex-gap">
+    <div class="row justify-content-center testimonial-block__flex-gap px-3 px-md-0">
 
       <blockquote class="blockquote col-sm-12 col-md-3">
       <p class="testimonial-quotation mb-0 text-secondary">Thanks a lot for the website!  My grandparents were born in Ukraine and came to Brazil. Now I am trying to learn the language in honor of them.</p>

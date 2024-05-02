@@ -195,8 +195,52 @@
   bottom: 0;
 }
 
+.sample-lessons-block-sticker {
+  display: inline-block;  font-weight: 700; font-size:1.5rem; padding: 1rem; color: white; z-index: 9999 !important; border-radius: 0.125rem;
+}
+
+.sample-lessons-block-sticker-1 {
+  transform: rotate(-2deg);
+  translate(-4rem, 0.75rem);
+  background: #FF62B3; 
+}
+
+.sample-lessons-block-sticker-2 {
+  transform: rotate(3deg) translate(0, 1.5rem);  
+  background:  #00B8A2;
+}
+
 @media (max-width: 600px) {
   .sample-lesson-block__lesson-card-fourth, .sample-lesson-block__lesson-card-fifth {
     display: none;
   }
+
+  .hero__bottom-right-color-blur {
+    box-shadow: 300px -300px  300px 200px #FACD49;
+  }
+
+  .hero__top-left-color-blur {
+    box-shadow: -200px 0px 300px 200px #95C7FF;
+    ;
+  }
+
+  .sample-lessons-block-sticker {
+    max-width: 350px;;
+  }
+
+  .sample-lesson-block__lesson-card-first {
+    transform: rotate(3deg);
+    margin-top: 2rem;
+    /* z-index: -4; */
+  }
+
+  .sample-lessons-block {
+    padding-top: 0.5rem;
+  }
+
+  .testimonial-block {
+    padding-top: 2rem;
+    padding-bottom: 2rem;
+  }
+
 }
