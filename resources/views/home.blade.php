@@ -14,7 +14,7 @@
 
 @section('content')
 
-<div class="hero ">
+<div class="hero pb-5">
   <div class="container">
     <div class="hero__top">
       <span class="hero__top-left-color-blur">
@@ -55,13 +55,24 @@
 
 </div>
 
-<div class="sample-lessons-block mt-5">
+<!-- <div class="container mt-4">
+
+<div class="flag-stripe-block ">
+  <div class="flag-stripe-block__blue"></div>
+  <div class="flag-stripe-block__yellow"></div>
+</div>
+
+</div> -->
+
+
+
+<div class="sample-lessons-block">
   <div class="container">
 
   <div class="row justify-content-between">
-  <h2 style="z-index: -2; display: inline-block; transform: rotate(-2deg) translate(-4rem, 0.75rem);font-weight: 700; font-size:1.5rem; padding: 1rem; background: #FF62B3; color: white; z-index: 9999 !important; border-radius: 0.125rem">Practical Lessons in Spoken Ukrainian</h2>
+  <h2 class="sample-lessons-block-sticker sample-lessons-block-sticker-1" style="z-index: -2; display: inline-block; transform: rotate(-2deg) translate(-4rem, 0.75rem);font-weight: 700; font-size:1.5rem; padding: 1rem; background: #FF62B3; color: white; z-index: 9999 !important; border-radius: 0.125rem">Practical Lessons in Spoken Ukrainian</h2>
 
-  <h2 style="z-index: -2; display: inline-block; transform: rotate(3deg) translate(0, 1.5rem);font-weight: 700; font-size:1.5rem; padding: 1rem; background:  #00B8A2; color: white; z-index: 9999 !important; border-radius: 0.125rem">Full Audio Recorded by Native Speakers</h2>
+  <h2 class="sample-lessons-block-sticker sample-lessons-block-sticker-2" style="z-index: -2; display: inline-block; transform: rotate(3deg) translate(0, 1.5rem);font-weight: 700; font-size:1.5rem; padding: 1rem; background:  #00B8A2; color: white; z-index: 9999 !important; border-radius: 0.125rem">Full Audio Recorded by Native Speakers</h2>
 </div>
     <!-- <h2 class="mb-5 text-center bg-primary text-white" style="font-weight:700">Practical Lessons in Spoken Ukrainian </h2> -->
     <div class="row sample-lessons-block__flex-gap justify-content-center">

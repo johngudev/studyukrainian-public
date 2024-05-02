@@ -169,3 +169,34 @@
 .sample-lesson-block__lesson-card-fifth {
   transform: rotate(-8deg);
 }
+
+.flag-stripe-block {
+  width: 66%; /* Set the width to fill the container */
+  height: 8px; /* Set the height of the stripe */
+  position: relative;
+  margin-left: auto;
+  margin-right: auto;
+
+}
+
+.flag-stripe-block__blue {
+  position: absolute;
+  width: 100%;
+  height: 50%; /* Each color takes up half of the stripe's height */
+  background-color: #95C7FF; /* Blue */
+  top: 0;
+}
+
+.flag-stripe-block__yellow {
+  position: absolute;
+  width: 100%;
+  height: 50%; /* Each color takes up half of the stripe's height */
+  background-color: /*#95C7FF*/ #FACD49; /* Yellow */
+  bottom: 0;
+}
+
+@media (max-width: 600px) {
+  .sample-lesson-block__lesson-card-fourth, .sample-lesson-block__lesson-card-fifth {
+    display: none;
+  }
+}
