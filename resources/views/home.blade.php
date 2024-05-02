@@ -31,8 +31,8 @@
 
         <div class="col-sm-12 col-md-6">
 
-          <div class="pt-5 pt-md-2">
-            <h1 class="mb-md-3">The most complete resource for learning Ukrainian language online</h1>
+          <div class="pt-4 pt-md-2">
+            <h1 class="mb-4 mb-md-3">The most complete resource for learning Ukrainian language online</h1>
 
             <ul class="hero__list-custom-bullet">
             <li>Learn Ukrainian naturally by listening to dialogues.</li>
