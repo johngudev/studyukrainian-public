@@ -4,6 +4,22 @@
 .container {
 }
 
+.text-graphite-black {
+  color: rgba(70,70,70,1) !important;
+}
+
+.text-softer-black {
+  color: rgba(100,100,100,1) !important;
+}
+
+.text-easy-gray {
+  color: rgba(150,150,150,1) !important;
+}
+
+.text-easy-grey {
+  color: rgba(150,150,150,1) !important;
+}
+
 .splash {
   margin-bottom: auto;
 }
@@ -11,6 +27,7 @@
 .testimonial-quotation{
 
   /* font-family: "Times New Roman", Times, serif; */
+  font-weight: 300;
 }
 
 .testimonial-quotation:before {
@@ -127,13 +144,21 @@
   gap: 20px;
 }
 
-.testimonial-block__source-name {
+.testimonial-block__source {
   display: flex;
   font-weight: bold;
   font-size: 1.25rem;
   padding-left:1rem;  
   align-items: center;
   flex-grow: 1;
+}
+
+.testimonial-block__source-name {
+  line-height: 1.375rem;
+}
+
+.testimonial-block__source-country {
+  font-weight: 300;font-size: 1rem;
 }
 
 .premium-block {
@@ -248,6 +273,8 @@
 
 .sample-lessons-block-sticker {
   display: inline-block;  font-weight: 700; font-size:1.5rem; padding: 1rem; color: white; z-index: 9999 !important; border-radius: 0.125rem;
+  padding-left: 1.25rem;
+  padding-right: 1.25rem;
 }
 
 .sample-lessons-block-sticker-1 {
@@ -266,6 +293,12 @@
 }
 
 @media (max-width: 600px) {
+  .sample-lessons-block-sticker-1 {
+    transform: rotate(-2deg) translate(0rem, 0.8375rem);
+    background: #FF62B3; 
+  }
+  
+
   .sample-lesson-block__lesson-card-fourth, .sample-lesson-block__lesson-card-fifth {
     display: none;
   }

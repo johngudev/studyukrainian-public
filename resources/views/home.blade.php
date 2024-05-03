@@ -32,9 +32,9 @@
         <div class="col-sm-12 col-md-6">
 
           <div class="pt-4 pt-md-2">
-            <h1 class="mb-4 mb-md-3">The most complete resource for learning Ukrainian language online</h1>
+            <h1 class="mb-4 mb-md-3 text-graphite-black">The most complete resource for learning Ukrainian language online</h1>
 
-            <ul class="hero__list-custom-bullet">
+            <ul class="hero__list-custom-bullet text-softer-black">
             <li>Learn Ukrainian naturally by listening to dialogues.</li>
             <li>Learn how to manage day-to-day situations in Ukrainian.</li>
             <li>Full grammar explanations and word-for-word translations of all dialogues.</li>
@@ -80,7 +80,7 @@
       <div class="card sample-lessons-block__lesson-card sample-lesson-block__lesson-card-first">
           <a href="<?php echo "lessons/1/"; ?>"><img class="card-img-top" src="<?php echo "../img/01.jpg"; ?>" alt="Card image cap"></a>
           <div class="card-body">
-            <div class="card-title text-center"><?php echo "Introducing Yourself";?></div>
+            <div class="card-title text-center text-graphite-black"><?php echo "Introducing Yourself";?></div>
             <p class="card-text text-center"></p>
             <div class="mx-auto text-center"><a href="<?php echo "lessons/1/"; ?>" class="btn btn-success btn-sm text-center ">Go to lesson</a></div>
           </div>
@@ -89,7 +89,7 @@
       <div class="card sample-lessons-block__lesson-card sample-lesson-block__lesson-card-second">
           <a href="<?php echo "lessons/3/"; ?>"><img class="card-img-top" src="<?php echo "../img/03.jpg"; ?>" alt="Card image cap"></a>
           <div class="card-body">
-            <div class="card-title text-center"><?php echo "Asking About Your Day";?></div>
+            <div class="card-title text-center text-graphite-black"><?php echo "Asking About Your Day";?></div>
             <p class="card-text text-center"></p>
             <div class="mx-auto text-center"><a href="<?php echo "lessons/3/"; ?>" class="btn btn-success btn-sm text-center ">Go to lesson</a></div>
           </div>
@@ -98,25 +98,25 @@
       <div class="card sample-lessons-block__lesson-card sample-lesson-block__lesson-card-third">
           <a href="<?php echo "lessons/5/"; ?>"><img class="card-img-top" src="<?php echo "../img/05.jpg"; ?>" alt="Card image cap"></a>
           <div class="card-body">
-            <div class="card-title text-center"><?php echo "Making Introductions";?></div>
+            <div class="card-title text-center text-graphite-black"><?php echo "Making Introductions";?></div>
             <p class="card-text text-center"></p>
             <div class="mx-auto text-center"><a href="<?php echo "lessons/5/"; ?>" class="btn btn-success btn-sm text-center ">Go to lesson</a></div>
           </div>
       </div>
 
-      <div class="card sample-lessons-block__lesson-card sample-lesson-block__lesson-card-fourth">
+      <div class="card sample-lessons-block__lesson-card sample-lesson-block__lesson-card-fourth d-none d-lg-inline-block">
           <a href="<?php echo "lessons/20/"; ?>"><img class="card-img-top" src="<?php echo "../img/20.jpg"; ?>" alt="Card image cap"></a>
           <div class="card-body">
-            <div class="card-title text-center"><?php echo "Talking About Your Ukrainian Heritage";?></div>
+            <div class="card-title text-center text-graphite-black"><?php echo "Talking About Your Ukrainian Heritage";?></div>
             <p class="card-text text-center"></p>
             <div class="mx-auto text-center"><a href="<?php echo "lessons/20/"; ?>" class="btn btn-success btn-sm text-center ">Go to lesson</a></div>
           </div>
       </div>
 
-      <div class="card sample-lessons-block__lesson-card sample-lesson-block__lesson-card-fifth">
+      <div class="card sample-lessons-block__lesson-card sample-lesson-block__lesson-card-fifth d-none d-xl-inline-block">
           <a href="<?php echo "lessons/25/"; ?>"><img class="card-img-top" src="<?php echo "../img/25.jpg"; ?>" alt="Card image cap"></a>
           <div class="card-body">
-            <div class="card-title text-center"><?php echo "Asking About Likes and Dislikes";?></div>
+            <div class="card-title text-center text-graphite-black"><?php echo "Asking About Likes and Dislikes";?></div>
             <p class="card-text text-center"></p>
             <div class="mx-auto text-center"><a href="<?php echo "lessons/25/"; ?>" class="btn btn-success btn-sm text-center ">Go to lesson</a></div>
           </div>
@@ -189,10 +189,15 @@
           <div class="testimonial-block__quote-cube"> 
             <img src="/img/right-quote-sign.svg">
           </div>
-          <div class="testimonial-block__source-name">
-            Derick          </div>
+          <div class="testimonial-block__source text-graphite-black">
+
+            <div class="testimonial-block__source-name">Derick<br>
+              <span class="text-easy-gray testimonial-block__source-country" >Brazil</span>
+            </div>
+
+          </div>
         </div>
-      <p class="testimonial-quotation mb-0 text-secondary">Thanks a lot for the website!  My grandparents were born in Ukraine and came to Brazil. Now I am trying to learn the language in honor of them.</p>
+      <p class="testimonial-quotation mb-0 text-easy-gray">Thanks a lot for the website!  My grandparents were born in Ukraine and came to Brazil. Now I am trying to learn the language in honor of them.</p>
       </blockquote>
 
       <blockquote class="blockquote col-sm-12 col-md-3">
@@ -200,11 +205,13 @@
           <div class="testimonial-block__quote-cube testimonial-block__quote-cube-orange"> 
             <img src="/img/right-quote-sign.svg">
           </div>
-          <div class="testimonial-block__source-name">
-            Milad
+          <div class="testimonial-block__source text-graphite-black">
+          <div class="testimonial-block__source-name">Milad<br>
+              <span class="text-easy-gray testimonial-block__source-country" >Saudi Arabia</span>
+            </div>
           </div>
         </div>
-      <p class="testimonial-quotation mb-0 text-secondary">I really like your method for teaching Ukrainian. I am living in Kiev, and it is very helpful to me.</p>
+      <p class="testimonial-quotation mb-0 text-easy-gray">I really like your method for teaching Ukrainian. I am living in Kiev, and it is very helpful to me.</p>
       </blockquote>
 
       <blockquote class="blockquote col-sm-12 col-md-4">
@@ -212,11 +219,13 @@
           <div class="testimonial-block__quote-cube testimonial-block__quote-cube-purple"> 
             <img src="/img/right-quote-sign.svg">
           </div>
-          <div class="testimonial-block__source-name">
-            Alec
+          <div class="testimonial-block__source text-graphite-black">
+            <div class="testimonial-block__source-name">Alec<br>
+              <span class="text-easy-gray testimonial-block__source-country" >Canada</span>
+            </div>
           </div>
         </div>
-      <p class="testimonial-quotation mb-0 text-secondary">Hello, I wish to say thank you on behalf of my teacher. You have a wonderful training resource and we use your site to teach me Ukrainian 3 days per week.</p>
+      <p class="testimonial-quotation mb-0 text-easy-gray">Hello, I wish to say thank you on behalf of my teacher. You have a wonderful training resource and we use your site to teach me Ukrainian 3 days per week.</p>
       </blockquote>
 
 
