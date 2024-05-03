@@ -237,4 +237,8 @@
 
 </div>
 
+<div class="premium-announcement-block padding-y-5">
+
+</div>   
+
 @endsection
