@@ -4,6 +4,10 @@
 .container {
 }
 
+.transparent-overlay {
+  background-image: linear-gradient(to top, rgb(0, 0, 0, 1), rgba(0, 0, 0, 0));
+}
+
 .text-graphite-black {
   color: rgba(70,70,70,1) !important;
 }
@@ -322,7 +326,7 @@
   }
 
   .hero__top-left-color-blur {
-    box-shadow: -200px 0px 300px 200px #95C7FF;
+    box-shadow: -50px 0px 300px 200px #95C7FF;
     ;
   }
 
