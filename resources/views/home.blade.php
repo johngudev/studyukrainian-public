@@ -179,27 +179,27 @@
 
 <div class="py-5 ">
   <div class="container">
-    <div class="container row justify-content-center" style="gap: 2rem;">
+    <div class="container row justify-content-center" style="gap: 1rem;">
 
     <div class="col-12 col-md-2">
       <h2 class="text-graphite-black " style="font-size: 4rem;; font-weight: 800">From the Blog</h2>
     </div>
 
-    <div style="border: 0; border-radius: 0.25rem 0.25rem 1rem 0.25rem; padding: 0; background-size: cover; background-image: url('/img/john-gu-lviv.jpg'); background-repeat: no-repeat" class="card col-md-2 flex flex-column justify-content-end">
+    <div style="border: 0; border-radius: 0.25rem 0.25rem 1rem 0.25rem; padding: 0; background-size: cover; background-image: url('/img/john-gu-lviv.jpg'); background-repeat: no-repeat" class="card col-md-3 flex flex-column justify-content-end">
       <div style="border-radius: 0.25rem 0.25rem 1rem 0.25rem;; height:100px; padding-top: 1rem; padding-left: 0.75rem; padding-right: 0.75rem;" class="transparent-overlay">
           <h3 class="card-title text-white" style="font-size: 1.25rem; font-weight:600; line-height: 1.25rem;">How I learned Ukrainian</h3>
           <div class="text-white">September 29, 2018</div>
         </div>
       </div>
 
-      <div style="border: 0; border-radius: 0.25rem 0.25rem 1rem 0.25rem; padding: 0; background-size: cover; background-image: url('/img/downtown-lviv.jpg'); background-repeat: no-repeat" class="card col-md-2 flex flex-column justify-content-end">
+      <div style="border: 0; border-radius: 0.25rem 0.25rem 1rem 0.25rem; padding: 0; background-size: cover; background-image: url('/img/downtown-lviv.jpg'); background-repeat: no-repeat" class="card col-md-3 flex flex-column justify-content-end">
           <div style="border-radius: 0.25rem 0.25rem 1rem 0.25rem;; height:100px; padding-top: 1rem; padding-left: 0.75rem; padding-right: 0.75rem;" class="transparent-overlay">
             <h3 class="card-title text-white" style="font-size: 1.25rem; font-weight:600; line-height: 1.25rem; margin-bottom: 0">Where to Learn Ukrainian in Lviv</h3>
             <div class="text-white">September 22, 2018</div>
         </div>
       </div>
 
-      <div style="min-height: 250px; border: 0; border-radius: 0.25rem 0.25rem 1rem 0.25rem; padding: 0; background-size: cover; background-image: url('/img/ctp.jpg'); background-repeat: no-repeat" class="card col-md-2 flex flex-column justify-content-end">
+      <div style="min-height: 250px; border: 0; border-radius: 0.25rem 0.25rem 1rem 0.25rem; padding: 0; background-size: cover; background-image: url('/img/ctp.jpg'); background-repeat: no-repeat" class="card col-md-3 flex flex-column justify-content-end">
         <div style="border-radius: 0.25rem 0.25rem 1rem 0.25rem;; height:100px; padding-top: 1rem; padding-left: 0.75rem; padding-right: 0.75rem;" class="transparent-overlay">
           <h3 class="card-title text-white" style="font-size: 1.25rem; font-weight:600; line-height: 1.25rem;">Where to Learn Ukrainian Online</h3>
           <div class="text-white">September 15, 2018</div>
