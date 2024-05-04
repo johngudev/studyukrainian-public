@@ -208,7 +208,7 @@
 }
 
 .sample-lessons-block {
-  padding-top: 50px;
+  padding-top: 0px;
 }
 
 .sample-lessons-block__flex-gap {
@@ -275,6 +275,7 @@
   display: inline-block;  font-weight: 700; font-size:1.5rem; padding: 1rem; color: white; z-index: 9999 !important; border-radius: 0.125rem;
   padding-left: 1.25rem;
   padding-right: 1.25rem;
+
 }
 
 .sample-lessons-block-sticker-1 {
@@ -290,6 +291,19 @@
 .sample-lessons-block-sticker-3 {
   transform: rotate(-2deg) translate(15.375rem, 0.375rem);  
   background: rgba(0, 101, 213, 1);
+}
+
+@media (min-width: 700px) {
+  .sample-lessons-block-sticker {
+    flex-grow: 1;
+    text-align: center;;
+  }
+
+  .sample-lessons-block-sticker-2 {
+    flex-grow: 1;
+    text-align: center;
+    transform: rotate(-2deg) translate(0,0.75rem);
+  }
 }
 
 @media (max-width: 600px) {

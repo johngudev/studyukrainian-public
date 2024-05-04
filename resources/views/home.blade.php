@@ -55,17 +55,6 @@
 
 </div>
 
-<!-- <div class="container mt-4">
-
-<div class="flag-stripe-block ">
-  <div class="flag-stripe-block__blue"></div>
-  <div class="flag-stripe-block__yellow"></div>
-</div>
-
-</div> -->
-
-
-
 <div class="sample-lessons-block">
   <div class="container">
 
@@ -129,55 +118,6 @@
     
   </div>
 </div>
-
-<!-- <div class="premium-block">
-  <div class="container">
-
-    <h2 style="text-align:center;">Premium Membership</h2>
-
-    <div class="mt-4 row justify-content-center premium-block__flex">
-      <div class="premium-card">
-        <div class="premium-card__title">Supercharge your learning experience with our premium features</div>
-        <div class="premium-card__content">With your premium option, you can get these features:
-          <ul>
-            <li>Feature 1: Lorem ipsum</li>
-            <li>Feature 2: Lorem ipsum</li>
-            <li>Feature 3: Lorem ipsum</li>
-          </ul>
-
-        </div>
-      </div>
-
-      <div class="premium-card premium-card__alternate">
-        <div class="premium-card__title">Monthly</div>
-        <hr />
-        <div class="premium-card__content">Billed once a month
-          <ul>
-            <li>Feature 1: Lorem ipsum</li>
-            <li>Feature 2: Lorem ipsum</li>
-            <li>Feature 3: Lorem ipsum</li>
-          </ul>
-
-        </div>
-      </div>
-
-        <div class="premium-card">
-          <div class="premium-card__title">Annual</div>
-          <hr />
-          <div class="premium-card__content">Billed once a year
-            <ul>
-              <li>Feature 1: Lorem ipsum</li>
-              <li>Feature 2: Lorem ipsum</li>
-              <li>Feature 3: Lorem ipsum</li>
-            </ul>
-
-          </div>
-        </div>
-      </div>
-
-    </div>
-  </div>
-</div> -->
 
 <div class=" mt-5 testimonial-block">
 
