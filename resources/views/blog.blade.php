@@ -18,6 +18,10 @@
       <li><a href="{{route('blog-how-i')}}">How I Learned Ukrainian</a></li>
       <li><a href="{{route('blog-where-to')}}">Where to Learn Ukrainian in Lviv</a></li>
       <li><a href="{{route('blog-how-to')}}">How to Learn Ukrainian Online</a></li>
+
+      @foreach($files as $file) 
+      <li><a href="{{ "/" . $file }}">A blog post</a></li>
+      @endforeach
     <ul>
 
   </div>

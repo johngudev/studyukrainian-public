@@ -91,6 +91,29 @@ Route::get('/admin', function() {
     return view('admin_dashboard');
 } )->middleware(['auth']);;
 
+Route::get('/admin/blogs/create', function() {
+    if (Auth::user()->id != 1) {
+        return redirect('/');
+    }
+
+    return view('create_blog_post');
+})->middleware(['auth']);;
+
+Route::post('/admin/blogs/create', function() {
+
+    if (Auth::user()->id != 1) {
+        return redirect('/');
+    }
+
+    $title = request()->title;
+    $slug = Carbon::now()->toDateString() . "-". Str::slug($title);
+    $content = request()->content;
+
+    Storage::put("/blogs-text/blog-".$slug.".txt", $content);
+
+    return redirect('/blogs');
+})->middleware(['auth']);;
+
 Route::get('/admin/grammar/create', function() {
     if (Auth::user()->id != 1) {
         return redirect('/');
@@ -223,7 +246,9 @@ Route::post('flashcard-studying/failed', function() {
 //blog routes
 
 Route::get('/blogs', function () {
-    return view('blog');
+    $files = Storage::files('/blogs-text');;
+
+    return view('blog', ['files' => $files]);
 });
 
 Route::get('/blogs/2018/09/29/how-i-learned-ukrainian', function () {
