@@ -107,7 +107,7 @@ Route::post('/admin/blogs/create', function() {
 
     $title = request()->title;
     $slug = Carbon::now()->toDateString() . "-". Str::slug($title);
-    $content = request()->content;
+    $content = $title . "\r\n" . request()->content;
 
     Storage::put("/blogs-text/blog-".$slug.".txt", $content);
 
@@ -270,6 +270,17 @@ Route::get('/blogs/{slug}', function($slug) {
         $file_path = '/blogs-text/blog-' . $slug . '.txt';
 
         $content = Storage::get($file_path);
+
+        // Find the position of the first "\r\n"
+        $position = strpos($content, "\r\n");
+
+        if ($position !== false) {
+            // If "\r\n" is found, extract the substring starting from the next character
+            $content = substr($content, $position + 2);
+        } else {
+            // If "\r\n" is not found, return the original string
+            $content = $content;
+        }
     
         return view('blog-post', ['content' => $content]);
 

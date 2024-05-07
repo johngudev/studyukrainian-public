@@ -22,8 +22,11 @@
       @foreach($files as $file) 
 
         @php $slug = \Illuminate\Support\Str::substr($file, 16, -4); @endphp
+        @php $fileHandle = fopen(storage_path("app/" . $file), "r"); @endphp
+        @php $firstLine = fgets($fileHandle); @endphp
 
-        <li><a href="{{ "/blogs/" . $slug }}">A blog post</a></li>
+
+        <li><a href="{{ "/blogs/" . $slug }}">{{$firstLine}}</a></li>
         
       @endforeach
     <ul>
