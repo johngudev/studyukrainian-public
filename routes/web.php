@@ -262,3 +262,19 @@ Route::get('/blogs/2018/09/22/where-to-learn-ukrainian-in-lviv', function () {
 Route::get('/blogs/2018/09/15/how-to-learn-ukrainian-online', function () {
     return view('blog.blog3');
 })->name('blog-how-to');
+
+Route::get('/blogs/{slug}', function($slug) {
+
+    try {
+
+        $file_path = '/blogs-text/blog-' . $slug . '.txt';
+
+        $content = Storage::get($file_path);
+    
+        return view('blog-post', ['content' => $content]);
+
+    } catch(\Illuminate\Contracts\Filesystem\FileNotFoundException $e) {
+        throw new NotFoundHttpException();
+    }
+
+});

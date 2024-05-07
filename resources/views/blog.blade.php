@@ -20,7 +20,11 @@
       <li><a href="{{route('blog-how-to')}}">How to Learn Ukrainian Online</a></li>
 
       @foreach($files as $file) 
-      <li><a href="{{ "/" . $file }}">A blog post</a></li>
+
+        @php $slug = \Illuminate\Support\Str::substr($file, 16, -4); @endphp
+
+        <li><a href="{{ "/blogs/" . $slug }}">A blog post</a></li>
+        
       @endforeach
     <ul>
 
