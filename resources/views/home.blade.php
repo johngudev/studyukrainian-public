@@ -187,13 +187,12 @@
 
     @for($i = 0; $i<=2; $i++)
 
-    <div style="border: 0; min-height: 200px; padding:0; background-image: url('{{ $blog_highlights[$i]['image'] }}'); background-size: cover; background-repeat: no-repeat" class="blog-post-card card col-md-3 flex flex-column justify-content-end">
-        <a class="text-decoration-none" href="{{ $blog_highlights[$i]['link'] }}"> <div style="border-radius: 0.25rem 0.25rem 0.25rem 0.25rem;; height:100px; padding-top: 1rem; padding-left: 0.75rem; padding-right: 0.75rem;" class="transparent-overlay">
+    <a href="{{ $blog_highlights[$i]['link'] }}" style="border: 0; min-height: 200px; padding:0; background-image: url('{{ $blog_highlights[$i]['image'] }}'); background-size: cover; background-repeat: no-repeat" class="text-decoration-none blog-post-card card col-md-3 flex flex-column justify-content-end">
+        <div style="border-radius: 0.25rem 0.25rem 0.25rem 0.25rem;; height:100px; padding-top: 1rem; padding-left: 0.75rem; padding-right: 0.75rem;" class="transparent-overlay">
           <h3 class="card-title text-white" style="font-size: 1.25rem; font-weight:600; line-height: 1.25rem;">{{ $blog_highlights[$i]['title'] }}</h3>
           <div class="text-white">{{ $blog_highlights[$i]['date'] }}</div>
          </div> 
         </a>
-    </div>
 
     @endfor
 
