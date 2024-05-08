@@ -9,6 +9,8 @@ use App\Models\FlashcardStudyRecord;
 use Carbon\Carbon;
 
 use App\Http\Controllers\FlashcardStudyRecordController;
+use App\Http\Controllers\BlogController;
+
 
 
 /*
@@ -21,6 +23,9 @@ use App\Http\Controllers\FlashcardStudyRecordController;
 | contains the "web" middleware group. Now create something great!
 |
 */
+
+//include blog
+require __DIR__.'/blog.php';
 
 /*Route::get('/', function () {
     return view('welcome');
@@ -242,50 +247,3 @@ Route::post('flashcard-studying/failed', function() {
 
 })->middleware(['auth']);*/
 
-
-//blog routes
-
-Route::get('/blogs', function () {
-    $files = Storage::files('/blogs-text');;
-
-    return view('blog', ['files' => $files]);
-});
-
-Route::get('/blogs/2018/09/29/how-i-learned-ukrainian', function () {
-    return view('blog.blog1');
-})->name('blog-how-i');;
-
-Route::get('/blogs/2018/09/22/where-to-learn-ukrainian-in-lviv', function () {
-    return view('blog.blog2');
-})->name('blog-where-to');
-
-Route::get('/blogs/2018/09/15/how-to-learn-ukrainian-online', function () {
-    return view('blog.blog3');
-})->name('blog-how-to');
-
-Route::get('/blogs/{slug}', function($slug) {
-
-    try {
-
-        $file_path = '/blogs-text/blog-' . $slug . '.txt';
-
-        $content = Storage::get($file_path);
-
-        // Find the position of the first "\r\n"
-        $position = strpos($content, "\r\n");
-
-        if ($position !== false) {
-            // If "\r\n" is found, extract the substring starting from the next character
-            $content = substr($content, $position + 2);
-        } else {
-            // If "\r\n" is not found, return the original string
-            $content = $content;
-        }
-    
-        return view('blog-post', ['content' => $content]);
-
-    } catch(\Illuminate\Contracts\Filesystem\FileNotFoundException $e) {
-        throw new NotFoundHttpException();
-    }
-
-});
