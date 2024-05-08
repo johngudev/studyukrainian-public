@@ -185,26 +185,19 @@
       <h2 class="text-graphite-black text-center " style="margin-top:auto; margin-bottom:auto; font-size: 3.25rem; line-height: 3rem; font-weight: 800">From the Blog</h2>
     </div>
 
-    <div style="border: 0; border-radius: 0.25rem 0.25rem 1rem 0.25rem; padding: 0; background-size: cover; background-image: url('/img/john-gu-lviv.jpg'); background-repeat: no-repeat" class="card col-md-3 flex flex-column justify-content-end">
-      <a class="text-decoration-none " href="/blogs/2018/09/29/how-i-learned-ukrainian"> <div style="border-radius: 0.25rem 0.25rem 1rem 0.25rem;; height:100px; padding-top: 1rem; padding-left: 0.75rem; padding-right: 0.75rem;" class="transparent-overlay">
-          <h3 class="card-title text-white" style="font-size: 1.25rem; font-weight:600; line-height: 1.25rem;">How I learned Ukrainian</h3>
-          <div class="text-white">September 29, 2018</div>
-        </div>
-      </a>
-      </div>
+    @for($i = 0; $i<=2; $i++)
 
-      <div style="border: 0; border-radius: 0.25rem 0.25rem 1rem 0.25rem; padding: 0; background-size: cover; background-image: url('/img/downtown-lviv.jpg'); background-repeat: no-repeat" class="card col-md-3 flex flex-column justify-content-end">
-          <div style="border-radius: 0.25rem 0.25rem 1rem 0.25rem;; height:100px; padding-top: 1rem; padding-left: 0.75rem; padding-right: 0.75rem;" class="transparent-overlay">
-            <h3 class="card-title text-white" style="font-size: 1.25rem; font-weight:600; line-height: 1.25rem;">Where to Learn Ukrainian in Lviv</h3>
-            <div class="text-white">September 22, 2018</div>
-        </div>
-      </div>
+    <div style="border: 0; min-height: 200px; padding:0; background-image: url('{{ $blog_highlights[$i]['image'] }}'); background-size: cover; background-repeat: no-repeat" class="blog-post-card card col-md-3 flex flex-column justify-content-end">
+        <a class="text-decoration-none" href="{{ $blog_highlights[$i]['link'] }}"> <div style="border-radius: 0.25rem 0.25rem 0.25rem 0.25rem;; height:100px; padding-top: 1rem; padding-left: 0.75rem; padding-right: 0.75rem;" class="transparent-overlay">
+          <h3 class="card-title text-white" style="font-size: 1.25rem; font-weight:600; line-height: 1.25rem;">{{ $blog_highlights[$i]['title'] }}</h3>
+          <div class="text-white">{{ $blog_highlights[$i]['date'] }}</div>
+         </div> 
+        </a>
+    </div>
 
-      <div style="min-height: 250px; border: 0; border-radius: 0.25rem 0.25rem 1rem 0.25rem; padding: 0; background-size: cover; background-image: url('/img/ctp.jpg'); background-repeat: no-repeat" class="card col-md-3 flex flex-column justify-content-end">
-        <div style="border-radius: 0.25rem 0.25rem 1rem 0.25rem;; height:100px; padding-top: 1rem; padding-left: 0.75rem; padding-right: 0.75rem;" class="transparent-overlay">
-          <h3 class="card-title text-white" style="font-size: 1.25rem; font-weight:600; line-height: 1.25rem;">Where to Learn Ukrainian Online</h3>
-          <div class="text-white">September 15, 2018</div>
-        </div>
+    @endfor
+
+
       </div>
 
     </div>

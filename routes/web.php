@@ -46,7 +46,19 @@ Route::get('logout', [AuthenticatedSessionController::class, 'destroy']);
 //COMMENT - ADD login in views home header and header- JG
 require __DIR__.'/auth.php';
 
-Route::view('/', 'home');
+Route::get('/', function() {
+
+    $blog_highlights = [
+        ['title' => 'New Website Features in 2024', 'link' => '/blogs/2024-05-06-new-website-features-in-2024', 'date' => Carbon::createFromFormat('Y-m-d','2024-05-06')->format('F j, Y'), 'image' => '/img/wheat-field-background.jpg'],
+        ['title' => 'How I learned Ukrainian', 'link' => '/blogs/2018/09/29/how-i-learned-ukrainian', 'date' => Carbon::createFromFormat('Y-m-d','2024-05-01')->format('F j, Y'), 'image' => '/img/john-gu-lviv.jpg'],
+        ['title' => 'How to Learn Ukrainian Online', 'link' => '/blogs/2018/09/15/how-to-learn-ukrainian-online', 'date' => Carbon::createFromFormat('Y-m-d','2024-04-26')->format('F j, Y'), 'image' => '/img/downtown-lviv.jpg']
+
+
+    ];
+    
+    return view('home', ['blog_highlights' => $blog_highlights]);
+
+});
 
 
 Route::get('/about', function () {
@@ -94,64 +106,6 @@ Route::get('/admin', function() {
 
     return view('admin_dashboard');
 } )->middleware(['auth']);;
-
-Route::get('/admin/blogs/create', function() {
-    if (Auth::user()->id != 1) {
-        return redirect('/');
-    }
-
-    return view('create_blog_post');
-})->middleware(['auth']);;
-
-Route::post('/admin/blogs/create', function() {
-
-    if (Auth::user()->id != 1) {
-        return redirect('/');
-    }
-
-    $title = request()->title;
-    $slug = Carbon::now()->toDateString() . "-". Str::slug($title);
-    $content = $title . "\r\n" . request()->content;
-
-    Storage::put("/blogs-text/blog-".$slug.".txt", $content);
-
-    return redirect('/blogs');
-})->middleware(['auth']);;
-
-Route::get('admin/blogs/edit/{slug}', function($slug) {
-
-    $file_path = '/blogs-text/blog-' . $slug . '.txt';
-
-    $content = Storage::get($file_path);
-    
-    // Strips the title of the blog post
-    // Find the position of the first "\r\n"
-    $position = strpos($content, "\r\n");
-
-    if ($position !== false) {
-        // If "\r\n" is found, extract the substring starting from the next character
-        $title = substr($content, 0, $position);
-        $content = substr($content, $position + 2);
-    } else {
-        // If "\r\n" is not found, return the original string
-        $content = $content;
-        $title = "";
-    }
-
-    return view('edit_blog_post', ['title' => $title, 'content' => $content, 'slug' => $slug]);
-}) ;
-
-Route::post('admin/blogs/edit/{slug}', function($slug) {
-
-
-    $title = request()->title;
-    $content = $title . "\r\n" .  request()->content;
-
-    Storage::put("/blogs-text/blog-".$slug.".txt", $content);
-
-    return redirect('/blogs');
-
-});
 
 
 Route::get('/admin/grammar/create', function() {
