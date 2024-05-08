@@ -24,12 +24,11 @@ use App\Http\Controllers\BlogController;
 |
 */
 
-//include blog
+/********************************/
+/* Manually include blog routes */
+/********************************/
 require __DIR__.'/blog.php';
 
-/*Route::get('/', function () {
-    return view('welcome');
-});*/
 
 Route::get('/dashboard', function () {
 
@@ -118,6 +117,42 @@ Route::post('/admin/blogs/create', function() {
 
     return redirect('/blogs');
 })->middleware(['auth']);;
+
+Route::get('admin/blogs/edit/{slug}', function($slug) {
+
+    $file_path = '/blogs-text/blog-' . $slug . '.txt';
+
+    $content = Storage::get($file_path);
+    
+    // Strips the title of the blog post
+    // Find the position of the first "\r\n"
+    $position = strpos($content, "\r\n");
+
+    if ($position !== false) {
+        // If "\r\n" is found, extract the substring starting from the next character
+        $title = substr($content, 0, $position);
+        $content = substr($content, $position + 2);
+    } else {
+        // If "\r\n" is not found, return the original string
+        $content = $content;
+        $title = "";
+    }
+
+    return view('edit_blog_post', ['title' => $title, 'content' => $content, 'slug' => $slug]);
+}) ;
+
+Route::post('admin/blogs/edit/{slug}', function($slug) {
+
+
+    $title = request()->title;
+    $content = $title . "\r\n" .  request()->content;
+
+    Storage::put("/blogs-text/blog-".$slug.".txt", $content);
+
+    return redirect('/blogs');
+
+});
+
 
 Route::get('/admin/grammar/create', function() {
     if (Auth::user()->id != 1) {
