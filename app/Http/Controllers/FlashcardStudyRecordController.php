@@ -89,7 +89,7 @@ class FlashcardStudyRecordController extends Controller
     public function test() {
         $studyRecords = FlashcardStudyRecord::where('user_id', '=', auth()->id())->where('next_test_date', '<', Carbon::now())->orWhereNull('next_test_date')->with('flashcard')->get()->toArray();
 
-        return view('study_record_test' ,['flashcardStudyRecordsJSON' => json_encode($studyRecords)]);
+        return view('study_record_test_new' ,['flashcardStudyRecordsJSON' => json_encode($studyRecords)]);
     }
 
     public function pass() {

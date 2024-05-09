@@ -4,7 +4,6 @@
         <script src="https://unpkg.com/vue@3"></script>
         <script src="https://cdn.tailwindcss.com"></script>
     </head>
-</html>
 
 <body class="h-full grid place-items-center bg-gray-100">
     <div id="app">
@@ -111,3 +110,5 @@
         Vue.createApp(app).mount('#app');
     </script>
 </body>
+
+</html>
