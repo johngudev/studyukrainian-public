@@ -7,7 +7,7 @@
         <nav class="navbar navbar-expand navbar-light fixed-top text-center bg-white">
           <a class="navbar-brand" href={{ URL::to('') }}>
 
-            <img class="logo 	d-none d-sm-inline" src="/img/logo.png"></img>
+            <img class="logo 	d-none d-sm-inline" src="/img/logo-2.png"></img>
             <span class="d-inline d-sm-none nav-link">Home</span>
           </a>
             <ul class="navbar-nav navbar-right  ml-auto">
