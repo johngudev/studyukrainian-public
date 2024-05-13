@@ -7,8 +7,8 @@
         <nav class="navbar navbar-expand navbar-light fixed-top text-center bg-white">
           <a class="navbar-brand" href={{ URL::to('') }}>
 
-            <img class="logo 	d-none d-sm-inline" src="/img/logo-2.png"></img>
-            <span class="d-inline d-sm-none nav-link">Home</span>
+            <img class="logo 	d-none d-sm-inline" src="/img/logo-3.png"></img>
+            <img class="logo d-sm-none nav-link" src="/img/logo-3-sm.png"></img>
           </a>
             <ul class="navbar-nav navbar-right  ml-auto">
 
