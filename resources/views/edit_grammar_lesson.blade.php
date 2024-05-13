@@ -1,7 +1,7 @@
 @extends('layouts.layout')
 
 @section('title')
- - Create Grammar Lesson
+ - Edit Grammar Lesson
 @endsection
 
 
@@ -27,7 +27,7 @@
 
 
 <form class="bg-light p-5 flex flex-col"
-    action="/admin/grammar/create"
+    action="/admin/grammar/edit"
     method="POST">
 
     @csrf
@@ -37,19 +37,32 @@
         <input type="text"
             class="form-control "
             name="title"
-            id="title">
+            id="title"
+            value = "{{ $title }}"
+            >
     </div>
+
+    <div class="my-3 col-12">
+        <label for="title">Slug</label>
+        <input type="text"
+            class="form-control "
+            name="slug"
+            id="slug"
+            value = "{{ $slug }}"
+            >
+    </div>
+
 
     <div class="my-3 col-12">
         <label for="title">Grammar Lesson</label>
         <textarea
             class="form-control "
             name="content"
-            id="content"></textarea>
+            id="content">{{ $content }}</textarea>
     </div>
 
     <div class="col-12">
-        <input class="btn btn-primary" type="submit">
+      <button type="submit" class="btn btn-primary">Submit Edit</button>
     </div>
 </form>
 
