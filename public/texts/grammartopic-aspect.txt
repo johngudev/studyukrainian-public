@@ -1,4 +1,4 @@
-<h3>Verbal aspect</h3>
+<h1>Verbal aspect</h1>
 <p>To understand the concept of verbal aspect, it&rsquo;s helpful to think of two different ways of capturing a given moment on camera:</p>
 <ul>
 <li>📷 with a photograph</li>
@@ -10,7 +10,8 @@
 <li>perfect</li>
 <li>imperfect</li>
 </ul>
-<p>More precisely, we typically say that every verb in the Ukrainian language falls into one of these two categories.</p>
+<p><span style="font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;">Perfect verbs are verbs that are used to describe completed actions. You can think of these as specific actions that happened at a specific moment in time (actions that can be expressed with a photograph). Imperfect verbs are verbs used to describe continuous actions or habitual actions (i.e. actions that can be expressed via video).</span></p>
+<p>More precisely, we typically say that every verb in the Ukrainian language falls into one of these two categories: perfect or imperfect.</p>
 <table class="table table-sm table-bordered">
 <thead class="thead-light">
 <tr>
@@ -33,7 +34,20 @@
 </tr>
 </tbody>
 </table>
-<p>Perfect verbs are verbs that are used to describe completed actions. You can think of these as specific actions that happened at a specific moment in time (actions that can be expressed with a photograph). Imperfect verbs are verbs used to describe continuous actions or habitual actions (i.e. actions that can be expressed via video).</p>
-<p>If you have studied French or Spanish, you will have encountered the perfect and imperfect aspects in the preterite tense and the imperfect tense.&nbsp; Ukrainian has these same tenses.</p>
-<p>&nbsp;</p>
-<p>&nbsp;</p>
+<p>If you have studied French or Spanish, you will have encountered the perfect and imperfect aspects in the perfect tense and the imperfect tense.&nbsp; Ukrainian has these same tenses, but rather than expressing these tenses with different conjugations, these tenses are expressed via distinct words.&nbsp; For example, we use the word позвати to express "to call" in the perfect tense, and звати to express "to call" in the imperfect tense.&nbsp;&nbsp;</p>
+<h2>Using Verbal Aspect in the Past Tense and Present Tense</h2>
+<h3>When Conjugated in the Past Tense</h3>
+<p>The words позвати (perfect) and звати (imperfect) will have different senses when conjugated in the past tense.&nbsp; For example, the phrase я позвав (perfect) means "I called," whereas the phrase я звав means "I was calling."</p>
+<p>A further distinction can be made between the perfect and imperfect verb.&nbsp; The perfect verb implies that the action is completed (like a photograph).&nbsp; The imperfect verb implies that the action was taking place over a period of time (like a video).&nbsp; Consider the following example.</p>
+<p>Він прочитав книжку. (perfect) - He read the book.&nbsp; (He finished reading the book).</p>
+<p>Він читав книжку (imperfect) - He was reading the book.</p>
+<h3>When Conjugated In the Present Tense</h3>
+<p>The words позвати (perfect) and звати (imperfect) also have very different senses when conjugated in the present tense.&nbsp; For example, the phrase &nbsp;я позвоню (perfect) means "I will call" (note that conjugated in the present tense, this word now has the sense of the present tense) whereas the phrase я звоню (imperfect) means "I am calling."&nbsp;</p>
+<p>A basic rule of thumb is that when we are conjugating in the present tense the imperfect tense will always refer to action occuring in the present, whereas the perfect tense will always refer to action in the future.&nbsp;&nbsp;</p>
+<p>Я прочитаю книгу. (perfect) - I will read the book.&nbsp;&nbsp;</p>
+<p>Я читаю книгу. (imperfect) - I am reading the book.</p>
+<h2>Formation of Verbal Aspect</h2>
+<p>Verbs in Ukrainian will almost always come in pairs corresponding to the perfect and imperfect forms of the verb.&nbsp; Typically, the imperfect form of the verb will be "base" form of the verb, and its counterpart in the perfect form is formed by adding a prefix to the imperfect form.&nbsp;&nbsp;</p>
+<p>звати (imperfect)</p>
+<p>по + звати = позвати (perfect)</p>
+<p>However the formation of the perfect form from the imperfect form of a given verb is very irregular and will require Ukrainian learners to memorize many different situations.&nbsp;&nbsp;</p>

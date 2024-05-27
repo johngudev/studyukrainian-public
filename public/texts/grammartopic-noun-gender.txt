@@ -1,0 +1,57 @@
+<p>Nouns in the Ukrainian language can have one of three genders:&nbsp; masculine, feminine, and neuter.&nbsp; As in other European languages like Spanish and German, the gender of a noun also applies to the adjectives that modify that noun.&nbsp;</p>
+<p>Although exceptions exist, the gender of a word typically depends on the ending of the noun.&nbsp; I will present the most typical word endings for each gender and then provide examples of word endings that can apply to either gender.</p>
+<h2>Masculine Nouns</h2>
+<p>Masculine nouns tend to end in consonants.&nbsp; Almost all words ending in hard consonants are masculine.&nbsp;</p>
+<table style="border-collapse: collapse; width: 100%;" border="1"><colgroup><col style="width: 50%;"><col style="width: 50%;"></colgroup>
+<tbody>
+<tr>
+<td>будинок</td>
+<td>building</td>
+</tr>
+<tr>
+<td>син</td>
+<td>son</td>
+</tr>
+<tr>
+<td>стіл</td>
+<td>table</td>
+</tr>
+</tbody>
+</table>
+<h2>Feminine Nouns</h2>
+<p>Feminine nouns tend to end in -я or -а.&nbsp;&nbsp;</p>
+<table style="border-collapse: collapse; width: 100%;" border="1"><colgroup><col style="width: 49.9464%;"><col style="width: 49.9464%;"></colgroup>
+<tbody>
+<tr>
+<td>донька</td>
+<td>daughter</td>
+</tr>
+<tr>
+<td>земля</td>
+<td>land</td>
+</tr>
+<tr>
+<td>машина</td>
+<td>car</td>
+</tr>
+</tbody>
+</table>
+<h2>Neuter Nouns</h2>
+<p>Neuter nouns tend to end in -o and -e.</p>
+<table style="border-collapse: collapse; width: 100%;" border="1"><colgroup><col style="width: 49.9464%;"><col style="width: 49.9464%;"></colgroup>
+<tbody>
+<tr>
+<td>місто</td>
+<td>city</td>
+</tr>
+<tr>
+<td>поле</td>
+<td>field</td>
+</tr>
+<tr>
+<td>слово</td>
+<td>word</td>
+</tr>
+</tbody>
+</table>
+<h2>Exceptional Cases: Masculine and Feminine Nouns - Indeterminate Forms</h2>

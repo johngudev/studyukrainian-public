@@ -25,10 +25,8 @@
 <?php
 
   $topic = "Verbs";
-  $titles = ["Present Tense","Past Tense","Future Tense","Verbal Aspect"];
-  $links  = ["grammar/present-tense/","grammar/past-tense/","grammar/future-tense","grammar/aspect"];
 
-  for($i=0; $i<=count($titles)-1; $i++)
+  foreach($content[$topic] as $item)
     {
 
       ?>
@@ -37,9 +35,9 @@
         <div class="card bg-light">
           <div class="card-header  text-secondary"><b><?php echo $topic; ?></b></div>
           <div class="card-body">
-            <div class="card-title text-center"><?php echo $titles[$i]; ?></div>
+            <div class="card-title text-center"><?php echo $item['title']; ?></div>
             <p class="card-text text-center"></p>
-            <div class="mx-auto text-center"><a href = "<?php echo $links[$i]; ?>" class="btn btn-success text-center btn-sm">Go to lesson</a></div>
+            <div class="mx-auto text-center"><a href = "<?php echo $item['link']; ?>" class="btn btn-success text-center btn-sm">Go to lesson</a></div>
           </div>
         </div>
       </div>
@@ -67,10 +65,8 @@
 <?php
 
   $topic = "Nouns and Adjectives";
-  $titles = ["Plurals","Pronouns"];
-  $links  = ["grammar/plurals/","grammar/pronouns/"];
 
-  for($i=0; $i<=count($titles)-1; $i++)
+  foreach($content[$topic] as $item)
     {
 
       ?>
@@ -79,9 +75,9 @@
         <div class="card bg-light">
           <div class="card-header  text-secondary"><b><?php echo $topic; ?></b></div>
           <div class="card-body">
-            <div class="card-title text-center"><?php echo $titles[$i]; ?></div>
+            <div class="card-title text-center"><?php echo $item['title']; ?></div>
             <p class="card-text text-center"></p>
-            <div class="mx-auto text-center"><a href = "<?php echo $links[$i]; ?>" class="btn btn-success text-center btn-sm">Go to lesson</a></div>
+            <div class="mx-auto text-center"><a href = "<?php echo $item['link']; ?>" class="btn btn-success text-center btn-sm">Go to lesson</a></div>
           </div>
         </div>
       </div>
@@ -106,10 +102,8 @@
 <?php
 
   $topic = "Noun Cases";
-  $titles = ["Genitive"];
-  $links  = ["grammar/genitive/"];
 
-  for($i=0; $i<=count($titles)-1; $i++)
+  foreach($content[$topic] as $item)
     {
 
       ?>
@@ -118,9 +112,9 @@
         <div class="card bg-light">
           <div class="card-header  text-secondary"><b><?php echo $topic; ?></b></div>
           <div class="card-body">
-            <div class="card-title text-center"><?php echo $titles[$i]; ?></div>
+            <div class="card-title text-center"><?php echo $item['title']; ?></div>
             <p class="card-text text-center"></p>
-            <div class="mx-auto text-center"><a href = "<?php echo $links[$i]; ?>" class="btn btn-success text-center btn-sm">Go to lesson</a></div>
+            <div class="mx-auto text-center"><a href = "<?php echo $item['link']; ?>" class="btn btn-success text-center btn-sm">Go to lesson</a></div>
           </div>
         </div>
       </div>
