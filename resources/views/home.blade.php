@@ -29,7 +29,7 @@
       <div class="row">
         <div class="col-sm-12 col-md-6 text-center">
           <div>
-            <img class="img-fluid mx-auto hero__image" src="/img/ukrainian-woman-with-flag.jpeg"></img>
+            <img alt="woman with flag" class="img-fluid mx-auto hero__image" src="/img/ukrainian-woman-with-flag.jpeg"></img>
           </div>
         </div>
 
@@ -131,7 +131,7 @@
       <blockquote class="blockquote col-sm-12 col-md-4">
         <div class="d-flex justify-content-center mb-3">
           <div class="testimonial-block__quote-cube"> 
-            <img src="/img/right-quote-sign.svg">
+            <img alt="quote sign" src="/img/right-quote-sign.svg">
           </div>
           <div class="testimonial-block__source text-graphite-black">
 
@@ -147,7 +147,7 @@
       <blockquote class="blockquote col-sm-12 col-md-3">
       <div class="d-flex justify-content-center mb-3">
           <div class="testimonial-block__quote-cube testimonial-block__quote-cube-orange"> 
-            <img src="/img/right-quote-sign.svg">
+            <img alt="quote sign" src="/img/right-quote-sign.svg">
           </div>
           <div class="testimonial-block__source text-graphite-black">
           <div class="testimonial-block__source-name">Milad<br>
@@ -161,7 +161,7 @@
       <blockquote class="blockquote col-sm-12 col-md-4">
       <div class="d-flex justify-content-center mb-3">
           <div class="testimonial-block__quote-cube testimonial-block__quote-cube-purple"> 
-            <img src="/img/right-quote-sign.svg">
+            <img alt="quote sign" src="/img/right-quote-sign.svg">
           </div>
           <div class="testimonial-block__source text-graphite-black">
             <div class="testimonial-block__source-name">Alec<br>
