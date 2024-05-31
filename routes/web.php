@@ -348,7 +348,7 @@ Route::get('flashcard-studying', function() {
 
 Route::post('flashcard-studying/store', function() {
 
-    FlashcardStudyRecord::firstOrCreate([
+    FlashcardStudyRecord::updateOrCreate([
         'flashcard_id' => request()->id,
         'user_id' => Auth::user()->id
     ],[
