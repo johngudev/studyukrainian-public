@@ -16,12 +16,12 @@
 
 
 <!-- Transliteration and Translation Buttons / Toggles -->
-<div class="text-center">
+<div style="margin-top: 1.75rem;" class="text-center">
   <button class="btn btn-info btn-sm transliteration-button mt-sm-2 float-right" id="toggleTransliterationButton">Toggle Transliteration</button>
   <!--button class="btn btn-info" onclick="toggleDefinitions()" >Show Literal Translations</button-->
 </div>
 
-<div id="grammar-content-original" class="foreign-script">
+<div style="margin-top: 1.75rem;" id="grammar-content-original" class="foreign-script">
 
     <?php
 

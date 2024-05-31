@@ -1,24 +1,31 @@
-<x-app-layout>
-    <x-slot name="header">
-        <h2 class="font-semibold text-xl text-gray-800 leading-tight">
-            {{ __('Dashboard') }}
-        </h2>
-    </x-slot>
+@extends('layouts.layout')
 
-    <div class="py-12">
-        <div class="max-w-7xl mx-auto sm:px-6 lg:px-8">
-            <div class="bg-white overflow-hidden shadow-sm sm:rounded-lg">
-                <div class="p-6 bg-white border-b border-gray-200">
-                    You're logged in!
-                </div>
-                <div class="">
-                    <ul>
-                        <li><a href="/about">About</a></li>
-                        <li><a href="/lessons">Lessons</a></li>
-                        <li><a href="/grammar">Grammar</a></li>
-                    </ul>
-                </div>
-            </div>
-        </div>
-    </div>
-</x-app-layout>
+@section('title')
+ - Dashboard
+@endsection
+
+
+@section('css')
+<!--link href="css/extra-styles.css" rel="stylesheet" -->
+@endsection
+
+
+@section('content')
+
+<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+
+<div class="foreign-script">
+
+<h1 style="margin-top: 1.75rem">Dashboard</h1>
+
+<ul>
+    <li>My lesson progress</li>
+    <li><a href="/lessons">Go to lessons</a></li>
+    <li><a href="/flashcard-studying">My flashcards</a></li>
+    <li><a href="/study-record/test">Get tested</a></li>
+
+</ul>
+
+</div>
+
+@endsection

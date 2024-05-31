@@ -4,7 +4,7 @@
 
       <header>
         <!-- Fixed navbar -->
-        <nav class="navbar navbar-expand navbar-light">
+        <nav class="navbar navbar-expand navbar-light d-sm-flex d-none">
 
             <ul class="navbar-nav navbar-right  ml-auto">
 
@@ -26,17 +26,22 @@
 
 
 
-              @php //if(Route::has('login')) - COMMENT JG @endphp
-              @if (false))                    
+              @if(Route::has('login'))
                     @auth
 
-                    <li class="nav-item">
-                      <span class="nav-link">Logged in as:  {{Auth::user()->name}} | <a href= {{ URL::to('logout') }}>Log out</a></span>
-                    </li>
+                    <!-- <li class="nav-item dropdown">
+                      <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">Account</a>
+                      <div class="dropdown-menu" ">
+                        <a class="nav-link" href='/dashboard'>Dashboard</a>
+                        <a class="nav-link" href='/logout'>Logout</a>
+
+                      </div>
+                    </li> -->
+
 
                     @else
                     <li class="nav-item">
-                      <a class="nav-link" href="{{ route('login') }}" class="text-sm text-gray-700 dark:text-gray-500 underline">Log in</a>
+                      <a class="nav-link" href="{{ route('login') }}" class="text-sm text-gray-700 dark:text-gray-500 underline">Login</a>
                     </li>
 
                     @endauth
@@ -49,4 +54,37 @@
 
             </ul>
         </nav>
+
+        <!-- Mobile navbar -->
+        <nav class="navbar navbar-expand navbar-light d-sm-none">
+        <ul class="navbar-nav navbar-right  ml-auto">
+            <li class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">Menu</a>
+              <div class="dropdown-menu">
+                <a class="nav-link" href={{ URL::to('lessons') }} >Lessons</a>
+                <a class="nav-link" href={{ URL::to('grammar') }} >Grammar</a>
+                <a class="nav-link" href= {{ URL::to('about') }} >About</a>
+
+                <div class="dropdown-divider"></div>
+
+                @if(Route::has('login'))
+                    @auth
+
+                      <a class="nav-link" href="/dashboard">Dashboard</a>
+                      <a class="nav-link" href="/logout">Logout</a>
+
+                    @else
+                      <a class="nav-link" href="{{ route('login') }}" class="text-sm text-gray-700 dark:text-gray-500 underline">Login</a>
+
+                    @endauth
+                @endif  
+
+              </div>
+            </li>
+          </ul>
+        </nav>
       </header>
+
+<script>
+  $('.dropdown-toggle').dropdown();
+</script>

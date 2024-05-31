@@ -1,0 +1,13 @@
+<h1>Expressing 'To Be' In Ukrainian</h1>
+<p>In Ukrainian, the infinitive form of the verb бути means 'to be.'&nbsp;&nbsp;</p>
+<p style="padding-left: 40px;">Я хочу бути лікарем.<br>I want to be a doctor.</p>
+<p style="padding-left: 40px;">Я хочу бути з тобою.<br>I want to be with you.</p>
+<p>The verb бути (to be) is always conjugated as є.&nbsp; This is in contrast to other languages where the word 'to be' has a variety of conjugations.&nbsp; (In English, we have many conjugations of the verb 'to be': 'He is', 'I am', 'You are', etc.)</p>
+<p style="padding-left: 40px;">Він є лікар.<br>He is a doctor.</p>
+<p style="padding-left: 40px;">я є студент.<br>I am a student.</p>
+<p>In virtually all cases, the word є is omitted.</p>
+<p style="padding-left: 40px;">Він лікар.<br>He is a doctor.</p>
+<p style="padding-left: 40px;">я студент.<br>I am a student.</p>
+<p>When the word є is present, it's used to express emphasis.</p>
+<p style="padding-left: 40px;">Він є лікар.<br>He IS a doctor.</p>
+<p style="padding-left: 40px;">я є студент.<br>I AM a student.</p>

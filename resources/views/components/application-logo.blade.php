@@ -1,0 +1,1 @@
+<img style="max-height:50px; max-width: 100px" src="/img/logo-3-sm.png" />

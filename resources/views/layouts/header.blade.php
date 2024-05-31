@@ -4,7 +4,7 @@
 
       <header>
         <!-- Fixed navbar -->
-        <nav class="navbar navbar-expand navbar-light fixed-top text-center bg-white">
+        <nav class="navbar navbar-expand navbar-light fixed-top text-center bg-white d-none d-flex">
           <a class="navbar-brand" href={{ URL::to('') }}>
 
             <img class="logo 	d-none d-sm-inline" src="/img/logo-3.png"></img>
@@ -28,17 +28,21 @@
                 <a class="nav-link" href="/blogs" >Blog</a>
               </li> -->
 
-              @php //if(Route::has('login')) - COMMENT JG @endphp
-              @if (false))
+              @if(Route::has('login'))
                     @auth
 
-                    <li class="nav-item">
-                      <span class="nav-link">Logged in as:  {{Auth::user()->name}} | <a href= {{ URL::to('logout') }}>Log out</a></span>
+                    <li class="nav-item dropdown">
+                      <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">Account</a>
+                      <div class="dropdown-menu" style="margin-left:-4rem;">
+                        <a class="nav-link" href='/dashboard'>Dashboard</a>
+                        <a class="nav-link" href='/logout'>Logout</a>
+
+                      </div>
                     </li>
 
                     @else
                     <li class="nav-item">
-                      <a class="nav-link" href="{{ route('login') }}" class="text-sm text-gray-700 dark:text-gray-500 underline">Log in</a>
+                      <a class="nav-link" href="{{ route('login') }}" class="text-sm text-gray-700 dark:text-gray-500 underline">Login</a>
                     </li>
 
                     @endauth
@@ -52,4 +56,43 @@
             </ul>
           </div>
         </nav>
+
+        <!-- Mobile navbar -->
+        <nav class="navbar navbar-expand navbar-light fixed-top text-center bg-white d-sm-none">
+          <a class="navbar-brand" href={{ URL::to('') }}>
+
+            <img class="logo 	d-none d-sm-inline" src="/img/logo-3.png"></img>
+            <img class="logo d-sm-none nav-link" src="/img/logo-3-sm.png"></img>
+          </a>
+
+          <ul class="navbar-nav navbar-right  ml-auto">
+            <li class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">Menu</a>
+              <div class="dropdown-menu">
+                <a class="nav-link" href={{ URL::to('lessons') }} >Lessons</a>
+                <a class="nav-link" href={{ URL::to('grammar') }} >Grammar</a>
+                <a class="nav-link" href= {{ URL::to('about') }} >About</a>
+
+                <div class="dropdown-divider"></div>
+
+                @if(Route::has('login'))
+                    @auth
+
+                      <a class="nav-link" href="/dashboard">Dashboard</a>
+                      <a class="nav-link" href="/logout">Logout</a>
+
+                    @else
+                      <a class="nav-link" href="{{ route('login') }}" class="text-sm text-gray-700 dark:text-gray-500 underline">Login</a>
+
+                    @endauth
+                @endif  
+
+              </div>
+            </li>
+          </ul>
+
+          </div>
+        </nav>
+
+        
       </header>
