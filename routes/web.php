@@ -328,10 +328,21 @@ Route::get('/admin/flashcard/all', function() {
 
 
 Route::get('flashcard-studying', function() {
+
+    $flashcard_study_records = FlashcardStudyRecord::where('user_id', '=', Auth::user()->id)->with('flashcard')->get();
+
+
+    $flashcard_study_records = $flashcard_study_records->map(function ($flashcard_study_record) { 
+        $flashcard_study_record->readableDateTime = Carbon::parse($flashcard_study_record->next_test_date)->setTimezone('America/Chicago')->format('F j, g:i A');
+        return $flashcard_study_record;
+        ;
+    });
+
+
     return view('flashcard_studying_panel', 
     [
     'flashcards' => Flashcard::all(), 
-    'flashcard_study_records' => FlashcardStudyRecord::where('user_id', '=', Auth::user()->id)->with('flashcard')->get()
+    'flashcard_study_records' => $flashcard_study_records
     ]);
 })->middleware(['auth']);
 
