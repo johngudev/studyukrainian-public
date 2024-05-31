@@ -7,6 +7,12 @@
 
 @section('css')
 <!--link href="css/extra-styles.css" rel="stylesheet" -->
+
+<style>
+    .flashcard-add-button:disabled {
+        color: transparent !important;
+    }
+</style>
 @endsection
 
 
@@ -38,7 +44,7 @@
                     <input style="display: none" type="text" name="id" value="{{$flashcard->id}}"></input>
 
                     <button 
-                        class="btn text-success" 
+                        class="btn text-success flashcard-add-button" 
                         type="submit"
                         @if(in_array($flashcard->id, $flashcards_owned_ids))
                             disabled style="color:gray"
