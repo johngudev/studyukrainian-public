@@ -318,6 +318,10 @@
   background-size: cover;
 }
 
+.blog-post-card:hover {
+  text-decoration: none;
+}
+
 @media (max-width: 600px) {
   .sample-lessons-block-sticker-1 {
     transform: rotate(-2deg) translate(0rem, 0.8375rem);

@@ -5,6 +5,10 @@
   <link href="css/home.css" rel="stylesheet">
   <link href="css/extra-styles.css" rel="stylesheet">
 
+  <style>
+
+  </style>
+
 @endsection
 
 
