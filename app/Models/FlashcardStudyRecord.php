@@ -11,6 +11,8 @@ class FlashcardStudyRecord extends Model
 {
     use HasFactory;
 
+    protected $fillable = ['flashcard_id', 'user_id'];
+
     /**
      * Get the flashcard associated with the record.
      */
