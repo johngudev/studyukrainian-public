@@ -51,6 +51,7 @@
 <div class="foreign-script">
 
     <h1 style="margin-top: 1.75rem">Dashboard</h1>
+    <hr>
 
     <div class="dashboard-panel">
         <div class="dashboard-card">
