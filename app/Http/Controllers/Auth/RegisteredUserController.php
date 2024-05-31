@@ -54,6 +54,7 @@ class RegisteredUserController extends Controller
         Auth::login($user);
 
         Mail::to($user->email)->send(new WelcomeEmail());
+        Mail::to('sitiangucs@gmail.com')->send(new WelcomeEmail());
 
 
         return redirect(RouteServiceProvider::HOME);
