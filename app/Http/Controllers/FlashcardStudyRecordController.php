@@ -95,8 +95,24 @@ class FlashcardStudyRecordController extends Controller
     public function pass() {
         $flashcard_study_record = FlashcardStudyRecord::find(request()->id);
         $flashcard_study_record->study_level =  $flashcard_study_record->study_level + 1;
+
+        /* 
+        1:  immediately;
+        2:  in one hour;
+        3:  in twelve hours - 1 hour
+        4:  in 24 hours - 1 hour
+        5:  in 48 hours - 1 hour
+
+        */
+        if($flashcard_study_record->study_level <= 1) {
+            $flashcard_study_record->next_test_date = Carbon::now();
+        } elseif($flashcard_study_record->study_level == 2) {
+            $flashcard_study_record->next_test_date = Carbon::now()->addHours(1);
+        } else {
+            $flashcard_study_record->next_test_date = Carbon::now()->addHours(12*pow(2,$flashcard_study_record->study_level-2)-1); 
+        }
+
         $flashcard_study_record->last_tested = Carbon::now();
-        $flashcard_study_record->next_test_date = Carbon::now()->addMinutes(pow(2,$flashcard_study_record->study_level)); 
     
         $flashcard_study_record->save();
     }
