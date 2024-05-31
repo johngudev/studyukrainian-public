@@ -66,8 +66,8 @@
     @foreach($flashcard_study_records as $flashcard_study_record)
 
     <div class="flex flex-row justify-content-between my-2 justify-content-end align-items-center">
-        <button style="width: 50px" class="btn btn-sm btn-success">Pass</button>
-        <button style="width: 50px" class="btn btn-sm btn-danger">Fail</button>
+        <!-- <button style="width: 50px" class="btn btn-sm btn-success">Pass</button>
+        <button style="width: 50px" class="btn btn-sm btn-danger">Fail</button> -->
         <span class="ml-3">{{$flashcard_study_record->flashcard->english_phrase}} | <a target="_blank" href="{{$flashcard_study_record->flashcard->sound_file_path}}"> {{ $flashcard_study_record->flashcard->ukrainian_phrase}} </a></span>
         <span> | </span>
         <span class="ml-auto"> Next Test Date: {{$flashcard_study_record->readableDateTime }} </span>
