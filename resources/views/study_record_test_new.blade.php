@@ -6,6 +6,21 @@ Flashcards
 
 @section('css')
 <script src="https://unpkg.com/vue@3"></script>
+
+<style>
+
+.flashcard {
+    height: 400px;
+    width: 600px;
+}
+
+@media(max-width: 480px) {
+.flashcard {
+    height: auto;
+    width: 90vw;
+}
+}
+</style>
 @endsection
 
 @section('content')
@@ -18,8 +33,8 @@ Flashcards
                         :key="assignment.id"> 
 
                         <div v-if="index<4" 
-                            class="flex flex-col justify-between bg-light rounded text-primary p-5"
-                            style="border: 1px solid Gainsboro; height:400px; width:600px; position: absolute; top: 50%; left: 50%; transform: translate(-50%,-50%);"
+                            class="flashcard flex flex-col justify-between bg-light rounded text-primary p-5"
+                            style="border: 1px solid Gainsboro;  position: absolute; top: 50%; left: 50%; transform: translate(-50%,-50%);"
                             :style="{'z-index': -index}">
 
                             <div @click="toggleFlashcard" class="" :data_sound="assignment.flashcard.sound_file_path" >
@@ -43,14 +58,14 @@ Flashcards
                         </div>
 
                         <div v-if="assignments.length >= 2"
-                            class="flex flex-col justify-between bg-light rounded text-primary p-5"
-                            style="z-index: -2; border: 1px solid Gainsboro; height:400px; width:600px; position: absolute; top: calc(50% + 8px); left: calc(50% + 4px); transform: translate(-50%,-50%);"
+                            class="flashcard flex flex-col justify-between bg-light rounded text-primary p-5"
+                            style="z-index: -2; border: 1px solid Gainsboro;  position: absolute; top: calc(50% + 8px); left: calc(50% + 4px); transform: translate(-50%,-50%);"
                             >
                         </div>
 
                         <div v-if="assignments.length >= 3"
-                            class="flex flex-col justify-between bg-light rounded text-primary p-5"
-                            style="z-index: -3; border: 1px solid Gainsboro; height:400px; width:600px; position: absolute; top: calc(50% + 16px); left: calc(50% + 8px); transform: translate(-50%,-50%);"
+                            class="flashcard flex flex-col justify-between bg-light rounded text-primary p-5"
+                            style="z-index: -3; border: 1px solid Gainsboro;  position: absolute; top: calc(50% + 16px); left: calc(50% + 8px); transform: translate(-50%,-50%);"
                             >
                         </div>
 
