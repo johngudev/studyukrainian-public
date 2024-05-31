@@ -348,14 +348,13 @@ Route::get('flashcard-studying', function() {
 
 Route::post('flashcard-studying/store', function() {
 
-    $flashcard_study_record = new FlashcardStudyRecord;
-
-    $flashcard_study_record->flashcard_id = request()->id;
-    $flashcard_study_record->user_id = Auth::user()->id;
-    $flashcard_study_record->study_level = 0;
-    $flashcard_study_record->last_tested = Carbon::now();
-
-    $flashcard_study_record->save();
+    FlashcardStudyRecord::firstOrCreate([
+        'flashcard_id' => request()->id,
+        'user_id' => Auth::user()->id
+    ],[
+        'study_level' => 0,
+        'last_tested' => Carbon::now()
+    ]);
 
     return redirect('flashcard-studying');
 
