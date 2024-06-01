@@ -322,7 +322,7 @@
 .blog-post-card {
   min-height: 200px; 
   border: 0; 
-  border-radius: 0.25rem 0.25rem 1rem 0.25rem; 
+  border-radius: 0.375rem 0.375rem 0.375rem 0.375rem; 
   padding: 0 !important; 
   background-size: cover;
 }
