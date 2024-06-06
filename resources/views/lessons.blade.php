@@ -16,7 +16,8 @@
 
 @section('content')
 
-@if($dialogue_number == 1)
+@if($first_visit == "yes")
+@else
   @include('components.lesson-instructions-modal')
 @endif
 

@@ -130,9 +130,19 @@ Route::get('/premium-1', function () {
 });
 
 Route::get('/lessons/{dialogue_number}', function ($dialogue_number) {
-    return view('lessons', [
-        'dialogue_number' => $dialogue_number
-    ]);
+
+    $value = request()->cookie('first_visit');
+
+    $cookie = cookie('first_visit', 'yes', 60*24*365*10);
+
+    return response()
+        ->view('lessons',  [ 'dialogue_number' => $dialogue_number, 'first_visit' => $value ])
+        ->withCookie($cookie);
+
+
+    // return view('lessons', [
+    //     'dialogue_number' => $dialogue_number
+    // ]);
 });
 
 Route::get('/grammar/{grammar_topic}', function ($grammar_topic) {
