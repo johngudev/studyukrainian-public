@@ -7,6 +7,7 @@
 
 @section('css')
 <!--link href="css/extra-styles.css" rel="stylesheet" -->
+<link href="css/flashcard-admin.css" rel="stylesheet">
 
 <style>
     .flashcard-add-button:disabled {
