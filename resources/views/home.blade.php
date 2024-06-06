@@ -185,7 +185,7 @@
   <div class="container">
     <div class="container row justify-content-center" style="gap: 1rem;">
 
-    <div class="col-12 col-md-2 flex">
+    <div class="col-12 col-md-2 flex mt-3">
       <h2 class="text-graphite-black text-center " style="margin-top:auto; margin-bottom:auto; font-size: 3.25rem; line-height: 3rem; font-weight: 800">From the Blog</h2>
     </div>
 
