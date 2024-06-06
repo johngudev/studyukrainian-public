@@ -81,12 +81,25 @@
             <button style="width: 50px" class="btn btn-sm btn-danger">Fail</button> -->
             <span class="ml-3">{{$flashcard_study_record->flashcard->english_phrase}} | <a target="_blank" href="{{$flashcard_study_record->flashcard->sound_file_path}}"> {{ $flashcard_study_record->flashcard->ukrainian_phrase}} </a></span>
             <span> | </span>
-            <span class="ml-auto"> Next Test Date: {{$flashcard_study_record->readableDateTime }} </span>
+            <span data-date_time="{{$flashcard_study_record->next_test_date}}" class="next-test-date-label ml-auto"> Next Test Date: {{$flashcard_study_record->readableDateTime }} </span>
         </li>
 
         @endforeach
     </ul>
 </div>
 
+<script>
+    const slides = document.getElementsByClassName("next-test-date-label");
+
+    console.log(   slides);
+
+    for( let slide of slides)  {
+        // console.log("hello world");
+        let date = new Date (Date.parse(slide.dataset.date_time + " UTC"));
+
+        slide.innerHTML = "Next Test Date: " + date.toLocaleDateString("en-US") + " " + date.toLocaleTimeString("en-US");
+    };
+
+</script>
 
 @endsection
