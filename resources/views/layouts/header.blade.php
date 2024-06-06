@@ -35,6 +35,9 @@
                       <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">Account</a>
                       <div class="dropdown-menu" style="margin-left:-5rem;" >
                         <a class="nav-link" href='/dashboard'>Dashboard</a>
+                        <a class="nav-link" href='/flashcard-studying'>Manage Flashcards</a>
+                        <a class="nav-link" href='/study-record/test'>Study Flashcards</a>
+
                         <a class="nav-link" href='/logout'>Logout</a>
 
                       </div>
@@ -79,6 +82,9 @@
                     @auth
 
                       <a class="nav-link" href="/dashboard">Dashboard</a>
+                      <a class="nav-link" href='/flashcard-studying'>Manage Flashcards</a>
+                      <a class="nav-link" href='/study-record/test'>Study Flashcards</a>
+
                       <a class="nav-link" href="/logout">Logout</a>
 
                     @else

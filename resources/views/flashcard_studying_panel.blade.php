@@ -20,6 +20,10 @@
 
 @isset($flashcards)
 <div class="bg-light my-5 p-5 flex flex-col">
+    <h2>Available Flashcards</h2>
+    <div>These are the flashcards that you can add to your personal flashcard deck.  To add a flashcard to your deck, click the <span style="color: green; padding-left: 3px; padding-right: 3px; border: 1px solid rgb(200, 200, 200); background-color:rgb(239, 239, 239);">+</span> button next to the phrase that you want to add as a flashcard.  <a href="/study-record/test">Study your flashcards now!</a></div>
+    <hr>
+
     <ul>
 
     @isset($flashcard_study_records)
@@ -63,6 +67,11 @@
 @endisset
 
 <div class="bg-light my-5 p-5 flex flex-col">
+<h2>Your Flashcard Deck</h2>
+    <div>These are the flashcards that you will be tested on.</div>
+    <hr>
+ 
+
     @foreach($flashcard_study_records as $flashcard_study_record)
 
     <div class="flex flex-row justify-content-between my-2 justify-content-end align-items-center">
