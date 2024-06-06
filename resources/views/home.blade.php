@@ -146,7 +146,7 @@
 
       <blockquote class="blockquote col-sm-12 col-md-3">
       <div class="d-flex justify-content-center mb-3">
-          <div class="testimonial-block__quote-cube testimonial-block__quote-cube-orange"> 
+          <div class="testimonial-block__quote-cube testimonial-block__quote-cube-purple"> 
             <img alt="quote sign" src="/img/right-quote-sign.svg">
           </div>
           <div class="testimonial-block__source text-graphite-black">
@@ -160,7 +160,7 @@
 
       <blockquote class="blockquote col-sm-12 col-md-4">
       <div class="d-flex justify-content-center mb-3">
-          <div class="testimonial-block__quote-cube testimonial-block__quote-cube-purple"> 
+          <div class="testimonial-block__quote-cube testimonial-block__quote-cube-orange"> 
             <img alt="quote sign" src="/img/right-quote-sign.svg">
           </div>
           <div class="testimonial-block__source text-graphite-black">
