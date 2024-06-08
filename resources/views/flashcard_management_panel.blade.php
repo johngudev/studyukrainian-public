@@ -1,7 +1,7 @@
 @extends('layouts.layout')
 
 @section('title')
- - Flashcard Studying Panel
+ - Flashcard Management Panel
 @endsection
 
 
@@ -98,7 +98,12 @@
         // console.log("hello world");
         let date = new Date (Date.parse(slide.dataset.date_time + " UTC"));
 
-        slide.innerHTML = "Next Test Date: " + date.toLocaleDateString("en-US") + " " + date.toLocaleTimeString("en-US");
+        if(date) {
+            slide.innerHTML = "Next Test Date: " + date.toLocaleDateString("en-US") + " " + date.toLocaleTimeString("en-US");
+        } else {
+            slide.innerHTML = "";
+        }
+
     };
 
 </script>

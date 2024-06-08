@@ -349,7 +349,7 @@ Route::get('flashcard-studying', function() {
     });
 
 
-    return view('flashcard_studying_panel', 
+    return view('flashcard_management_panel', 
     [
     'flashcards' => Flashcard::all(), 
     'flashcard_study_records' => $flashcard_study_records
@@ -367,7 +367,8 @@ Route::post('flashcard-studying/store', function() {
 
     $flashcard_study_record->save();
 
-    return redirect('flashcard-studying');
+    return redirect()->back();
+    // return redirect('flashcard-studying');
 
 })->middleware(['auth']);
 
