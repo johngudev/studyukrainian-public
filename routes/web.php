@@ -135,8 +135,26 @@ Route::get('/lessons/{dialogue_number}', function ($dialogue_number) {
 
     $cookie = cookie('first_visit', 'yes', 60*24*365*10);
 
+
+    //get index of dialogue number
+    //returns "01" if dialogue number is "1"
+    $dialogue_index = str_pad($dialogue_number, 2, '0', STR_PAD_LEFT);
+
+    $texts_path = "texts/";
+
+    $lesson_flashcard_path   = $texts_path . "flashcards" . $dialogue_index . ".txt";
+
+    if (file_exists($lesson_flashcard_path))
+    {
+        $display_flashcards = true;
+    } else {
+        $display_flashcards = false;
+    }
+
+
+
     return response()
-        ->view('lessons',  [ 'dialogue_number' => $dialogue_number, 'first_visit' => $value ])
+        ->view('lessons',  [ 'dialogue_number' => $dialogue_number, 'first_visit' => $value, 'display_flashcards' => $display_flashcards ])
         ->withCookie($cookie);
 
 

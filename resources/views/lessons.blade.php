@@ -57,6 +57,14 @@
   <!--button class="btn btn-info" onclick="toggleDefinitions()" >Show Literal Translations</button-->
 </div>
 
+@isset($display_flashcards)
+  @if($display_flashcards)
+    <div class="text-center mt-2">
+      <a href="/lessons/flashcards/{{$dialogue_number}}" target="_blank" class="btn btn-primary">Add Flashcards</a>
+    </div>
+  @endif
+@endisset
+
 
 
 <div class="row justify-content-center">
