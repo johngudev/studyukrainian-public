@@ -176,7 +176,7 @@ Route::get('/lessons/flashcards/{dialogue_number}', function($dialogue_number) {
                 $flashcard_study_records = FlashcardStudyRecord::where('user_id', '=', Auth::user()->id)->with('flashcard')->get();
                 $flashcards_owned_ids = $flashcard_study_records->pluck('flashcard_id')->toArray();
 
-                dd($flashcards_owned_ids);
+                // dd($flashcards_owned_ids);
 
                 return view('lessons-flashcards',['flashcards' => $flashcards, 'flashcards_owned_ids' => $flashcards_owned_ids ]);
             } else {
