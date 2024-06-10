@@ -148,22 +148,23 @@ Route::get('/lessons/{dialogue_number}', function ($dialogue_number) {
 Route::get('/lessons/flashcards/{dialogue_number}', function($dialogue_number) {
 
     //get index of dialogue number
+    //returns "01" if dialogue number is "1"
+    $dialogue_index = str_pad($dialogue_number, 2, '0', STR_PAD_LEFT);
 
-    $this->dialogue_index = $this->getIndexVersion($dialogue_number);
+    $texts_path = "texts/";
 
-
-    $lesson_flashcard_path   = $this->texts_path . "flashcards" . $dialogue_index . ".txt";
-
+    $lesson_flashcard_path   = $texts_path . "flashcards" . $dialogue_index . ".txt";
 
 
     //get all flashcards
     $flashcard_indexes = file_get_contents($lesson_flashcard_path);
 
-    
+    $flashcard_indexes = array_map('intval', explode(', ', $flashcard_indexes));
 
-    $flashcards = Flashcard::all();
 
-    
+    $flashcards = Flashcard::whereIn('id', $flashcard_indexes)->get();
+
+    dd($flashcards);
 
     //get flashcard for user
     if(Auth::user()) {
