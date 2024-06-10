@@ -196,9 +196,9 @@ Route::get('/lessons/flashcards/{dialogue_number}', function($dialogue_number) {
 
                 // dd($flashcards_owned_ids);
 
-                return view('lessons-flashcards',['flashcards' => $flashcards, 'flashcards_owned_ids' => $flashcards_owned_ids ]);
+                return view('lessons-flashcards',['dialogue_number' =>$dialogue_number, 'flashcards' => $flashcards, 'flashcards_owned_ids' => $flashcards_owned_ids ]);
             } else {
-                return view('lessons-flashcards',['flashcards' => $flashcards ]);
+                return view('lessons-flashcards',['dialogue_number' =>$dialogue_number, 'flashcards' => $flashcards ]);
             }
     }
 

@@ -21,7 +21,7 @@
 <div class="container">
 @isset($flashcards)
     <div class="bg-light my-5 p-5 flex flex-col">
-        <h2>Lesson 1 Flashcards</h2>
+        <h2>Lesson {{ $dialogue_number }} Flashcards</h2>
         @auth()
             <div class="mt-2">To add a flashcard to your deck, click the <span style="color: green; padding-left: 3px; padding-right: 3px; border: 1px solid rgb(200, 200, 200); background-color:rgb(239, 239, 239);">+</span> button next to the phrase that you want to add as a flashcard.  </div>
             <div><a href="/flashcard-studying/">Manage all your flashcards here.</a>
