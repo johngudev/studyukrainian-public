@@ -4,6 +4,8 @@ namespace App\Console\Commands;
 
 use Illuminate\Console\Command;
 use App\Models\Flashcard;
+use Illuminate\Support\Facades\Storage;
+
 
 class GenerateFlashcards extends Command
 {
@@ -54,7 +56,10 @@ class GenerateFlashcards extends Command
         $english_dialogue_array = $this->getEnglishDialogue($this->argument('lesson_number'));
         $ukrainian_dialogue_array = $this->getForeignDialogue($this->argument('lesson_number'));
 
+        $flashcards_txt_file_content = "";
+
         for($i=0; $i< count($english_dialogue_array); $i++) {
+
 
             $line_index = str_pad($i+1, 2, '0', STR_PAD_LEFT);
 
@@ -65,7 +70,11 @@ class GenerateFlashcards extends Command
                 'ukrainian_phrase' => $ukrainian_dialogue_array[$i]
             ];
 
-            $this->createFlashcard($args);
+            $flashcard_id = $this->createFlashcard($args);
+
+            if($i==0) {
+                $flashcards_txt_file_content = '';
+            }
 
             echo ($english_dialogue_array[$i]);
             echo "\n";
@@ -74,7 +83,21 @@ class GenerateFlashcards extends Command
             echo $sound_file_path;
             echo "\n";
             echo "\n";
+
+            if($i==0) {
+                $flashcards_txt_file_content = $flashcard_id;
+            } else {
+                $flashcards_txt_file_content = $flashcards_txt_file_content . ", " . $flashcard_id;
+            }
         }
+
+        $texts_path = "texts/";
+
+        $lesson_flashcard_path   = $texts_path . "flashcards" . $dialogue_index . ".txt";
+    
+
+        // Create the file in the public directory
+        Storage::disk('public')->put($lesson_flashcard_path, $flashcards_txt_file_content);
 
         return 0;
     }
@@ -105,6 +128,10 @@ class GenerateFlashcards extends Command
         return $phrases_english_total;
     }
 
+    /*
+    * Create flashcard
+    * return id of newly created card
+    */
     public function createFlashcard($args) {
         $flashcard = new Flashcard;
 
@@ -113,5 +140,7 @@ class GenerateFlashcards extends Command
         $flashcard->sound_file_path = $args['sound_file_path'];
     
         $flashcard->save();
+
+        return $flashcard->id;
     }
 }
