@@ -155,24 +155,28 @@ Route::get('/lessons/flashcards/{dialogue_number}', function($dialogue_number) {
 
     $lesson_flashcard_path   = $texts_path . "flashcards" . $dialogue_index . ".txt";
 
+    if (!file_exists($lesson_flashcard_path)) {
+        return redirect('/lessons');
 
-    //get all flashcards
-    $flashcard_indexes = file_get_contents($lesson_flashcard_path);
-
-    $flashcard_indexes = array_map('intval', explode(', ', $flashcard_indexes));
-
-
-    $flashcards = Flashcard::whereIn('id', $flashcard_indexes)->get();
-
-    dd($flashcards);
-
-    //get flashcard for user
-    if(Auth::user()) {
-        $flashcard_study_records = FlashcardStudyRecord::where('user_id', '=', Auth::user()->id)->with('flashcard')->get();
-        $flashcards_owned_ids = $flashcard_study_records->pluck('flashcard_id')->toArray();
-        return view('lessons-flashcards',[]);
     } else {
-        return redirect('/login');
+    
+
+            //get all flashcards
+            $flashcard_indexes = file_get_contents($lesson_flashcard_path);
+
+            $flashcard_indexes = array_map('intval', explode(', ', $flashcard_indexes));
+
+
+            $flashcards = Flashcard::whereIn('id', $flashcard_indexes)->get();
+
+            //get flashcard for user
+            if(Auth::user()) {
+                $flashcard_study_records = FlashcardStudyRecord::where('user_id', '=', Auth::user()->id)->with('flashcard')->get();
+                $flashcards_owned_ids = $flashcard_study_records->pluck('flashcard_id')->toArray();
+                return view('lessons-flashcards',['flashcards' => $flashcards, 'flashcards_owned_ids' => $flashcards_owned_ids ]);
+            } else {
+                return view('lessons-flashcards',['flashcards' => $flashcards ]);
+            }
     }
 
 
