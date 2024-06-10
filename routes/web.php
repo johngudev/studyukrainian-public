@@ -169,10 +169,15 @@ Route::get('/lessons/flashcards/{dialogue_number}', function($dialogue_number) {
 
             $flashcards = Flashcard::whereIn('id', $flashcard_indexes)->get();
 
+
+
             //get flashcard for user
             if(Auth::user()) {
                 $flashcard_study_records = FlashcardStudyRecord::where('user_id', '=', Auth::user()->id)->with('flashcard')->get();
                 $flashcards_owned_ids = $flashcard_study_records->pluck('flashcard_id')->toArray();
+
+                dd($flashcards_owned_ids);
+
                 return view('lessons-flashcards',['flashcards' => $flashcards, 'flashcards_owned_ids' => $flashcards_owned_ids ]);
             } else {
                 return view('lessons-flashcards',['flashcards' => $flashcards ]);
