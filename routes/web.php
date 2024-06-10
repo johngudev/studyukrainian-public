@@ -145,6 +145,38 @@ Route::get('/lessons/{dialogue_number}', function ($dialogue_number) {
     // ]);
 });
 
+Route::get('/lessons/flashcards/{dialogue_number}', function($dialogue_number) {
+
+    //get index of dialogue number
+
+    $this->dialogue_index = $this->getIndexVersion($dialogue_number);
+
+
+    $lesson_flashcard_path   = $this->texts_path . "flashcards" . $dialogue_index . ".txt";
+
+
+
+    //get all flashcards
+    $flashcard_indexes = file_get_contents($lesson_flashcard_path);
+
+    
+
+    $flashcards = Flashcard::all();
+
+    
+
+    //get flashcard for user
+    if(Auth::user()) {
+        $flashcard_study_records = FlashcardStudyRecord::where('user_id', '=', Auth::user()->id)->with('flashcard')->get();
+        $flashcards_owned_ids = $flashcard_study_records->pluck('flashcard_id')->toArray();
+        return view('lessons-flashcards',[]);
+    } else {
+        return redirect('/login');
+    }
+
+
+});
+
 Route::get('/grammar/{grammar_topic}', function ($grammar_topic) {
     return view('grammar_lesson', [
         'grammar_topic' => $grammar_topic

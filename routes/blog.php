@@ -1,6 +1,15 @@
 <?php
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\Auth\AuthenticatedSessionController;
+use Illuminate\Support\Str;
+use Illuminate\Support\Facades\Storage;
+use App\Models\Flashcard;
+use App\Models\FlashcardStudyRecord;
+use Carbon\Carbon;
+
+use App\Http\Controllers\FlashcardStudyRecordController;
 use App\Http\Controllers\BlogController;
+
 
 
 //blog routes
