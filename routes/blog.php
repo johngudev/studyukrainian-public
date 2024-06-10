@@ -43,7 +43,7 @@ Route::post('/admin/blogs/create', function() {
 
     $title = request()->title;
     $slug = Carbon::now()->toDateString() . "-". Str::slug($title);
-    $content = $title . "\r\n" . request()->content;
+    // $content = $title . "\r\n" . request()->content;
 
     Storage::put("/blogs-text/blog-".$slug.".txt", $content);
 
