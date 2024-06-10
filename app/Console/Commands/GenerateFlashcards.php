@@ -91,13 +91,15 @@ class GenerateFlashcards extends Command
             }
         }
 
-        $texts_path = "texts/";
+        $texts_path = "public/texts/";
 
         $lesson_flashcard_path   = $texts_path . "flashcards" . $dialogue_index . ".txt";
     
 
         // Create the file in the public directory
-        Storage::disk('public')->put($lesson_flashcard_path, $flashcards_txt_file_content);
+        $file = fopen($lesson_flashcard_path, "w");
+        fwrite($file, $flashcards_txt_file_content);
+        fclose($file);
 
         return 0;
     }
