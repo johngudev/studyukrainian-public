@@ -13,12 +13,12 @@ class BlogController extends Controller
         return view('blog', ['files' => $files]);
     }
 
-    public function show($slug)
+    public function show($year, $month, $day, $slug)
     {
 
         try {
 
-            $file_path = '/blogs-text/blog-' . $slug . '.txt';
+            $file_path = "/blogs-text/blog-$year-$month-$day-$slug.txt";
     
             $content = Storage::get($file_path);
     

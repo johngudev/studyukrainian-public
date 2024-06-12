@@ -25,7 +25,7 @@ Route::get('/blogs/2018/09/22/where-to-learn-ukrainian-in-lviv', [BlogController
 Route::get('/blogs/2018/09/15/how-to-learn-ukrainian-online', [BlogController::class, 'showHowToLearnUkrainianOnline'])
     ->name('blog-how-to');
 
-Route::get('/blogs/{slug}', [BlogController::class, 'show']);
+Route::get('/blogs/{year}/{month}/{day}/{slug}', [BlogController::class, 'show']);
 
 Route::get('/admin/blogs/create', function() {
     if (Auth::user()->id != 1) {

@@ -20,7 +20,7 @@
 @section('content')
 
 @isset($flashcards)
-<div class="bg-light my-5 p-5 flex flex-col">
+<!-- <div class="bg-light my-5 p-5 flex flex-col">
     <h2>Available Flashcards</h2>
     <div>Click each link to open the flashcards manager for a particular lesson.  You can then add the flashcards for each phrase of that lesson individually.  (These links will open in a new tab).</div>  
     <div class="mt-2"><a href="/study-record/test">Study your flashcards now!</a></div>
@@ -39,12 +39,15 @@
     @endfor
 
     </ul>
-</div>
+</div> -->
 @endisset
 
 <div class="bg-light my-5 p-5 flex flex-col">
 <h2>Your Flashcard Deck</h2>
-    <div>These are the flashcards that you will be tested on.</div>
+    <div>These are the flashcards that you will be tested on.
+    You can add new flashcards to your collection by adding flashcards from the lessons.</div>
+    <div class="mt-2"><a href="/study-record/test">Study your flashcards now!</a></div>
+
     <hr>
  
 
