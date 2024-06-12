@@ -13,7 +13,7 @@
 
             $('#modal-tutorial-01').html( $('#modal-tutorial-0' + currIndex).html() ); 
 
-            if(currIndex >=3) {
+            if(currIndex >=4) {
                 $('#modal-tutorial-next-button').css('display','none');
                 $('#modal-tutorial-exit-button').removeClass('d-none');
 
@@ -67,5 +67,10 @@
     <div id="modal-tutorial-03">
         Haven't learned Cyrillic?  No problem!  Click the "Toggle Transliteration" button under the dialogue to display the Ukrainian text with the English alphabet.
         <img class="mt-3" style="width:100%" src="/img/tutorial-03.png" />
+    </div>
+
+    <div id="modal-tutorial-04">
+        If you have an account, you can also make each phrase you learn in a lesson into an online flashcard that you can study on this platform!
+        <img class="mt-3" style="width:100%" src="/img/tutorial-04.png" />
     </div>
 </div>

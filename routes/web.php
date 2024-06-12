@@ -49,7 +49,7 @@ require __DIR__.'/auth.php';
 Route::get('/', function() {
 
     $blog_highlights = [
-        ['title' => 'New Website Features in 2024', 'link' => '/blogs/2024/05/06/new-website-features-in-2024', 'date' => Carbon::createFromFormat('Y-m-d','2024-05-06')->format('F j, Y'), 'image' => '/img/wheat-field-background.jpg'],
+        ['title' => 'Flashcards Are Now Live', 'link' => '/blogs/2024/06/12/study-ukrainian-flashcards-are-now-live', 'date' => Carbon::createFromFormat('Y-m-d','2024-05-06')->format('F j, Y'), 'image' => '/img/wheat-field-background.jpg'],
         ['title' => 'How I learned Ukrainian', 'link' => '/blogs/2018/09/29/how-i-learned-ukrainian', 'date' => Carbon::createFromFormat('Y-m-d','2024-05-01')->format('F j, Y'), 'image' => '/img/john-gu-lviv.jpg'],
         ['title' => 'How to Learn Ukrainian Online', 'link' => '/blogs/2018/09/15/how-to-learn-ukrainian-online', 'date' => Carbon::createFromFormat('Y-m-d','2024-04-26')->format('F j, Y'), 'image' => '/img/downtown-lviv.jpg']
     ];
