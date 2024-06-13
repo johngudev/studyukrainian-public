@@ -36,12 +36,14 @@
         <div class="col-sm-12 col-md-6">
 
           <div class="pt-4 pt-md-2">
-            <h1 class="mb-4 mb-md-3 text-graphite-black">The most complete resource for learning Ukrainian language online</h1>
+            <h1 class="mb-4 mb-md-3 text-graphite-black">Your resource for learning Ukrainian language online</h1>
 
             <ul class="hero__list-custom-bullet text-softer-black">
             <li>Learn Ukrainian naturally by listening to dialogues.</li>
             <li>Learn how to manage day-to-day situations in Ukrainian.</li>
             <li>Full grammar explanations and word-for-word translations of all dialogues.</li>
+            <li>Integrated flashcard system for memorizing vocabulary.</li>
+
             </ul>
             <div class="text-center">
               <a href="/lessons" class="btn hero__cta-button mx-auto">Start learning now</a>
