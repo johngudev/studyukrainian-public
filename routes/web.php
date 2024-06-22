@@ -31,13 +31,7 @@ require __DIR__.'/blog.php';
 
 
 Route::get('/dashboard', function () {
-
-    if (Auth::user()->id == 1) {
-        // return redirect('/admin');
-    }
-
     return view('dashboard');
-    // return view('table_of_contents');
 })->middleware(['auth'])->name('dashboard');
 
 //Crudely gets us out of the login
