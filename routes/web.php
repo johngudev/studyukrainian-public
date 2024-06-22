@@ -10,13 +10,7 @@ use Carbon\Carbon;
 
 use App\Http\Controllers\FlashcardStudyRecordController;
 use App\Http\Controllers\BlogController;
-use App\Http\Controllers\GrammarPagesController;
-
-/*
-*
-*
-*
-*/
+use App\Http\Controllers\StaticPagesController;
 
 /*
 |--------------------------------------------------------------------------
@@ -36,74 +30,23 @@ Route::get('/dashboard', function () {
     return view('dashboard');
 })->middleware(['auth'])->name('dashboard');
 
-Route::get('/', function() {
-
-    $blog_highlights = [
-        ['title' => 'Flashcards Are Now Live', 'link' => '/blogs/2024/06/12/study-ukrainian-flashcards-are-now-live', 'date' => Carbon::createFromFormat('Y-m-d','2024-05-06')->format('F j, Y'), 'image' => '/img/wheat-field-background.jpg'],
-        ['title' => 'How I learned Ukrainian', 'link' => '/blogs/2018/09/29/how-i-learned-ukrainian', 'date' => Carbon::createFromFormat('Y-m-d','2024-05-01')->format('F j, Y'), 'image' => '/img/john-gu-lviv.jpg'],
-        ['title' => 'How to Learn Ukrainian Online', 'link' => '/blogs/2018/09/15/how-to-learn-ukrainian-online', 'date' => Carbon::createFromFormat('Y-m-d','2024-04-26')->format('F j, Y'), 'image' => '/img/downtown-lviv.jpg']
-    ];
-    
-    return view('home', ['blog_highlights' => $blog_highlights]);
-
-});
-
-
-Route::get('/about', function () {
-    return view('about');
-});
-
-Route::get('/links', function () {
-    return view('links');
-});
-
-Route::get('/lessons', function () {
-    return view('table_of_contents');
-});
-
-Route::get('/grammar', [GrammarPagesController::class, 'tableOfContents']); 
-
-Route::get('/premium', function () {
-    return view('premium');
-});
-
-Route::get('/premium-1', function () {
-    return view('premium-1');
-});
-
-Route::get('/lessons/{dialogue_number}', function ($dialogue_number) {
-
-    $value = request()->cookie('first_visit');
-
-    $cookie = cookie('first_visit', 'yes', 60*24*365*10);
-
-
-    //get index of dialogue number
-    //returns "01" if dialogue number is "1"
-    $dialogue_index = str_pad($dialogue_number, 2, '0', STR_PAD_LEFT);
-
-    $texts_path = "texts/";
-
-    $lesson_flashcard_path   = $texts_path . "flashcards" . $dialogue_index . ".txt";
-
-    if (file_exists($lesson_flashcard_path))
-    {
-        $display_flashcards = true;
-    } else {
-        $display_flashcards = false;
+Route::get('/admin', function() {
+    if (Auth::user()->id != 1) {
+        return redirect('/');
     }
 
+    return view('admin_dashboard');
+} )->middleware(['auth']);
 
+Route::get('/', [StaticPagesController::class, 'homePage']);
+Route::get('/about', [StaticPagesController::class, 'aboutPage']);
+Route::get('/links', [StaticPagesController::class, 'linksPage']);
 
-    return response()
-        ->view('lessons',  [ 'dialogue_number' => $dialogue_number, 'first_visit' => $value, 'display_flashcards' => $display_flashcards ])
-        ->withCookie($cookie);
+Route::get('/grammar', [StaticPagesController::class, 'grammarTableOfContents']); 
+Route::get('/grammar/{grammar_topic}', [StaticPagesController::class, 'grammarTopic']);
 
-
-    // return view('lessons', [
-    //     'dialogue_number' => $dialogue_number
-    // ]);
-});
+Route::get('/lessons', [StaticPagesController::class, 'lessonTableOfContents']);
+Route::get('/lessons/{dialogue_number}', [StaticPagesController::class, 'lessonPage']);
 
 Route::get('/lessons/flashcards/{dialogue_number}', function($dialogue_number) {
 
@@ -147,23 +90,6 @@ Route::get('/lessons/flashcards/{dialogue_number}', function($dialogue_number) {
 
 });
 
-Route::get('/grammar/{grammar_topic}', function ($grammar_topic) {
-    return view('grammar_lesson', [
-        'grammar_topic' => $grammar_topic
-    ]);
-});
-//end static pages
-
-
-Route::get('/admin', function() {
-    if (Auth::user()->id != 1) {
-        return redirect('/');
-    }
-
-    return view('admin_dashboard');
-} )->middleware(['auth']);;
-
-
 Route::get('/admin/grammar/create', function() {
     if (Auth::user()->id != 1) {
         return redirect('/');
@@ -192,7 +118,7 @@ Route::get('/admin/grammar/create', function() {
      */
 
     return view('create_grammar_lesson', ['grammar_files' => $filteredFiles]);
-})->middleware(['auth']);;
+})->middleware(['auth']);
 
 Route::get('/admin/grammar/edit/{slug}', function($slug) {
     if (Auth::user()->id != 1) {
@@ -378,19 +304,10 @@ Route::get('study-record/test', [FlashcardStudyRecordController::class, 'test'])
 Route::post('study-record/pass', [FlashcardStudyRecordController::class, 'pass'])->middleware(['auth']);
 Route::post('study-record/fail', [FlashcardStudyRecordController::class, 'fail'])->middleware(['auth']);
 
-/*
-Route::post('flashcard-studying/passed', function() {
-    //get flashcard id from request
-    //get user id from session
-    //set last_tested property to now() and increment study_level by one
+Route::get('/premium', function () {
+    return view('premium');
+});
 
-})->middleware(['auth']);
-
-Route::post('flashcard-studying/failed', function() {
-    //get flashcard id from request
-    //get user id from session
-    //set last_tested property to now() and decrement study_level by one
-
-
-})->middleware(['auth']);*/
-
+Route::get('/premium-1', function () {
+    return view('premium-1');
+});
