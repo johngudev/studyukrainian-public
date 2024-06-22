@@ -10,8 +10,13 @@ use Carbon\Carbon;
 
 use App\Http\Controllers\FlashcardStudyRecordController;
 use App\Http\Controllers\BlogController;
+use App\Http\Controllers\GrammarPagesController;
 
-
+/*
+*
+*
+*
+*/
 
 /*
 |--------------------------------------------------------------------------
@@ -24,18 +29,12 @@ use App\Http\Controllers\BlogController;
 |
 */
 
-/********************************/
-/* Manually include blog routes */
-/********************************/
 require __DIR__.'/blog.php';
-
+require __DIR__.'/auth.php';
 
 Route::get('/dashboard', function () {
     return view('dashboard');
 })->middleware(['auth'])->name('dashboard');
-
-//COMMENT - ADD login in views home header and header- JG
-require __DIR__.'/auth.php';
 
 Route::get('/', function() {
 
@@ -62,55 +61,7 @@ Route::get('/lessons', function () {
     return view('table_of_contents');
 });
 
-Route::get('/grammar', function () {
-
-    $filePath = 'grammar/Verbs.txt';
-    $contents = Storage::disk('local')->get($filePath);
-
-    $tokens = preg_split("/\r\n\r\n|\n\n|\r\r/", $contents);
-
-    $content["Verbs"] = [];
-
-    // Iterate over each string in the input array
-    foreach ($tokens as $string) {
-        // Split the string by newline character
-        $splitStrings = explode("\n", $string);
-        // Merge the split strings into the output array
-        $content["Verbs"][] = ['title'=>$splitStrings[0], 'link'=> $splitStrings[1]];
-    }
-
-    $filePath = 'grammar/Nouns and Adjectives.txt';
-    $contents = Storage::disk('local')->get($filePath);
-
-    $tokens = preg_split("/\r\n\r\n|\n\n|\r\r/", $contents);
-
-    $content["Nouns and Adjectives"] = [];
-
-    // Iterate over each string in the input array
-    foreach ($tokens as $string) {
-        // Split the string by newline character
-        $splitStrings = explode("\n", $string);
-        // Merge the split strings into the output array
-        $content["Nouns and Adjectives"][] = ['title'=>$splitStrings[0], 'link'=> $splitStrings[1]];
-    }
-
-    $filePath = 'grammar/Noun Cases.txt';
-    $contents = Storage::disk('local')->get($filePath);
-
-    $tokens = preg_split("/\r\n\r\n|\n\n|\r\r/", $contents);
-
-    $content["Noun Cases"] = [];
-
-    // Iterate over each string in the input array
-    foreach ($tokens as $string) {
-        // Split the string by newline character
-        $splitStrings = explode("\n", $string);
-        // Merge the split strings into the output array
-        $content["Noun Cases"][] = ['title'=>$splitStrings[0], 'link'=> $splitStrings[1]];
-    }
-
-    return view('grammar_toc', ['content' => $content]);
-});
+Route::get('/grammar', [GrammarPagesController::class, 'tableOfContents']); 
 
 Route::get('/premium', function () {
     return view('premium');
