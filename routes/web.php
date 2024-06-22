@@ -34,9 +34,6 @@ Route::get('/dashboard', function () {
     return view('dashboard');
 })->middleware(['auth'])->name('dashboard');
 
-//Crudely gets us out of the login
-Route::get('logout', [AuthenticatedSessionController::class, 'destroy']);
-
 //COMMENT - ADD login in views home header and header- JG
 require __DIR__.'/auth.php';
 
