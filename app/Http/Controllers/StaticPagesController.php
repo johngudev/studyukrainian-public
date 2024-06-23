@@ -8,7 +8,7 @@ use App\Models\Flashcard;
 use App\Models\FlashcardStudyRecord;
 use App\Http\Controllers\Auth\AuthenticatedSessionController;
 use Carbon\Carbon;
-
+use Illuminate\Support\Facades\Auth;
 
 
 class StaticPagesController extends Controller
@@ -125,6 +125,48 @@ class StaticPagesController extends Controller
         return response()
             ->view('lessons',  [ 'dialogue_number' => $dialogue_number, 'first_visit' => $value, 'display_flashcards' => $display_flashcards ])
             ->withCookie($cookie);
+    }
+
+    public function lessonFlashcardsPage($dialogue_number) {
+
+        //get index of dialogue number
+        //returns "01" if dialogue number is "1"
+        $dialogue_index = str_pad($dialogue_number, 2, '0', STR_PAD_LEFT);
+    
+        $texts_path = "texts/";
+    
+        $lesson_flashcard_path   = $texts_path . "flashcards" . $dialogue_index . ".txt";
+    
+        if (!file_exists($lesson_flashcard_path)) {
+            return redirect('/lessons');
+    
+        } else {
+        
+    
+                //get all flashcards
+                $flashcard_indexes = file_get_contents($lesson_flashcard_path);
+    
+                $flashcard_indexes = array_map('intval', explode(', ', $flashcard_indexes));
+    
+    
+                $flashcards = Flashcard::whereIn('id', $flashcard_indexes)->get();
+    
+    
+    
+                //get flashcard for user
+                if(Auth::user()) {
+                    $flashcard_study_records = FlashcardStudyRecord::where('user_id', '=', Auth::user()->id)->with('flashcard')->get();
+                    $flashcards_owned_ids = $flashcard_study_records->pluck('flashcard_id')->toArray();
+    
+                    // dd($flashcards_owned_ids);
+    
+                    return view('lessons-flashcards',['dialogue_number' =>$dialogue_number, 'flashcards' => $flashcards, 'flashcards_owned_ids' => $flashcards_owned_ids ]);
+                } else {
+                    return view('lessons-flashcards',['dialogue_number' =>$dialogue_number, 'flashcards' => $flashcards ]);
+                }
+        }
+    
+    
     }
 
 }

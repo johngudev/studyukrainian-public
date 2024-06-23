@@ -11,6 +11,7 @@ use Carbon\Carbon;
 use App\Http\Controllers\FlashcardStudyRecordController;
 use App\Http\Controllers\BlogController;
 use App\Http\Controllers\StaticPagesController;
+use App\Http\Controllers\AdminGrammarController;
 
 /*
 |--------------------------------------------------------------------------
@@ -47,78 +48,11 @@ Route::get('/grammar/{grammar_topic}', [StaticPagesController::class, 'grammarTo
 
 Route::get('/lessons', [StaticPagesController::class, 'lessonTableOfContents']);
 Route::get('/lessons/{dialogue_number}', [StaticPagesController::class, 'lessonPage']);
-
-Route::get('/lessons/flashcards/{dialogue_number}', function($dialogue_number) {
-
-    //get index of dialogue number
-    //returns "01" if dialogue number is "1"
-    $dialogue_index = str_pad($dialogue_number, 2, '0', STR_PAD_LEFT);
-
-    $texts_path = "texts/";
-
-    $lesson_flashcard_path   = $texts_path . "flashcards" . $dialogue_index . ".txt";
-
-    if (!file_exists($lesson_flashcard_path)) {
-        return redirect('/lessons');
-
-    } else {
-    
-
-            //get all flashcards
-            $flashcard_indexes = file_get_contents($lesson_flashcard_path);
-
-            $flashcard_indexes = array_map('intval', explode(', ', $flashcard_indexes));
-
-
-            $flashcards = Flashcard::whereIn('id', $flashcard_indexes)->get();
+Route::get('/lessons/flashcards/{dialogue_number}', [StaticPagesController::class, 'lessonFlashcardsPage']);
 
 
 
-            //get flashcard for user
-            if(Auth::user()) {
-                $flashcard_study_records = FlashcardStudyRecord::where('user_id', '=', Auth::user()->id)->with('flashcard')->get();
-                $flashcards_owned_ids = $flashcard_study_records->pluck('flashcard_id')->toArray();
-
-                // dd($flashcards_owned_ids);
-
-                return view('lessons-flashcards',['dialogue_number' =>$dialogue_number, 'flashcards' => $flashcards, 'flashcards_owned_ids' => $flashcards_owned_ids ]);
-            } else {
-                return view('lessons-flashcards',['dialogue_number' =>$dialogue_number, 'flashcards' => $flashcards ]);
-            }
-    }
-
-
-});
-
-Route::get('/admin/grammar/create', function() {
-    if (Auth::user()->id != 1) {
-        return redirect('/');
-    }
-
-    /*** 
-     * Get all the grammar files available
-     */
-
-         // Specify the directory path
-    $directory = public_path("texts/");
-
-    // Get all files in the directory
-    $files = scandir($directory);
-
-    // Define the string to match
-    $startWithString = 'grammartopic';
-
-    // Filter files that begin with the specified string
-    $filteredFiles = array_filter($files, function ($file) use ($startWithString) {
-        return Str::startsWith(basename($file), $startWithString);
-    });
-
-    /***
-     * End:  get all the grammar files available
-     */
-
-    return view('create_grammar_lesson', ['grammar_files' => $filteredFiles]);
-})->middleware(['auth']);
+Route::get('/admin/grammar/create', [AdminGrammarController::class, 'create'])->middleware(['auth']);
 
 Route::get('/admin/grammar/edit/{slug}', function($slug) {
     if (Auth::user()->id != 1) {
