@@ -50,98 +50,11 @@ Route::get('/lessons', [StaticPagesController::class, 'lessonTableOfContents']);
 Route::get('/lessons/{dialogue_number}', [StaticPagesController::class, 'lessonPage']);
 Route::get('/lessons/flashcards/{dialogue_number}', [StaticPagesController::class, 'lessonFlashcardsPage']);
 
-
-
 Route::get('/admin/grammar/create', [AdminGrammarController::class, 'create'])->middleware(['auth']);
-
-Route::get('/admin/grammar/edit/{slug}', function($slug) {
-    if (Auth::user()->id != 1) {
-        return redirect('/');
-    }
-
-    $path = public_path("texts/grammartopic-".$slug.".txt");
-
-    $title = Str::title(str_replace('-', ' ', $slug));
-    
-    $texts_path = "texts/";
-
-    $grammar_path 	= $texts_path."grammartopic-".$slug.".txt";
-
-    if (file_exists($grammar_path)) {
-        $grammar_contents         = file_get_contents($grammar_path,true);
-
-    } else {
-        echo "No grammar with this slug";
-    }
-
-    return view('edit_grammar_lesson', ['content' => $grammar_contents,'title'=> $title, 'slug'=> $slug, 'path' => $path]);
-})->middleware(['auth']);;
-
-Route::post('/admin/grammar/create', function() {
-
-    if (Auth::user()->id != 1) {
-        return redirect('/');
-    }
-
-    $title = request()->title;
-    $slug = Str::slug($title);
-    $content = request()->content;
-
-    //No guards here
-    //Save to public directory with texts
-    file_put_contents(
-        public_path("texts/grammartopic-".$slug.".txt"),
-        $content
-    );
-
-    return redirect('/grammar');
-})->middleware(['auth']);;
-
-Route::post('/admin/grammar/edit/', function() {
-
-    if (Auth::user()->id != 1) {
-        return redirect('/');
-    }
-
-    $slug = request()->slug;
-    $content = request()->content;
-
-    //No guards here
-    //Save to public directory with texts
-    file_put_contents(
-        public_path("texts/grammartopic-".$slug.".txt"),
-        $content
-    );
-
-    return redirect('/admin');
-})->middleware(['auth']);;
-
-Route::get('admin/grammar/all', function() {
-
-    if (Auth::user()->id != 1) {
-        return redirect('/');
-    }
-
-    // Specify the directory path
-    $directory = public_path("texts/");
-
-    // Get all files in the directory
-    $files = scandir($directory);
-
-    // Define the string to match
-    $startWithString = 'grammartopic';
-
-    // Filter files that begin with the specified string
-    $filteredFiles = array_filter($files, function ($file) use ($startWithString) {
-        return Str::startsWith(basename($file), $startWithString);
-    });
-
-    // dd($filteredFiles);
-
-    return view('admin_grammar_toc', ['grammar_files' => $filteredFiles]);
-
-});
-
+Route::get('/admin/grammar/edit/{slug}', [AdminGrammarController::class, 'edit'])->middleware(['auth']);
+Route::post('/admin/grammar/create', [AdminGrammarController::class, 'store'])->middleware(['auth']);
+Route::post('/admin/grammar/edit/', [AdminGrammarController::class, 'update'])->middleware(['auth']);
+Route::get('admin/grammar/all', [AdminGrammarController::class, 'index'])->middleware(['auth']);
 
 Route::get('/admin/flashcard/create', function() {
     if (Auth::user()->id != 1) {
