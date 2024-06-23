@@ -13,6 +13,7 @@ use App\Http\Controllers\BlogController;
 use App\Http\Controllers\StaticPagesController;
 use App\Http\Controllers\AdminGrammarController;
 use App\Http\Controllers\AdminFlashcardController;
+use App\Http\Controllers\FlashcardManagerController;
 
 /*
 |--------------------------------------------------------------------------
@@ -62,41 +63,8 @@ Route::post('/admin/flashcard/delete', [AdminFlashcardController::class, 'destro
 Route::post('/admin/flashcard/create', [AdminFlashcardController::class, 'store'])->middleware(['auth']);
 Route::get('/admin/flashcard/all', [AdminFlashcardController::class, 'index'])->middleware(['auth']);
 
-
-Route::get('flashcard-studying', function() {
-
-    $flashcard_study_records = FlashcardStudyRecord::where('user_id', '=', Auth::user()->id)->with('flashcard')->get();
-
-
-    $flashcard_study_records = $flashcard_study_records->map(function ($flashcard_study_record) { 
-        $flashcard_study_record->readableDateTime = Carbon::parse($flashcard_study_record->next_test_date)->setTimezone('America/Chicago')->format('F j, g:i A');
-        return $flashcard_study_record;
-        ;
-    });
-
-
-    return view('flashcard_management_panel', 
-    [
-    'flashcards' => Flashcard::all(), 
-    'flashcard_study_records' => $flashcard_study_records
-    ]);
-})->middleware(['auth']);
-
-Route::post('flashcard-studying/store', function() {
-
-    $flashcard_study_record = new FlashcardStudyRecord;
-
-    $flashcard_study_record->flashcard_id = request()->id;
-    $flashcard_study_record->user_id = Auth::user()->id;
-    $flashcard_study_record->study_level = 0;
-    $flashcard_study_record->last_tested = Carbon::now();
-
-    $flashcard_study_record->save();
-
-    return redirect()->back();
-    // return redirect('flashcard-studying');
-
-})->middleware(['auth']);
+Route::get('flashcard-studying', [FlashcardManagerController::class, 'showFlashcardManager'])->middleware(['auth']);
+Route::post('flashcard-studying/store', [FlashcardManagerController::class, 'store'])->middleware(['auth']);
 
 Route::get('study-record/test', [FlashcardStudyRecordController::class, 'test'])->middleware(['auth']);
 Route::post('study-record/pass', [FlashcardStudyRecordController::class, 'pass'])->middleware(['auth']);
