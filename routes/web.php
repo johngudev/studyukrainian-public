@@ -12,6 +12,7 @@ use App\Http\Controllers\FlashcardStudyRecordController;
 use App\Http\Controllers\BlogController;
 use App\Http\Controllers\StaticPagesController;
 use App\Http\Controllers\AdminGrammarController;
+use App\Http\Controllers\AdminFlashcardController;
 
 /*
 |--------------------------------------------------------------------------
@@ -56,25 +57,8 @@ Route::post('/admin/grammar/create', [AdminGrammarController::class, 'store'])->
 Route::post('/admin/grammar/edit/', [AdminGrammarController::class, 'update'])->middleware(['auth']);
 Route::get('admin/grammar/all', [AdminGrammarController::class, 'index'])->middleware(['auth']);
 
-Route::get('/admin/flashcard/create', function() {
-    if (Auth::user()->id != 1) {
-        return redirect('/');
-    }
-
-    return view('create_flashcard');
-})->middleware(['auth']);;
-
-Route::post('/admin/flashcard/delete', function() {
-
-    if (Auth::user()->id != 1) {
-        return redirect('/');
-    }
-
-    $post = Flashcard::find(request()->id);
-    $post->delete();
-
-    return redirect('/admin/flashcard/all');
-})->middleware(['auth']);;
+Route::get('/admin/flashcard/create', [AdminFlashcardController::class, 'create'])->middleware(['auth']);
+Route::post('/admin/flashcard/delete', [AdminFlashcardController::class, 'destroy'])->middleware(['auth']);
 
 Route::post('/admin/flashcard/create', function() {
 
