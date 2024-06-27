@@ -86,6 +86,7 @@ class StaticPagesController extends Controller
             $splitStrings = explode("\n", $string);
             // Merge the split strings into the output array
             $content["Noun Cases"][] = ['title'=>$splitStrings[0], 'link'=> $splitStrings[1]];
+            
         }
     
         return view('grammar_toc', ['content' => $content]);

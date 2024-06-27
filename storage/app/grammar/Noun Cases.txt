@@ -1,2 +1,5 @@
 Genitive
 grammar/genitive
+
+Genitive of Plural Nouns
+grammar/genitive-plural-nouns

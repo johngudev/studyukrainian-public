@@ -15,6 +15,25 @@ use Illuminate\Support\Str;
 
 class AdminGrammarController extends Controller
 {
+    public function update() {
+
+        if (Auth::user()->id != 1) {
+            return redirect('/');
+        }
+    
+        $slug = request()->slug;
+        $content = request()->content;
+    
+        //No guards here
+        //Save to public directory with texts
+        file_put_contents(
+            public_path("texts/grammartopic-".$slug.".txt"),
+            $content
+        );
+    
+        return redirect('/admin');
+    }
+
     public function create() {
         if (Auth::user()->id != 1) {
             return redirect('/');

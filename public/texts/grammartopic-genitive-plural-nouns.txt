@@ -1,0 +1,60 @@
+<h1>The Genitive Case for Plural Nouns</h1>
+<p>When forming the plural of a noun in the genitive case, the ending to be used differs based on the gender of the noun.&nbsp; The following table presents how noun endings change when forming the genitive for plural nouns.</p>
+<table style="border-collapse: collapse; width: 100%; height: 348.734px;" border="1"><colgroup><col style="width: 33.3691%;"><col style="width: 33.3691%;"><col style="width: 33.2618%;"></colgroup>
+<tbody>
+<tr style="height: 92.7812px;">
+<td style="height: 92.7812px;"><strong>Type of Noun</strong></td>
+<td style="height: 92.7812px;">
+<p><strong>Singular</strong></p>
+<p><strong>Nominative &rarr; Genitive</strong></p>
+</td>
+<td style="height: 92.7812px;">
+<p><strong>Plural</strong></p>
+<p><strong>Nominative &rarr; Genitive</strong></p>
+</td>
+</tr>
+<tr style="height: 54.3906px;">
+<td style="height: 54.3906px;">Feminine nouns, ending in&nbsp;<span class="ending">&ndash;a</span>:</td>
+<td style="height: 54.3906px;">
+<p><span class="ending">ковбаса ⟶ ковбаси</span></p>
+</td>
+<td style="height: 54.3906px;">ковбас<span class="ending">и</span> ⟶ ковбас</td>
+</tr>
+<tr style="height: 54.3906px;">
+<td style="height: 54.3906px;">Feminine nouns, ending in&nbsp;<span class="ending">&ndash;я</span>:</td>
+<td style="height: 54.3906px;">
+<p>полуниц<span class="ending">я</span>&nbsp;⟶ полуниц<span class="ending">і</span></p>
+</td>
+<td style="height: 54.3906px;">полуниц<span class="ending">і</span> ⟶ полуниц</td>
+</tr>
+<tr style="height: 92.7812px;">
+<td style="height: 92.7812px;">Masculine nouns, ending in a consonant:</td>
+<td style="height: 92.7812px;">
+<p>персик &ndash; персик<span class="ending">а</span></p>
+<p><span class="ending">сир ⟶ сиру</span></p>
+</td>
+<td style="height: 92.7812px;">
+<p>персик<span class="ending">и</span>&nbsp;⟶ персик<span class="ending">ів</span></p>
+<p><span class="ending">сири ⟶ сирів</span></p>
+</td>
+</tr>
+<tr style="height: 54.3906px;">
+<td style="height: 54.3906px;">Neuter nouns, ending in&nbsp;<span class="ending">&ndash;о</span>:</td>
+<td>
+<p>яблук<span class="ending">а</span>&nbsp;⟶ яблук</p>
+<p>вин<span class="ending">о</span>&nbsp;⟶ вин<span class="ending">а</span></p>
+</td>
+<td>
+<p>яблук<span class="ending">а</span> ⟶ яблук</p>
+<p>вин<span class="ending">а</span> ⟶ вин</p>
+</td>
+</tr>
+<tr>
+<td>Neuter nouns, ending in &ndash;&nbsp;<span class="ending">е</span>:&nbsp;</td>
+<td>яйц<span class="ending">е</span>&nbsp;⟶ яйц<span class="ending">я</span></td>
+<td>яйц<span class="ending">я</span> ⟶ яєць</td>
+</tr>
+</tbody>
+</table>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
