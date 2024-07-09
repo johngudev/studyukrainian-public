@@ -17,6 +17,7 @@ use App\Http\Controllers\StaticPagesController;
 use App\Http\Controllers\AdminGrammarController;
 use App\Http\Controllers\AdminFlashcardController;
 use App\Http\Controllers\FlashcardManagerController;
+use App\Http\Controllers\AdminTopicalLessonsController;
 
 /*
 |--------------------------------------------------------------------------

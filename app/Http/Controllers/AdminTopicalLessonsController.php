@@ -3,6 +3,12 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
+use Carbon\Carbon;
+use Illuminate\Support\Str;
+use Illuminate\Support\Facades\Storage;
+
+
 
 class AdminTopicalLessonsController extends Controller
 {
@@ -23,7 +29,7 @@ class AdminTopicalLessonsController extends Controller
         }
     
         $title = request()->title;
-        $slug = Carbon::now()->toDateString() . "-". Str::slug($title);
+        $slug = Str::slug($title);
         $content = $title . "\r\n" . request()->content;
     
         Storage::put("/topical-lesson/".$slug.".txt", $content);
@@ -37,7 +43,7 @@ class AdminTopicalLessonsController extends Controller
     
         $content = Storage::get($file_path);
         
-        // Strips the title of the blog post
+        // Strips the title of the topical lesson
         // Find the position of the first "\r\n"
         $position = strpos($content, "\r\n");
     
