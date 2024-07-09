@@ -61,6 +61,11 @@ Route::post('/admin/grammar/create', [AdminGrammarController::class, 'store'])->
 Route::post('/admin/grammar/edit/', [AdminGrammarController::class, 'update'])->middleware(['auth']);
 Route::get('admin/grammar/all', [AdminGrammarController::class, 'index'])->middleware(['auth']);
 
+Route::get('/admin/topical-lesson/create', [AdminTopicalLessonsController::class, 'create'])->middleware(['auth']);;
+Route::post('/admin/topical-lesson/create', [AdminTopicalLessonsController::class, 'store'])->middleware(['auth']);
+Route::get('admin/topical-lesson/edit/{slug}', [AdminTopicalLessonsController::class, 'edit'] )->middleware(['auth']);
+Route::post('admin/topical-lesson/edit/{slug}', [AdminTopicalLessonsController::class, 'update'])->middleware(['auth']);
+
 Route::get('/admin/flashcard/create', [AdminFlashcardController::class, 'create'])->middleware(['auth']);
 Route::post('/admin/flashcard/delete', [AdminFlashcardController::class, 'destroy'])->middleware(['auth']);
 Route::post('/admin/flashcard/create', [AdminFlashcardController::class, 'store'])->middleware(['auth']);
