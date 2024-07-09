@@ -21,7 +21,7 @@
               </div>
 
               <div class="col-12 col-md-6 mt-3 my-md-auto">
-                The Study Ukrainian website was created by a group of volunteers working in Lviv.
+                The Study Ukrainian website was created by a group of educators working in Lviv and Austin at the University of Texas.
                 We're dedicated to creating a free online resource for teaching the Ukrainian language.
                 This website is actively being updated with new material.  Keep checking back for updates!
               </div>
@@ -82,11 +82,11 @@
             </div>
         </div> -->
 
-        <div class="contact-text text-center mt-3 mt-md-5">
+        <!-- <div class="contact-text text-center mt-3 mt-md-5">
           <h1 class="text-center">Contact</h1>
 
           Questions?  Comments?  Technical issues? Contact us at studyukrainianwebsite@gmail.com
 
-        </div>
+        </div> -->
 
 @endsection
