@@ -8,6 +8,9 @@ use App\Models\Flashcard;
 use App\Models\FlashcardStudyRecord;
 use Carbon\Carbon;
 
+use Illuminate\Support\Facades\Mail;
+
+
 use App\Http\Controllers\FlashcardStudyRecordController;
 use App\Http\Controllers\BlogController;
 use App\Http\Controllers\StaticPagesController;
@@ -28,6 +31,38 @@ use App\Http\Controllers\FlashcardManagerController;
 
 require __DIR__.'/blog.php';
 require __DIR__.'/auth.php';
+
+
+Route::get('/contact', function () {
+    return view('contact');
+});
+
+Route::post('/contact', function (Illuminate\Http\Request $request) {
+
+    $validated = $request->validate([
+        'name' => 'required|string|max:255',
+        'email' => 'required|email|max:255',
+        'message' => 'required|string'
+    ]);
+
+    $data = [
+        'name' => $request->name,
+        'email' => $request->email,
+        'message' => $request->message,
+    ];
+
+    Mail::send('emails.contact', $data, function ($message) use ($data) {
+        $message->to('recipient@example.com', 'Recipient Name')
+                ->subject('Contact Form Submission')
+                ->from($data['email'], $data['name']);
+    });
+
+    return back()->with('success', 'Thank you for contacting us!');
+
+
+});
+
+
 
 Route::get('/dashboard', function () {
     return view('dashboard');
