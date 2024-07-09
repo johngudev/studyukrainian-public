@@ -27,13 +27,13 @@
 
 
 <form class="bg-light p-5 flex flex-col"
-    action="/admin/blogs/create"
+    action="/admin/topical-lesson/create"
     method="POST">
 
     @csrf
 
     <div class="my-3 col-12">
-        <label for="title">Blog Post Title</label>
+        <label for="title">Topical Lesson Title</label>
         <input type="text"
             class="form-control "
             name="title"
@@ -41,7 +41,7 @@
     </div>
 
     <div class="my-3 col-12">
-        <label for="title">Blog Post Content</label>
+        <label for="title">Topical Lesson Content</label>
         <textarea
             class="form-control "
             name="content"

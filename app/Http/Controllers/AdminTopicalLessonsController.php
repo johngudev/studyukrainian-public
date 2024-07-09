@@ -13,7 +13,7 @@ class AdminTopicalLessonsController extends Controller
             return redirect('/');
         }
     
-        return view('create_blog_post');
+        return view('create_topical_lesson');
     }
     
     function store() {
