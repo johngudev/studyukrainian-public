@@ -11,19 +11,16 @@
 
 
 @section('content')
-
-
-
-
 <script src="/tinymce/js/tinymce/tinymce.min.js" referrerpolicy="origin"></script>
 
-<script>
+<!-- script>
       tinymce.init({
         selector: '#content',
         plugins: 'table',
       });
-    </script>
-  </head>
+  </script -->
+
+</head>
 
 
 <form class="bg-light p-5 flex flex-col"

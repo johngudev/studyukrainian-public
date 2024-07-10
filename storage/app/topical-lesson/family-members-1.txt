@@ -1,0 +1,5 @@
+family-members-1
+mother | мати | мати
+father | батько | батько
+brother | брат | брат
+sister | сестра | сестра

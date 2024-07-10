@@ -56,6 +56,10 @@ Route::get('/lessons', [StaticPagesController::class, 'lessonTableOfContents']);
 Route::get('/lessons/{dialogue_number}', [StaticPagesController::class, 'lessonPage']);
 Route::get('/lessons/flashcards/{dialogue_number}', [StaticPagesController::class, 'lessonFlashcardsPage']);
 
+Route::get('/topical-lesson', [StaticPagesController::class, 'topicalLessonTableOfContents']);
+Route::get('/topical-lesson/{slug}', [StaticPagesController::class, 'topicalLessonPage']);
+
+
 Route::get('/admin/grammar/create', [AdminGrammarController::class, 'create'])->middleware(['auth']);
 Route::get('/admin/grammar/edit/{slug}', [AdminGrammarController::class, 'edit'])->middleware(['auth']);
 Route::post('/admin/grammar/create', [AdminGrammarController::class, 'store'])->middleware(['auth']);

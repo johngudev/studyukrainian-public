@@ -40,6 +40,16 @@ class StaticPagesController extends Controller
         return view('table_of_contents');
     }
 
+    public function topicalLessonTableOfContents()
+    {
+
+        $directory = "/topical-lesson";
+
+        $files = Storage::files($directory);
+
+        return view('topical_lessons_toc', ['files' => $files]);
+    }
+
     public function grammarTableOfContents()
     {
 
@@ -97,6 +107,24 @@ class StaticPagesController extends Controller
         return view('grammar_lesson', [
             'grammar_topic' => $grammar_topic
         ]);
+    }
+
+    public function topicalLessonPage ($slug)
+    {
+        $filePath = "topical-lesson/$slug.txt";
+
+        $contents = Storage::disk('local')->get($filePath);
+
+        $contentArray = explode(PHP_EOL, $contents);
+
+        $vocab_section = [];
+
+        foreach($contentArray as $item) {
+            $vocab_section[] = explode("|", $item);   
+        }
+
+        return response()
+        ->view('topical_lesson_page',  [ 'dialogue_number' => $vocab_section]);
     }
 
     public function lessonPage ($dialogue_number)
