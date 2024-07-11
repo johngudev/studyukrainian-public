@@ -124,7 +124,7 @@ class StaticPagesController extends Controller
         }
 
         return response()
-        ->view('topical_lesson_page',  [ 'dialogue_number' => $vocab_section]);
+        ->view('topical_lesson_page',  [ 'vocab' => $vocab_section]);
     }
 
     public function lessonPage ($dialogue_number)
