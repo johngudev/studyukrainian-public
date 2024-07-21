@@ -13,7 +13,7 @@
 @section('content')
 
         <div class="about-text">
-            <h1 class="text-center">  About the Project </h1>
+            <h1 class="text-center mb-5">  About the Project </h1>
             <div class="row justify-content-around">
 
               <div class="col-12 col-md-4 col-lg-3 text-center">
@@ -21,10 +21,20 @@
               </div>
 
               <div class="col-12 col-md-6 mt-3 my-md-auto">
-                The Study Ukrainian website was created by a group of educators working in Lviv and Austin at the University of Texas.
+                The Study Ukrainian website was created by a group of educators working in Lviv, Ukraine and Austin at the <a href=""https://liberalarts.utexas.edu/humanitiesinstitute/digital-humanities/">Institute for Digital Humanities</a> and the <a href="https://www.ischool.utexas.edu/">School of Information</a> at the University of Texas.
                 We're dedicated to creating a free online resource for teaching the Ukrainian language.
                 This website is actively being updated with new material.  Keep checking back for updates!
               </div>
+
+
+              <div class="col-12 mt-5">
+                <h2>Contributors</h2>
+                <div class="my-1"><strong>Tanya Clement</strong> is an Associate Professor at the University of Texas at Austin. She has a PhD in English from the University of Maryland and an M.F.A. in fiction from the University of Virginia, where she was also trained in humanities computing at the Electronic Text Center and the Institute for Advanced Technology in the Humanities (IATH). </div>
+                <div class="my-1"><strong>Daniel Carter</strong>  is a writer, researcher, and designer at the School of Information at the University of Texas at Austin.</div>
+                <div class="my-1"><strong>Jon Gu</strong> is a developer and language enthusiast.  He holds a BS in Mathematics from the University of Texas at Austin.</div>
+                <div class="my-1"><strong>Oksana Lutsyshyna</strong>  is a Professor of Instructor in the Department of Slavic and Eurasian Studies at the University of Texas at Austin. Dr. Lutsyshyna's research interests revolve around the issue of metropolitan modernity and Central and Eastern European identity in literature. </div>
+              </div>
+
 
           </div>
         </div>
