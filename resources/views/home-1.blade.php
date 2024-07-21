@@ -183,5 +183,36 @@
 
 </div>
 
+<div class="py-5 ">
+  <div class="container">
+    <div class="container row justify-content-center" style="gap: 1rem;">
+
+    <div class="col-12 col-md-2 flex mt-3">
+      <h2 class="text-graphite-black text-center " style="margin-top:auto; margin-bottom:auto; font-size: 3.25rem; line-height: 3rem; font-weight: 800">From the Blog</h2>
+    </div>
+
+    @for($i = 0; $i<=2; $i++)
+
+    <a href="{{ $blog_highlights[$i]['link'] }}" style="border: 0; min-height: 200px; padding:0; background-image: url('{{ $blog_highlights[$i]['image'] }}'); background-size: cover; background-repeat: no-repeat" class="text-decoration-none blog-post-card card col-md-3 flex flex-column justify-content-end">
+        <div style="border-radius: 0.5rem 0.5rem 0.5rem 0.5rem;; padding-top: 1rem; padding-left: 0.75rem; padding-right: 0.75rem; padding-bottom: 1rem;" class="transparent-overlay">
+          <h3 class="card-title text-white" style="font-size: 1.25rem; font-weight:600; line-height: 1.25rem;">{{ $blog_highlights[$i]['title'] }}</h3>
+          <div class="text-white">{{ $blog_highlights[$i]['date'] }}</div>
+         </div> 
+        </a>
+
+    @endfor
+
+
+      </div>
+
+    </div>
+
+    
+  </div>
+</div>
+
+<div class="premium-announcement-block padding-y-5">
+
+</div>   
 
 @endsection
