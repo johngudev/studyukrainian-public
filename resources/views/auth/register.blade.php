@@ -1,5 +1,13 @@
 @include('auth.auth-header')
 
+<script src="https://www.google.com/recaptcha/api.js"></script>
+
+<script>
+   function onSubmit(token) {
+     document.getElementById("demo-form").submit();
+   }
+ </script>
+
 <x-guest-layout>
     <x-auth-card>
         <x-slot name="logo">
@@ -52,7 +60,11 @@
                     {{ __('Already registered?') }}
                 </a>
 
-                <x-button class="ml-4">
+                <x-button class="ml-4 g-recaptcha" 
+                    data-sitekey="6LeR7xUqAAAAAEC-q0n154JP0GZ3u_ZbJjqSFz36" 
+                    data-callback='onSubmit' 
+                    data-action='submit'
+                    >
                     {{ __('Register') }}
                 </x-button>
             </div>
