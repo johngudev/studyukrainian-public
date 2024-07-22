@@ -4,7 +4,7 @@
 
 <script>
    function onSubmit(token) {
-     document.getElementById("demo-form").submit();
+     document.getElementById("register-form").submit();
    }
  </script>
 
@@ -19,7 +19,7 @@
         <!-- Validation Errors -->
         <x-auth-validation-errors class="mb-4" :errors="$errors" />
 
-        <form method="POST" action="{{ route('register') }}">
+        <form method="POST" id="register-form" action="{{ route('register') }}">
             @csrf
 
             <!-- Name -->
