@@ -16,9 +16,9 @@
                 <a class="nav-link" href={{ URL::to('grammar') }} >Grammar</a>
               </li>
 
-              <li class="nav-item">
+              <!-- <li class="nav-item">
                 <a class="nav-link" href= {{ URL::to('about') }} >About</a>
-              </li>
+              </li> -->
 
               <!-- <li class="nav-item">
                 <a class="nav-link" href="/blogs" >Blog</a>
@@ -66,7 +66,7 @@
               <div class="dropdown-menu" style="margin-left: -5rem;">
                 <a class="nav-link" href={{ URL::to('lessons') }} >Lessons</a>
                 <a class="nav-link" href={{ URL::to('grammar') }} >Grammar</a>
-                <a class="nav-link" href= {{ URL::to('about') }} >About</a>
+                <!-- <a class="nav-link" href= {{ URL::to('about') }} >About</a> -->
 
                 <div class="dropdown-divider"></div>
 
