@@ -7,6 +7,39 @@
 
   <style>
 
+    @media (min-width:1000px){
+      .hero__copy{
+        padding: 2rem;
+        margin-top: 2rem;
+        background-color: white;
+        border-radius: 1.5rem;
+
+      } 
+
+      .hero__image-long {
+        position: absolute;
+        left:0;
+        height: 375px;
+        object-fit: cover;
+      }
+
+      .hero__image {
+        display: none;
+      } 
+
+      .sample-lessons-block {
+        margin-top:3rem;
+      }
+    }
+
+    @media (max-width:999px){
+
+      .hero__image-long {
+        display: none;
+      }
+    }
+ 
+
   </style>
 
 @endsection
@@ -21,27 +54,30 @@
 <div class="hero pb-5">
   <div class="container">
     <div class="hero__top">
-      <span class="hero__top-left-color-blur">
+      <!--span class="hero__top-left-color-blur" -->
     </div>
 
     <div class="hero__content">
 
+      <img alt="woman with flag" class="img-fluid mx-auto hero__image-long" src="/img/ukrainian-woman-with-flag.JPG"></img>
+
+
       <div class="row">
-        <div class="col-sm-12 col-md-6 text-center">
-          <div>
+        <div class="col-sm-12 col-md-6">
+          <div class="text-center">
             <img alt="woman with flag" class="img-fluid mx-auto hero__image" src="/img/ukrainian-woman-with-flag.jpeg"></img>
+
           </div>
         </div>
+        
 
-        <div class="col-sm-12 col-md-6">
 
-          <div class="pt-4 pt-md-2">
+          <div class="pt-4 pt-md-4 px-3 px-md-4 col-md-6 hero__copy">
             <h1 class="mb-4 mb-md-3 text-graphite-black">Your resource for learning Ukrainian language online</h1>
 
             <ul class="hero__list-custom-bullet text-softer-black">
             <li>Learn Ukrainian naturally by listening to dialogues.</li>
-            <li>Learn how to manage day-to-day situations in Ukrainian.</li>
-            <li>Full grammar explanations and word-for-word translations of all dialogues.</li>
+            <li>Full grammar explanations and word-for-word translations.</li>
             <li>Integrated flashcard system for memorizing vocabulary.</li>
 
             </ul>
@@ -50,7 +86,6 @@
             </div>
           </div>
 
-        </div>
       </div>
     </div>
 
