@@ -8,6 +8,10 @@
   <style>
 
     @media (min-width:1000px){
+      .navbar {
+        border-bottom: 1px solid lightgray;
+      }
+
       .hero__copy{
         padding: 2rem;
         margin-top: 2rem;
