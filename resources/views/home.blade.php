@@ -28,7 +28,7 @@
       } 
 
       .sample-lessons-block {
-        margin-top:3rem;
+        margin-top:2.75rem;
       }
     }
 
