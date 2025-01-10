@@ -25,6 +25,7 @@
         left:0;
         height: 375px;
         object-fit: cover;
+        width: 100%;
       }
 
       .hero__image {
