@@ -1,11 +1,13 @@
-@extends('layouts.layout')
+@extends('layouts.layout-tw')
 
 @section('title')
  - Blog
 @endsection
 
 @section('css')
-<link href="css/extra-styles.css" rel="stylesheet">
+<link href="{{ url('/'); }}/css/extra-styles.css" rel="stylesheet">
+<link href="{{ url('/'); }}/css/app.css" rel="stylesheet">
+
 <style>
     .navbar {
         border: 1px solid lightgray;

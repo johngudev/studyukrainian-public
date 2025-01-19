@@ -2,7 +2,7 @@
     $tailwind = true;
 @endphp
 
-@extends('layouts.layout')
+@extends('layouts.layout-tw')
 
 @section('title')
  - Blog

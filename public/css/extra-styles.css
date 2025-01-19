@@ -16,6 +16,10 @@ html {
   font-size: 1rem;
 }
 
+body > .container {
+  padding: 60px 15px 0;
+}
+
 
 @include media-breakpoint-up(sm) {
   html {
