@@ -1,3 +1,7 @@
+@php
+    $tailwind = true;
+@endphp
+
 @extends('layouts.layout')
 
 @section('title')
@@ -5,7 +9,9 @@
 @endsection
 
 @section('css')
-<link href="css/extra-styles.css" rel="stylesheet">
+<link href="{{ url('/'); }}/css/extra-styles.css" rel="stylesheet">
+<link href="{{ url('/'); }}/css/app.css" rel="stylesheet">
+
 <style>
     .navbar {
         border: 1px solid lightgray;
@@ -15,7 +21,7 @@
 
 
 @section('content')
-    <h1 class="mt-3">{{$title}}</h1>
+    <h1 class="mt-5 font-bold	text-lg	">{{$title}}</h1>
 
     <section>
         {!! $content !!}
