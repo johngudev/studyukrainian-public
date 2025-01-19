@@ -83,6 +83,8 @@ Route::get('study-record/test', [FlashcardStudyRecordController::class, 'test'])
 Route::post('study-record/pass', [FlashcardStudyRecordController::class, 'pass'])->middleware(['auth']);
 Route::post('study-record/fail', [FlashcardStudyRecordController::class, 'fail'])->middleware(['auth']);
 
+Route::statamic('blog', 'blog.index');
+
 Route::get('/premium', function () {
     return view('premium');
 });
