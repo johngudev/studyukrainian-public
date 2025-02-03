@@ -1,0 +1,186 @@
+tabs:
+  main:
+    display: Main
+    sections:
+      -
+        fields:
+          -
+            handle: title
+            field:
+              type: text
+              required: true
+              validate:
+                - required
+          -
+            handle: content
+            field:
+              type: markdown
+              localizable: true
+          -
+            handle: vocabulary_set
+            field:
+              fields:
+                -
+                  handle: english_definition
+                  field:
+                    input_type: text
+                    antlers: false
+                    type: text
+                    display: 'English Definition'
+                    listable: hidden
+                    instructions_position: above
+                    visibility: visible
+                    replicator_preview: true
+                    hide_display: false
+                -
+                  handle: ukrainian_word
+                  field:
+                    input_type: text
+                    antlers: false
+                    type: text
+                    display: 'Ukrainian Word'
+                    listable: hidden
+                    instructions_position: above
+                    visibility: visible
+                    replicator_preview: true
+                    hide_display: false
+                -
+                  handle: audio
+                  field:
+                    max_files: 1
+                    min_files: 1
+                    mode: list
+                    container: audio_files
+                    restrict: false
+                    allow_uploads: true
+                    show_filename: true
+                    show_set_alt: true
+                    type: assets
+                    display: Audio
+                    listable: hidden
+                    instructions_position: above
+                    visibility: visible
+                    replicator_preview: true
+                    hide_display: false
+              mode: table
+              reorderable: true
+              fullscreen: true
+              type: grid
+              display: 'Vocabulary Set'
+              listable: hidden
+              instructions_position: above
+              visibility: visible
+              replicator_preview: true
+              hide_display: false
+          -
+            handle: grid_field
+            field:
+              fields:
+                -
+                  handle: english_sentence
+                  field:
+                    input_type: text
+                    antlers: false
+                    type: text
+                    display: 'English Sentence'
+                    listable: hidden
+                    instructions_position: above
+                    visibility: visible
+                    replicator_preview: true
+                    hide_display: false
+                -
+                  handle: ukrainian_sentence
+                  field:
+                    input_type: text
+                    antlers: false
+                    type: text
+                    display: 'Ukrainian Sentence'
+                    listable: hidden
+                    instructions_position: above
+                    visibility: visible
+                    replicator_preview: true
+                    hide_display: false
+                -
+                  handle: ukrainian_word_for_word
+                  field:
+                    input_type: text
+                    antlers: false
+                    type: text
+                    display: 'Ukrainian Word for Word'
+                    listable: hidden
+                    instructions_position: above
+                    visibility: visible
+                    replicator_preview: true
+                    hide_display: false
+              mode: table
+              reorderable: true
+              fullscreen: true
+              type: grid
+              display: 'Ukrainian Story'
+              listable: hidden
+              instructions_position: above
+              visibility: visible
+              replicator_preview: true
+              hide_display: false
+          -
+            handle: dialogue
+            field:
+              fields:
+                -
+                  handle: ukrainian_sentence
+                  field:
+                    input_type: text
+                    antlers: false
+                    type: text
+                    display: 'Ukrainian Sentence'
+                    listable: hidden
+                    instructions_position: above
+                    visibility: visible
+                    replicator_preview: true
+                    hide_display: false
+                -
+                  handle: english_sentence
+                  field:
+                    input_type: text
+                    antlers: false
+                    type: text
+                    display: 'English Sentence'
+                    listable: hidden
+                    instructions_position: above
+                    visibility: visible
+                    replicator_preview: true
+                    hide_display: false
+                -
+                  handle: ukrainian_word_for_word
+                  field:
+                    input_type: text
+                    antlers: false
+                    type: text
+                    display: 'Ukrainian Word for Word'
+                    listable: hidden
+                    instructions_position: above
+                    visibility: visible
+                    replicator_preview: true
+                    hide_display: false
+              mode: table
+              reorderable: true
+              fullscreen: true
+              type: grid
+              display: Dialogue
+              listable: hidden
+              instructions_position: above
+              visibility: visible
+              replicator_preview: true
+              hide_display: false
+  sidebar:
+    display: Sidebar
+    sections:
+      -
+        fields:
+          -
+            handle: slug
+            field:
+              type: slug
+              localizable: true
+              validate: 'max:200'
+title: 'Sample Lesson'
