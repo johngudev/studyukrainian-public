@@ -8,7 +8,12 @@ vocabulary_set:
     english_definition: 'My name is John.'
     ukrainian_word: 'Mene zvati John, a vas?'
     audio: audio/dialogue-uk-01-04.mp3
+  -
+    id: m6qtm0bi
+    english_definition: "What's your name?"
+    ukrainian_word: 'Yak vas zvati?'
+    audio: audio/dialogue-uk-01-04.mp3
 updated_by: 1
-updated_at: 1738608266
+updated_at: 1738694177
 ---
 Here is some random content.
