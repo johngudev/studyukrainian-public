@@ -1,5 +1,14 @@
 title: 'Topical Lessons'
+template: default
+layout: layout
 revisions: false
+route: '/topical-lessons/{slug}'
+sort_dir: asc
 date_behavior:
   past: public
   future: private
+preview_targets:
+  -
+    label: Entry
+    url: '{permalink}'
+    refresh: true
