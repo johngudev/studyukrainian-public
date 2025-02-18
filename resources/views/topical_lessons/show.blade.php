@@ -49,7 +49,28 @@
                     </tr>
                 </thead>
                 <tbody>
-                    @foreach($page->vocabulary_set as $vocabulary_item)
+                    @foreach($page->nouns as $vocabulary_item)
+                        <tr>
+                            <td class="border border-gray-300 px-4 py-2">{{ $vocabulary_item->ukrainian_word }}</td>
+                            <td class="border border-gray-300 px-4 py-2">{{ $vocabulary_item->english_definition }}</td>
+                            <td class="border border-gray-300 px-4 py-2">{{ $vocabulary_item->audio_file }}</td>
+                        </tr>
+                    @endforeach
+                </tbody>
+            </table>
+
+            <hr>
+
+            <table class="table-auto w-full border-collapse border border-gray-300">
+                <thead>
+                    <tr class="bg-gray-100">
+                        <th class="border border-gray-300 px-4 py-2">Ukrainian</th>
+                        <th class="border border-gray-300 px-4 py-2">English</th>
+                        <th class="border border-gray-300 px-4 py-2">Audio</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    @foreach($page->verbs as $vocabulary_item)
                         <tr>
                             <td class="border border-gray-300 px-4 py-2">{{ $vocabulary_item->ukrainian_word }}</td>
                             <td class="border border-gray-300 px-4 py-2">{{ $vocabulary_item->english_definition }}</td>
@@ -63,8 +84,6 @@
         <div class="modern-panel mt-3">
             <h2>Reading</h2>
             <div class="row">
-                <div class="col-6 border-right border-info px-5">{!! $page->ukrainian_text !!}</div>
-                <div class="col-6 px-5" >{!! $page->english_translation !!}</div>
             </div>
         </div>
 
