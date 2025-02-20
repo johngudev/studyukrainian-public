@@ -15,15 +15,19 @@ nouns:
   -
     id: m7ab515s
     ukrainian_word: дідусь
+    english_definition: grandfather
   -
     id: m7ab54jk
     ukrainian_word: бабуся
+    english_definition: grandmother
   -
     id: m7ab57h2
     ukrainian_word: 'двоюрідна сестра'
+    english_definition: 'female cousin'
   -
     id: m7ab5c1y
     ukrainian_word: 'двоюрідний брат'
+    english_definition: 'male cousin'
 verbs:
   -
     id: m7ab81ir
@@ -43,21 +47,21 @@ verbs:
     english_definition: 'look at'
   -
     id: m7ab93mw
-    ukrainian_word: 'грати у...'
+    ukrainian_word: грати
     english_definition: 'to play'
-  -
-    id: m7ab986n
-    ukrainian_word: 'грати на...'
 adjectives_and_adverbs:
   -
     id: m7aba1kz
     ukrainian_word: дорослий
+    english_definition: adult
   -
     id: m7abadpq
     ukrainian_word: новий
+    english_definition: new
   -
     id: m7abakdl
     ukrainian_word: мудрий
+    english_definition: wise
 other_parts_of_speech:
   -
     id: m7abbprb
@@ -172,33 +176,32 @@ dialogue:
     id: m7abnb46
     speaker: Ганна
     ukrainian_speech: 'Привіт, Степане! Ти часто розмовляєш зі своїми бабусею та дідусем?'
+    english_translation: 'Hello, Stepan! Do you often talk to your grandparents?'
   -
     id: m7aborl0
     speaker: Степан
     ukrainian_speech: 'Так, я часто бачу їх. А ти? Що любить робити твоя бабуся?'
+    english_translation: 'Yes, I often see them.'
   -
     id: m7abovdl
     speaker: Ганна
     ukrainian_speech: 'Моя бабуся дуже мудра і добра. Вона любить грати на гітарі й дивитися на птахів у саду.'
+    english_translation: 'My grandmother is very wise and kind. She loves playing the guitar and watching birds in the garden.'
   -
     id: m7abowb4
     speaker: Степан
     ukrainian_speech: 'Цікаво! Мій дідусь також грає на гітарі. А бабуся любить читат детективи й писати листи. А в тебе є двоюрідні брат і сестра?'
+    english_translation: 'Interesting! My grandfather also plays guitar. And grandmother likes to read detectives and write letters. Do you have cousins?'
   -
     id: m7abowye
     speaker: Ганна
     ukrainian_speech: 'Так, але вони ще малі. Зазвичай вони люблять грати у футбол.'
+    english_translation: 'Yes, but they are still small. They usually like to play football.'
   -
     id: m7aboxfy
     speaker: Степан
     ukrainian_speech: 'У мене теж є двоюрідний брат.  Він дорослий. Я люблю розмовляти з ним.'
-  -
-    id: m7abp7hl
-  -
-    id: m7abp8lp
-    speaker: Ганна
-  -
-    id: m7abpbf7
+    english_translation: "I also have a cousin. He's an adult. I love talking to him."
 updated_by: 4378
-updated_at: 1739875756
+updated_at: 1739950260
 ---
