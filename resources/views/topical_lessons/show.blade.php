@@ -40,7 +40,8 @@
 
         <div class="modern-panel mt-3">
             <h2 class="">Vocabulary</h2>
-            <table class="table-auto w-full border-collapse border border-gray-300">
+            <h3>Nouns</h3>
+            <table class="table-auto w-full border-collapse  border-gray-300">
                 <thead>
                     <tr class="bg-gray-100">
                         <th class="border border-gray-300 px-4 py-2">Ukrainian</th>
@@ -58,6 +59,73 @@
                     @endforeach
                 </tbody>
             </table>
+
+            <hr>
+
+            <h3>Verbs</h3>
+            <table class="table-auto w-full border-collapse  border-gray-300">
+                <thead>
+                    <tr class="bg-gray-100">
+                        <th class="border border-gray-300 px-4 py-2">Ukrainian</th>
+                        <th class="border border-gray-300 px-4 py-2">English</th>
+                        <th class="border border-gray-300 px-4 py-2">Audio</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    @foreach($page->verbs as $vocabulary_item)
+                        <tr>
+                            <td class="border border-gray-300 px-4 py-2">{{ $vocabulary_item->ukrainian_word }}</td>
+                            <td class="border border-gray-300 px-4 py-2">{{ $vocabulary_item->english_definition }}</td>
+                            <td class="border border-gray-300 px-4 py-2">{{ $vocabulary_item->audio_file }}</td>
+                        </tr>
+                    @endforeach
+                </tbody>
+            </table>
+
+            <hr>
+
+            <h3>Adjectives and Adverbs</h3>
+            <table class="table-auto w-full border-collapse  border-gray-300">
+                <thead>
+                    <tr class="bg-gray-100">
+                        <th class="border border-gray-300 px-4 py-2">Ukrainian</th>
+                        <th class="border border-gray-300 px-4 py-2">English</th>
+                        <th class="border border-gray-300 px-4 py-2">Audio</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    @foreach($page->adjectives_and_adverbs as $vocabulary_item)
+                        <tr>
+                            <td class="border border-gray-300 px-4 py-2">{{ $vocabulary_item->ukrainian_word }}</td>
+                            <td class="border border-gray-300 px-4 py-2">{{ $vocabulary_item->english_definition }}</td>
+                            <td class="border border-gray-300 px-4 py-2">{{ $vocabulary_item->audio_file }}</td>
+                        </tr>
+                    @endforeach
+                </tbody>
+            </table>
+
+            <hr>
+            
+            <h3>Other Parts of Speech</h3>
+            <table class="table-auto w-full border-collapse  border-gray-300">
+                <thead>
+                    <tr class="bg-gray-100">
+                        <th class="border border-gray-300 px-4 py-2">Ukrainian</th>
+                        <th class="border border-gray-300 px-4 py-2">English</th>
+                        <th class="border border-gray-300 px-4 py-2">Audio</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    @foreach($page->other_parts_of_speech as $vocabulary_item)
+                        <tr>
+                            <td class="border border-gray-300 px-4 py-2">{{ $vocabulary_item->ukrainian_word }}</td>
+                            <td class="border border-gray-300 px-4 py-2">{{ $vocabulary_item->english_definition }}</td>
+                            <td class="border border-gray-300 px-4 py-2">{{ $vocabulary_item->audio_file }}</td>
+                        </tr>
+                    @endforeach
+                </tbody>
+            </table>`
+
         </div>
 
         <div class="modern-panel mt-3">
