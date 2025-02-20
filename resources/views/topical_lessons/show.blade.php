@@ -49,7 +49,7 @@
                     </tr>
                 </thead>
                 <tbody>
-                    @foreach($page->vocabulary_set as $vocabulary_item)
+                    @foreach($page->nouns as $vocabulary_item)
                         <tr>
                             <td class="border border-gray-300 px-4 py-2">{{ $vocabulary_item->ukrainian_word }}</td>
                             <td class="border border-gray-300 px-4 py-2">{{ $vocabulary_item->english_definition }}</td>
@@ -63,13 +63,32 @@
         <div class="modern-panel mt-3">
             <h2>Reading</h2>
             <div class="row">
-                <div class="col-6 border-right border-info px-5">{!! $page->ukrainian_text !!}</div>
-                <div class="col-6 px-5" >{!! $page->english_translation !!}</div>
+                <div class="col-6">
+                    @foreach($page->long_reading_text as $text_item)
+                        {!! $text_item->ukrainian_paragraph  !!}
+                    @endforeach
+                </div>
+                <div class="col-6">
+                    @foreach($page->long_reading_text as $text_item)
+                        {!! $text_item->english_paragraph !!}
+                    @endforeach
+                </div>
             </div>
         </div>
 
         <div class="modern-panel mt-3">
             <h2>Questions and Phrases</h2>
+
+            <table class="table-auto w-full border-collapse border border-gray-100">
+                <tbody>
+                    @foreach($page->phrases_and_questions as $item)
+                        <tr>
+                            <td class="border border-gray-100 px-4 py-2">{{ $item->ukrainian_phrase }}</td>
+                            <td class="border border-gray-100 px-4 py-2">{{ $item->english_definition }}</td>
+                        </tr>
+                    @endforeach
+                </tbody>
+            </table>
         </div>
 
 
