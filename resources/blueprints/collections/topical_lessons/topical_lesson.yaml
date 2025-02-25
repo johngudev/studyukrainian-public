@@ -382,6 +382,97 @@ tabs:
               visibility: visible
               replicator_preview: true
               hide_display: false
+          -
+            handle: word_group
+            field:
+              collapse: false
+              previews: true
+              fullscreen: true
+              sets:
+                new_set_group:
+                  display: 'New Set Group'
+                  instructions: null
+                  icon: null
+                  sets:
+                    new_set:
+                      display: 'New Set'
+                      instructions: null
+                      icon: null
+                      fields:
+                        -
+                          handle: word_group_title
+                          field:
+                            input_type: text
+                            antlers: false
+                            type: text
+                            display: 'Word Group Title'
+                            listable: hidden
+                            instructions_position: above
+                            visibility: visible
+                            replicator_preview: true
+                            hide_display: false
+                        -
+                          handle: vocabulary_item
+                          field:
+                            fields:
+                              -
+                                handle: ukrainian_word
+                                field:
+                                  input_type: text
+                                  antlers: false
+                                  type: text
+                                  display: 'Ukrainian Word'
+                                  listable: hidden
+                                  instructions_position: above
+                                  visibility: visible
+                                  replicator_preview: true
+                                  hide_display: false
+                              -
+                                handle: english_definition
+                                field:
+                                  input_type: text
+                                  antlers: false
+                                  type: text
+                                  display: 'English Definition'
+                                  listable: hidden
+                                  instructions_position: above
+                                  visibility: visible
+                                  replicator_preview: true
+                                  hide_display: false
+                              -
+                                handle: audio_file
+                                field:
+                                  max_files: 1
+                                  mode: list
+                                  container: public_assets
+                                  restrict: false
+                                  allow_uploads: true
+                                  show_filename: true
+                                  show_set_alt: true
+                                  type: assets
+                                  display: 'Audio File'
+                                  listable: hidden
+                                  instructions_position: above
+                                  visibility: visible
+                                  replicator_preview: true
+                                  hide_display: false
+                            mode: table
+                            reorderable: true
+                            fullscreen: true
+                            type: grid
+                            display: 'Vocabulary Item'
+                            listable: hidden
+                            instructions_position: above
+                            visibility: visible
+                            replicator_preview: true
+                            hide_display: false
+              type: replicator
+              display: 'Word Group'
+              listable: hidden
+              instructions_position: above
+              visibility: visible
+              replicator_preview: true
+              hide_display: false
       -
         display: 'Lesson Content'
         fields:
