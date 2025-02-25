@@ -17,7 +17,7 @@
     .modern-panel {
         background-color: white;
         padding: 1rem;
-        border-radius: 0.75rem;
+        border-radius: 0.25rem;
         box-shadow: 1px 1px 2px rgba(0, 0, 0, 0.1);
 
     }
@@ -33,52 +33,62 @@
 @section('content')
     <div class="container">
 
-        <div class="modern-panel">
+        <div class="modern-panel p-5">
             <h1 class=""> {{$page->title}} </h1>
             {!! $page->introduction !!}
         </div>
 
-        <div class="modern-panel mt-3">
+        <div class="modern-panel mt-1 p-5">
             <h2 class="">Vocabulary</h2>
-            <h3>Nouns</h3>
-            <table class="table-auto w-full border-collapse  border-gray-300">
+            <!-- <h3>Nouns</h3> -->
+            <table style="margin-left: auto; margin-right:auto" class="mt-5 table-auto w-full border-collapse  border-gray-300">
                 <thead>
-                    <tr class="bg-gray-100">
-                        <th class="border border-gray-300 px-4 py-2">Ukrainian</th>
-                        <th class="border border-gray-300 px-4 py-2">English</th>
-                        <th class="border border-gray-300 px-4 py-2">Audio</th>
-                    </tr>
+
                 </thead>
-                <tbody>
-                    @foreach($page->nouns as $vocabulary_item)
-                        <tr>
-                            <td class="border border-gray-300 px-4 py-2">{{ $vocabulary_item->ukrainian_word }}</td>
-                            <td class="border border-gray-300 px-4 py-2">{{ $vocabulary_item->english_definition }}</td>
-                            <td class="border border-gray-300 px-4 py-2">{{ $vocabulary_item->audio_file }}</td>
-                        </tr>
-                    @endforeach
+
+                @php
+
+                @endphp
+
+                <tbody >
+                    <tr>
+                    @for( $i=1; $i <= count($page->nouns); $i++)
+
+                            <td style="width: 200px;" class="border border-gray-300 px-4 py-2"><div style="color:#029AF7"><b>{{ $page->nouns[$i-1]->ukrainian_word }}</b></div><div>{{ $page->nouns[$i-1]->english_definition }}</div></td>
+                            @if($i % 4 == 0 )
+                                </tr>
+                                <tr>
+                            @endif    
+                        
+                    @endfor
+                    </tr>
                 </tbody>
             </table>
 
             <hr>
 
             <h3>Verbs</h3>
-            <table class="table-auto w-full border-collapse  border-gray-300">
+            <table style="margin-left: auto; margin-right:auto" class="mt-5 table-auto w-full border-collapse  border-gray-300">
                 <thead>
-                    <tr class="bg-gray-100">
-                        <th class="border border-gray-300 px-4 py-2">Ukrainian</th>
-                        <th class="border border-gray-300 px-4 py-2">English</th>
-                        <th class="border border-gray-300 px-4 py-2">Audio</th>
-                    </tr>
+
                 </thead>
-                <tbody>
-                    @foreach($page->verbs as $vocabulary_item)
-                        <tr>
-                            <td class="border border-gray-300 px-4 py-2">{{ $vocabulary_item->ukrainian_word }}</td>
-                            <td class="border border-gray-300 px-4 py-2">{{ $vocabulary_item->english_definition }}</td>
-                            <td class="border border-gray-300 px-4 py-2">{{ $vocabulary_item->audio_file }}</td>
-                        </tr>
-                    @endforeach
+
+                @php
+
+                @endphp
+
+                <tbody >
+                    <tr>
+                    @for( $i=1; $i <= count($page->verbs); $i++)
+
+                            <td style="width: 200px;" class="border border-gray-300 px-4 py-2"><div style="color:#029AF7"><b>{{ $page->verbs[$i-1]->ukrainian_word }}</b></div><div>{{ $page->verbs[$i-1]->english_definition }}</div></td>
+                            @if($i % 4 == 0 )
+                                </tr>
+                                <tr>
+                            @endif    
+                        
+                    @endfor
+                    </tr>
                 </tbody>
             </table>
 
@@ -128,7 +138,7 @@
 
         </div>
 
-        <div class="modern-panel mt-3">
+        <div class="modern-panel mt-1 p-5">
             <h2>Reading</h2>
             <div class="row">
                 <div class="col-6">
@@ -144,7 +154,7 @@
             </div>
         </div>
 
-        <div class="modern-panel mt-3">
+        <div class="modern-panel mt-1 p-5">
             <h2>Questions and Phrases</h2>
 
             <table class="table-auto w-full border-collapse border border-gray-100">
@@ -160,7 +170,7 @@
         </div>
 
 
-        <div class="modern-panel mt-3">
+        <div class="modern-panel mt-1 p-5">
             <h2>Dialogue</h2>
 
             <table class="table-auto w-full border-collapse border border-gray-100">
