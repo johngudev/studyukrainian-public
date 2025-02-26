@@ -31,7 +31,7 @@
     }
 
     .background-light-gray-box {
-        background-color: #F2F2F2 !important;
+        background-color: #F4F4F4 !important;
     }
 
     .reading-flex {
@@ -205,7 +205,7 @@
                         {!! $text_item->ukrainian_paragraph  !!}
                     @endforeach
                 </div>
-                <div class="p-5 background-light-gray-box reading-passage">
+                <div class="p-5 border border-gray-100 reading-passage">
                     @foreach($page->long_reading_text as $text_item)
                         {!! $text_item->english_paragraph !!}
                     @endforeach
