@@ -219,7 +219,7 @@ dialogue:
     id: m7lt89sa
     speaker: Богдан
     ukrainian_speech: 'Тоді запрошую😉'
-    english_translation: "Привіт, Олено! Чим ти любиш займатись у вільний час?  Привіт, Богдане! Найбільше за все я люблю займатися спортом – бігати, ходити в спортзалу, танцювати.   Чому ти так це обожнюєш?  Коли я займаюся спортом, відчуваю енергію, силу та радість! А ти? Чим ти захоплюєшся?  Я захоплююся мистецтвом. Я обожнюю ходити в театр і в музеї. Це моя пристрасть.  Чому ти так любиш мистецтво?  Це дуже захопливо й красиво!    Цікаво! Я би хотіла колись сходити в театр.  Тоді запрошую😉 \tHello, Elena! What do you like to do in your free time?  Hello, Bogdan! Most of all, I love to play sports - running, going to the gym, dancing.  Why do you adore it so much?  When I play sports, I feel energy, strength and joy! How about you? What do you admire?   I'm passionate about art. I love going to the theater and museums. That's my passion.  Why do you love art so much?  It is very exciting and beautiful!  Interesting! I'd like to go to theatre.   Then I invite you!😉"
-updated_by: 4378
-updated_at: 1740568200
+    english_translation: 'Then I invite you!😉'
+updated_by: 1
+updated_at: 1740588406
 ---

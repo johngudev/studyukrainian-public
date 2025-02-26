@@ -175,9 +175,6 @@
 
                 </thead>
 
-                @php
-
-                @endphp
 
                 <tbody >
                     <tr>
@@ -194,6 +191,31 @@
                 </tbody>
             </table>
             @endif
+
+
+            @foreach($page->word_group as $group)
+            <h3 class="p-3 text-graphite-black mt-4" style="background-color: #EEF7DC;">{{ $group->word_group_title }}</h3>
+            <table style="margin-left: auto; margin-right:auto; width:100%;" class="my-2 table-auto w-full border-collapse  border-gray-300">
+                <thead>
+
+                </thead>
+
+
+                <tbody >
+                    <tr>
+                    @for( $i=1; $i <= count($group->vocabulary_item); $i++)
+
+                            <td style="width: 24%;" class="border border-gray-300 px-4 py-2"><div style="color:#029AF7"><b>{{ $group->vocabulary_item[$i-1]->ukrainian_word }}</b></div><div>{{ $group->vocabulary_item[$i-1]->english_definition }}</div></td>
+                            @if($i % 4 == 0 )
+                                </tr>
+                                <tr>
+                            @endif    
+                        
+                    @endfor
+                    </tr>
+                </tbody>
+            </table>
+            @endforeach
 
         </div>
 
