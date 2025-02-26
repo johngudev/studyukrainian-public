@@ -40,8 +40,10 @@
 
         <div class="modern-panel mt-1 p-5">
             <h2 class="">Vocabulary</h2>
+
+            <h3 class="p-2" style="background-color: #EEF7DC;">Nouns</h3>
             <!-- <h3>Nouns</h3> -->
-            <table style="margin-left: auto; margin-right:auto" class="mt-5 table-auto w-full border-collapse  border-gray-300">
+            <table style="margin-left: auto; margin-right:auto; width: 100%" class="my-2 table-auto w-full border-collapse  border-gray-300">
                 <thead>
 
                 </thead>
@@ -54,7 +56,7 @@
                     <tr>
                     @for( $i=1; $i <= count($page->nouns); $i++)
 
-                            <td style="width: 200px;" class="border border-gray-300 px-4 py-2"><div style="color:#029AF7"><b>{{ $page->nouns[$i-1]->ukrainian_word }}</b></div><div>{{ $page->nouns[$i-1]->english_definition }}</div></td>
+                            <td style="width: 24%;" class="border border-gray-300 px-4 py-2"><div style="color:#029AF7"><b>{{ $page->nouns[$i-1]->ukrainian_word }}</b></div><div>{{ $page->nouns[$i-1]->english_definition }}</div></td>
                             @if($i % 4 == 0 )
                                 </tr>
                                 <tr>
@@ -65,10 +67,8 @@
                 </tbody>
             </table>
 
-            <hr>
-
-            <h3>Verbs</h3>
-            <table style="margin-left: auto; margin-right:auto" class="mt-5 table-auto w-full border-collapse  border-gray-300">
+            <h3 class="p-2" style="background-color: #EEF7DC;">Verbs</h3>
+            <table style="margin-left: auto; margin-right:auto; width:100%;" class="my-2 table-auto w-full border-collapse  border-gray-300">
                 <thead>
 
                 </thead>
@@ -81,7 +81,7 @@
                     <tr>
                     @for( $i=1; $i <= count($page->verbs); $i++)
 
-                            <td style="width: 200px;" class="border border-gray-300 px-4 py-2"><div style="color:#029AF7"><b>{{ $page->verbs[$i-1]->ukrainian_word }}</b></div><div>{{ $page->verbs[$i-1]->english_definition }}</div></td>
+                            <td style="width: 24%;" class="border border-gray-300 px-4 py-2"><div style="color:#029AF7"><b>{{ $page->verbs[$i-1]->ukrainian_word }}</b></div><div>{{ $page->verbs[$i-1]->english_definition }}</div></td>
                             @if($i % 4 == 0 )
                                 </tr>
                                 <tr>
