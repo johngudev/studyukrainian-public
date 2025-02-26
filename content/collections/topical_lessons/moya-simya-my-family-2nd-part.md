@@ -168,9 +168,6 @@ long_reading_text:
           -
             type: text
             text: 'My sister is an adult, she loves to write poetry, and my brother is still small, he loves to play basketball.'
-phrases_and_questions:
-  -
-    id: m7abmlh9
 dialogue:
   -
     id: m7abnb46
@@ -202,6 +199,6 @@ dialogue:
     speaker: Степан
     ukrainian_speech: 'У мене теж є двоюрідний брат.  Він дорослий. Я люблю розмовляти з ним.'
     english_translation: "I also have a cousin. He's an adult. I love talking to him."
-updated_by: 4378
-updated_at: 1739950260
+updated_by: 1
+updated_at: 1740583322
 ---
