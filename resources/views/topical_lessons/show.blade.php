@@ -239,7 +239,7 @@
         <div class="modern-panel mt-1 p-5">
             <h2 class="mb-4 text-graphite-black">Questions and Phrases</h2>
 
-            <table class="table-auto w-full border-collapse border border-gray-100">
+            <table class="table-auto w-full border-collapse border border-gray-100 mx-auto">
                 <tbody>
                     @foreach($page->phrases_and_questions as $item)
                         <tr>
