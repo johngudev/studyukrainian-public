@@ -243,8 +243,8 @@
                 <tbody>
                     @foreach($page->phrases_and_questions as $item)
                         <tr>
-                            <td class="border border-gray-100 px-4 py-2 ukrainian-word-text">{{ $item->ukrainian_phrase }}</td>
-                            <td class="border border-gray-100 px-4 py-2">{{ $item->english_definition }}</td>
+                            <td style="border-right: 1px dashed rgb(222, 226, 230) !important" class="border border-gray-100 px-4 py-2 ukrainian-word-text">{{ $item->ukrainian_phrase }}</td>
+                            <td style="border-left: 1px dashed  rgb(222, 226, 230) !important" class="border border-gray-100 px-4 py-2">{{ $item->english_definition }}</td>
                         </tr>
                     @endforeach
                 </tbody>
