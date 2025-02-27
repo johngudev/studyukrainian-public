@@ -1,5 +1,6 @@
 ---
 id: 8b0f962d-6517-476b-a54d-e87f273fd8a8
+published: false
 blueprint: topical_lesson
 title: 'John stuff please ignore'
 introduction:

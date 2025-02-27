@@ -19,6 +19,9 @@ use App\Http\Controllers\AdminFlashcardController;
 use App\Http\Controllers\FlashcardManagerController;
 use App\Http\Controllers\AdminTopicalLessonsController;
 
+use Statamic\Facades\Entry;
+
+
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -92,3 +95,13 @@ Route::get('/premium', function () {
 Route::get('/premium-1', function () {
     return view('premium-1');
 });
+
+Route::statamic('/topical-lessons', 'topical_lessons.index', [
+    'entries' => Entry::query()
+    ->where('collection', 'topical_lessons')
+    ->where('status', 'published')
+    ->orderBy('order')
+    ->get(),
+]);
+
+;
