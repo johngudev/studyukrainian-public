@@ -143,8 +143,8 @@ english_translation:
       -
         type: text
         text: 'Kyiv is a city of history and modernity, it is always interesting here!  I love Kyiv.'
-updated_by: 4378
-updated_at: 1739868161
+updated_by: 1
+updated_at: 1740589264
 phrases_and_questions:
   -
     id: m73pkmz8
@@ -228,12 +228,6 @@ verbs:
     id: m7a7zw33
     ukrainian_word: Їздити
     english_definition: 'To go (by transport, ussualy, regullary)'
-adjectives_and_adverbs:
-  -
-    id: m799mc8l
-other_parts_of_speech:
-  -
-    id: m799mkq8
 long_reading_text:
   -
     id: m799nam3
