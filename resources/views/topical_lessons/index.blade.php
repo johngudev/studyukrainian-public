@@ -42,7 +42,7 @@
         <hr>
 
         @foreach($entries as $lesson)
-            <div> <a href="{{ $lesson->slug }}">{{ $lesson->title}}</a> </div>
+            <div> <a href="/topical-lessons/{{ $lesson->slug }}">{{ $lesson->title}}</a> </div>
         @endforeach
     </div>
 </div>
