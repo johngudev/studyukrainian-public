@@ -9,7 +9,7 @@
     </a>
     <ul class="ml-auto flex items-center space-x-4">
       <li>
-        <a class="text-gray-500 hover:text-gray-900" href={{ URL::to('lessons') }}>Lessons</a>
+        <a class="text-gray-500 hover:text-gray-900" href={{ URL::to('lessons') }}>Dialogues</a>
       </li>
       <li>
         <a class="text-gray-500 hover:text-gray-900" href={{ URL::to('grammar') }}>Grammar</a>
@@ -45,7 +45,7 @@
       <li class="relative group">
         <a class="text-gray-700 hover:text-gray-900 cursor-pointer">Menu</a>
         <div class="absolute hidden group-hover:block bg-white border border-gray-300 rounded mt-2">
-          <a class="block px-4 py-2 text-gray-700 hover:bg-gray-100" href={{ URL::to('lessons') }}>Lessons</a>
+          <a class="block px-4 py-2 text-gray-700 hover:bg-gray-100" href={{ URL::to('lessons') }}>Dialogues</a>
           <a class="block px-4 py-2 text-gray-700 hover:bg-gray-100" href={{ URL::to('grammar') }}>Grammar</a>
           <a class="block px-4 py-2 text-gray-700 hover:bg-gray-100" href={{ URL::to('about') }}>About</a>
 

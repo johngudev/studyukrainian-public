@@ -15,7 +15,11 @@
             <ul class="navbar-nav navbar-right  ml-auto">
 
               <li class="nav-item">
-                <a class="nav-link" href={{ URL::to('lessons') }} >Lessons</a>
+                <a class="nav-link" href={{ URL::to('topical-lessons') }} >Lessons</a>
+              </li>
+
+              <li class="nav-item">
+                <a class="nav-link" href={{ URL::to('lessons') }} >Dialogues</a>
               </li>
 
               <li class="nav-item">
@@ -70,7 +74,8 @@
             <li class="nav-item dropdown">
               <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">Menu</a>
               <div class="dropdown-menu" style="margin-left: -5rem;">
-                <a class="nav-link" href={{ URL::to('lessons') }} >Lessons</a>
+                <a class="nav-link" href={{ URL::to('topical-lessons') }} >Topical Lessons</a>
+                <a class="nav-link" href={{ URL::to('lessons') }} >Dialogues</a>
                 <a class="nav-link" href={{ URL::to('grammar') }} >Grammar</a>
                 <!-- <a class="nav-link" href= {{ URL::to('about') }} >About</a> -->
 
