@@ -1,7 +1,7 @@
 ---
 id: 40679ec2-35b1-4611-a2a1-73a2f35597b5
 blueprint: topical_lesson
-title: "МОЯ СІМ'Я  - My family (2nd part)"
+title: "Моя сім'я  - My family (part 2)"
 introduction:
   -
     type: paragraph
@@ -10,7 +10,7 @@ introduction:
     content:
       -
         type: text
-        text: 'Continuing talking about family'
+        text: 'Talking about family, continued.'
 nouns:
   -
     id: m7ab515s
@@ -200,5 +200,5 @@ dialogue:
     ukrainian_speech: 'У мене теж є двоюрідний брат.  Він дорослий. Я люблю розмовляти з ним.'
     english_translation: "I also have a cousin. He's an adult. I love talking to him."
 updated_by: 1
-updated_at: 1740583322
+updated_at: 1741200365
 ---

@@ -1,7 +1,7 @@
 ---
 id: 2052bf5d-10d2-4ef8-8a0c-d9e2a275134d
 blueprint: topical_lesson
-title: 'МОЯ СІМ’Я - My Family (1st part)'
+title: "Моя сім'я- My family (part 1)"
 introduction:
   -
     type: paragraph
@@ -10,7 +10,7 @@ introduction:
     content:
       -
         type: text
-        text: "Hello! This lesson is about how to describe one's family. "
+        text: "How to describe one's family. "
 vocabulary_set:
   -
     id: m73o8yvh
@@ -25,7 +25,7 @@ vocabulary_set:
     ukrainian_word: брат
     english_definition: Brother
 updated_by: 1
-updated_at: 1740507131
+updated_at: 1741200307
 ukrainian_text:
   -
     type: paragraph

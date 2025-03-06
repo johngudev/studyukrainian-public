@@ -1,7 +1,7 @@
 ---
 id: 298219b7-4b22-4994-b6ed-4a2d0404c0a3
 blueprint: topical_lesson
-title: 'МІСТО - A city'
+title: 'Місто - A city'
 introduction:
   -
     type: paragraph
@@ -144,7 +144,7 @@ english_translation:
         type: text
         text: 'Kyiv is a city of history and modernity, it is always interesting here!  I love Kyiv.'
 updated_by: 1
-updated_at: 1740589264
+updated_at: 1741199589
 phrases_and_questions:
   -
     id: m73pkmz8

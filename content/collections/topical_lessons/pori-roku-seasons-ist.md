@@ -1,23 +1,28 @@
 ---
 id: f959839c-1f39-459a-ae5a-b0fee431f1ac
 blueprint: topical_lesson
-title: 'ПОРИ РОКУ - Seasons Ist'
+title: 'Пори року - The seasons of the year (part 1)'
 nouns:
   -
     id: m7bneumi
     ukrainian_word: весна
+    english_definition: spring
   -
     id: m7bnf6ni
     ukrainian_word: літо
+    english_definition: summer
   -
     id: m7bnf9w6
     ukrainian_word: ліс
+    english_definition: forest
   -
     id: m7bnfh0l
     ukrainian_word: дерева
+    english_definition: tree
   -
     id: m7bnfnh7
     ukrainian_word: велосипед
+    english_definition: bicycle
 verbs:
   -
     id: m7bnfqrm
@@ -200,6 +205,6 @@ dialogue:
     speaker: Марко
     ukrainian_speech: Ходімо!
     english_translation: "Let's go!"
-updated_by: 4378
-updated_at: 1739954553
+updated_by: 1
+updated_at: 1741200740
 ---
