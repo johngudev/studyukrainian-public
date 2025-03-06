@@ -89,132 +89,80 @@
 
             @if(count($page->nouns) > 0)
             <h3 class="p-3 text-graphite-black" style="background-color: #EEF7DC;">Nouns</h3>
-            <table style="margin-left: auto; margin-right:auto; width: 100%" class="my-2 table-auto w-full border-collapse  border-gray-300">
-                <thead>
+            <div style="margin-left: auto; margin-right:auto; width: 100%" class="my-2 table-auto w-full border-collapse  border-gray-300">
 
-                </thead>
-
-                @php
-
-                @endphp
-
-                <tbody >
-                    <tr>
-                    @for( $i=1; $i <= count($page->nouns); $i++)
-
-                            <td style="width: 24%;" class="border border-gray-300 px-4 py-2"><div style="color:#029AF7"><b>{{ $page->nouns[$i-1]->ukrainian_word }}</b></div><div>{{ $page->nouns[$i-1]->english_definition }}</div></td>
-                            @if($i % 4 == 0 )
-                                </tr>
-                                <tr>
-                            @endif    
-                        
-                    @endfor
-                    </tr>
-                </tbody>
-            </table>
+                    <div class="row no-gutters border-top border-left border-gray-300">
+                            @foreach($page->nouns as $item)
+                                <div class="col-6 col-md-3 border-right border-bottom border-gray-300 px-4 py-2">
+                                    <div style="color:#029AF7"><b>{{ $item->ukrainian_word }}</b></div>
+                                    <div>{{ $item->english_definition }}</div>
+                                </div>
+                            @endforeach
+                    </div>
+            </div>
             @endif
 
             @if(count($page->verbs) > 0)
             <h3 class="p-3 text-graphite-black" style="background-color: #EEF7DC;">Verbs</h3>
-            <table style="margin-left: auto; margin-right:auto; width:100%;" class="my-2 table-auto w-full border-collapse  border-gray-300">
-                <thead>
+            <div style="margin-left: auto; margin-right:auto; width: 100%" class="my-2 table-auto w-full border-collapse  border-gray-300">
 
-                </thead>
-
-                @php
-
-                @endphp
-
-                <tbody >
-                    <tr>
-                    @for( $i=1; $i <= count($page->verbs); $i++)
-
-                            <td style="width: 24%;" class="border border-gray-300 px-4 py-2"><div style="color:#029AF7"><b>{{ $page->verbs[$i-1]->ukrainian_word }}</b></div><div>{{ $page->verbs[$i-1]->english_definition }}</div></td>
-                            @if($i % 4 == 0 )
-                                </tr>
-                                <tr>
-                            @endif    
-                        
-                    @endfor
-                    </tr>
-                </tbody>
-            </table>
+                    <div class="row no-gutters border-top border-left border-gray-300">
+                            @foreach($page->verbs as $item)
+                                <div class="col-6 col-md-3 border-right border-bottom border-gray-300 px-4 py-2">
+                                    <div style="color:#029AF7"><b>{{ $item->ukrainian_word }}</b></div>
+                                    <div>{{ $item->english_definition }}</div>
+                                </div>
+                            @endforeach
+                    </div>
+            </div>
             @endif
 
             @if(count($page->adjectives_and_adverbs) > 0)
             <h3 class="p-3 text-graphite-black" style="background-color: #EEF7DC;">Adjectives and Adverbs</h3>
-            <table style="margin-left: auto; margin-right:auto; width:100%;" class="my-2 table-auto w-full border-collapse  border-gray-300">
-                <thead>
+            <div style="margin-left: auto; margin-right:auto; width: 100%" class="my-2 table-auto w-full border-collapse  border-gray-300">
 
-                </thead>
-
-                @php
-
-                @endphp
-
-                <tbody >
-                    <tr>
-                    @for( $i=1; $i <= count($page->adjectives_and_adverbs); $i++)
-
-                            <td style="width: 24%;" class="border border-gray-300 px-4 py-2"><div style="color:#029AF7"><b>{{ $page->adjectives_and_adverbs[$i-1]->ukrainian_word }}</b></div><div>{{ $page->adjectives_and_adverbs[$i-1]->english_definition }}</div></td>
-                            @if($i % 4 == 0 )
-                                </tr>
-                                <tr>
-                            @endif    
-                        
-                    @endfor
-                    </tr>
-                </tbody>
-            </table>
+                    <div class="row no-gutters border-top border-left border-gray-300">
+                            @foreach($page->adjectives_and_adverbs as $item)
+                                <div class="col-6 col-md-3 border-right border-bottom border-gray-300 px-4 py-2">
+                                    <div style="color:#029AF7"><b>{{ $item->ukrainian_word }}</b></div>
+                                    <div>{{ $item->english_definition }}</div>
+                                </div>
+                            @endforeach
+                    </div>
+            </div>
             @endif
 
             @if(count($page->other_parts_of_speech) > 0)
-            <h3 class="p-3 text-graphite-black" style="background-color: #EEF7DC;">Other Parts of Speech</h3>
-            <table style="margin-left: auto; margin-right:auto; width:100%;" class="my-2 table-auto w-full border-collapse  border-gray-300">
-                <thead>
+            <h3 class="p-3 text-graphite-black" style="background-color: #EEF7DC;">Other</h3>
+            <div style="margin-left: auto; margin-right:auto; width: 100%" class="my-2 table-auto w-full border-collapse  border-gray-300">
 
-                </thead>
-
-
-                <tbody >
-                    <tr>
-                    @for( $i=1; $i <= count($page->other_parts_of_speech); $i++)
-
-                            <td style="width: 24%;" class="border border-gray-300 px-4 py-2"><div style="color:#029AF7"><b>{{ $page->other_parts_of_speech[$i-1]->ukrainian_word }}</b></div><div>{{ $page->other_parts_of_speech[$i-1]->english_definition }}</div></td>
-                            @if($i % 4 == 0 )
-                                </tr>
-                                <tr>
-                            @endif    
-                        
-                    @endfor
-                    </tr>
-                </tbody>
-            </table>
+                    <div class="row no-gutters border-top border-left border-gray-300">
+                            @foreach($page->other_parts_of_speech as $item)
+                                <div class="col-6 col-md-3 border-right border-bottom border-gray-300 px-4 py-2">
+                                    <div style="color:#029AF7"><b>{{ $item->ukrainian_word }}</b></div>
+                                    <div>{{ $item->english_definition }}</div>
+                                </div>
+                            @endforeach
+                    </div>
+            </div>
             @endif
 
 
+
+
             @foreach($page->word_group as $group)
-            <h3 class="p-3 text-graphite-black mt-4" style="background-color: #EEF7DC;">{{ $group->word_group_title }}</h3>
-            <table style="margin-left: auto; margin-right:auto; width:100%;" class="my-2 table-auto w-full border-collapse  border-gray-300">
-                <thead>
+            <h3 class="p-3 text-graphite-black" style="background-color: #EEF7DC;">{{ $group->word_group_title }}</h3>
+            <div style="margin-left: auto; margin-right:auto; width: 100%" class="my-2 table-auto w-full border-collapse  border-gray-300">
 
-                </thead>
-
-
-                <tbody >
-                    <tr>
-                    @for( $i=1; $i <= count($group->vocabulary_item); $i++)
-
-                            <td style="width: 24%;" class="border border-gray-300 px-4 py-2"><div style="color:#029AF7"><b>{{ $group->vocabulary_item[$i-1]->ukrainian_word }}</b></div><div>{{ $group->vocabulary_item[$i-1]->english_definition }}</div></td>
-                            @if($i % 4 == 0 )
-                                </tr>
-                                <tr>
-                            @endif    
-                        
-                    @endfor
-                    </tr>
-                </tbody>
-            </table>
+                    <div class="row no-gutters border-top border-left border-gray-300">
+                            @foreach($group->vocabulary_item as $item)
+                                <div class="col-6 col-md-3 border-right border-bottom border-gray-300 px-4 py-2">
+                                    <div style="color:#029AF7"><b>{{ $item->ukrainian_word }}</b></div>
+                                    <div>{{ $item->english_definition }}</div>
+                                </div>
+                            @endforeach
+                    </div>
+            </div>
             @endforeach
 
         </div>
