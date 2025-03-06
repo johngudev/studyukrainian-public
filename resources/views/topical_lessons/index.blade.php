@@ -74,7 +74,7 @@
                             <span class="text-lesson-number">Lesson {{$index+1}} </span>  
                             <span>{{ $lesson->title}}</span>
                         </span> 
-                        <svg fill="none" viewBox="0 0 24 24" width="0.75rem" height="0.75rem" class="topical-lesson-bar-link-icon"><path fill="currentColor" d="M18.45 11.54a.6.6 0 0 1 0 .92L5.14 23.64a.6.6 0 0 1-.99-.46V.82c0-.51.6-.8.99-.46z"></path></svg>
+                        <svg fill="none" viewBox="0 0 24 24" width="0.75rem" height="0.75rem" class="d-none d-md-block topical-lesson-bar-link-icon"><path fill="currentColor" d="M18.45 11.54a.6.6 0 0 1 0 .92L5.14 23.64a.6.6 0 0 1-.99-.46V.82c0-.51.6-.8.99-.46z"></path></svg>
                     </div>
                 </a>
             @endforeach
