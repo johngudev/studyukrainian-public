@@ -84,6 +84,8 @@
 @endsection
 
 
+
+
 @section('content')
     <div class="container">
 
@@ -176,7 +178,19 @@
         </div>
 
         <div class="modern-panel mt-1 p-3 p-md-5">
-            <h2 class="mb-4 text-graphite-black">Reading</h2>
+            <h2 class="mb-4 text-graphite-black">Reading
+
+                <button id="audioPlayBtn" class="btn btn-light border ml-2 d-flex align-items-center" onclick="playAudioFromButton(this)" style="transition: background-color 0.3s; display: inline !important;" data-audio-file-path="{{ $page->audio_file }}">
+                    <!-- Speaker SVG -->
+                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" class="bi bi-volume-up" viewBox="0 0 16 16">
+                        <path d="M11.536 14.01a.5.5 0 0 1-.992-.117 5.985 5.985 0 0 0 0-11.786.5.5 0 1 1 .992-.117 6.985 6.985 0 0 1 0 13.02z"/>
+                        <path d="M10.707 11.536a.5.5 0 0 1-.707-.707 3 3 0 0 0 0-4.243.5.5 0 0 1 .707-.707 4 4 0 0 1 0 5.657z"/>
+                        <path d="M8.931 8.001a.5.5 0 0 1 .569.57 1.5 1.5 0 0 0 0-.57.5.5 0 0 1-.569-.57z"/>
+                        <path d="M7.017 3.072A.5.5 0 0 1 7.5 3.5v9a.5.5 0 0 1-.83.377L3.825 9H2.5A.5.5 0 0 1 2 8.5v-1A.5.5 0 0 1 2.5 7h1.325l2.845-3.877a.5.5 0 0 1 .347-.17z"/>
+                    </svg>
+                </button>
+
+            </h2>
             <div class="reading-flex">
                 <div class="p-3 p-md-5 background-light-gray-box reading-passage">
                     @foreach($page->long_reading_text as $text_item)
@@ -210,7 +224,19 @@
 
 
         <div class="modern-panel mt-1 p-3 p-md-5">
-            <h2 class="mb-4 text-graphite-black">Dialogue</h2>
+            <h2 class="mb-4 text-graphite-black">Dialogue
+
+                <button id="audioPlayBtn" class="btn btn-light border ml-2 d-flex align-items-center" onclick="playAudioFromButton(this)"  style="transition: background-color 0.3s; display: inline !important;" data-audio-file-path="{{ $page->audio_file }}">
+                    <!-- Speaker SVG -->
+                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" class="bi bi-volume-up" viewBox="0 0 16 16">
+                        <path d="M11.536 14.01a.5.5 0 0 1-.992-.117 5.985 5.985 0 0 0 0-11.786.5.5 0 1 1 .992-.117 6.985 6.985 0 0 1 0 13.02z"/>
+                        <path d="M10.707 11.536a.5.5 0 0 1-.707-.707 3 3 0 0 0 0-4.243.5.5 0 0 1 .707-.707 4 4 0 0 1 0 5.657z"/>
+                        <path d="M8.931 8.001a.5.5 0 0 1 .569.57 1.5 1.5 0 0 0 0-.57.5.5 0 0 1-.569-.57z"/>
+                        <path d="M7.017 3.072A.5.5 0 0 1 7.5 3.5v9a.5.5 0 0 1-.83.377L3.825 9H2.5A.5.5 0 0 1 2 8.5v-1A.5.5 0 0 1 2.5 7h1.325l2.845-3.877a.5.5 0 0 1 .347-.17z"/>
+                    </svg>
+                </button>
+
+            </h2>
 
             <table class="table-auto w-full border-collapse  border-gray-100">
                 <tbody class="dialogue-body">
@@ -226,7 +252,31 @@
         </div>
 </div>
 
+@endsection
 
 
+@section('scripts')
+<script>
+    function playAudioFromButton(button) {
+        const audioPath = button.getAttribute('data-audio-file-path');
+        if (!audioPath) return;
 
+        button.disabled = true;
+        button.style.backgroundColor = '#FFC107'; // Active amber
+
+        const audio = new Audio(audioPath);
+        audio.play();
+
+        audio.addEventListener('ended', () => {
+            button.disabled = false;
+            button.style.backgroundColor = '';
+        });
+
+        audio.addEventListener('error', () => {
+            console.error("Audio file could not be played:", audioPath);
+            button.disabled = false;
+            button.style.backgroundColor = '';
+        });
+    }
+</script>
 @endsection

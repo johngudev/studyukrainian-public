@@ -25,7 +25,7 @@ vocabulary_set:
     ukrainian_word: брат
     english_definition: Brother
 updated_by: 1
-updated_at: 1744672018
+updated_at: 1744682578
 ukrainian_text:
   -
     type: paragraph
@@ -118,7 +118,6 @@ dialogue:
     speaker: Ганна
     ukrainian_speech: 'Привіт, Степане! У тебе велика сім’я?'
     english_translation: 'Hi, Oleh! Do you have a big family?'
-    audio_file: 3002-69th-st.mp3
   -
     id: m73oc43q
     speaker: Степан
@@ -325,4 +324,5 @@ phrases_and_questions:
     id: m7a99otf
     ukrainian_phrase: 'Я теж люблю... (+inf)'
     english_definition: 'I also like...'
+audio_file: lesson_audio/3002-69th-st.mp3
 ---
