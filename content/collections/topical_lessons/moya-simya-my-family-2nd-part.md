@@ -96,7 +96,7 @@ long_reading_text:
         content:
           -
             type: text
-            text: 'У мене чудові бабуся й дідусь. Вони мудрі і дуже добрі. '
+            text: 'У мене чудові бабуся й дідусь. Вони мудрі й дуже добрі. '
     english_paragraph:
       -
         type: paragraph
@@ -187,7 +187,7 @@ dialogue:
   -
     id: m7abowb4
     speaker: Степан
-    ukrainian_speech: 'Цікаво! Мій дідусь також грає на гітарі. А бабуся любить читат детективи й писати листи. А в тебе є двоюрідні брат і сестра?'
+    ukrainian_speech: 'Цікаво! Мій дідусь також грає на гітарі. А бабуся любить читати детективи й писати листи. А в тебе є двоюрідні брат і сестра?'
     english_translation: 'Interesting! My grandfather also plays guitar. And grandmother likes to read detectives and write letters. Do you have cousins?'
   -
     id: m7abowye
@@ -199,6 +199,6 @@ dialogue:
     speaker: Степан
     ukrainian_speech: 'У мене теж є двоюрідний брат.  Він дорослий. Я люблю розмовляти з ним.'
     english_translation: "I also have a cousin. He's an adult. I love talking to him."
-updated_by: 1
-updated_at: 1741200365
+updated_by: 4378
+updated_at: 1742200037
 ---

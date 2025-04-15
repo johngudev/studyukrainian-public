@@ -143,8 +143,8 @@ english_translation:
       -
         type: text
         text: 'Kyiv is a city of history and modernity, it is always interesting here!  I love Kyiv.'
-updated_by: 1
-updated_at: 1741199589
+updated_by: 4378
+updated_at: 1742200183
 phrases_and_questions:
   -
     id: m73pkmz8
@@ -271,7 +271,7 @@ long_reading_text:
         content:
           -
             type: text
-            text: 'У Києві є багато музеїв, там можна дізнатися про історію України.'
+            text: 'У Києві багато музеїв, там можна дізнатися про історію України.'
       -
         type: paragraph
     english_paragraph:
@@ -305,7 +305,7 @@ long_reading_text:
         content:
           -
             type: text
-            text: 'У Києві є багато магазинів і чудових ресторанів. Там можна смачно поїсти.'
+            text: 'У Києві також багато магазинів і чудових ресторанів. Там можна смачно поїсти.'
     english_paragraph:
       -
         type: paragraph

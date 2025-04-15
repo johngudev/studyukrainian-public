@@ -14,7 +14,7 @@ introduction:
 word_group:
   -
     id: m7krqmwf
-    word_group_title: 'Nouns - What?'
+    word_group_title: Nouns
     vocabulary_item:
       -
         id: m7krqyso
@@ -49,7 +49,7 @@ word_group:
       -
         id: m7krs8ys
         ukrainian_word: Займатися
-        english_definition: 'To do, to be occupied with'
+        english_definition: 'too do, to be occupied with'
       -
         id: m7ll7qdr
         ukrainian_word: малювати
@@ -57,15 +57,15 @@ word_group:
       -
         id: m7ll87ee
         ukrainian_word: читати
-        english_definition: read
+        english_definition: 'to read'
       -
         id: m7ll8j2q
         ukrainian_word: 'грати на гітарі'
-        english_definition: 'play guitar'
+        english_definition: 'to play guitar'
       -
         id: m7ll9280
         ukrainian_word: 'грати у футбол'
-        english_definition: 'play football'
+        english_definition: 'to play football'
       -
         id: m7llb686
         ukrainian_word: розслаблятися
@@ -109,7 +109,7 @@ word_group:
     type: new_set
     enabled: true
 updated_by: 1
-updated_at: 1740589476
+updated_at: 1741887699
 long_reading_text:
   -
     id: m7llbct4
@@ -243,7 +243,7 @@ phrases_and_questions:
   -
     id: m7llpxom
     ukrainian_phrase: 'Які ти маєш хобі/захоплення?'
-    english_definition: 'What hobbies/hobbies do you have?'
+    english_definition: 'What hobbies do you have?'
   -
     id: m7llq75g
     ukrainian_phrase: 'Чим ти займаєшся у вільний час?'

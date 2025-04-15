@@ -1,7 +1,7 @@
 ---
 id: b164c0c8-d950-4a43-8046-404f3f2b9ba0
 blueprint: topical_lesson
-title: 'Ти любиш подорожувати? Do you like to travel?'
+title: 'Ти любиш подорожувати? - Do you like to travel?'
 introduction:
   -
     type: paragraph
@@ -219,5 +219,5 @@ dialogue:
     ukrainian_speech: Цікаво!
     english_translation: Interesting!
 updated_by: 1
-updated_at: 1741222535
+updated_at: 1741264839
 ---
