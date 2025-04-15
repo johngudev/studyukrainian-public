@@ -167,7 +167,23 @@
                     <div class="row no-gutters border-top border-left border-gray-300">
                             @foreach($group->vocabulary_item as $index => $item)
                                 <div class="col-6 col-md-3 border-right border-bottom border-gray-300 px-2 py-1 px-md-4 py-md-2">
-                                    <div style="color:#029AF7"><b>{{ $item->ukrainian_word }}</b></div>
+                                    <div style="color:#029AF7"><b>{{ $item->ukrainian_word }}</b>
+                                
+                                        @if($item->audio_file)
+                                            <button
+                                                class="btn btn-sm btn-light border p-1"
+                                                onclick="playAudioFromButton(this)"
+                                                data-audio-file-path="{{ $item->audio_file }}"
+                                                style="line-height: 1; transition: background-color 0.3s;">
+                                                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-volume-up" viewBox="0 0 16 16">
+                                                    <path d="M11.536 14.01a.5.5 0 0 1-.992-.117 5.985 5.985 0 0 0 0-11.786.5.5 0 1 1 .992-.117 6.985 6.985 0 0 1 0 13.02z"/>
+                                                    <path d="M10.707 11.536a.5.5 0 0 1-.707-.707 3 3 0 0 0 0-4.243.5.5 0 0 1 .707-.707 4 4 0 0 1 0 5.657z"/>
+                                                    <path d="M8.931 8.001a.5.5 0 0 1 .569.57 1.5 1.5 0 0 0 0-.57.5.5 0 0 1-.569-.57z"/>
+                                                    <path d="M7.017 3.072A.5.5 0 0 1 7.5 3.5v9a.5.5 0 0 1-.83.377L3.825 9H2.5A.5.5 0 0 1 2 8.5v-1A.5.5 0 0 1 2.5 7h1.325l2.845-3.877a.5.5 0 0 1 .347-.17z"/>
+                                                </svg>
+                                            </button>
+                                        @endif
+                                    </div>
                                     <div>{{ $item->english_definition }}</div>
                                 </div>
                             @endforeach
