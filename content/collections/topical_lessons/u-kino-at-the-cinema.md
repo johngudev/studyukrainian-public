@@ -105,7 +105,7 @@ long_reading_text:
         content:
           -
             type: text
-            text: 'And my favorite actor plays there: Endrian Brody.'
+            text: 'And my favorite actor plays there: Adrian Brody.'
   -
     id: m8tx7eo1
     ukrainian_paragraph:
@@ -205,5 +205,5 @@ dialogue:
     ukrainian_speech: 'Так, дуже! Дякую!'
     english_translation: 'Yes, very much! Thank you!'
 updated_by: 1
-updated_at: 1743434552
+updated_at: 1745159778
 ---

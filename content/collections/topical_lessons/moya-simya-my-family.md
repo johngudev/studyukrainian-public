@@ -25,7 +25,7 @@ vocabulary_set:
     ukrainian_word: брат
     english_definition: Brother
 updated_by: 1
-updated_at: 1744682578
+updated_at: 1745705268
 ukrainian_text:
   -
     type: paragraph
@@ -235,31 +235,6 @@ long_reading_text:
           -
             type: text
             text: 'I also have a brother and a sister, but they are still small.'
-nouns:
-  -
-    id: m7a8moh9
-    ukrainian_word: мати
-    english_definition: mother
-  -
-    id: m7a8ngih
-    ukrainian_word: мама
-    english_definition: mom
-  -
-    id: m7a8nimy
-    ukrainian_word: батько
-    english_definition: father
-  -
-    id: m7a8nnhb
-    ukrainian_word: тато
-    english_definition: dad
-  -
-    id: m7a8npsz
-    ukrainian_word: брат
-    english_definition: brother
-  -
-    id: m7a8ns6g
-    ukrainian_word: сестра
-    english_definition: sister
 verbs:
   -
     id: m7a8v638
@@ -324,5 +299,42 @@ phrases_and_questions:
     id: m7a99otf
     ukrainian_phrase: 'Я теж люблю... (+inf)'
     english_definition: 'I also like...'
-audio_file: lesson_audio/3002-69th-st.mp3
+word_group:
+  -
+    id: m9upanmu
+    word_group_title: Nouns
+    vocabulary_item:
+      -
+        id: m9upar27
+        ukrainian_word: мати
+        english_definition: mother
+        audio_file: audio/topical-lesson-moya-simya-my-family-101.mp3
+      -
+        id: m9upb8x0
+        ukrainian_word: мама
+        english_definition: mom
+        audio_file: audio/topical-lesson-moya-simya-my-family-102.mp3
+      -
+        id: m9upba1t
+        ukrainian_word: батько
+        english_definition: father
+        audio_file: audio/topical-lesson-moya-simya-my-family-103.mp3
+      -
+        id: m9upbapz
+        ukrainian_word: тато
+        english_definition: dad
+        audio_file: audio/topical-lesson-moya-simya-my-family-104.mp3
+      -
+        id: m9upbbf1
+        ukrainian_word: брат
+        english_definition: brother
+        audio_file: audio/topical-lesson-moya-simya-my-family-105.mp3
+      -
+        id: m9upbby8
+        ukrainian_word: сестра
+        english_definition: sister
+        audio_file: audio/topical-lesson-moya-simya-my-family-106.mp3
+    type: new_set
+    enabled: true
+audio_file: topical-lesson-moya-simya-my-family-104.mp3
 ---
