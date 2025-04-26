@@ -1,0 +1,240 @@
+000100 IDENTIFICATION DIVISION.                                         
+000200 PROGRAM-ID. JXGCH144.                                             
+
+
+
+       ENVIRONMENT DIVISION.
+
+
+
+       INPUT-OUTPUT SECTION.
+       FILE-CONTROL.
+           SELECT OLD-MASTER-FILE
+               ASSIGN TO UT-S-MASTEROLD.
+           SELECT NEW-MASTER-FILE
+               ASSIGN TO UT-S-MASTERNEW.
+           SELECT CONTROL-FILE
+               ASSIGN TO UT-S-CONTROL.
+           SELECT REPORT-FILE
+               ASSIGN TO UT-S-REPORT.
+           SELECT TRANSACTION-FILE
+               ASSIGN TO UT-S-TRANSACTION.
+
+       DATA DIVISION.
+       FILE SECTION.
+       FD  OLD-MASTER-FILE
+           RECORD CONTAINS 132 CHARACTERS
+           LABEL RECORDS ARE STANDARD.
+       01  MO-OLD-MASTER-RECORD.
+           05  FILLER                  PIC X(1).
+           05  FILLER                  PIC X(1).
+           05  MO-INDEX                PIC X(23).
+      *         05  MO-STORE-NUMBER         PIC 99.
+      *         05  FILLER                  PIC X(8).
+      *         05  MO-DEPT-MNEMONIC        PIC X(2).
+      *         05  FILLER                  PIC X(8).
+      *         05  MO-VENDOR-NUMBER        PIC 999.
+           05  FILLER                  PIC X(6).
+           05  MO-ITEM-DESCRIPTION     PIC X(26).
+           05  FILLER                  PIC X(2).
+           05  MO-QUANTITY             PIC 9(6).
+           05  FILLER                  PIC X(5).
+           05  MO-SALES-PRICE          PIC 9(4)V99.
+           05  FILLER                  PIC X(6).
+           05  MO-COST                 PIC 9(4)V99.
+           05  FILLER                  PIC X(3).
+           05  MO-YTD-QUANTITY-SOLD    PIC 9(6).
+           05  FILLER                  PIC X(3).
+           05  MO-YTD-QUANTITY-PURCHASED   PIC 9(6).
+           05  FILLER                  PIC X(1).
+           05  MO-CURR-SOLD            PIC 9(5).
+           05  FILLER                  PIC X(1).
+           05  MO-CURR-PURCH           PIC 9(5).
+
+       FD NEW-MASTER-FILE.
+           RECORD CONTAINS 132 CHARACTERS.
+           LABEL RECORDS ARE STANDARD.
+       01  MN-NEW-MASTER-RECORD.
+           05  FILLER                  PIC X(1) VALUE SPACE.
+           05  FILLER                  PIC X(1) VALUE SPACE.
+           05  MN-STORE-NUMBER         PIC 99.
+           05  FILLER                  PIC X(8) VALUE SPACES.
+           05  MN-DEPT-MNEMONIC        PIC X(2).
+           05  FILLER                  PIC X(8) VALUE SPACES.
+           05  MN-VENDOR-NUMBER        PIC 999.
+           05  FILLER                  PIC X(6) VALUE SPACES.
+           05  MN-ITEM-DESCRIPTION     PIC X(26).
+           05  FILLER                  PIC X(2) VALUE SPACES.
+           05  MN-QUANTITY             PIC 9(6).
+           05  FILLER                  PIC X(5) VALUE SPACES.
+           05  MN-SALES-PRICE          PIC 9(4)V99.
+           05  FILLER                  PIC X(6) VALUE SPACES.
+           05  MN-COST                 PIC 9(4)v99.
+           05  FILLER                  PIC X(3) VALUE SPACES.
+           05  MN-YTD-QUANTITY-SOLD    PIC 9(6).
+           05  FILLER                  PIC X(3) VALUE SPACES.
+           05  MN-YTD-QUANTITY-PURCHASED   PIC 9(6).
+           05  FILLER                  PIC X(1).
+           05  MN-CURR-SOLD            PIC 9(5).
+           05  FILLER                  PIC X(1).
+           05  MN-CURR-PURCH           PIC 9(5).
+
+       FD CONTROL-FILE
+           RECORD CONTAINS 132 CHARACTERS.
+           LABEL RECORDS ARE STANDARD.
+       01  CT-CONTROL-FILE-RECORD.
+           05  FILLER                  PIC X(1).
+           05  CT-ROW-LABEL            PIC X(8).
+           05  FILLER                  PIC X(2).
+           05  CT-NUMBER-RECORDS       PIC 9(2).
+           05  FILLER                  PIC X(5).
+           05  CT-STORE-NUM-HASH       PIC 9(4).
+           05  FILLER                  PIC X(3).
+           05  CT-ITEM-NUM-HASH        PIC 9(4).
+           05  FILLER                  PIC X(2).
+           05  CT-PRICE-HASH           PIC 9(4)V99.
+           05  FILLER                  PIC X(2).
+           05  CT-COST-HASH            PIC 9(4)V99.
+           05  FILLER                  PIC X(2).
+           05  CT-QUANT-SOLD           PIC 9(5).
+           05  FILLER                  PIC X(1).
+           05  CT-QUANT-PURCHASED      PIC 9(5).
+           05  FILLER                  PIC X(1).
+           05  CT-QUANT-ON-HAND        PIC 9(5).
+           05  FILLER                  PIC X(2).
+           05  CT-CURR-SOLD            PIC 9(5).
+           05  FILLER                  PIC X(1).
+           05  CT-CURR-PURCH           PIC 9(5).
+
+       FD  TRANSACTION-REPORT
+           LABEL RECORDS ARE OMITTED
+           RECORD CONTAINS 132 CHARACTERS.
+       01  RP-REPORT-LINE.
+       
+      *>>> ADD STUFF HERE.
+      *>> 01 RP-REPORT-LINE
+
+       FD  TRANSACTION-VALID-FILE
+           LABEL RECORDS ARE OMITTED
+           RECORD CONTAINS 132 CHARACTERS.
+       01  TR-TRANSACTION-RECORD.
+           05  FILLER                  PIC X(1).
+           05  FILLER                  PIC X(1).
+           05  TR-INDEX                PIC X(23).
+      *           05  TR-STORE-NUMBER         PIC X(2).
+      *      05  FILLER                  PIC X(8).
+      *     05  TR-DEPT-MNEMONIC        PIC X(2).
+      *     05  FILLER                  PIC X(8).
+      *     05  TR-ITEM-NUMBER          PIC X(3).
+           05  FILLER                  PIC X(1).
+           05  TR-ITEM-DESCRIPTION     PIC X(25).
+           05  TR-ITEM-PRICE-COST      PIC X(5).
+           05  FILLER                  PIC X(1).
+           05  TR-TRANSACTION-CODE     PIC X(1).
+           05  FILLER                  PIC X(1).
+           05  TR-QUANT-SOLD-PURCH     PIC X(6).
+           05  FILLER                  PIC X(1).
+           05  TR-TRANSACTION-DATE     PIC X(8).
+
+       WORKING-STORAGE SECTION.
+
+       01  WS-ACCUMULATORS.
+           05  WS-CHG-TOT-RECORDS          PIC 9(4).
+           05  WS-CHG-STORE-ITEM-HASH      PIC 9(4).
+           05  WS-CHG-ITEM-NUM-HASH        PIC 9(4).
+           05  WS-CHG-PRICE-HASH           PIC 9(4)V99.
+           05  WS-CHG-COST-HASH            PIC 9(4)V99.
+           05  WS-CHG-QUANT-SOLD           PIC 9(4).
+           05  WS-CHG-QUANT-PURCH          PIC 9(4).
+           05  WS-CHG-QUANT-ON-HAND        PIC 9(4).
+           05  WS-CHG-CURR-SOLD            PIC 9(4).
+           05  WS-CHG-CURR-PURCH           PIC 9(4).
+
+       01  UC-UPDATE-CONTROL-AREAS.
+           05  MASTER-IS-PENDING           PIC X(3).
+               88  MASTER-IS-PENDING       VALUE 'YES'.
+           05  UC-COUNT-SUB                PIC 9(4).
+           05  UC-MASTER-HOLD-AREA         PIC X(132).
+           05  UC-HEADING-CONTROL-VALUES.
+      *    >>>FILLERS
+      *    >>>FILLER REDEFINES UC-HEADING-CONTROL-VALUES
+
+           05  UC-RECORD-CONTROL-TOTALS.
+      *    >>>PUT THESE IN LATE
+
+      *    >>>PUT MORE STUFF
+
+       PROCEDURE DIVISION.
+       A000-UPDATE.
+           PERFORM B100-INITIAL-ROUTINE.
+           PERFORM B200-UPDATE-RECORDS
+               UNTIL MO-INDEX = HIGH-VALUES
+               AND   TR-INDEX = HIGH-VALUES.
+           PERFORM B300-ENDING-ROUTINE.
+           STOP RUN.
+       B100-INITIAL-ROUTINE.
+           PERFORM C100-OPEN-FILES.
+           PERFORM C200-INITIALIZE-VARIABLES.
+           PERFORM C300-PRINT-HEADINGS.
+           PERFORM C400-READ-FIRST-TRANS-RECORD.
+           PERFORM C500-READ-FIRST-MASTER-RECORD.
+       B200-UPDATE-RECORDS.
+*          MOVE SPACES TO DL-DETAIL-LINE.
+           PERFORM C600-TRANSFER-OLD-TO-NEW
+               UNTIL MO-INDEX NOT < TR-INDEX.
+           IF MO-INDEX = TR-INDEX
+               IF MO-INDEX NOT = HIGH-VALUES
+                   PERFORM C700-POSSIBLE-UPDATE
+               ELSE
+                   NEXT SENTENCE
+           ELSE
+               IF MO-INDEX > TR-INDEX
+                   PERFORM C800-POSSIBLE-ADDITION.
+           IF TR-INDEX NOT = HIGH-VALUES
+               PERFORM Z100-READ-TRANS-RECORD.
+               
+       B300-ENDING-ROUTINE.
+
+       C100-OPEN-FILES.
+           OPEN INPUT  OLD-MASTER-FILE
+                       TRANSACTION-VALID-FILE
+                OUTPUT NEW-MASTER-FILE.
+       C200-INITIALIZE-VARIABLES.
+       C300-PRINT-HEADINGS.
+       C400-READ-FIRST-TRANS-RECORD.
+           PERFORM Z100-READ-TRANS-RECORD.
+       C500-READ-FIRST-MASTER-RECORD.
+           PERFORM Z200-READ-MASTER-RECORD.
+           PERFORM Z200-READ-MASTER-RECORD.
+           PERFORM Z200-READ-MASTER-RECORD.
+
+       C600-TRANSFER-OLD-TO-NEW.
+           WRITE MN-NEW-MASTER-RECORD
+               FROM MO-OLD-MASTER-RECORD.
+           PERFORM Z200-READ-MASTER-RECORD.
+       C700-POSSIBLE-UPDATE.
+           PERFORM D200-UPDATE-RECORD.
+           PERFORM Z300-WRITE-DETAIL-LINE.
+       C800-POSSIBLE-ADDITION.
+           PERFORM Z300-WRITE-DETAIL-LINE.
+
+       D200-UPDATE-RECORD.
+
+       Z100-READ-TRANS-RECORD.
+           READ TRANSACTION-VALID-FILE
+               AT END MOVE HIGH-VALUES TO TR-INDEX.
+       Z200-READ-MASTER-RECORD.
+    ** >>> HOLDING AREA LOGIC???
+           READ OLD-MASTER-FILE
+               AT END MOVE HIGH-VALUES TO MO-INDEX.
+
+       Z300-WRITE-DETAIL-LINE.
+
+
+         
+
+              
+           
+
+           
+       

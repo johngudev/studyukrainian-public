@@ -1,0 +1,399 @@
+000100 IDENTIFICATION DIVISION.                                         
+000200 PROGRAM-ID. JXGCH143.                                             
+                                                                        
+                                                                        
+       ENVIRONMENT DIVISION.                                            
+       INPUT-OUTPUT SECTION.                                            
+       FILE-CONTROL.                                                    
+           SELECT INVENTORY-MASTER ASSIGN TO UT-S-MASTER.
+           SELECT INVENTORY-CONTROL ASSIGN TO UT-S-CONTROL.
+           SELECT INVENTORY-CNTL-REPORT ASSIGN TO UT-S-CNTLREPT.
+
+       DATA DIVISION.
+       FILE SECTION.
+
+       FD  INVENTORY-MASTER
+           LABEL RECORDS ARE STANDARD
+           RECORD CONTAINS 132 CHARACTERS.
+
+       01  MI-INVENTORY-MASTER-RECORD.
+           05  FILLER                  PIC X(1).
+           05  FILLER                  PIC X(1).
+           05  MI-STORE-NUMBER         PIC 99.
+           05  FILLER                  PIC X(8).
+           05  MI-DEPT-MNEMONIC        PIC X(2).
+           05  FILLER                  PIC X(8).
+           05  MI-VENDOR-NUMBER        PIC 999.
+           05  FILLER                  PIC X(6).
+           05  MI-ITEM-DESCRIPTION     PIC X(26).
+           05  FILLER                  PIC X(2).
+           05  MI-QUANITY              PIC 9(6).
+           05  FILLER                  PIC X(5).
+           05  MI-SALES-PRICE          PIC 9(4)V99.
+           05  FILLER                  PIC X(6).
+           05  MI-COST                 PIC 9(4)V99.
+           05  FILLER                  PIC X(3).
+           05  MI-YTD-QUANTITY-SOLD    PIC 9(6).
+           05  FILLER                  PIC X(3).
+           05  MI-YTD-QUANTITY-PURCHASED   PIC 9(6).
+           05  FILLER                  PIC X(1).
+           05  MI-CURR-SOLD            PIC 9(5).
+           05  FILLER                  PIC X(1).
+           05  MI-CURR-PURCH           PIC 9(5).
+
+       FD  INVENTORY-CONTROL
+           LABEL RECORDS ARE STANDARD
+           RECORD CONTAINS 132 CHARACTERS.
+
+       01  CT-INVENTORY-CONTROL-RECORD.
+           05  FILLER                  PIC X(1).
+           05  CT-ROW-LABEL                PIC X(8).
+           05  FILLER                      PIC X(2).
+           05  CT-NUMBER-RECORDS           PIC 9(2).
+           05  FILLER                      PIC X(5) VALUE SPACES.
+           05  CT-STORE-NUM-HASH           PIC 9(4).
+           05  FILLER                      PIC X(3) VALUE SPACES.
+           05  CT-ITEM-NUM-HASH            PIC 9(4).
+           05  FILLER                      PIC X(2) VALUE SPACES.
+           05  CT-PRICE-HASH               PIC 9(4).99.
+           05  FILLER                      PIC X(1) VALUE SPACES.
+           05  CT-COST-HASH                PIC 9(4).99.
+           05  FILLER                      PIC X(1) VALUE SPACES.
+           05  CT-QUANT-SOLD               PIC 9(5).
+           05  FILLER                      PIC X(1) VALUE SPACE.
+           05  CT-QUANT-PURCHASED          PIC 9(5).
+           05  FILLER                      PIC X(1) VALUE SPACE.
+           05  CT-QUANT-ON-HAND            PIC 9(5).
+           05  FILLER                      PIC X(2) VALUE SPACE.
+           05  CT-CURR-SOLD                PIC 9(5).
+           05  FILLER                      PIC X(1) VALUE SPACE.
+           05  CT-CURR-PURCH               PIC 9(5).
+
+       FD  INVENTORY-CNTL-REPORT
+           LABEL RECORDS ARE STANDARD
+           RECORD CONTAINS 132 CHARACTERS.
+
+       01  IR-INVENTORY-CNTL-REPORT        PIC X(132).
+
+       WORKING-STORAGE SECTION.
+       01  WS-PROCESSING-INDICATORS.
+           05  END-OF-FILE-INDICATOR       PIC X(3).
+               88  END-OF-FILE             VALUE "END".
+      
+      01  WS-NUMERICAL-VALUES.
+           05  WS-ACCUMULATED-VALUES.
+               10  WS-NUMBER-RECORDS           PIC 9(2).
+               10  WS-STORE-NUM-HASH           PIC 9(4).
+               10  WS-ITEM-NUM-HASH            PIC 9(4).
+               10  WS-PRICE-HASH               PIC 9(4)V99.
+               10  WS-COST-HASH                PIC 9(4)V99.
+               10  WS-QUANT-SOLD               PIC 9(5).
+               10  WS-QUANT-PURCHASED          PIC 9(5).
+               10  WS-QUANT-ON-HAND            PIC 9(5).
+               10  WS-CURR-SOLD                PIC 9(5).
+               10  WS-CURR-PURCH               PIC 9(5).
+
+           05  BC-BEGINNING-CHANGE-CONTROL.
+               10  BC-NUMBER-RECORDS           PIC 9(2).
+               10  BC-STORE-NUM-HASH           PIC 9(4).
+               10  BC-ITEM-NUM-HASH            PIC 9(4).
+               10  BC-PRICE-HASH               PIC 9(4)V99.
+               10  BC-COST-HASH                PIC 9(4)V99.
+               10  BC-QUANT-SOLD               PIC 9(5).
+               10  BC-QUANT-PURCHASED          PIC 9(5).
+               10  BC-QUANT-ON-HAND            PIC 9(5).
+               10  BC-CURR-SOLD                PIC 9(5).
+               10  BC-CURR-PURCH               PIC 9(5).
+
+           05  CC-CHANGE-CHANGE-CONTROL.
+               10  CC-NUMBER-RECORDS           PIC 9(2).
+               10  CC-STORE-NUM-HASH           PIC 9(4).
+               10  CC-ITEM-NUM-HASH            PIC 9(4).
+               10  CC-PRICE-HASH               PIC 9(4)V99.
+               10  CC-COST-HASH                PIC 9(4)V99.
+               10  CC-QUANT-SOLD               PIC 9(5).
+               10  CC-QUANT-PURCHASED          PIC 9(5).
+               10  CC-QUANT-ON-HAND            PIC 9(5).
+               10  CC-CURR-SOLD                PIC 9(5).
+               10  CC-CURR-PURCH               PIC 9(5).
+      *>>>
+
+       01  RC-INVENTORY-CNTL-OUTPUT-REC.
+           05  FILLER                  PIC X(1).
+           05  FILLER                  PIC X(1).
+           05  RC-STORE-NUMBER         PIC 99.
+           05  FILLER                  PIC X(8).
+           05  RC-DEPT-MNEMONIC        PIC X(2).
+           05  FILLER                  PIC X(8).
+           05  RC-VENDOR-NUMBER        PIC 999.
+           05  FILLER                  PIC X(6).
+           05  RC-ITEM-DESCRIPTION     PIC X(26).
+           05  FILLER                  PIC X(2).
+           05  RC-QUANITY              PIC 9(6).
+           05  FILLER                  PIC X(5).
+           05  RC-SALES-PRICE          PIC 9(4).99.
+           05  FILLER                  PIC X(5).
+           05  RC-COST                 PIC 9(4).99.
+           05  FILLER                  PIC X(2).
+           05  RC-YTD-QUANTITY-SOLD    PIC 9(6).
+           05  FILLER                  PIC X(3).
+           05  RC-YTD-QUANTITY-PURCHASED   PIC 9(6).
+           05  FILLER                  PIC X(1).
+           05  RC-CURR-SOLD            PIC 9(5).
+           05  FILLER                  PIC X(1).
+           05  RC-CURR-PURCH           PIC 9(5).
+
+       01  RC-INVENTORY-CNTL-OUTPUT-END.
+           05  FILLER                  PIC X(1) VALUE SPACE.
+           05  FILLER                  PIC X(1) VALUE SPACE.
+           05  RC-CNTL-DETAIL-TYPE     PIC X(8).
+           05  FILLER                  PIC X(3) VALUE SPACE.
+           05  RC-CNTL-NUMBER-RECORDS  PIC 9(2).
+           05  FILLER                  PIC X(4) VALUE SPACE.
+           05  RC-CNTL-STORE-HASH      PIC 9(4).
+           05  FILLER                  PIC X(3) VALUE SPACE.
+           05  RC-CNTL-ITEM-HASH       PIC 9(4).
+           05  FILLER                  PIC X(2) VALUE SPACE.
+           05  RC-CNTL-PRICE-HASH      PIC 9(4).99.
+           05  FILLER                  PIC X(1) VALUE SPACE.
+           05  RC-CNTL-COST-HASH       PIC 9(4).99.
+           05  FILLER                  PIC X(1) VALUE SPACE.
+           05  RC-CNTL-QUANT-SOLD      PIC 9(5).
+           05  FILLER                  PIC X(1) VALUE SPACE.
+           05  RC-CNTL-QUANT-PURCH     PIC 9(5).
+           05  FILLER                  PIC X(1) VALUE SPACE.
+           05  RC-CNTL-QUANT-ONHND     PIC 9(5).
+           05  FILLER                  PIC X(1) VALUE SPACE.
+           05  RC-CNTL-CURR-SOLD       PIC 9(5).
+           05  FILLER                  PIC X(1) VALUE SPACE.
+           05  RC-CNTL-CURR-PURCH      PIC 9(5).
+
+
+       01  HD-INVENTORY-CNTL-HEAD-1.
+           05  FILLER                  PIC X(1) VALUE SPACE.
+           05  FILLER                  PIC X(11) VALUE SPACE.
+           05  FILLER                  PIC X(29)
+               VALUE "NUMBER  STORE# ITEM# PRICE   ".
+           05  FILLER                  PIC X(30)
+               VALUE "COST    QUANT QUANT QUANT  CUR".
+           05  FILLER                  PIC X(7)
+               VALUE "R CURR ".
+
+       01  HD-INVENTORY-CNTL-HEAD-2.
+           05  FILLER                  PIC X(1) VALUE SPACE.
+           05  FILLER                  PIC X(11) VALUE SPACE.
+           05  FILLER                  PIC X(29)
+               VALUE "RECORDS HASH   HASH  HASH    ".
+           05  FILLER                  PIC X(30)
+               VALUE "HASH    SOLD  PURCH ONHND  SOL".
+           05  FILLER                 PIC X(7)
+               VALUE "D PURCH".
+
+       PROCEDURE DIVISION.
+       A000-INVENTORY-CONTROL-REPORT.
+           PERFORM B100-INITIAL-ROUTINE.
+           PERFORM B200-PRINT-RECORDS
+               UNTIL END-OF-FILE.
+           PERFORM B300-ENDING-ROUTINE.
+           STOP RUN.
+       
+       B100-INITIAL-ROUTINE.
+           PERFORM C100-OPEN-FILES.
+           PERFORM C200-INITIALIZE-VARIABLES.
+           PERFORM C300-PRINT-HEADINGS.
+           PERFORM C400-READ-FIRST-RECORD.
+       B200-PRINT-RECORDS.
+           PERFORM C500-WRITE-DETAIL-LINE.
+           PERFORM C600-ACCUMULATE-TOTALS.
+           PERFORM C700-READ-NEXT-RECORD.
+       B300-ENDING-ROUTINE.
+           PERFORM C800-PROCESS-TOTALS.
+           PERFORM C900-CLOSE-FILES.
+
+       C100-OPEN-FILES.
+           OPEN INPUT INVENTORY-MASTER.
+           OPEN INPUT INVENTORY-CONTROL.
+           OPEN OUTPUT INVENTORY-CNTL-REPORT.
+
+
+       C200-INITIALIZE-VARIABLES.
+           MOVE ZEROES TO WS-NUMBER-RECORDS
+               WS-STORE-NUM-HASH
+               WS-ITEM-NUM-HASH
+               WS-PRICE-HASH
+               WS-COST-HASH
+               WS-QUANT-SOLD
+               WS-QUANT-PURCHASED
+               WS-QUANT-ON-HAND
+               WS-CURR-SOLD
+               WS-CURR-PURCH.
+       C300-PRINT-HEADINGS.
+       C400-READ-FIRST-RECORD.
+           PERFORM Z100-READ-RECORD.
+           PERFORM Z100-READ-RECORD.
+           PERFORM Z100-READ-RECORD.
+       C500-WRITE-DETAIL-LINE.
+           MOVE MI-STORE-NUMBER TO RC-STORE-NUMBER.
+           MOVE MI-DEPT-MNEMONIC TO RC-DEPT-MNEMONIC.
+           MOVE MI-VENDOR-NUMBER TO RC-VENDOR-NUMBER.
+           MOVE MI-ITEM-DESCRIPTION TO RC-ITEM-DESCRIPTION.
+           MOVE MI-QUANITY TO RC-QUANITY.
+           MOVE MI-SALES-PRICE TO RC-SALES-PRICE.
+           MOVE MI-COST TO RC-COST.
+           MOVE MI-YTD-QUANTITY-SOLD TO RC-YTD-QUANTITY-SOLD.
+           MOVE MI-YTD-QUANTITY-PURCHASED TO RC-YTD-QUANTITY-PURCHASED.
+           MOVE MI-CURR-SOLD TO RC-CURR-SOLD.
+           MOVE MI-CURR-PURCH TO RC-CURR-PURCH.
+
+           MOVE RC-INVENTORY-CNTL-OUTPUT-REC 
+               TO IR-INVENTORY-CNTL-REPORT.
+
+           WRITE IR-INVENTORY-CNTL-REPORT
+               AFTER ADVANCING 1 LINE.
+
+       C600-ACCUMULATE-TOTALS.
+           ADD 1 TO WS-NUMBER-RECORDS.
+           ADD MI-STORE-NUMBER TO WS-STORE-NUM-HASH.
+           ADD MI-VENDOR-NUMBER TO WS-ITEM-NUM-HASH.
+           ADD MI-SALES-PRICE TO WS-PRICE-HASH.
+           ADD MI-COST TO WS-COST-HASH.
+           ADD MI-YTD-QUANTITY-SOLD TO WS-QUANT-SOLD.
+           ADD MI-YTD-QUANTITY-PURCHASED TO WS-QUANT-PURCHASED.
+           ADD MI-QUANITY TO WS-QUANT-ON-HAND.
+           ADD MI-CURR-SOLD TO WS-CURR-SOLD
+           ADD MI-CURR-PURCH TO WS-CURR-PURCH.
+       C700-READ-NEXT-RECORD.
+           PERFORM Z100-READ-RECORD.
+       C800-PROCESS-TOTALS.
+           READ INVENTORY-CONTROL.
+           READ INVENTORY-CONTROL.
+
+           PERFORM Z150-PRINT-END-CNTL-HEAD.
+           
+      *>>>
+
+           READ INVENTORY-CONTROL.
+
+           MOVE CT-NUMBER-RECORDS TO BC-NUMBER-RECORDS.
+           MOVE CT-STORE-NUM-HASH TO BC-STORE-NUM-HASH.
+           MOVE CT-ITEM-NUM-HASH TO BC-ITEM-NUM-HASH.
+           MOVE CT-PRICE-HASH TO BC-PRICE-HASH.
+           MOVE CT-COST-HASH TO BC-COST-HASH.
+           MOVE CT-QUANT-SOLD TO BC-QUANT-SOLD.
+           MOVE CT-QUANT-PURCHASED TO BC-QUANT-PURCHASED.
+           MOVE CT-QUANT-ON-HAND TO BC-QUANT-ON-HAND.
+           MOVE CT-CURR-SOLD TO BC-CURR-SOLD.
+           MOVE CT-CURR-PURCH TO BC-CURR-PURCH.
+
+           MOVE "BEG CNTL" TO RC-CNTL-DETAIL-TYPE.
+           MOVE BC-NUMBER-RECORDS TO RC-CNTL-NUMBER-RECORDS.
+           MOVE BC-STORE-NUM-HASH TO RC-CNTL-STORE-HASH.
+           MOVE BC-ITEM-NUM-HASH TO RC-CNTL-ITEM-HASH.
+           MOVE BC-PRICE-HASH TO RC-CNTL-PRICE-HASH.
+           MOVE BC-COST-HASH TO RC-CNTL-COST-HASH.
+           MOVE BC-QUANT-SOLD TO RC-CNTL-QUANT-SOLD.
+           MOVE BC-QUANT-PURCHASED TO RC-CNTL-QUANT-PURCH.
+           MOVE BC-QUANT-ON-HAND TO RC-CNTL-QUANT-ONHND.
+           MOVE BC-CURR-SOLD TO RC-CNTL-CURR-SOLD.
+           MOVE BC-CURR-PURCH TO RC-CNTL-CURR-PURCH.
+
+           PERFORM Z200-WRITE-END-CNTL-REPORT.
+
+           READ INVENTORY-CONTROL.
+
+           MOVE CT-NUMBER-RECORDS TO CC-NUMBER-RECORDS.
+           MOVE CT-STORE-NUM-HASH TO CC-STORE-NUM-HASH.
+           MOVE CT-ITEM-NUM-HASH TO CC-ITEM-NUM-HASH.
+           MOVE CT-PRICE-HASH TO CC-PRICE-HASH.
+           MOVE CT-COST-HASH TO CC-COST-HASH.
+           MOVE CT-QUANT-SOLD TO CC-QUANT-SOLD.
+           MOVE CT-QUANT-PURCHASED TO CC-QUANT-PURCHASED.
+           MOVE CT-QUANT-ON-HAND TO CC-QUANT-ON-HAND.
+           MOVE CT-CURR-SOLD TO CC-CURR-SOLD.
+           MOVE CT-CURR-PURCH TO CC-CURR-PURCH.
+
+           MOVE "CHG CNTL" TO RC-CNTL-DETAIL-TYPE.
+           MOVE CC-NUMBER-RECORDS TO RC-CNTL-NUMBER-RECORDS.
+           MOVE CC-STORE-NUM-HASH TO RC-CNTL-STORE-HASH.
+           MOVE CC-ITEM-NUM-HASH TO RC-CNTL-ITEM-HASH.
+           MOVE CC-PRICE-HASH TO RC-CNTL-PRICE-HASH.
+           MOVE CC-COST-HASH TO RC-CNTL-COST-HASH.
+           MOVE CC-QUANT-SOLD TO RC-CNTL-QUANT-SOLD.
+           MOVE CC-QUANT-PURCHASED TO RC-CNTL-QUANT-PURCH.
+           MOVE CC-QUANT-ON-HAND TO RC-CNTL-QUANT-ONHND.
+           MOVE CC-CURR-SOLD TO RC-CNTL-CURR-SOLD.
+           MOVE CC-CURR-PURCH TO RC-CNTL-CURR-PURCH.
+
+           PERFORM Z200-WRITE-END-CNTL-REPORT.
+
+           MOVE "END CNTL" TO RC-CNTL-DETAIL-TYPE.
+
+           ADD BC-NUMBER-RECORDS TO CC-NUMBER-RECORDS
+               GIVING RC-CNTL-NUMBER-RECORDS.
+           ADD BC-STORE-NUM-HASH TO CC-STORE-NUM-HASH
+               GIVING RC-CNTL-STORE-HASH.
+           ADD BC-ITEM-NUM-HASH TO CC-ITEM-NUM-HASH
+               GIVING RC-CNTL-ITEM-HASH.
+           ADD BC-PRICE-HASH TO CC-PRICE-HASH
+               GIVING RC-CNTL-PRICE-HASH.
+           ADD BC-COST-HASH TO CC-COST-HASH
+               GIVING RC-CNTL-COST-HASH.
+           ADD BC-QUANT-SOLD TO CC-QUANT-SOLD
+               GIVING RC-CNTL-QUANT-SOLD.
+           ADD BC-QUANT-PURCHASED TO CC-QUANT-PURCHASED
+               GIVING RC-CNTL-QUANT-PURCH.
+           ADD BC-QUANT-ON-HAND TO CC-QUANT-ON-HAND
+               GIVING RC-CNTL-QUANT-ONHND.
+           ADD BC-CURR-SOLD TO CC-CURR-SOLD
+               GIVING RC-CNTL-CURR-SOLD.
+           ADD BC-CURR-PURCH TO CC-CURR-PURCH
+               GIVING RC-CNTL-CURR-PURCH.
+          
+           PERFORM Z200-WRITE-END-CNTL-REPORT.
+
+           MOVE "END ACTL" TO RC-CNTL-DETAIL-TYPE.
+
+           MOVE WS-NUMBER-RECORDS TO RC-CNTL-NUMBER-RECORDS.
+           MOVE WS-STORE-NUM-HASH TO RC-CNTL-STORE-HASH.
+           MOVE WS-ITEM-NUM-HASH TO RC-CNTL-ITEM-HASH.
+           MOVE WS-PRICE-HASH TO RC-CNTL-PRICE-HASH.
+           MOVE WS-COST-HASH TO RC-CNTL-COST-HASH.
+           MOVE WS-QUANT-SOLD TO RC-CNTL-QUANT-SOLD.
+           MOVE WS-QUANT-PURCHASED TO RC-CNTL-QUANT-PURCH.
+           MOVE WS-QUANT-ON-HAND TO RC-CNTL-QUANT-ONHND.
+           MOVE WS-CURR-SOLD TO RC-CNTL-CURR-SOLD.
+           MOVE WS-CURR-PURCH TO RC-CNTL-CURR-PURCH.
+
+           PERFORM Z200-WRITE-END-CNTL-REPORT.
+
+       C900-CLOSE-FILES.
+           CLOSE INVENTORY-MASTER.
+           CLOSE INVENTORY-CONTROL.
+           CLOSE INVENTORY-CNTL-REPORT.
+       Z100-READ-RECORD.
+           READ INVENTORY-MASTER
+               AT END MOVE 'END' TO END-OF-FILE-INDICATOR.
+
+       Z150-PRINT-END-CNTL-HEAD.
+           MOVE HD-INVENTORY-CNTL-HEAD-1
+               TO IR-INVENTORY-CNTL-REPORT.
+
+           WRITE IR-INVENTORY-CNTL-REPORT
+               AFTER ADVANCING 1 LINE.
+
+           MOVE HD-INVENTORY-CNTL-HEAD-2
+               TO IR-INVENTORY-CNTL-REPORT.
+
+           WRITE IR-INVENTORY-CNTL-REPORT
+               AFTER ADVANCING 1 LINKAGE SECTION.
+
+       Z200-WRITE-END-CNTL-REPORT.
+           MOVE RC-INVENTORY-CNTL-OUTPUT-END
+               TO IR-INVENTORY-CNTL-REPORT.
+
+           WRITE IR-INVENTORY-CNTL-REPORT
+               AFTER ADVANCING 1 LINE.
+
+
+
+                                                                     

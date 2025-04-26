@@ -1,0 +1,804 @@
+000100 IDENTIFICATION DIVISION.                                         
+000200 PROGRAM-ID. JXGCH14.                                             
+                                                                        
+                                                                        
+       ENVIRONMENT DIVISION.                                            
+       INPUT-OUTPUT SECTION.                                            
+       FILE-CONTROL.                                                    
+           SELECT INVENTORY-DATA ASSIGN TO UT-S-INPUT.                  
+           SELECT INVENTORY-EXCEPTION-REPORT ASSIGN TO UT-S-REPORT.
+           SELECT INVENTORY-MASTER ASSIGN TO UT-S-MASTER.
+           SELECT INVENTORY-CONTROL ASSIGN TO UT-S-CONTROL.
+                                                                      
+       DATA DIVISION.                                                   
+       FILE SECTION.                                                    
+                                                                        
+       FD  INVENTORY-DATA                                               
+           LABEL RECORDS ARE STANDARD                                   
+           RECORD CONTAINS 69 CHARACTERS.                               
+                                                                        
+       01  ID-INVENTORY-DATA-RECORD.                                    
+           05  ID-STORE-NUMBER                 PIC 9(2).
+           05  ID-STORE-NUMBER-X
+               REDEFINES ID-STORE-NUMBER       PIC X(2).                                
+           05  FILLER                          PIC X(1).                
+           05  ID-DEPT-MNEMONIC                PIC X(2).                
+           05  FILLER                          PIC X(1).                
+           05  ID-ITEM-NUMBER                  PIC 9(3).                
+           05  ID-ITEM-NUMBER-X                                         
+               REDEFINES ID-ITEM-NUMBER        PIC X(3).                
+           05  FILLER                          PIC X(1).                
+           05  ID-ITEM-DESCRIPTION             PIC X(25).               
+           05  ID-QUANTITY                     PIC 9(6).                
+           05  ID-QUANTITY-X                                            
+               REDEFINES ID-QUANTITY           PIC X(6).                
+                                                                        
+           05  FILLER                          PIC X(1).                
+           05  ID-SALES-PRICE                  PIC 9(4)V99.             
+           05  ID-SALES-PRICE-X                                         
+               REDEFINES ID-SALES-PRICE        PIC X(6).                
+                                                                        
+           05  FILLER                          PIC X(1).                
+           05  ID-COST                         PIC 9(4)V99.             
+           05  ID-COST-X                                                
+               REDEFINES ID-COST               PIC X(6).                
+                                                                        
+           05  FILLER                          PIC X(1).                
+           05  ID-YTD-QUANTITY-SOLD            PIC 9(6).                
+           05  ID-YTD-QUANTITY-SOLD-X                                   
+               REDEFINES ID-YTD-QUANTITY-SOLD  PIC X(6).                
+                                                                        
+           05  FILLER                          PIC X(1).                
+           05  ID-YTD-QUANTITY-PURCHASED       PIC 9(6).                
+           05  ID-YTD-QUANTITY-PURCHASED-X                              
+               REDEFINES ID-YTD-QUANTITY-PURCHASED                      
+               PIC X(6).                                                
+                                                                        
+       FD  INVENTORY-EXCEPTION-REPORT                                   
+           LABEL RECORDS ARE OMITTED                                    
+           RECORD CONTAINS 132 CHARACTERS.                     
+
+       01  IR-INV-REPORT-OUTPUT-LINE      PIC X(132).                   
+                                                                        
+
+       FD  INVENTORY-MASTER
+           LABEL RECORDS ARE OMITTED
+           RECORD CONTAINS 132 CHARACTERS.
+
+       01  MI-MASTER-INV-OUTPUT-LINE       PIC X(132).
+
+       FD  INVENTORY-CONTROL
+           LABEL RECORDS ARE OMITTED
+           RECORD CONTAINS 132 CHARACTERS.
+
+       01  CT-CONTROL-FILE-OUTPUT-LINE     PIC X(132).
+
+
+       WORKING-STORAGE SECTION.                                         
+       01  WS-PROCESSING-INDICATORS.                                    
+           05  END-OF-FILE-INDICATOR   PIC X(3).                        
+               88  END-OF-FILE         VALUE "END".                     
+                                                                        
+           05  ER-ERROR-CODES.                                          
+               10  WS-ERROR-MESSAGE               PIC X(30).            
+               10  WS-ERROR-FLAG                  PIC X(1) VALUE SPACE. 
+                   88 RECORD-HAS-ERROR             VALUE "1".           
+                                                                        
+               10  WS-FIRST-ERROR-FLAG         PIC X(1) VALUE SPACE.    
+                   88  FIRST-ERROR-IN-RECORD   VALUE "1".
+
+           05  VALID-RECORD-FLAG       PIC 9(1).
+               88  IS-VALID-RECORD     VALUE 1.
+
+
+       01  CT-CONTROL-FILE-DETAIL-LINE.
+           05  FILLER                      PIC X(1) VALUE SPACE.
+           05  CT-ROW-LABEL                PIC X(8).
+           05  FILLER                      PIC X(2).
+           05  CT-NUMBER-RECORDS           PIC 9(2).
+           05  FILLER                      PIC X(5) VALUE SPACES.
+           05  CT-STORE-NUM-HASH           PIC 9(4).
+           05  FILLER                      PIC X(3) VALUE SPACES.
+           05  CT-ITEM-NUM-HASH            PIC 9(4).
+           05  FILLER                      PIC X(2) VALUE SPACES.
+           05  CT-PRICE-HASH               PIC 9(4)V99.
+           05  FILLER                      PIC X(2) VALUE SPACES.
+           05  CT-COST-HASH                PIC 9(4)V99.
+           05  FILLER                      PIC X(2) VALUE SPACES.
+           05  CT-QUANT-SOLD               PIC 9(5).
+           05  FILLER                      PIC X(1) VALUE SPACE.
+           05  CT-QUANT-PURCHASED          PIC 9(5).
+           05  FILLER                      PIC X(1) VALUE SPACE.
+           05  CT-QUANT-ON-HAND            PIC 9(5).
+           05  FILLER                      PIC X(2) VALUE SPACE.
+           05  CT-CURR-SOLD                PIC 9(5).
+           05  FILLER                      PIC X(1) VALUE SPACE.
+           05  CT-CURR-PURCH               PIC 9(5).
+                                                                        
+       01  IR-OUTPUT-ERROR-LINE.                                        
+           05  FILLER                      PIC X(1) VALUE SPACE.        
+           05  FILLER                      PIC X(108) VALUE SPACES.     
+           05  IR-ERROR-LINE-MESSAGE            PIC X(30).              
+                                                                        
+       01  IR-INV-REPORT-DETAIL-LINE.                                   
+      * MODIFY THE VARIABLE LENGTHS HERE.                               
+           05  FILLER                      PIC X(1) VALUE SPACE.        
+                                                                        
+           05  FILLER                      PIC X(1) VALUE SPACE.        
+           05  IR-STORE-NUMBER             PIC X(2).                    
+           05  FILLER                      PIC X(8) VALUE SPACES.       
+           05  IR-DEPT-MNEMONIC            PIC X(2).                    
+           05  FILLER                      PIC X(8) VALUE SPACES.       
+           05  IR-VENDOR-NUMBER            PIC X(3).                    
+           05  FILLER                      PIC X(6) VALUE SPACES.       
+           05  IR-ITEM-DESCRIPTION         PIC X(26).                   
+           05  FILLER                      PIC X(2) VALUE SPACES.       
+           05  IR-QUANTITY                 PIC X(6).                    
+           05  FILLER                      PIC X(5) VALUE SPACES.       
+           05  IR-SALES-PRICE              PIC X(6).                    
+           05  FILLER                      PIC X(6) VALUE SPACES.       
+           05  IR-COST                     PIC X(6).                    
+           05  FILLER                      PIC X(3) VALUE SPACES.       
+           05  IR-YTD-QUANTITY-SOLD        PIC X(6).                    
+           05  FILLER                      PIC X(3) VALUE SPACES.       
+           05  IR-YTD-QUANTITY-PURCHASED   PIC X(6).                    
+           05  FILLER                      PIC X(4) VALUE SPACES.       
+                                                                        
+                                                                        
+           05  IR-ERROR-MESSAGE            PIC X(20).          
+
+       01  MD-INV-MASTER-DETAIL-LINE. 
+           05  FILLER                      PIC X(2) VALUE SPACE.
+           05  MD-STORE-NUMBER             PIC 9(2).
+           05  FILLER                      PIC X(8) VALUE SPACE.
+           05  MD-DEPT-MNEMONIC            PIC X(2).
+           05  FILLER                      PIC X(8) VALUE SPACE.
+           05  MD-VENDOR-NUMBER            PIC 9(3).
+           05  FILLER                      PIC X(6) VALUE SPACE.
+           05  MD-ITEM-DESCRIPTION         PIC X(26).
+           05  FILLER                      PIC X(2) VALUE SPACE.
+           05  MD-QUANTITY                 PIC 9(6).
+           05  FILLER                      PIC X(5) VALUE SPACE.
+           05  MD-SALES-PRICE              PIC 9(4)V99.
+           05  FILLER                      PIC X(6) VALUE SPACE.
+           05  MD-COST                     PIC 9(4)V99.
+           05  FILLER                      PIC X(3) VALUE SPACE.
+           05  MD-YTD-QUANTITY-SOLD        PIC 9(6).
+           05  FILLER                      PIC X(3) VALUE SPACE.
+           05  MD-YTD-QUANTITY-PURCHASED   PIC 9(6).
+           05  FILLER                      PIC X(1) VALUE SPACE.
+           05  MD-CURR-SOLD                PIC 9(5) VALUE ZEROES.
+           05  FILLER                      PIC X(1) VALUE SPACE.
+           05  MD-CURR-PURCH               PIC 9(5) VALUE ZEROES.
+                                                                        
+                                                                        
+       01  WS-NUMERICAL-VALUES.                                         
+           05  WS-STORE-NUMBER             PIC 99.                      
+           05  WS-RECORDS-READ             PIC 99.                      
+           05  WS-VALID-RECORDS            PIC 99.                      
+           05  WS-INVALID-RECORDS          PIC 99.                      
+           05  WS-QUANTITY-ON-HAND         PIC 9999.                    
+           05  WS-YTD-SOLD                 PIC 9999.
+           05  WS-QUANTITY-PURCHASED       PIC 9999.
+           05  WS-CURR-SOLD                PIC 9999.
+           05  WS-CURR-PURCH               PIC 9999.
+
+           05  WS-STORE-NUM-HASH        PIC 9999.
+           05  WS-ITEM-NUM-HASH         PIC 9999.
+           05  WS-PRICE-HASH            PIC 9999V99.
+           05  WS-COST-HASH             PIC 9999V99.
+                                                                        
+       01  WS-ITEM-DESCRIPTION-VALS.                                    
+           05  WS-ITEM-DESCRIPTION.                                     
+               10  WS-ITEM-DESC-FIRST-CHAR     PIC X.                   
+               10  FILLER                      PIC X(24).               
+           05  WS-ITEM-DESC-TABLE                                       
+           REDEFINES WS-ITEM-DESCRIPTION.                               
+           10  WS-ITEM-DESC-CHAR           PIC X(1)                     
+               OCCURS 25 TIMES.                                         
+                                                                        
+       01  WS-STRING-VARIABLES.                                         
+           05  WS-CHARACTER-SUBSCRIPT      PIC 99.                      
+           05  WS-LENGTH-SUBSCRIPT         PIC 99.                      
+           05  WS-NEXT-CHARACTER           PIC 99.                      
+                                                                        
+       01  IR-COUNT-LINE.                                               
+           05  FILLER  PIC X(1).                                        
+           05  IR-ACCOUNTING-LABEL  PIC X(15).                          
+           05  IR-ACCOUNTING-NUMBER  PIC 9(4).                          
+                                                                        
+       01  HEADING-SEPARATOR   PIC X(132) VALUE ALL "X".                
+                                                                        
+       01  HD-REPORT-HEADING-1.                                         
+           05  FILLER  PIC X(1) VALUE SPACE.                            
+           05  FILLER  PIC X(53) VALUE SPACES.                          
+           05  FILLER  PIC X(26)                                        
+                       VALUE "INVENTORY EXCEPTION REPORT".              
+                                                                        
+       01  HD-REPORT-HEADING-2.                                         
+           05  FILLER  PIC X(1) VALUE SPACE.                            
+                                                                        
+                                                                        
+       01  HD-COLUMN-HEADING-1.                                         
+           05  FILLER                  PIC X(1) VALUE SPACE.            
+           05  FILLER  PIC X(5) VALUE "STORE".                          
+           05  FILLER  PIC X(3) VALUE SPACES.                           
+           05  FILLER  PIC X(10) VALUE "DEPARTMENT".                    
+           05  FILLER  PIC X(2)  VALUE SPACES.                          
+           05  FILLER  PIC X(6)    VALUE "VENDOR".                      
+           05  FILLER  PIC X(30)   VALUE SPACES.                        
+           05  FILLER  PIC X(8)    VALUE "QUANTITY".                    
+           05  FILLER  PIC X(8)    VALUE SPACES.                        
+           05  FILLER  PIC X(5)    VALUE "PRICE".                       
+           05  FILLER  PIC X(4)    VALUE SPACES.                        
+           05  FILLER  PIC X(33)                                        
+               VALUE "LOST     YTD      YTD       ERROR".               
+                                                                        
+      *COMPLETE HEADINGS                                        
+                                                                        
+       01  HD-COLUMN-HEADING-2.                                         
+           05  FILLER                  PIC X(1) VALUE SPACE.            
+           05  FILLER  PIC X(28)                                        
+               VALUE "NUMBER   MNEMONIC   NUMBER  ".                    
+           05  FILLER  PIC X(16)                                        
+               VALUE "ITEM DESCRIPTION".                                
+           05  FILLER  PIC X(12)   VALUE SPACES.                        
+           05  FILLER  PIC X(31)                                        
+               VALUE "ON HAND    PER UNIT    PER UNIT".                 
+           05  FILLER  PIC X(3)    VALUE SPACES.                        
+           05  FILLER  PIC X(25)                                        
+               VALUE "SOLD   PURCHASED  MESSAGE".
+
+
+       01  HD-MASTER-COLUMN-HEADING-1.
+           05  FILLER                  PIC X(1) VALUE SPACE.            
+           05  FILLER  PIC X(5) VALUE "STORE".                          
+           05  FILLER  PIC X(3) VALUE SPACES.                           
+           05  FILLER  PIC X(10) VALUE "DEPARTMENT".                    
+           05  FILLER  PIC X(2)  VALUE SPACES.                          
+           05  FILLER  PIC X(6)    VALUE "VENDOR".                      
+           05  FILLER  PIC X(30)   VALUE SPACES.                        
+           05  FILLER  PIC X(8)    VALUE "QUANTITY".                    
+           05  FILLER  PIC X(8)    VALUE SPACES.                        
+           05  FILLER  PIC X(5)    VALUE "PRICE".                       
+           05  FILLER  PIC X(4)    VALUE SPACES.                        
+           05  FILLER  PIC X(33)                                        
+               VALUE "LOST     YTD      YTD       ERROR".
+
+       01  HD-MASTER-COLUMN-HEADING-2.
+           05  FILLER  PIC X(1) VALUE SPACE.            
+           05  FILLER  PIC X(28)                                        
+               VALUE "NUMBER   MNEMONIC   NUMBER  ".                    
+           05  FILLER  PIC X(16)                                        
+               VALUE "ITEM DESCRIPTION".                                
+           05  FILLER  PIC X(12)   VALUE SPACES.                        
+           05  FILLER  PIC X(31)                                        
+               VALUE "ON HAND    PER UNIT    PER UNIT".                 
+           05  FILLER  PIC X(3)    VALUE SPACES.                        
+           05  FILLER  PIC X(25)                                        
+               VALUE "SOLD   PURCHASED  MESSAGE". 
+
+       01  HD-CONTROL-HEADING-1.
+           05  FILLER PIC X(1) VALUE SPACE.
+           05  FILLER PIC X(53) VALUE SPACES.
+           05  FILLER PIC X(24)
+                      VALUE "INVENTORY CONTROL REPORT".
+       01  HD-CONTROL-COLUMN-HEADING-1.
+           05  FILLER PIC X(1) VALUE SPACE.
+           05  FILLER PIC X(9) VALUE SPACE.
+           05  FILLER PIC X(21) 
+               VALUE "NUMBER  STORE# ITEM# ". 
+             
+           05 FILLER PIC X(45) 
+              VALUE "PRICE   COST    QUANT QUANT QUANT  CURR  CURR".
+
+       01  HD-CONTROL-COLUMN-HEADING-2
+           05  FILLER PIC X(1) VALUE SPACE.
+           05  FILLER PIC X(9) VALUE SPACE.
+           05  FILLER PIC X(27) 
+               VALUE "RECORDS HASH   HASH  HASH  ".
+           05  FILLER PIC X(42)
+               VALUE "  HASH    SOLD    PURCH ONHND  SOLD  PURCH".
+
+       PROCEDURE DIVISION.                                              
+       A000-YTD-PAY-ANALYSIS-REPORT.                                    
+           PERFORM B100-INITIAL-ROUTINE.                                
+           PERFORM B200-PROCESS-RECORDS                                 
+               UNTIL END-OF-FILE.                                       
+           PERFORM B300-ENDING-ROUTINE.                                 
+           STOP RUN.                                                    
+                                                                        
+       B100-INITIAL-ROUTINE.                                            
+           PERFORM C100-OPEN-FILES.                                     
+           PERFORM C200-INITIALIZE-VARIABLES.                           
+           PERFORM C300-WRITE-HEADING.                                  
+           PERFORM C400-READ-EMPLOYEE-RECORD.                           
+       B200-PROCESS-RECORDS.                                            
+                                                                        
+                                                                        
+           MOVE SPACES TO IR-ERROR-MESSAGE.                             
+           MOVE 1 TO WS-FIRST-ERROR-FLAG.                               
+           MOVE SPACES TO WS-ERROR-FLAG.                                
+                                                                        
+           COMPUTE WS-RECORDS-READ = WS-RECORDS-READ + 1.               
+                                                                        
+           MOVE ID-STORE-NUMBER TO IR-STORE-NUMBER.                     
+           MOVE ID-DEPT-MNEMONIC TO IR-DEPT-MNEMONIC.                   
+           MOVE ID-ITEM-NUMBER-X TO IR-VENDOR-NUMBER.                   
+     **    MOVE ID-ITEM-DESCRIPTION TO IR-ITEM-DESCRIPTION.             
+           MOVE ID-SALES-PRICE-X TO IR-SALES-PRICE.                     
+           MOVE ID-QUANTITY-X TO IR-QUANTITY.                           
+           MOVE ID-COST-X TO IR-COST.                                   
+           MOVE ID-YTD-QUANTITY-SOLD-X TO IR-YTD-QUANTITY-SOLD.         
+           MOVE ID-YTD-QUANTITY-PURCHASED-X                             
+               TO IR-YTD-QUANTITY-PURCHASED.                            
+                                                                        
+                                                                        
+           PERFORM C500-VALIDATE-FIELDS.                                
+                                                                        
+           IF FIRST-ERROR-IN-RECORD                                     
+               COMPUTE WS-VALID-RECORDS = WS-VALID-RECORDS + 1;         
+               COMPUTE WS-QUANTITY-ON-HAND =                            
+                   WS-QUANTITY-ON-HAND + ID-QUANTITY                    
+               COMPUTE WS-YTD-SOLD =                                    
+                    WS-YTD-SOLD + ID-YTD-QUANTITY-SOLD
+               COMPUTE WS-QUANTITY-PURCHASED = 
+                   WS-QUANTITY-PURCHASED+ ID-YTD-QUANTITY-PURCHASED
+           END-IF.                                                      
+                                                                        
+           PERFORM C700-OUTPUT.                                         
+                                                                        
+           PERFORM C400-READ-EMPLOYEE-RECORD.                           
+                                                                        
+       C500-VALIDATE-FIELDS.                                            
+           PERFORM D1000-DESCRIPTION-CHECKS.                            
+           PERFORM D100-INITIALIZE-RECORD.                              
+           PERFORM D200-STORE-NUMBER-CHECKS.                            
+           PERFORM D300-DEPT-MNEMONIC-CHECKS.                           
+           PERFORM D400-VENDOR-NUMBER-CHECKS.                           
+           PERFORM D500-QUANITTY-CHECKS.                                
+           PERFORM D600-SALES-PRICE-CHECKS.                             
+           PERFORM D700-COST-CHECKS.                                    
+           PERFORM D800-YTD-QUANT-SOLD-CHECKS.                          
+           PERFORM D900-YTD-QUANT-PURCH-CHECKS.                         
+                                                                        
+                                                                        
+       D100-INITIALIZE-RECORD.                                          
+                                                                        
+                                                                        
+       D200-STORE-NUMBER-CHECKS.                                        
+           PERFORM E200-STORE-NUMBER-CHECKS.                            
+                                                                        
+                                                                        
+       D1000-DESCRIPTION-CHECKS.                                        
+                                                                        
+           MOVE ID-ITEM-DESCRIPTION                                     
+           TO   WS-ITEM-DESCRIPTION.                                    
+                                                                        
+           INITIALIZE WS-CHARACTER-SUBSCRIPT.                           
+                                                                        
+           IF ID-ITEM-DESCRIPTION = SPACES                              
+               MOVE "NO ITEM DESCRIPT" TO WS-ERROR-MESSAGE              
+               MOVE 1 TO WS-ERROR-FLAG                                  
+           ELSE                                                         
+                                                                        
+               IF WS-ITEM-DESC-FIRST-CHAR = SPACES                      
+                   PERFORM Z500-JUSTIFY-ITEM-DESC                       
+           END-IF.                                                      
+                                                                        
+           MOVE WS-ITEM-DESC-TABLE TO IR-ITEM-DESCRIPTION.              
+                                                                        
+           IF WS-ERROR-FLAG = 1                                         
+               MOVE 0 TO WS-ERROR-FLAG                                  
+               PERFORM Z200-PRINT-ERROR-MESSAGE                         
+            END-IF.                                                     
+                                                                        
+       Z500-JUSTIFY-ITEM-DESC.                                          
+           MOVE WS-ITEM-DESC-FIRST-CHAR TO IR-ACCOUNTING-NUMBER.        
+           MOVE 25 TO WS-LENGTH-SUBSCRIPT.                              
+           PERFORM Z600-JUSTIFY-STRING                                  
+               UNTIL WS-ITEM-DESC-FIRST-CHAR NOT = SPACES.              
+                                                                        
+           MOVE WS-ITEM-DESC-TABLE TO IR-ITEM-DESCRIPTION.              
+                                                                        
+       Z600-JUSTIFY-STRING.                                             
+           PERFORM Z700-MOVE-FIELD-TO-LEFT                              
+               VARYING WS-CHARACTER-SUBSCRIPT                           
+               FROM 1 BY 1                                              
+               UNTIL WS-CHARACTER-SUBSCRIPT = WS-LENGTH-SUBSCRIPT.      
+           MOVE SPACE TO WS-ITEM-DESC-CHAR(WS-LENGTH-SUBSCRIPT).        
+           SUBTRACT 1 FROM WS-LENGTH-SUBSCRIPT.                         
+                                                                        
+        Z700-MOVE-FIELD-TO-LEFT.                                        
+           COMPUTE WS-NEXT-CHARACTER = WS-CHARACTER-SUBSCRIPT + 1.      
+           MOVE WS-ITEM-DESC-CHAR(WS-NEXT-CHARACTER)                    
+               TO WS-ITEM-DESC-CHAR(WS-CHARACTER-SUBSCRIPT).            
+                                                                        
+       D900-YTD-QUANT-PURCH-CHECKS.                                     
+           IF ID-YTD-QUANTITY-PURCHASED-X = SPACES                      
+               MOVE "NO QUNTY PURCH" TO WS-ERROR-MESSAGE                
+               MOVE 1 TO WS-ERROR-FLAG                                  
+           ELSE                                                         
+               INSPECT ID-YTD-QUANTITY-PURCHASED                        
+               REPLACING LEADING SPACES BY ZEROES                       
+               IF ID-YTD-QUANTITY-PURCHASED IS NOT NUMERIC              
+               MOVE "QUNTY PURCH NOT NUM" TO WS-ERROR-MESSAGE           
+               MOVE 1 TO WS-ERROR-FLAG                                  
+           END-IF.                                                      
+                                                                        
+           IF WS-ERROR-FLAG = 1                                         
+               MOVE 0 TO WS-ERROR-FLAG                                  
+               PERFORM Z200-PRINT-ERROR-MESSAGE                         
+            END-IF.                                                     
+                                                                        
+       D800-YTD-QUANT-SOLD-CHECKS.                                      
+           IF ID-YTD-QUANTITY-SOLD-X = SPACES                           
+               MOVE "NO QUNTY SOLD" TO WS-ERROR-MESSAGE                 
+               MOVE 1 TO WS-ERROR-FLAG                                  
+           ELSE                                                         
+               INSPECT ID-YTD-QUANTITY-SOLD                             
+               REPLACING LEADING SPACES BY ZEROES                       
+               IF ID-YTD-QUANTITY-SOLD IS NOT NUMERIC                   
+                   MOVE "QUNTY SOLD NOT NUM" TO WS-ERROR-MESSAGE        
+                   MOVE 1 TO WS-ERROR-FLAG                              
+           END-IF.                                                      
+                                                                        
+           IF WS-ERROR-FLAG = 1                                         
+               MOVE 0 TO WS-ERROR-FLAG                                  
+               PERFORM Z200-PRINT-ERROR-MESSAGE                         
+            END-IF.                                                     
+                                                                        
+       D700-COST-CHECKS.                                                
+           IF ID-COST-X = SPACES                                        
+               MOVE "NO COST" TO WS-ERROR-MESSAGE                       
+               MOVE 1 TO WS-ERROR-FLAG                                  
+           ELSE                                                         
+               INSPECT ID-COST                                          
+               REPLACING LEADING SPACES BY ZEROES                       
+               IF ID-COST IS NOT NUMERIC                                
+                   MOVE "COST IS NOT NUM" TO WS-ERROR-MESSAGE           
+                   MOVE 1 TO WS-ERROR-FLAG                              
+           END-IF.                                                      
+                                                                        
+           IF WS-ERROR-FLAG = 1                                         
+               MOVE 0 TO WS-ERROR-FLAG                                  
+               PERFORM Z200-PRINT-ERROR-MESSAGE                         
+            END-IF.                                                     
+                                                                        
+       D600-SALES-PRICE-CHECKS.                                         
+           IF ID-SALES-PRICE-X = SPACES                                 
+               MOVE "NO SALES PRICE" TO WS-ERROR-MESSAGE                
+               MOVE 1 TO WS-ERROR-FLAG                                  
+           ELSE                                                         
+               INSPECT ID-SALES-PRICE                                   
+               REPLACING LEADING SPACES BY ZEROES                       
+               IF ID-SALES-PRICE IS NOT NUMERIC                         
+                   MOVE "SALES PRICE NOT NUM" TO WS-ERROR-MESSAGE       
+                   MOVE 1 TO WS-ERROR-FLAG                              
+               ELSE                                                     
+                   IF ID-SALES-PRICE > 75                               
+                      AND ID-DEPT-MNEMONIC = "AU"                       
+                       MOVE "SALES PRICE HIGH" TO WS-ERROR-MESSAGE      
+                       MOVE 1 TO WS-ERROR-FLAG                          
+                   END-IF                                               
+                   IF ID-SALES-PRICE > 795                              
+                       AND ID-DEPT-MNEMONIC = "AP"                      
+                       MOVE "SALES PRICE HIGH" TO WS-ERROR-MESSAGE      
+                       MOVE 1 TO WS-ERROR-FLAG                          
+                   END-IF                                               
+                                                                        
+           END-IF.                                                      
+                                                                        
+            IF WS-ERROR-FLAG = 1                                        
+               MOVE 0 TO WS-ERROR-FLAG                                  
+               PERFORM Z200-PRINT-ERROR-MESSAGE                         
+            END-IF.                                                     
+                                                                        
+                                                                        
+       D500-QUANITTY-CHECKS.                                            
+           IF ID-QUANTITY-X = SPACES                                    
+               MOVE "NO QNTY ON HND" TO WS-ERROR-MESSAGE                
+               MOVE 1 TO WS-ERROR-FLAG                                  
+           ELSE                                                         
+               INSPECT ID-QUANTITY                                      
+               REPLACING LEADING SPACES BY ZEROES                       
+               IF ID-QUANTITY IS NOT NUMERIC                            
+               MOVE "QNTY ON HND NOT NUM" TO WS-ERROR-MESSAGE           
+               MOVE 1 TO WS-ERROR-FLAG                                  
+               ELSE                                                     
+                   IF ID-QUANTITY < 0                                   
+                   MOVE "NEG QNTTY ON HND" TO WS-ERROR-MESSAGE          
+                   MOVE 1 TO WS-FIRST-ERROR-FLAG                        
+           END-IF.                                                      
+                                                                        
+           IF WS-ERROR-FLAG = 1                                         
+               MOVE 0 TO WS-ERROR-FLAG                                  
+               PERFORM Z200-PRINT-ERROR-MESSAGE                         
+           END-IF.                                                      
+                                                                        
+       D400-VENDOR-NUMBER-CHECKS.                                       
+           IF ID-ITEM-NUMBER-X = SPACES                                 
+               MOVE "THERE IS NO VENDOR NUM" TO WS-ERROR-MESSAGE        
+               MOVE 1 TO WS-ERROR-FLAG                                  
+               ELSE                                                     
+                   INSPECT ID-ITEM-NUMBER                               
+                   REPLACING LEADING SPACES BY ZEROES                   
+                   IF ID-ITEM-NUMBER IS NOT NUMERIC                     
+                   MOVE "VENDOR NUMBER NOT NUM" TO WS-ERROR-MESSAGE     
+                   MOVE 1 TO WS-ERROR-FLAG                              
+                       ELSE IF ID-ITEM-NUMBER > 890                     
+                           MOVE "VEND NUM >890" TO WS-ERROR-MESSAGE     
+                           MOVE 1 TO WS-ERROR-FLAG                      
+           END-IF.                                                      
+                                                                        
+           IF WS-ERROR-FLAG = 1                                         
+               MOVE 0 TO WS-ERROR-FLAG                                  
+               PERFORM Z200-PRINT-ERROR-MESSAGE                         
+           END-IF.                                                      
+                                                                        
+       D300-DEPT-MNEMONIC-CHECKS.                                       
+           IF ID-DEPT-MNEMONIC = SPACES                                 
+               MOVE "THERE IS NO DEPT" TO WS-ERROR-MESSAGE              
+               MOVE 1 TO WS-ERROR-FLAG                                  
+               ELSE                                                     
+                   IF ID-DEPT-MNEMONIC IS NOT ALPHABETIC                
+                   MOVE "DEPT MNEMONIC NOT ALPHA" TO WS-ERROR-MESSAGE   
+                   MOVE 1 TO WS-ERROR-FLAG                              
+                   ELSE                                                 
+                       IF ID-DEPT-MNEMONIC NOT = "AU"                   
+                       AND ID-DEPT-MNEMONIC NOT = "AP"                  
+                           MOVE "DEPT NOT AU OR AP" TO WS-ERROR-MESSAGE 
+                           MOVE 1 TO WS-ERROR-FLAG                      
+           END-IF.                                                      
+                                                                        
+           IF WS-ERROR-FLAG = 1                                         
+               MOVE 0 TO WS-ERROR-FLAG                                  
+               PERFORM Z200-PRINT-ERROR-MESSAGE                         
+           END-IF.                                                      
+                                                                        
+       E200-STORE-NUMBER-CHECKS.                                        
+           IF ID-STORE-NUMBER = SPACES                                  
+               MOVE "THERE IS NO STORE NUMBER" TO WS-ERROR-MESSAGE      
+               MOVE 1 TO WS-ERROR-FLAG                                  
+               ELSE                                                     
+                   INSPECT ID-STORE-NUMBER                              
+                   REPLACING LEADING SPACES BY ZEROES                   
+                   IF ID-STORE-NUMBER IS NOT NUMERIC                    
+                       MOVE "STORE NUMBER NOT NUMERIC"                  
+                       TO WS-ERROR-MESSAGE                              
+                       MOVE 1 TO WS-ERROR-FLAG                          
+                       ELSE                                             
+                           IF ID-STORE-NUMBER < 10                      
+                           OR ID-STORE-NUMBER > 20                      
+                               MOVE "STORE NUMBER OUT OF BOUNDS"        
+                               TO WS-ERROR-MESSAGE                      
+                               MOVE 1 TO WS-ERROR-FLAG                  
+           END-IF.                                                      
+                                                                        
+                                                                        
+           IF WS-ERROR-FLAG = 1                                         
+               MOVE 0 TO WS-ERROR-FLAG                                  
+               PERFORM Z200-PRINT-ERROR-MESSAGE                         
+           END-IF.                                                      
+                                                                        
+       Z200-PRINT-ERROR-MESSAGE.
+
+           MOVE 0 TO VALID-RECORD-FLAG.                                        
+                                                                        
+           MOVE WS-ERROR-MESSAGE TO IR-ERROR-MESSAGE.                   
+                                                                        
+           IF FIRST-ERROR-IN-RECORD                                     
+               MOVE 0 TO WS-FIRST-ERROR-FLAG                            
+                                                                        
+               MOVE IR-INV-REPORT-DETAIL-LINE                           
+                   TO IR-INV-REPORT-OUTPUT-LINE                         
+                                                                        
+               WRITE IR-INV-REPORT-OUTPUT-LINE                          
+               AFTER ADVANCING 1 LINE                                   
+                                                                        
+               COMPUTE WS-INVALID-RECORDS = WS-INVALID-RECORDS + 1      
+                                                                        
+           ELSE                                                         
+               MOVE IR-ERROR-MESSAGE                                    
+                   TO IR-ERROR-LINE-MESSAGE                             
+                                                                        
+               MOVE IR-OUTPUT-ERROR-LINE                                
+                   TO IR-INV-REPORT-OUTPUT-LINE                         
+                                                                        
+               WRITE IR-INV-REPORT-OUTPUT-LINE                          
+               AFTER ADVANCING 1 LINE                                   
+                                                                        
+           END-IF.                                                      
+                                                                        
+                                                                        
+       B300-ENDING-ROUTINE.                                             
+                                                                        
+           MOVE "RECORDS READ: " TO IR-ACCOUNTING-LABEL.                
+           MOVE WS-RECORDS-READ TO IR-ACCOUNTING-NUMBER.                
+           MOVE IR-COUNT-LINE TO IR-INV-REPORT-OUTPUT-LINE.             
+           WRITE IR-INV-REPORT-OUTPUT-LINE                              
+               AFTER ADVANCING 1 LINE.                                  
+                                                                        
+           MOVE "VALID RECORDS: " TO IR-ACCOUNTING-LABEL.               
+           MOVE WS-VALID-RECORDS TO IR-ACCOUNTING-NUMBER.               
+           MOVE IR-COUNT-LINE TO IR-INV-REPORT-OUTPUT-LINE.             
+           WRITE IR-INV-REPORT-OUTPUT-LINE                              
+               AFTER ADVANCING 1 LINE.                                  
+                                                                        
+           MOVE "INVALID RECDS: " TO IR-ACCOUNTING-LABEL.               
+           MOVE WS-INVALID-RECORDS TO IR-ACCOUNTING-NUMBER.             
+           MOVE IR-COUNT-LINE TO IR-INV-REPORT-OUTPUT-LINE.             
+           WRITE IR-INV-REPORT-OUTPUT-LINE                              
+               AFTER ADVANCING 1 LINE.                                  
+                                                                        
+           MOVE "QUANT ON HAND: " TO IR-ACCOUNTING-LABEL.               
+           MOVE WS-QUANTITY-ON-HAND TO IR-ACCOUNTING-NUMBER.            
+           MOVE IR-COUNT-LINE TO IR-INV-REPORT-OUTPUT-LINE.             
+           WRITE IR-INV-REPORT-OUTPUT-LINE                              
+           AFTER ADVANCING 1 LINE.                                      
+                                                                        
+           MOVE "YTD SOLD:      " TO IR-ACCOUNTING-LABEL.               
+           MOVE WS-YTD-SOLD TO IR-ACCOUNTING-NUMBER.                    
+           MOVE IR-COUNT-LINE TO IR-INV-REPORT-OUTPUT-LINE.             
+           WRITE IR-INV-REPORT-OUTPUT-LINE                              
+               AFTER ADVANCING 1 LINE.
+
+           MOVE "BEG CNTL" TO CT-ROW-LABEL.
+           MOVE WS-VALID-RECORDS TO CT-NUMBER-RECORDS.
+
+           MOVE WS-STORE-NUM-HASH TO CT-STORE-NUM-HASH.
+           MOVE WS-ITEM-NUM-HASH TO CT-ITEM-NUM-HASH.
+           MOVE WS-PRICE-HASH TO CT-PRICE-HASH.
+           MOVE WS-COST-HASH TO CT-COST-HASH.           
+
+           MOVE WS-YTD-SOLD TO CT-QUANT-SOLD.
+           MOVE WS-QUANTITY-ON-HAND TO CT-QUANT-ON-HAND.
+           MOVE WS-QUANTITY-PURCHASED TO CT-QUANT-PURCHASED.
+
+           MOVE WS-CURR-SOLD TO CT-CURR-SOLD.
+           MOVE WS-CURR-PURCH TO CT-CURR-PURCH.
+
+           MOVE CT-CONTROL-FILE-DETAIL-LINE 
+               TO CT-CONTROL-FILE-OUTPUT-LINE.
+
+           WRITE CT-CONTROL-FILE-OUTPUT-LINE
+               AFTER ADVANCING 1 LINE.
+
+
+           MOVE "CHG CNTL" TO CT-ROW-LABEL.
+           MOVE ZEROES TO CT-NUMBER-RECORDS.
+           MOVE ZEROES TO CT-STORE-NUM-HASH.   
+           MOVE ZEROES TO CT-ITEM-NUM-HASH.
+           MOVE ZEROES TO CT-PRICE-HASH.
+           MOVE ZEROES TO CT-COST-HASH.           
+
+           MOVE ZEROES TO CT-QUANT-SOLD.
+           MOVE ZEROES TO CT-QUANT-ON-HAND.
+           MOVE ZEROES TO CT-QUANT-PURCHASED.
+
+           MOVE CT-CONTROL-FILE-DETAIL-LINE 
+               TO CT-CONTROL-FILE-OUTPUT-LINE.
+
+           WRITE CT-CONTROL-FILE-OUTPUT-LINE
+               AFTER ADVANCING 1 LINE.
+
+            
+           MOVE "END CNTL" TO CT-ROW-LABEL.
+
+           MOVE ZEROES TO CT-STORE-NUM-HASH.
+           MOVE ZEROES TO CT-ITEM-NUM-HASH.
+           MOVE ZEROES TO CT-PRICE-HASH.
+           MOVE ZEROES TO CT-COST-HASH.           
+
+           MOVE ZEROES TO CT-QUANT-SOLD.
+           MOVE ZEROES TO CT-QUANT-ON-HAND.
+           MOVE ZEROES TO CT-QUANT-PURCHASED.
+
+           MOVE CT-CONTROL-FILE-DETAIL-LINE 
+               TO CT-CONTROL-FILE-OUTPUT-LINE.
+
+           WRITE CT-CONTROL-FILE-OUTPUT-LINE
+               AFTER ADVANCING 1 LINE.
+
+                                                                        
+           PERFORM Z300-CLOSE-FILES.                                    
+                                                                        
+       C100-OPEN-FILES.                                                 
+           OPEN INPUT INVENTORY-DATA.                                   
+           OPEN OUTPUT INVENTORY-EXCEPTION-REPORT.
+           OPEN OUTPUT INVENTORY-MASTER.
+           OPEN OUTPUT INVENTORY-CONTROL.                      
+       C200-INITIALIZE-VARIABLES.                                       
+           INITIALIZE WS-RECORDS-READ.                                  
+           INITIALIZE WS-INVALID-RECORDS.                               
+           INITIALIZE WS-VALID-RECORDS.                                 
+           INITIALIZE WS-QUANTITY-ON-HAND.
+
+           INITIALIZE  WS-STORE-NUM-HASH.
+           INITIALIZE  WS-ITEM-NUM-HASH.
+           INITIALIZE  WS-PRICE-HASH.
+           INITIALIZE  WS-COST-HASH.
+
+           INITIALIZE  WS-CURR-PURCH.
+           INITIALIZE  WS-CURR-SOLD.
+                                        
+                                                                        
+       C300-WRITE-HEADING.                                              
+                                                                        
+           MOVE HEADING-SEPARATOR TO IR-INV-REPORT-OUTPUT-LINE.         
+           WRITE IR-INV-REPORT-OUTPUT-LINE                              
+           AFTER ADVANCING PAGE.                                        
+                                                                        
+           MOVE HD-REPORT-HEADING-1 TO IR-INV-REPORT-OUTPUT-LINE.       
+           WRITE IR-INV-REPORT-OUTPUT-LINE                              
+           AFTER ADVANCING 1 LINE.                                      
+                                                                        
+           MOVE HEADING-SEPARATOR TO IR-INV-REPORT-OUTPUT-LINE.         
+           WRITE IR-INV-REPORT-OUTPUT-LINE                              
+           AFTER ADVANCING 1 LINE.                                      
+                                                                        
+           MOVE HD-COLUMN-HEADING-1 TO IR-INV-REPORT-OUTPUT-LINE.       
+           WRITE IR-INV-REPORT-OUTPUT-LINE                              
+           AFTER ADVANCING 2 LINES.                                     
+                                                                        
+           MOVE HD-COLUMN-HEADING-2 TO IR-INV-REPORT-OUTPUT-LINE.       
+           WRITE IR-INV-REPORT-OUTPUT-LINE                              
+           AFTER ADVANCING 2 LINES.
+
+           MOVE HD-MASTER-COLUMN-HEADING-1 TO MI-MASTER-INV-OUTPUT-LINE.
+           WRITE MI-MASTER-INV-OUTPUT-LINE.
+
+           MOVE HD-MASTER-COLUMN-HEADING-2 TO MI-MASTER-INV-OUTPUT-LINE.
+           WRITE MI-MASTER-INV-OUTPUT-LINE.
+
+           MOVE HD-CONTROL-COLUMN-HEADING-1 
+               TO CT-CONTROL-FILE-OUTPUT-LINE.
+           WRITE CT-CONTROL-FILE-OUTPUT-LINE.
+
+           MOVE HD-CONTROL-COLUMN-HEADING-2
+               TO CT-CONTROL-FILE-OUTPUT-LINE.
+           WRITE CT-CONTROL-FILE-OUTPUT-LINE.
+                                                                                   
+       C400-READ-EMPLOYEE-RECORD.
+           MOVE 1 TO VALID-RECORD-FLAG.                                       
+           READ INVENTORY-DATA                                          
+               AT END MOVE 'END' TO END-OF-FILE-INDICATOR.              
+       C700-OUTPUT.
+           IF IS-VALID-RECORD
+               MOVE ID-STORE-NUMBER TO MD-STORE-NUMBER                     
+               MOVE ID-DEPT-MNEMONIC TO MD-DEPT-MNEMONIC                   
+               MOVE ID-ITEM-NUMBER TO MD-VENDOR-NUMBER                   
+               MOVE ID-ITEM-DESCRIPTION TO MD-ITEM-DESCRIPTION             
+               MOVE ID-SALES-PRICE TO MD-SALES-PRICE                     
+               MOVE ID-QUANTITY TO MD-QUANTITY                           
+               MOVE ID-COST TO MD-COST                                   
+               MOVE ID-YTD-QUANTITY-SOLD TO MD-YTD-QUANTITY-SOLD         
+               MOVE ID-YTD-QUANTITY-PURCHASED                             
+                   TO MD-YTD-QUANTITY-PURCHASED
+               MOVE ZEROES TO MD-CURR-SOLD
+               MOVE ZEROES TO MD-CURR-PURCH
+
+                  MOVE MD-INV-MASTER-DETAIL-LINE
+                  TO MI-MASTER-INV-OUTPUT-LINE
+       
+                  WRITE MI-MASTER-INV-OUTPUT-LINE
+                  AFTER ADVANCING 1 LINE
+
+               ADD ID-STORE-NUMBER TO WS-STORE-NUM-HASH
+               ADD ID-ITEM-NUMBER TO WS-ITEM-NUM-HASH
+               ADD ID-SALES-PRICE TO WS-PRICE-HASH
+               ADD WS-COST-HASH TO CT-COST-HASH
+
+           END-IF.                                                     
+                                                                                                                                              
+       Z300-CLOSE-FILES.                                                
+           CLOSE INVENTORY-DATA.                                        
+           CLOSE INVENTORY-EXCEPTION-REPORT.                            
+                                                                        
+                                                                        
+                                                                        
+                                                                        
+**************************** BOTTOM OF DATA ****************************
+*******AD9F95.CH10.REPORT                                               
+                                                                        
+**************************** Bottom of Data ****************************
