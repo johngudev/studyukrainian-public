@@ -229,7 +229,22 @@
                 <tbody>
                     @foreach($page->phrases_and_questions as $item)
                         <tr>
-                            <td style="border-right: 1px dashed rgb(222, 226, 230) !important" class="border border-gray-100 px-4 py-2 ukrainian-word-text">{{ $item->ukrainian_phrase }}</td>
+                            <td style="border-right: 1px dashed rgb(222, 226, 230) !important" class="border border-gray-100 px-4 py-2 ukrainian-word-text">{{ $item->ukrainian_phrase }}
+                                @if($item->audio_file)
+                                    <button
+                                        class="btn btn-sm btn-light border p-1"
+                                        onclick="playAudioFromButton(this)"
+                                        data-audio-file-path="{{ $item->audio_file }}"
+                                        style="line-height: 1; transition: background-color 0.3s;">
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-volume-up" viewBox="0 0 16 16">
+                                            <path d="M11.536 14.01a.5.5 0 0 1-.992-.117 5.985 5.985 0 0 0 0-11.786.5.5 0 1 1 .992-.117 6.985 6.985 0 0 1 0 13.02z"/>
+                                            <path d="M10.707 11.536a.5.5 0 0 1-.707-.707 3 3 0 0 0 0-4.243.5.5 0 0 1 .707-.707 4 4 0 0 1 0 5.657z"/>
+                                            <path d="M8.931 8.001a.5.5 0 0 1 .569.57 1.5 1.5 0 0 0 0-.57.5.5 0 0 1-.569-.57z"/>
+                                            <path d="M7.017 3.072A.5.5 0 0 1 7.5 3.5v9a.5.5 0 0 1-.83.377L3.825 9H2.5A.5.5 0 0 1 2 8.5v-1A.5.5 0 0 1 2.5 7h1.325l2.845-3.877a.5.5 0 0 1 .347-.17z"/>
+                                        </svg>
+                                    </button>
+                                @endif
+                            </td>
                             <td style="border-left: 1px dashed  rgb(222, 226, 230) !important" class="border border-gray-100 px-4 py-2">{{ $item->english_definition }}</td>
                         </tr>
                     @endforeach
@@ -242,7 +257,7 @@
         <div class="modern-panel mt-1 p-3 p-md-5">
             <h2 class="mb-4 text-graphite-black">Dialogue
 
-                <button id="audioPlayBtn" class="btn btn-light border ml-2 d-flex align-items-center" onclick="playAudioFromButton(this)"  style="transition: background-color 0.3s; display: inline !important;" data-audio-file-path="{{ $page->audio_file }}">
+                <button id="audioPlayBtn" class="btn btn-light border ml-2 d-flex align-items-center" onclick="playAudioFromButton(this)"  style="transition: background-color 0.3s; display: inline !important;" data-audio-file-path="{{ $page->dialogue_full_audio }}">
                     <!-- Speaker SVG -->
                     <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" class="bi bi-volume-up" viewBox="0 0 16 16">
                         <path d="M11.536 14.01a.5.5 0 0 1-.992-.117 5.985 5.985 0 0 0 0-11.786.5.5 0 1 1 .992-.117 6.985 6.985 0 0 1 0 13.02z"/>

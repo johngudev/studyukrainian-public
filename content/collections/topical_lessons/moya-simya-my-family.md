@@ -25,7 +25,7 @@ vocabulary_set:
     ukrainian_word: брат
     english_definition: Brother
 updated_by: 1
-updated_at: 1745785819
+updated_at: 1745786575
 ukrainian_text:
   -
     type: paragraph
@@ -283,10 +283,12 @@ phrases_and_questions:
     id: m7a8z76q
     ukrainian_phrase: "У тебе велика сім'я?"
     english_definition: 'You have a big family?'
+    audio_file: topical-lesson-moya-simya-my-family-301.mp3
   -
     id: m7a9alyh
     ukrainian_phrase: 'Так, велика'
     english_definition: 'Yes, I have a big family.'
+    audio_file: topical-lesson-moya-simya-my-family-302.mp3
   -
     id: m7a99iju
     ukrainian_phrase: 'У тебе є брати й сестри?'
@@ -337,4 +339,5 @@ word_group:
     type: new_set
     enabled: true
 audio_file: topical-lesson-moya-simya-my-family-201.mp3
+dialogue_full_audio: topical-lesson-moya-simya-my-family-201.mp3
 ---

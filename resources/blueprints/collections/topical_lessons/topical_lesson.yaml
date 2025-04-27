@@ -742,6 +742,23 @@ tabs:
               visibility: visible
               replicator_preview: true
               hide_display: false
+          -
+            handle: dialogue_full_audio
+            field:
+              max_files: 1
+              mode: list
+              container: public_assets
+              restrict: false
+              allow_uploads: true
+              show_filename: true
+              show_set_alt: true
+              type: assets
+              display: 'Dialogue Full Audio'
+              listable: hidden
+              instructions_position: above
+              visibility: visible
+              replicator_preview: true
+              hide_display: false
   sidebar:
     display: Sidebar
     sections:
@@ -753,4 +770,13 @@ tabs:
               type: slug
               localizable: true
               validate: 'max:200'
+          -
+            handle: parent
+            field:
+              type: entries
+              collections:
+                - topical_lessons
+              max_items: 1
+              listable: false
+              localizable: true
 title: 'Topical Lesson'
