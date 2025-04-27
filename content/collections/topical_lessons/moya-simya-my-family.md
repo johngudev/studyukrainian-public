@@ -25,7 +25,7 @@ vocabulary_set:
     ukrainian_word: брат
     english_definition: Brother
 updated_by: 1
-updated_at: 1745786575
+updated_at: 1745788320
 ukrainian_text:
   -
     type: paragraph
@@ -235,49 +235,6 @@ long_reading_text:
           -
             type: text
             text: 'I also have a brother and a sister, but they are still small.'
-verbs:
-  -
-    id: m7a8v638
-    ukrainian_word: любити
-    english_definition: 'to love'
-  -
-    id: m7a8pk2c
-    ukrainian_word: 'вчити мови'
-    english_definition: 'to study languages'
-  -
-    id: m7a8ppwh
-    ukrainian_word: знати
-    english_definition: 'to know'
-  -
-    id: m7a8qmhf
-    ukrainian_word: 'слухати музику'
-    english_definition: 'to listen to music'
-adjectives_and_adverbs:
-  -
-    id: m7a8rhdk
-    ukrainian_word: гарний
-    english_definition: beautiful
-  -
-    id: m7a8rz96
-    ukrainian_word: добрий
-    english_definition: kind
-  -
-    id: m7a8s1uj
-    ukrainian_word: сильний
-    english_definition: strong
-  -
-    id: m7a8s4k0
-    ukrainian_word: розумний
-    english_definition: smart
-  -
-    id: m7a8s7i9
-    ukrainian_word: малий
-    english_definition: 'little, small'
-other_parts_of_speech:
-  -
-    id: m7a8ymwx
-    ukrainian_word: також
-    english_definition: also
 phrases_and_questions:
   -
     id: m7a8z76q
@@ -293,14 +250,17 @@ phrases_and_questions:
     id: m7a99iju
     ukrainian_phrase: 'У тебе є брати й сестри?'
     english_definition: 'Do you have brothers and sisters?'
+    audio_file: topical-lesson-moya-simya-my-family-303.mp3
   -
     id: m7a9a1dl
     ukrainian_phrase: 'Так, у мене є брат / сестра.'
     english_definition: 'Yes, I have a brother/sister.'
+    audio_file: topical-lesson-moya-simya-my-family-304.mp3
   -
     id: m7a99otf
     ukrainian_phrase: 'Я теж люблю... (+inf)'
     english_definition: 'I also like...'
+    audio_file: topical-lesson-moya-simya-my-family-305.mp3
 word_group:
   -
     id: m9upanmu
@@ -338,6 +298,73 @@ word_group:
         audio_file: audio/topical-lesson-moya-simya-my-family-106.mp3
     type: new_set
     enabled: true
+  -
+    id: ma04swn2
+    word_group_title: Verbs
+    vocabulary_item:
+      -
+        id: ma04t2c6
+        ukrainian_word: любити
+        english_definition: 'to love'
+        audio_file: topical-lesson-moya-simya-my-family-107.mp3.m4a
+      -
+        id: ma04t9g5
+        ukrainian_word: 'вчити мови'
+        english_definition: 'to study languages'
+        audio_file: topical-lesson-moya-simya-my-family-108.mp3
+      -
+        id: ma04tgbe
+        ukrainian_word: знати
+        english_definition: 'to know'
+        audio_file: topical-lesson-moya-simya-my-family-109.mp3.m4a
+      -
+        id: ma04tmg8
+        ukrainian_word: 'слухати музику'
+        english_definition: 'to listen to music'
+        audio_file: topical-lesson-moya-simya-my-family-110.mp3
+    type: new_set
+    enabled: true
+  -
+    id: ma052gli
+    word_group_title: 'Adjectives and Adverbs'
+    vocabulary_item:
+      -
+        id: ma052o0d
+        ukrainian_word: гарний
+        english_definition: beautiful
+        audio_file: topical-lesson-moya-simya-my-family-111.mp3
+      -
+        id: ma052w9e
+        ukrainian_word: добрий
+        english_definition: kind
+        audio_file: topical-lesson-moya-simya-my-family-112.mp3
+      -
+        id: ma0531ml
+        ukrainian_word: сильний
+        english_definition: strong
+        audio_file: topical-lesson-moya-simya-my-family-113.mp3
+      -
+        id: ma0539k8
+        ukrainian_word: розумний
+        english_definition: smart
+        audio_file: topical-lesson-moya-simya-my-family-114.mp3
+      -
+        id: ma053d0s
+        ukrainian_word: малий
+        english_definition: 'little, small'
+        audio_file: topical-lesson-moya-simya-my-family-115.mp3
+    type: new_set
+    enabled: true
+  -
+    id: ma058q6j
+    word_group_title: Other
+    vocabulary_item:
+      -
+        id: ma058sss
+        ukrainian_word: також
+        english_definition: also
+        audio_file: topical-lesson-moya-simya-my-family-116.mp3
+    type: new_set
+    enabled: true
 audio_file: topical-lesson-moya-simya-my-family-201.mp3
-dialogue_full_audio: topical-lesson-moya-simya-my-family-201.mp3
 ---
