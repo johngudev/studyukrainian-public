@@ -199,6 +199,7 @@ dialogue:
     speaker: Степан
     ukrainian_speech: 'У мене теж є двоюрідний брат.  Він дорослий. Я люблю розмовляти з ним.'
     english_translation: "I also have a cousin. He's an adult. I love talking to him."
-updated_by: 4378
-updated_at: 1742200037
+updated_by: 1
+updated_at: 1745843625
+audio_file: topical-lesson-moya-simya-part-2-201.mp3
 ---

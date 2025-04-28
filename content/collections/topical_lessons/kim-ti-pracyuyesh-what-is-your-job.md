@@ -1,7 +1,7 @@
 ---
 id: 041fab9e-20c2-4674-ad42-36ff4d0e823a
 blueprint: topical_lesson
-title: 'Ким ти працюєш? - What is your job?'
+title: 'Ким ти працюєш? - What is your job? (part 1)'
 word_group:
   -
     id: m9wladej
@@ -74,7 +74,7 @@ word_group:
       -
         id: m9wlhjzv
         ukrainian_word: 'хоча й'
-        english_definition: 'even those'
+        english_definition: although
     type: new_set
     enabled: true
 long_reading_text:
@@ -125,7 +125,7 @@ long_reading_text:
         content:
           -
             type: text
-            text: 'My husband is a doctor.He works in a hospital.'
+            text: 'My husband is a doctor. He works in a hospital.'
   -
     id: m9wlk3wy
     ukrainian_paragraph:
@@ -162,6 +162,6 @@ phrases_and_questions:
 dialogue:
   -
     id: m9wlnmzn
-updated_by: 4378
-updated_at: 1745573955
+updated_by: 1
+updated_at: 1745790144
 ---

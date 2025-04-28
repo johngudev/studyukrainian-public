@@ -1,7 +1,7 @@
 ---
 id: dbd68ef5-4acb-42f6-bd3f-927f2a21e19e
 blueprint: topical_lesson
-title: "Ким ти працюєш? 2nd - What's your job? 2nd"
+title: "Ким ти працюєш? - What's your job? (part 2)"
 word_group:
   -
     id: m9zi30x9
@@ -10,7 +10,7 @@ word_group:
       -
         id: m9zi50ro
         ukrainian_word: 'психолог, психологиня'
-        english_definition: Psychologist
+        english_definition: psychologist
       -
         id: m9zi7wfw
         ukrainian_word: 'військовий, військова'
@@ -148,11 +148,11 @@ phrases_and_questions:
   -
     id: m9ziksfy
     ukrainian_phrase: 'Чому ти обрав цю професію?'
-    english_definition: 'Why did you choose this profession? (to ask a man)'
+    english_definition: 'Why did you choose this profession? (when asking a man)'
   -
     id: m9zil0q8
     ukrainian_phrase: 'Чому ти обрала цю професію?'
-    english_definition: 'Why did you choose this profession? (to ask a woman)'
+    english_definition: 'Why did you choose this profession? (when asking a woman)'
 dialogue:
   -
     id: m9zim03g
@@ -179,6 +179,6 @@ dialogue:
     speaker: Рома
     ukrainian_speech: 'Так само! Рятувати життя й захищати людей – це дуже цінно. Я пишаюся своєю професією.'
     english_translation: 'Same! Saving lives and protecting people is very valuable. I am proud of my profession.'
-updated_by: 4378
-updated_at: 1745751336
+updated_by: 1
+updated_at: 1745790741
 ---

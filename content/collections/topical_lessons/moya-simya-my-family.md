@@ -25,7 +25,7 @@ vocabulary_set:
     ukrainian_word: брат
     english_definition: Brother
 updated_by: 1
-updated_at: 1745788320
+updated_at: 1745859129
 ukrainian_text:
   -
     type: paragraph
@@ -270,32 +270,26 @@ word_group:
         id: m9upar27
         ukrainian_word: мати
         english_definition: mother
-        audio_file: audio/topical-lesson-moya-simya-my-family-101.mp3
       -
         id: m9upb8x0
         ukrainian_word: мама
         english_definition: mom
-        audio_file: audio/topical-lesson-moya-simya-my-family-102.mp3
       -
         id: m9upba1t
         ukrainian_word: батько
         english_definition: father
-        audio_file: audio/topical-lesson-moya-simya-my-family-103.mp3
       -
         id: m9upbapz
         ukrainian_word: тато
         english_definition: dad
-        audio_file: audio/topical-lesson-moya-simya-my-family-104.mp3
       -
         id: m9upbbf1
         ukrainian_word: брат
         english_definition: brother
-        audio_file: audio/topical-lesson-moya-simya-my-family-105.mp3
       -
         id: m9upbby8
         ukrainian_word: сестра
         english_definition: sister
-        audio_file: audio/topical-lesson-moya-simya-my-family-106.mp3
     type: new_set
     enabled: true
   -
@@ -367,4 +361,5 @@ word_group:
     type: new_set
     enabled: true
 audio_file: topical-lesson-moya-simya-my-family-201.mp3
+dialogue_full_audio: topical-lesson-moya-simya-my-family-201.mp3
 ---
