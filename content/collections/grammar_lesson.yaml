@@ -1,5 +1,14 @@
 title: 'Grammar Lesson'
+template: grammar_lesson/show
+layout: layout
 revisions: false
+route: 'grammar-lesson/{slug}'
+sort_dir: asc
 date_behavior:
   past: public
   future: private
+preview_targets:
+  -
+    label: Entry
+    url: '{permalink}'
+    refresh: true

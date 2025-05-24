@@ -104,4 +104,14 @@ Route::statamic('/topical-lessons', 'topical_lessons.index', [
     ->get(),
 ]);
 
+
+Route::statamic('/grammar-lesson', 'grammar_lesson.index', [
+    'entries' => Entry::query()
+    ->where('collection', 'grammar_lesson')
+    ->where('status', 'published')
+    ->orderBy('order')
+    ->get(),
+]);
+
+
 ;
