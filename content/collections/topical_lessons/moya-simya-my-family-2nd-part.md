@@ -16,52 +16,64 @@ nouns:
     id: m7ab515s
     ukrainian_word: дідусь
     english_definition: grandfather
+    audio_file: topical-lesson-moya-simya-part-2-101.mp3
   -
     id: m7ab54jk
     ukrainian_word: бабуся
     english_definition: grandmother
+    audio_file: topical-lesson-moya-simya-part-2-102.mp3
   -
     id: m7ab57h2
     ukrainian_word: 'двоюрідна сестра'
     english_definition: 'female cousin'
+    audio_file: topical-lesson-moya-simya-part-2-103.mp3
   -
     id: m7ab5c1y
     ukrainian_word: 'двоюрідний брат'
     english_definition: 'male cousin'
+    audio_file: topical-lesson-moya-simya-part-2-104.mp3
 verbs:
   -
     id: m7ab81ir
     ukrainian_word: розмовляти
     english_definition: 'to talk'
+    audio_file: topical-lesson-moya-simya-part-2-105.mp3
   -
     id: m7abg4gh
     ukrainian_word: читати
     english_definition: 'to read'
+    audio_file: topical-lesson-moya-simya-part-2-106.mp3
   -
     id: m7ab9fpj
     ukrainian_word: писати
     english_definition: 'to write'
+    audio_file: topical-lesson-moya-simya-part-2-107.mp3
   -
     id: m7ab85sc
     ukrainian_word: 'дивитися на …'
     english_definition: 'look at'
+    audio_file: topical-lesson-moya-simya-part-2-108.mp3
   -
     id: m7ab93mw
     ukrainian_word: грати
     english_definition: 'to play'
+    audio_file: topical-lesson-moya-simya-part-2-109.mp3
 adjectives_and_adverbs:
   -
     id: m7aba1kz
     ukrainian_word: дорослий
     english_definition: adult
+    audio_file: topical-lesson-moya-simya-part-2-110.mp3
   -
     id: m7abadpq
     ukrainian_word: новий
     english_definition: new
+    audio_file: topical-lesson-moya-simya-part-2-111.mp3
   -
     id: m7abakdl
     ukrainian_word: мудрий
     english_definition: wise
+    audio_file: topical-lesson-moya-simya-part-2-112.mp3
 other_parts_of_speech:
   -
     id: m7abbprb
@@ -200,6 +212,6 @@ dialogue:
     ukrainian_speech: 'У мене теж є двоюрідний брат.  Він дорослий. Я люблю розмовляти з ним.'
     english_translation: "I also have a cousin. He's an adult. I love talking to him."
 updated_by: 1
-updated_at: 1745843625
+updated_at: 1745978076
 audio_file: topical-lesson-moya-simya-part-2-201.mp3
 ---

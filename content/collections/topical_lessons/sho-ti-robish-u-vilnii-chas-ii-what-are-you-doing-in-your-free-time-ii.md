@@ -20,10 +20,12 @@ word_group:
         id: m7lsfgqi
         ukrainian_word: пристрасть
         english_definition: passion
+        audio_file: topical-lessons-chym-ty-zakhopluyesa-101-1746950605.mp3
       -
         id: m7lsfi7a
         ukrainian_word: музей
         english_definition: museum
+        audio_file: topical-lessons-chym-ty-zakhopluyesa-102.mp3
     type: new_set
     enabled: true
   -
@@ -34,26 +36,32 @@ word_group:
         id: m7lsh016
         ukrainian_word: 'займатися спортом'
         english_definition: 'do sport'
+        audio_file: topical-lessons-chym-ty-zakhopluyesa-103.mp3
       -
         id: m7lshd30
         ukrainian_word: танцювати
         english_definition: dance
+        audio_file: topical-lessons-chym-ty-zakhopluyesa-104.mp3
       -
         id: m7lshtn3
         ukrainian_word: 'ходити в театр'
         english_definition: 'go to the theater'
+        audio_file: topical-lessons-chym-ty-zakhopluyesa-105-1746950736.mp3
       -
         id: m7lsi7g1
         ukrainian_word: 'ходити в спортзал'
         english_definition: 'go to the gym'
+        audio_file: topical-lessons-chym-ty-zakhopluyesa-106.mp3
       -
         id: m7lsizu6
         ukrainian_word: подорожувати
         english_definition: travel
+        audio_file: topical-lessons-chym-ty-zakhopluyesa-107.mp3
       -
         id: m7lsx4y5
         ukrainian_word: відвідувати
         english_definition: attend
+        audio_file: topical-lessons-chym-ty-zakhopluyesa-108-1746950470.mp3
     type: new_set
     enabled: true
   -
@@ -64,6 +72,7 @@ word_group:
         id: m7lsy0xj
         ukrainian_word: найбільше
         english_definition: 'the most'
+        audio_file: topical-lessons-chym-ty-zakhopluyesa-109-1746950483.mp3
     type: new_set
     enabled: true
   -
@@ -74,14 +83,17 @@ word_group:
         id: m7lsykgq
         ukrainian_word: тому...
         english_definition: 'so, therefore...'
+        audio_file: topical-lessons-chym-ty-zakhopluyesa-110-1746950491.mp3
       -
         id: m7lsz3ch
         ukrainian_word: 'а ще'
         english_definition: 'and also'
+        audio_file: topical-lessons-chym-ty-zakhopluyesa-111-1746950498.mp3
       -
         id: m7lsziyh
         ukrainian_word: 'Чому?'
         english_definition: 'Why?'
+        audio_file: topical-lessons-chym-ty-zakhopluyesa-112.mp3
     type: new_set
     enabled: true
 long_reading_text:
@@ -154,26 +166,32 @@ phrases_and_questions:
     id: m7lt2907
     ukrainian_phrase: 'Це моя пристрасть!'
     english_definition: 'This is my passion!'
+    audio_file: topical-lessons-chym-ty-zakhopluyesa-301.mp3
   -
     id: m7lt2ke0
     ukrainian_phrase: 'Це дуже захопливо!'
     english_definition: "It's very exciting!"
+    audio_file: topical-lessons-chym-ty-zakhopluyesa-302.mp3
   -
     id: m7lt2urm
     ukrainian_phrase: 'Чому ти так сильно це любиш?'
     english_definition: 'Why do you love it so much?'
+    audio_file: topical-lessons-chym-ty-zakhopluyesa-303.mp3
   -
     id: m7ltcjxk
     ukrainian_phrase: 'Чим ти захоплюєшся?'
     english_definition: 'What are you interested in?'
+    audio_file: topical-lessons-chym-ty-zakhopluyesa-304.mp3
   -
     id: m7lt3482
     ukrainian_phrase: 'Я захоплюююся…'
     english_definition: "I'm interested in...  I admire..."
+    audio_file: topical-lessons-chym-ty-zakhopluyesa-305.mp3
   -
     id: m7lt3dye
     ukrainian_phrase: 'Я обожнюю…'
     english_definition: 'I love/adore...'
+    audio_file: topical-lessons-chym-ty-zakhopluyesa-306.mp3
 dialogue:
   -
     id: m7lt3wo3
@@ -220,6 +238,8 @@ dialogue:
     speaker: Богдан
     ukrainian_speech: 'Тоді запрошую😉'
     english_translation: 'Then I invite you!😉'
-updated_by: 1
-updated_at: 1740588406
+updated_by: 4378
+updated_at: 1746950741
+dialogue_full_audio: topical-lessons-chym-ty-zakhopluyesa-401.mp3
+audio_file: topical-lessons-chym-ty-zakhopluyesa-201.mp3
 ---

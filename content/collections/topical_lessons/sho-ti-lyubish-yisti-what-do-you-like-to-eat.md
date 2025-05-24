@@ -70,11 +70,11 @@ word_group:
       -
         id: m7z3bi5r
         ukrainian_word: корисно
-        english_definition: useful
+        english_definition: 'healthy, useful'
       -
         id: m7z3bmhz
         ukrainian_word: шкідливо
-        english_definition: harmful
+        english_definition: 'junky, harmful'
     type: new_set
     enabled: true
 long_reading_text:
@@ -246,5 +246,5 @@ dialogue:
     ukrainian_speech: 'У мене є алергія на яйця, а сьогодні я би з’їв салату та м’яса. Ходімо!'
     english_translation: 'I am allergic to eggs, and today I would eat salad and meat. Come!'
 updated_by: 4378
-updated_at: 1742200735
+updated_at: 1746630975
 ---

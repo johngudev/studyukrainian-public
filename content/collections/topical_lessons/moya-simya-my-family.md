@@ -24,8 +24,8 @@ vocabulary_set:
     id: m73o9fzb
     ukrainian_word: брат
     english_definition: Brother
-updated_by: 1
-updated_at: 1745859129
+updated_by: 4378
+updated_at: 1746362191
 ukrainian_text:
   -
     type: paragraph
@@ -361,5 +361,5 @@ word_group:
     type: new_set
     enabled: true
 audio_file: topical-lesson-moya-simya-my-family-201.mp3
-dialogue_full_audio: topical-lesson-moya-simya-my-family-201.mp3
+dialogue_full_audio: topical-lesson-moya-simya-my-family-401.mp3
 ---
