@@ -94,6 +94,10 @@
             <div class="lesson-introduction-text">{!! $page->introduction !!}</div>
         </div>
 
+        <div class="modern-panel mt-1 p-3 p-md-5">
+            {!! $page->content !!}
+        </div>
+
     </div>
 
 @endsection
