@@ -93,8 +93,12 @@
             <h1 class=""> {{$page->title}} </h1>
         </div>
 
-        <div class="modern-panel p-3 p-md-5 text-graphite-black">
+        <div class="modern-panel p-3 p-md-5 mt-1 text-graphite-black">
             <div class=""> {!! $page->ukrainian_article !!} </div>
+        </div>
+
+        <div class="modern-panel p-3 p-md-5 mt-1 text-graphite-black">
+            <div class=""> {!! $page->english_article !!} </div>
         </div>
 
     </div>
