@@ -20,26 +20,32 @@ word_group:
         id: m8ah248a
         ukrainian_word: подорож
         english_definition: travel
+        audio_file: topical-lesson-yaka-sogodni-pohoda-101.mp3
       -
         id: m8ah2jex
         ukrainian_word: погода
         english_definition: weather
+        audio_file: topical-lesson-yaka-sogodni-pohoda-102.mp3
       -
         id: m8ah2p7g
         ukrainian_word: мороз
         english_definition: frost
+        audio_file: topical-lesson-yaka-sogodni-pohoda-103.mp3
       -
         id: m8ah2ss0
         ukrainian_word: парасолька
         english_definition: umbrella
+        audio_file: topical-lesson-yaka-sogodni-pohoda-104.mp3
       -
         id: m8ah38ib
         ukrainian_word: 'речі (одяг)'
         english_definition: 'things (clothes)'
+        audio_file: topical-lesson-yaka-sogodni-pohoda-105.mp3
       -
         id: m8ah3f2a
         ukrainian_word: туман
         english_definition: fog
+        audio_file: topical-lesson-yaka-sogodni-pohoda-106.mp3
     type: new_set
     enabled: true
   -
@@ -50,22 +56,27 @@ word_group:
         id: m8ah5pxp
         ukrainian_word: 'хотіти (я хочу)'
         english_definition: 'to want (I want)'
+        audio_file: topical-lesson-yaka-sogodni-pohoda-107.mp3
       -
         id: m8ah5xp7
         ukrainian_word: поїхати
         english_definition: 'to go by transport'
+        audio_file: topical-lesson-yaka-sogodni-pohoda-108.mp3
       -
         id: m8ah62b7
         ukrainian_word: взяти
         english_definition: 'to take'
+        audio_file: topical-lesson-yaka-sogodni-pohoda-109.mp3
       -
         id: m8ah67ny
         ukrainian_word: вдягнутися
         english_definition: 'to dress'
+        audio_file: topical-lesson-yaka-sogodni-pohoda-110.mp3
       -
         id: m8ah6hbk
         ukrainian_word: дізнатися
         english_definition: 'to find out, to learn'
+        audio_file: topical-lesson-yaka-sogodni-pohoda-111.mp3
     type: new_set
     enabled: true
   -
@@ -76,26 +87,32 @@ word_group:
         id: m8aha1fu
         ukrainian_word: довгий
         english_definition: long
+        audio_file: topical-lesson-yaka-sogodni-pohoda-112.mp3
       -
         id: m8aha6q3
         ukrainian_word: теплий
         english_definition: warm
+        audio_file: topical-lesson-yaka-sogodni-pohoda-113.mp3
       -
         id: m8ahagii
         ukrainian_word: треба
         english_definition: 'need to'
+        audio_file: topical-lesson-yaka-sogodni-pohoda-114.mp3
       -
         id: m8ahaol1
         ukrainian_word: хмарно
         english_definition: cloudy
+        audio_file: topical-lesson-yaka-sogodni-pohoda-115.mp3
       -
         id: m8ahavtr
         ukrainian_word: там
         english_definition: there
+        audio_file: topical-lesson-yaka-sogodni-pohoda-116.mp3
       -
         id: m8ahb1a6
         ukrainian_word: 'на вулиці'
         english_definition: outside
+        audio_file: topical-lesson-yaka-sogodni-pohoda-117.mp3
     type: new_set
     enabled: true
 long_reading_text:
@@ -200,26 +217,32 @@ phrases_and_questions:
     id: m8ahkg3f
     ukrainian_phrase: 'Яка сьогодні погода?'
     english_definition: 'What the weather is today?'
+    audio_file: topical-lesson-yaka-sogodni-pohoda-301.mp3
   -
     id: m8ahkojj
     ukrainian_phrase: 'Дощить, іде дощ'
     english_definition: 'It is raining'
+    audio_file: topical-lesson-yaka-sogodni-pohoda-302.mp3
   -
     id: m8ahktsk
     ukrainian_phrase: 'Дощу немає'
     english_definition: "It isn't raining"
+    audio_file: topical-lesson-yaka-sogodni-pohoda-303.mp3
   -
     id: m8ahl32b
     ukrainian_phrase: 'Іде сніг'
     english_definition: "It's snowing"
+    audio_file: topical-lesson-yaka-sogodni-pohoda-304.mp3
   -
     id: m8ahn1f7
     ukrainian_phrase: 'Я хочу...'
     english_definition: 'I want…'
+    audio_file: topical-lesson-yaka-sogodni-pohoda-305.mp3
   -
     id: m8ahn7e2
     ukrainian_phrase: Навзаєм!
     english_definition: 'Universal expression we use to wish something in return'
+    audio_file: topical-lesson-yaka-sogodni-pohoda-306.mp3
 dialogue:
   -
     id: m8ahms9s
@@ -257,5 +280,6 @@ dialogue:
     ukrainian_speech: 'Дякую! Навзаєм!'
     english_translation: 'Thank you! To you too!'
 updated_by: 4378
-updated_at: 1742060631
+updated_at: 1750417546
+audio_file: topical-lesson-yaka-sogodni-pohoda-201.mp3
 ---

@@ -11,30 +11,37 @@ word_group:
         id: m7z37w5x
         ukrainian_word: їжа
         english_definition: food
+        audio_file: topical-lesson-shcho-ty-lubysh-jisty-101.mp3
       -
         id: m7z38791
         ukrainian_word: яйця
         english_definition: eggs
+        audio_file: topical-lesson-shcho-ty-lubysh-jisty-102.mp3
       -
         id: m7z38eeh
         ukrainian_word: овочі
         english_definition: vegetables
+        audio_file: topical-lesson-shcho-ty-lubysh-jisty-103.mp3
       -
         id: m7z38r1c
         ukrainian_word: фрукти
         english_definition: fruits
+        audio_file: topical-lesson-shcho-ty-lubysh-jisty-104.mp3
       -
         id: m7z38w3q
         ukrainian_word: каша
         english_definition: porridge
+        audio_file: topical-lesson-shcho-ty-lubysh-jisty-105.mp3
       -
         id: m7z391tg
         ukrainian_word: м’ясо
         english_definition: meat
+        audio_file: topical-lesson-shcho-ty-lubysh-jisty-106.mp3
       -
         id: m7z398du
         ukrainian_word: риба
         english_definition: fish
+        audio_file: topical-lesson-shcho-ty-lubysh-jisty-107.mp3
     type: new_set
     enabled: true
   -
@@ -45,14 +52,17 @@ word_group:
         id: m7z39jsi
         ukrainian_word: їсти
         english_definition: 'to eat'
+        audio_file: topical-lesson-shcho-ty-lubysh-jisty-108.mp3
       -
         id: m7z39rgf
         ukrainian_word: 'мати алергію'
         english_definition: 'to have allergies'
+        audio_file: topical-lesson-shcho-ty-lubysh-jisty-109.mp3
       -
         id: m7z3aa2s
         ukrainian_word: намагатися
         english_definition: 'to try (to do something)'
+        audio_file: topical-lesson-shcho-ty-lubysh-jisty-110.mp3
     type: new_set
     enabled: true
   -
@@ -63,18 +73,22 @@ word_group:
         id: m7z3b5ri
         ukrainian_word: смачно
         english_definition: delicious
+        audio_file: topical-lesson-shcho-ty-lubysh-jisty-111.mp3
       -
         id: m7z3bcxf
         ukrainian_word: несмачно
         english_definition: tasteless
+        audio_file: topical-lesson-shcho-ty-lubysh-jisty-111-1748777043.mp3
       -
         id: m7z3bi5r
         ukrainian_word: корисно
         english_definition: 'healthy, useful'
+        audio_file: topical-lesson-shcho-ty-lubysh-jisty-112.mp3
       -
         id: m7z3bmhz
         ukrainian_word: шкідливо
         english_definition: 'junky, harmful'
+        audio_file: topical-lesson-shcho-ty-lubysh-jisty-113.mp3
     type: new_set
     enabled: true
 long_reading_text:
@@ -179,26 +193,32 @@ phrases_and_questions:
     id: m7z3dfrb
     ukrainian_phrase: 'Що ти любиш їсти?'
     english_definition: 'What do you like to eat?'
+    audio_file: topical-lesson-shcho-ty-lubysh-jisty-301.mp3
   -
     id: m7z3dmcr
     ukrainian_phrase: 'Ти голодний?'
     english_definition: 'Are you hungry? (to men)'
+    audio_file: topical-lesson-shcho-ty-lubysh-jisty-302-1748777170.mp3
   -
     id: m7z3duvp
     ukrainian_phrase: 'Ти голодна?'
     english_definition: 'Are you hungry? (to women)'
+    audio_file: topical-lesson-shcho-ty-lubysh-jisty-303.mp3
   -
     id: m7z3edjg
     ukrainian_phrase: 'Ти хотів би піти в ресторан?'
     english_definition: 'Would you like to go to a restaurant? (to men)'
+    audio_file: topical-lesson-shcho-ty-lubysh-jisty-304-1748777370.mp3
   -
     id: m7z3f168
     ukrainian_phrase: 'Ти хотіла б піти в ресторан?'
     english_definition: 'Would you like to go to a restaurant? (to women)'
+    audio_file: topical-lesson-shcho-ty-lubysh-jisty-305-1748777385.mp3
   -
     id: m7z3fk54
     ukrainian_phrase: 'У тебе є на щось алергія?'
     english_definition: 'Do you have any allergies?'
+    audio_file: topical-lesson-shcho-ty-lubysh-jisty-305-1748777401.mp3
 dialogue:
   -
     id: m7z3ft65
@@ -246,5 +266,6 @@ dialogue:
     ukrainian_speech: 'У мене є алергія на яйця, а сьогодні я би з’їв салату та м’яса. Ходімо!'
     english_translation: 'I am allergic to eggs, and today I would eat salad and meat. Come!'
 updated_by: 4378
-updated_at: 1746630975
+updated_at: 1748777429
+audio_file: topical-lesson-shcho-ty-lubysh-jisty-201.mp3
 ---

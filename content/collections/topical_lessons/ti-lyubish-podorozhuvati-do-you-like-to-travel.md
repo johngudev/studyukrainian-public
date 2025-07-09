@@ -20,30 +20,37 @@ word_group:
         id: m7pyova3
         ukrainian_word: море
         english_definition: sea
+        audio_file: topical-lesson-ty-lubysh-podorozhuvaty-101.mp3
       -
         id: m7pyp9w2
         ukrainian_word: водоспад
         english_definition: waterfall
+        audio_file: topical-lesson-ty-lubysh-podorozhuvaty-102-1748215399.mp3
       -
         id: m7pyqh3m
         ukrainian_word: водойма
         english_definition: pond
+        audio_file: topical-lesson-ty-lubysh-podorozhuvaty-103-1748214500.mp3
       -
         id: m7pyqt7e
         ukrainian_word: каньйон
         english_definition: canyon
+        audio_file: topical-lesson-ty-lubysh-podorozhuvaty-104-1748214533.mp3
       -
         id: m7pyum7u
         ukrainian_word: пустеля
         english_definition: desert
+        audio_file: topical-lesson-ty-lubysh-podorozhuvaty-105-1748214552.mp3
       -
         id: m7pyux2p
         ukrainian_word: береги
         english_definition: shores
+        audio_file: topical-lesson-ty-lubysh-podorozhuvaty-114.mp3
       -
         id: m7pyvchj
         ukrainian_word: узбережжя
         english_definition: coast
+        audio_file: topical-lesson-ty-lubysh-podorozhuvaty-106.mp3
     type: new_set
     enabled: true
   -
@@ -53,6 +60,7 @@ word_group:
         id: m7pyw9e7
         ukrainian_word: знаходиться
         english_definition: 'is located'
+        audio_file: topical-lesson-ty-lubysh-podorozhuvaty-107-1748214632.mp3
     type: new_set
     enabled: true
     word_group_title: Verbs
@@ -64,10 +72,12 @@ word_group:
         id: m7pyxxro
         ukrainian_word: недалеко
         english_definition: 'not far away'
+        audio_file: topical-lesson-ty-lubysh-podorozhuvaty-108-1748214654.mp3
       -
         id: m7pyylsy
         ukrainian_word: поблизу
         english_definition: near
+        audio_file: topical-lesson-ty-lubysh-podorozhuvaty-109-1748214659.mp3
     type: new_set
     enabled: true
   -
@@ -78,14 +88,17 @@ word_group:
         id: m7pzeorj
         ukrainian_word: 'поблизу моря'
         english_definition: 'near the sea'
+        audio_file: topical-lesson-ty-lubysh-podorozhuvaty-110.mp3
       -
         id: m7pzfqtr
         ukrainian_word: 'недалеко від озера'
         english_definition: 'near the lake'
+        audio_file: topical-lesson-ty-lubysh-podorozhuvaty-111.mp3
       -
         id: m7pzgaq7
         ukrainian_word: 'уздовж узбережжя'
         english_definition: 'along the coast'
+        audio_file: topical-lesson-ty-lubysh-podorozhuvaty-112.mp3
     type: new_set
     enabled: true
 long_reading_text:
@@ -174,14 +187,17 @@ phrases_and_questions:
     id: m7pzklb8
     ukrainian_phrase: 'Куди ти їздив (-ла) цього літа?'
     english_definition: 'Where did you go this summer?'
+    audio_file: topical-lesson-ty-lubysh-podorozhuvaty-301.mp3
   -
     id: m7pzl0s4
     ukrainian_phrase: 'Де ти відпочивав (-ла) цього літа?'
     english_definition: 'Where did you rest this summer?'
+    audio_file: topical-lesson-ty-lubysh-podorozhuvaty-302.mp3
   -
     id: m7pzld81
-    ukrainian_phrase: 'Ти дійсно маєш це зробити!'
+    ukrainian_phrase: 'Ти справді маєш це зробити!'
     english_definition: 'You really have to do it!'
+    audio_file: topical-lesson-ty-lubysh-podorozhuvaty-303.mp3
 dialogue:
   -
     id: m7pzlosf
@@ -218,6 +234,7 @@ dialogue:
     speaker: Давид
     ukrainian_speech: Цікаво!
     english_translation: Interesting!
-updated_by: 1
-updated_at: 1741264839
+updated_by: 4378
+updated_at: 1748215628
+audio_file: topical-lesson-ty-lubysh-podorozhuvaty-201.mp3
 ---

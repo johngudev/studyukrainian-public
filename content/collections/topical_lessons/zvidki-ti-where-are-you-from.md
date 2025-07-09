@@ -20,14 +20,17 @@ word_group:
         id: m80mk9n9
         ukrainian_word: 'Звідки ти?'
         english_definition: 'Where are you from?'
+        audio_file: topical-lesson-zvidky-ty-101.mp3
       -
         id: m80mjivs
         ukrainian_word: 'Де ти живеш?'
         english_definition: 'Where do you live?'
+        audio_file: topical-lesson-zvidky-ty-102.mp3
       -
         id: m80mkrxg
         ukrainian_word: Гаразд!
         english_definition: Okay!
+        audio_file: topical-lesson-zvidky-ty-103.mp3
     type: new_set
     enabled: true
   -
@@ -38,30 +41,37 @@ word_group:
         id: m80mo4bo
         ukrainian_word: вчити
         english_definition: 'to learn'
+        audio_file: topical-lesson-zvidky-ty-104.mp3
       -
         id: m80mod5d
         ukrainian_word: жити
         english_definition: 'to live'
+        audio_file: topical-lesson-zvidky-ty-105.mp3
       -
         id: m80moki2
         ukrainian_word: розмовляти
         english_definition: 'to talk'
+        audio_file: topical-lesson-zvidky-ty-106.mp3
       -
         id: m80mp2o4
         ukrainian_word: давно
         english_definition: 'long ago, for a long time'
+        audio_file: topical-lesson-zvidky-ty-107.mp3
       -
         id: m80mpmhr
         ukrainian_word: зараз
         english_definition: now
+        audio_file: topical-lesson-zvidky-ty-108.mp3
       -
         id: m80mq0bj
         ukrainian_word: але
         english_definition: but
+        audio_file: topical-lesson-zvidky-ty-109.mp3
       -
         id: m80mq77r
         ukrainian_word: 'до речі'
         english_definition: 'by the way'
+        audio_file: topical-lesson-zvidky-ty-110.mp3
     type: new_set
     enabled: true
 long_reading_text:
@@ -134,26 +144,32 @@ phrases_and_questions:
     id: m80mufwg
     ukrainian_phrase: 'Доброго ранку!'
     english_definition: 'Good morning!'
+    audio_file: topical-lesson-zvidky-ty-301.mp3
   -
     id: m80murii
     ukrainian_phrase: 'Я живу в…'
     english_definition: 'I live in...'
+    audio_file: topical-lesson-zvidky-ty-302-1749134788.mp3
   -
     id: m80mv1s7
     ukrainian_phrase: 'Ти з...?'
     english_definition: 'Are you from…?'
+    audio_file: topical-lesson-zvidky-ty-303.mp3
   -
     id: m80mwets
     ukrainian_phrase: 'Я розмовляю англійською.'
     english_definition: 'I speak English.'
+    audio_file: topical-lesson-zvidky-ty-304.mp3
   -
     id: m80mwtrn
     ukrainian_phrase: 'Я вчу українську (мову)'
     english_definition: 'I learn Ukrainian (language)'
+    audio_file: topical-lesson-zvidky-ty-305.mp3
   -
     id: m80mx6zt
     ukrainian_phrase: 'Можна на ти!'
     english_definition: 'You can speak in informal way to me and you "ти"'
+    audio_file: topical-lesson-zvidky-ty-306.mp3
 dialogue:
   -
     id: m80myljd
@@ -201,5 +217,6 @@ dialogue:
     ukrainian_speech: Дякую!
     english_translation: 'Thank you!'
 updated_by: 4378
-updated_at: 1742200864
+updated_at: 1749134882
+audio_file: topical-lesson-zvidky-ty-201.mp3
 ---

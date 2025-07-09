@@ -11,9 +11,6 @@ introduction:
       -
         type: text
         text: "Let's look how to get to know new people in Ukrainian!"
-nouns:
-  -
-    id: m80lpwkl
 word_group:
   -
     id: m80lq0m7
@@ -23,26 +20,32 @@ word_group:
         id: m80lun7w
         ukrainian_word: Привіт!
         english_definition: Hi!
+        audio_file: topical-lesson-jak-tebe-zvaty-101.mp3
       -
         id: m80luxr3
         ukrainian_word: 'Як тебе звати?'
         english_definition: 'What is your name?'
+        audio_file: topical-lesson-jak-tebe-zvaty-102.mp3
       -
         id: m80ly37f
         ukrainian_word: 'Я з...'
         english_definition: "I'm from..."
+        audio_file: topical-lesson-jak-tebe-zvaty-103.mp3
       -
         id: m80lqa1r
         ukrainian_word: Звісно!
         english_definition: 'Of course!'
+        audio_file: topical-lesson-jak-tebe-zvaty-104.mp3
       -
         id: m80lqude
         ukrainian_word: Дякую!
         english_definition: 'Thank you!'
+        audio_file: topical-lesson-jak-tebe-zvaty-105.mp3
       -
         id: m80lr3ml
-        ukrainian_word: 'Будь ласка'
+        ukrainian_word: 'Будь ласка!'
         english_definition: Please
+        audio_file: topical-lesson-jak-tebe-zvaty-106.mp3
     type: new_set
     enabled: true
   -
@@ -53,10 +56,7 @@ word_group:
         id: m80lrkn5
         ukrainian_word: знайомитися
         english_definition: 'to get aquaintance'
-    type: new_set
-    enabled: true
-  -
-    id: m80ls5ph
+        audio_file: topical-lesson-jak-tebe-zvaty-107.mp3
     type: new_set
     enabled: true
 long_reading_text:
@@ -113,30 +113,37 @@ phrases_and_questions:
     id: m80m0gwc
     ukrainian_phrase: 'Добрий день!'
     english_definition: 'Good afternoon!'
+    audio_file: topical-lesson-jak-tebe-zvaty-301.mp3
   -
     id: m80m0y1o
     ukrainian_phrase: Вітаю!
     english_definition: Hello!
+    audio_file: topical-lesson-jak-tebe-zvaty-302.mp3
   -
     id: m80m3bsa
     ukrainian_phrase: 'Можна з Вами познайомитися?'
     english_definition: 'May I ask your name, please?'
+    audio_file: topical-lesson-jak-tebe-zvaty-303.mp3
   -
     id: m80m3nmm
     ukrainian_phrase: 'Звідки Ви?'
     english_definition: 'Where are you from? (formal)'
+    audio_file: topical-lesson-jak-tebe-zvaty-303-1748778294.mp3
   -
     id: m80m4w2x
     ukrainian_phrase: 'Звідки ти?'
     english_definition: 'Where are you from? (informal)'
+    audio_file: topical-lesson-jak-tebe-zvaty-305.mp3
   -
     id: m80m5a6e
     ukrainian_phrase: 'Приємно познайомитися!'
     english_definition: 'Nice to meet you!'
+    audio_file: topical-lesson-jak-tebe-zvaty-306.mp3
   -
     id: m80m5mmm
     ukrainian_phrase: Навзаєм!
     english_definition: 'For me too!'
+    audio_file: topical-lesson-jak-tebe-zvaty-307.mp3
 dialogue:
   -
     id: m80m63bo
@@ -174,5 +181,6 @@ dialogue:
     ukrainian_speech: 'Навзаєм! 😊'
     english_translation: 'For me too! 😊'
 updated_by: 4378
-updated_at: 1741464826
+updated_at: 1748778385
+audio_file: topical-lesson-jak-tebe-zvaty-201.mp3
 ---

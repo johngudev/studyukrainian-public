@@ -20,14 +20,17 @@ word_group:
         id: m8ai3hms
         ukrainian_word: пробіжка
         english_definition: jogging
+        audio_file: topical-lesson-na-vulici-sonyachno-101.mp3
       -
         id: m8ai3poj
         ukrainian_word: температура
         english_definition: temperature
+        audio_file: topical-lesson-na-vulici-sonyachno-102.mp3
       -
         id: m8ai3wtx
         ukrainian_word: 'прогноз погоди'
         english_definition: 'weather forecast'
+        audio_file: topical-lesson-na-vulici-sonyachno-103.mp3
     type: new_set
     enabled: true
   -
@@ -38,14 +41,17 @@ word_group:
         id: m8ai79zy
         ukrainian_word: піти
         english_definition: 'to go'
+        audio_file: topical-lesson-na-vulici-sonyachno-104.mp3
       -
         id: m8ai7wwu
         ukrainian_word: збиратися
         english_definition: 'to get ready'
+        audio_file: topical-lesson-na-vulici-sonyachno-105.mp3
       -
         id: m8ai8gwb
         ukrainian_word: виходити
         english_definition: 'to go outside'
+        audio_file: topical-lesson-na-vulici-sonyachno-106.mp3
     type: new_set
     enabled: true
   -
@@ -56,26 +62,32 @@ word_group:
         id: m8aia9tk
         ukrainian_word: сонячно
         english_definition: sunny
+        audio_file: topical-lesson-na-vulici-sonyachno-107.mp3
       -
         id: m8aib14u
         ukrainian_word: жарко
         english_definition: hot
+        audio_file: topical-lesson-na-vulici-sonyachno-108.mp3
       -
         id: m8aicul6
         ukrainian_word: високий
         english_definition: high
+        audio_file: topical-lesson-na-vulici-sonyachno-109.mp3
       -
         id: m8aidvxl
         ukrainian_word: гроза
         english_definition: thunder
+        audio_file: topical-lesson-na-vulici-sonyachno-110.mp3
       -
         id: m8aiewtm
         ukrainian_word: прохолодно
         english_definition: cool
+        audio_file: topical-lesson-na-vulici-sonyachno-111.mp3
       -
         id: m8aifj5w
         ukrainian_word: швидко
         english_definition: 'fastly, quickly'
+        audio_file: topical-lesson-na-vulici-sonyachno-112.mp3
     type: new_set
     enabled: true
 long_reading_text:
@@ -164,14 +176,17 @@ phrases_and_questions:
     id: m8aj0bwy
     ukrainian_phrase: 'Хочеш піти на прогулянку?'
     english_definition: 'Do you want to go for a walk?'
+    audio_file: topical-lesson-na-vulici-sonyachno-301.mp3
   -
     id: m8aj0jnz
     ukrainian_phrase: Ходімо!
     english_definition: "Let's go!"
+    audio_file: topical-lesson-na-vulici-sonyachno-302.mp3
   -
     id: m8aj0tf1
     ukrainian_phrase: 'дізнатися/ подивитися прогноз погоди'
     english_definition: 'to check the weather forecast'
+    audio_file: topical-lesson-na-vulici-sonyachno-303.mp3
 dialogue:
   -
     id: m8aj4t3c
@@ -209,5 +224,6 @@ dialogue:
     ukrainian_speech: 'До зустрічі!'
     english_translation: 'See you!'
 updated_by: 4378
-updated_at: 1742201234
+updated_at: 1750925226
+audio_file: topical-lesson-na-vulici-sonyachno-201.mp3
 ---

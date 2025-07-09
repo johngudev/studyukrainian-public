@@ -20,22 +20,27 @@ word_group:
         id: m7nma80b
         ukrainian_word: природа
         english_definition: Nature
+        audio_file: topical-lesson-chudesa-pryrody-101.mp3
       -
         id: m7nmalzn
         ukrainian_word: гори
         english_definition: mountains
+        audio_file: topical-lesson-chudesa-pryrody-102.mp3
       -
         id: m7nmbuuv
         ukrainian_word: ріка
         english_definition: river
+        audio_file: topical-lesson-chudesa-pryrody-103.mp3
       -
         id: m7nmcimk
         ukrainian_word: озеро
         english_definition: lake
+        audio_file: topical-lesson-chudesa-pryrody-104.mp3
       -
         id: m7nmcrr3
         ukrainian_word: край
         english_definition: 'land, region'
+        audio_file: topical-lesson-chudesa-pryrody-105.mp3
     type: new_set
     enabled: true
   -
@@ -46,22 +51,27 @@ word_group:
         id: m7nmdkum
         ukrainian_word: 'йти в похід'
         english_definition: 'go camping'
+        audio_file: topical-lesson-chudesa-pryrody-106.mp3
       -
         id: m7nmdxrw
         ukrainian_word: 'споглядати краєвид'
         english_definition: 'contemplate the landscape'
+        audio_file: topical-lesson-chudesa-pryrody-107.mp3
       -
         id: m7nme8sx
         ukrainian_word: подорожувати
         english_definition: travel
+        audio_file: topical-lesson-chudesa-pryrody-108.mp3
       -
         id: m7nmeppj
         ukrainian_word: захоплювати
         english_definition: 'delight, be exciting'
+        audio_file: topical-lesson-chudesa-pryrody-108-1748213689.mp3
       -
         id: m7nmf342
         ukrainian_word: 'залишати спогад'
         english_definition: 'leave memories'
+        audio_file: topical-lesson-chudesa-pryrody-110.mp3
     type: new_set
     enabled: true
   -
@@ -72,10 +82,12 @@ word_group:
         id: m7nmg7rb
         ukrainian_word: неймовірно
         english_definition: incredibly
+        audio_file: topical-lesson-chudesa-pryrody-111.mp3
       -
         id: m7nmgkgx
         ukrainian_word: мальовничий
         english_definition: picturesque
+        audio_file: topical-lesson-chudesa-pryrody-112.mp3
     type: new_set
     enabled: true
 long_reading_text:
@@ -164,14 +176,17 @@ phrases_and_questions:
     id: m7nmjy4t
     ukrainian_phrase: 'Ти ходив(-ла) в похід в гори?'
     english_definition: 'Did you go hiking in the mountains?'
+    audio_file: topical-lesson-chudesa-pryrody-301-1748215721.mp3
   -
     id: m7nmka4r
     ukrainian_phrase: 'Ти їздив(-ла) на море?'
     english_definition: 'Did you go to the sea?'
+    audio_file: topical-lesson-chudesa-pryrody-302.mp3
   -
     id: m7nmkkof
     ukrainian_phrase: 'Куди ти зазвичай подорожуєш?'
     english_definition: 'Where do you usually travel?'
+    audio_file: topical-lesson-chudesa-pryrody-303-1748215771.mp3
 dialogue:
   -
     id: m7nmkure
@@ -214,5 +229,6 @@ dialogue:
     ukrainian_speech: 'Подорожі завжди залишають чудові спогади!'
     english_translation: 'Travel always leaves great memories!'
 updated_by: 4378
-updated_at: 1740677911
+updated_at: 1748215789
+audio_file: topical-lesson-chudesa-pryrody-201.mp3
 ---
