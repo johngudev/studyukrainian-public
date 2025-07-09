@@ -98,7 +98,7 @@ word_group:
         id: m8ctuxde
         ukrainian_word: знайомий
         english_definition: familiar
-        audio_file: topical-lesson-mozhemo-obminyatisya-kontaktami-115-1752079203.mp3
+        audio_file: topical-lesson-mozhemo-obminyatisya-kontaktami-116-1752079705.mp3
     type: new_set
     enabled: true
   -
@@ -109,6 +109,7 @@ word_group:
         id: m8ctvpmm
         ukrainian_word: адже
         english_definition: 'as soons as'
+        audio_file: topical-lesson-mozhemo-obminyatisya-kontaktami-117.mp3
     type: new_set
     enabled: true
 long_reading_text:
@@ -197,18 +198,22 @@ phrases_and_questions:
     id: m8ctzjr4
     ukrainian_phrase: 'Це мій улюблений гурт'
     english_definition: 'This is my favorite band'
+    audio_file: topical-lesson-mozhemo-obminyatisya-kontaktami-301.mp3
   -
     id: m8ctzq89
     ukrainian_phrase: 'Можемо обмінятися контактами'
     english_definition: 'We can exchange contacts'
+    audio_file: topical-lesson-mozhemo-obminyatisya-kontaktami-302.mp3
   -
     id: m8cu00rm
     ukrainian_phrase: 'Ось мій номер телефону, інстаграм'
     english_definition: "Here's my phone number, Instagram"
+    audio_file: topical-lesson-mozhemo-obminyatisya-kontaktami-303.mp3
   -
     id: m8cu0aqe
     ukrainian_phrase: 'Як тобі зручно'
     english_definition: 'How you feel comfortable'
+    audio_file: topical-lesson-mozhemo-obminyatisya-kontaktami-304.mp3
 dialogue:
   -
     id: m8cu0kr3
@@ -266,5 +271,6 @@ dialogue:
     ukrainian_speech: Навзаєм!
     english_translation: 'Me too!'
 updated_by: 4378
-updated_at: 1752079243
+updated_at: 1752079795
+audio_file: topical-lesson-mozhemo-obminyatisya-kontaktami-201.mp3
 ---
