@@ -11,30 +11,37 @@ word_group:
         id: m8ctof0d
         ukrainian_word: 'номер телефону'
         english_definition: 'phone number'
+        audio_file: topical-lesson-mozhemo-obminyatisya-kontaktami-101.mp3
       -
         id: m8ctot2w
         ukrainian_word: контакт
         english_definition: contact
+        audio_file: topical-lesson-mozhemo-obminyatisya-kontaktami-102.mp3
       -
         id: m8ctpgpu
         ukrainian_word: Інстаграм
         english_definition: Instagram
+        audio_file: topical-lesson-mozhemo-obminyatisya-kontaktami-103.mp3
       -
         id: m8ctprax
         ukrainian_word: концерт
         english_definition: concert
+        audio_file: topical-lesson-mozhemo-obminyatisya-kontaktami-104.mp3
       -
         id: m8ctq28x
         ukrainian_word: гурт
         english_definition: band
+        audio_file: topical-lesson-mozhemo-obminyatisya-kontaktami-105.mp3
       -
         id: m8ctqcvi
         ukrainian_word: натовп
         english_definition: crowd
+        audio_file: topical-lesson-mozhemo-obminyatisya-kontaktami-106.mp3
       -
         id: m8ctqjsn
         ukrainian_word: голос
         english_definition: voice
+        audio_file: topical-lesson-mozhemo-obminyatisya-kontaktami-107.mp3
     type: new_set
     enabled: true
   -
@@ -45,26 +52,32 @@ word_group:
         id: m8ctr3du
         ukrainian_word: знайомитися
         english_definition: 'to get aquiantanced'
+        audio_file: topical-lesson-mozhemo-obminyatisya-kontaktami-108.mp3
       -
         id: m8ctrgle
         ukrainian_word: обмінятися
         english_definition: 'to exchange'
+        audio_file: topical-lesson-mozhemo-obminyatisya-kontaktami-109.mp3
       -
         id: m8ctrytr
         ukrainian_word: 'губити (щось)'
         english_definition: 'to lose (something)'
+        audio_file: topical-lesson-mozhemo-obminyatisya-kontaktami-110.mp3
       -
         id: m8ctscc1
         ukrainian_word: cпілкуватися
         english_definition: 'to communicate, to chat'
+        audio_file: topical-lesson-mozhemo-obminyatisya-kontaktami-111.mp3
       -
         id: m8cttbo7
         ukrainian_word: слухати
         english_definition: 'to listen'
+        audio_file: topical-lesson-mozhemo-obminyatisya-kontaktami-112.mp3
       -
         id: m8cttjh7
         ukrainian_word: чути
         english_definition: 'to hear'
+        audio_file: topical-lesson-mozhemo-obminyatisya-kontaktami-113.mp3
     type: new_set
     enabled: true
   -
@@ -75,14 +88,17 @@ word_group:
         id: m8ctugsg
         ukrainian_word: разом
         english_definition: together
+        audio_file: topical-lesson-mozhemo-obminyatisya-kontaktami-114.mp3
       -
         id: m8ctuqxb
         ukrainian_word: пізніше
         english_definition: later
+        audio_file: topical-lesson-mozhemo-obminyatisya-kontaktami-115.mp3
       -
         id: m8ctuxde
         ukrainian_word: знайомий
         english_definition: familiar
+        audio_file: topical-lesson-mozhemo-obminyatisya-kontaktami-115-1752079203.mp3
     type: new_set
     enabled: true
   -
@@ -250,5 +266,5 @@ dialogue:
     ukrainian_speech: Навзаєм!
     english_translation: 'Me too!'
 updated_by: 4378
-updated_at: 1742202443
+updated_at: 1752079243
 ---
