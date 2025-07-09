@@ -94,7 +94,7 @@
         </div>
 
         <div class="modern-panel p-3 p-md-5 text-graphite-black">
-            <h1 class=""> {!! $page->ukrainian_article !!} </h1>
+            <div class=""> {!! $page->ukrainian_article !!} </div>
         </div>
 
     </div>
