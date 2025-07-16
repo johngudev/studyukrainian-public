@@ -104,4 +104,13 @@ Route::statamic('/topical-lessons', 'topical_lessons.index', [
     ->get(),
 ]);
 
+Route::statamic('/news-articles', 'news_articles.index', [
+    'entries' => Entry::query()
+    ->where('collection', 'news_articles')
+    ->where('status', 'published')
+    ->orderBy('order')
+    ->get(),
+]);
+
+
 ;

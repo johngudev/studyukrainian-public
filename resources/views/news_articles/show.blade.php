@@ -44,9 +44,9 @@
         flex: 1;
     }
 
-    .reading-passage p {
+    /* .reading-passage p {
         display: inline;
-    }
+    } */
 
     .lesson-introduction-text  p:last-of-type {
         margin-bottom: 0rem !important;
@@ -89,17 +89,58 @@
 @section('content')
     <div class="container">
 
+        <!-- Title -->
         <div class="modern-panel p-3 p-md-5 text-graphite-black">
             <h1 class=""> {{$page->title}} </h1>
         </div>
 
+        <!-- Readings -->
         <div class="modern-panel p-3 p-md-5 mt-1 text-graphite-black">
-            <div class=""> {!! $page->ukrainian_article !!} </div>
+            <div class="reading-flex">
+                    <div class="p-3 p-md-5 background-light-gray-box reading-passage">
+                            {!! $page->ukrainian_article  !!}
+                    </div>
+                    <div class="p-3 p-md-5 border border-gray-100 reading-passage">
+                            {!! $page->english_article !!}
+                    </div>
+            </div>
         </div>
 
-        <div class="modern-panel p-3 p-md-5 mt-1 text-graphite-black">
-            <div class=""> {!! $page->english_article !!} </div>
+
+        <!-- Vocabulary -->
+        @if(count($page->vocabulary_item) > 0)
+        <div class="modern-panel p-3 p-md-5 mt-1 text-graphite-black">            
+            <h2 class="mb-4 text-graphite-black">Vocabulary</h2>
+
+            <table class="table-auto w-full border-collapse border border-gray-100 mx-auto">
+                <tbody>
+                    @foreach($page->vocabulary_item as $item)
+                    <tr>
+                        <td style="border-right: 1px dashed rgb(222, 226, 230) !important" class="border border-gray-100 px-4 py-2 ukrainian-word-text">{{ $item->ukrainian_word }}
+                            @if($item->audio_file)
+                                <button
+                                    class="btn btn-sm btn-light border p-1"
+                                    onclick="playAudioFromButton(this)"
+                                    data-audio-file-path="{{ $item->audio_file }}"
+                                    style="line-height: 1; transition: background-color 0.3s;">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-volume-up" viewBox="0 0 16 16">
+                                        <path d="M11.536 14.01a.5.5 0 0 1-.992-.117 5.985 5.985 0 0 0 0-11.786.5.5 0 1 1 .992-.117 6.985 6.985 0 0 1 0 13.02z"/>
+                                        <path d="M10.707 11.536a.5.5 0 0 1-.707-.707 3 3 0 0 0 0-4.243.5.5 0 0 1 .707-.707 4 4 0 0 1 0 5.657z"/>
+                                        <path d="M8.931 8.001a.5.5 0 0 1 .569.57 1.5 1.5 0 0 0 0-.57.5.5 0 0 1-.569-.57z"/>
+                                        <path d="M7.017 3.072A.5.5 0 0 1 7.5 3.5v9a.5.5 0 0 1-.83.377L3.825 9H2.5A.5.5 0 0 1 2 8.5v-1A.5.5 0 0 1 2.5 7h1.325l2.845-3.877a.5.5 0 0 1 .347-.17z"/>
+                                    </svg>
+                                </button>
+                            @endif
+                        </td>
+                        <td style="border-left: 1px dashed  rgb(222, 226, 230) !important" class="border border-gray-100 px-4 py-2">{{ $item->english_definition }}</td>
+                    </tr>
+
+                    @endforeach
+                   
+                </tbody>
+            </table>
         </div>
+        @endif
 
     </div>
 @endsection

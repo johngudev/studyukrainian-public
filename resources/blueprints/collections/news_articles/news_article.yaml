@@ -13,6 +13,34 @@ tabs:
               validate:
                 - required
           -
+            handle: english_title
+            field:
+              type: text
+              validate:
+                - required
+              display: 'English Title'
+              instructions_position: above
+              listable: hidden
+              visibility: visible
+              replicator_preview: true
+              input_type: text
+              antlers: false
+              hide_display: false
+          -
+            handle: ukrainian_title
+            field:
+              type: text
+              validate:
+                - required
+              display: 'Ukrainian Title'
+              instructions_position: above
+              listable: hidden
+              visibility: visible
+              replicator_preview: true
+              input_type: text
+              antlers: false
+              hide_display: false
+          -
             handle: hero_photo
             field:
               mode: list

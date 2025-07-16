@@ -1,7 +1,7 @@
 @extends('layouts.layout-modern')
 
 @section('title')
-- Ukrainian Topical Lessons
+- Ukrainian Articles
 @endsection
 
 @section('css')
@@ -49,7 +49,7 @@
 
     .text-lesson-number {
         color: rgba(125,125,125,1) !important;
-        width: 5rem;
+        width: 7rem;
 
         display: inline-block !important;
 
@@ -62,16 +62,16 @@
 <div class="container">
 
     <div class="modern-panel px-0 py-5 text-graphite-black">
-        <h1 class="px-5">Topical Lessons </h1>
-        <div class="px-5 text-light-gray" >These lessons equip learners with the vocabulary and expressions needed to talk about a variety of topics.
+        <h1 class="px-5">News Articles </h1>
+        <div class="px-5 text-light-gray" >These news articles equip learners with the vocabulary and expressions needed to talk about a variety of topics.
         </div>
 
         <div class="border-top border-gray-100 mt-5">
             @foreach($entries as $index => $lesson)
-                <a class="text-graphite-black text-decoration-none topical-lesson-bar-link" href="/topical-lessons/{{ $lesson->slug }}">
+                <a class="text-graphite-black text-decoration-none topical-lesson-bar-link" href="/news-articles/{{ $lesson->slug }}">
                     <div class="border-bottom border-gray-100 py-2 px-5 d-flex justify-content-between align-items-center topical-lesson-bar-link"> 
                         <span> 
-                            <span class="text-lesson-number">Lesson {{$index+1}} </span>  
+                            <span class="text-lesson-number">{{Statamic::modify($lesson->date)->format('m/d/Y')}}</span>  
                             <span>{{ $lesson->title}}</span>
                         </span> 
                         <svg fill="none" viewBox="0 0 24 24" width="0.75rem" height="0.75rem" class="d-none d-md-block topical-lesson-bar-link-icon"><path fill="currentColor" d="M18.45 11.54a.6.6 0 0 1 0 .92L5.14 23.64a.6.6 0 0 1-.99-.46V.82c0-.51.6-.8.99-.46z"></path></svg>
