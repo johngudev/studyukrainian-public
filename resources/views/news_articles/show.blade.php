@@ -83,16 +83,13 @@
 
 @endsection
 
-
-
-
 @section('content')
     <div class="container">
 
         <!-- Title -->
         <div class="modern-panel p-3 p-md-5 text-graphite-black">
             <h1 class=""> {{$page->title}} </h1>
-            <img class="" src="{{$page->hero_image}}" />
+            <img class="rounded" src="{{ $page->hero_photo }}" style="max-width: 100%; height: auto;" />
         </div>
 
         <!-- Readings -->
