@@ -4,7 +4,7 @@
 
       <header>
         <!-- Fixed navbar -->
-        <nav class="navbar navbar-expand navbar-light fixed-top text-center bg-white d-none d-flex">
+        <nav class="navbar navbar-expand navbar-light fixed-top text-center bg-white d-none d-sm-flex">
           <a class="navbar-brand" href={{ URL::to('') }}>
 
             <img class="logo 	d-none d-sm-inline" src="/img/logo-3.png"></img>
