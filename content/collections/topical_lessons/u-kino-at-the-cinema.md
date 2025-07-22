@@ -11,26 +11,32 @@ word_group:
         id: m8tx0zyb
         ukrainian_word: квитки
         english_definition: tickets
+        audio_file: topical-lessons-u-kino-101.mp3
       -
         id: m8tx0szh
         ukrainian_word: 'вечірній сеанс'
         english_definition: 'evening session'
+        audio_file: topical-lessons-u-kino-102.mp3
       -
         id: m8tx1u85
         ukrainian_word: режисер
         english_definition: director
+        audio_file: topical-lessons-u-kino-103.mp3
       -
         id: m8tx251r
         ukrainian_word: стиль
         english_definition: style
+        audio_file: topical-lessons-u-kino-104.mp3
       -
         id: m8tx2fy9
         ukrainian_word: перегляд
         english_definition: viewing
+        audio_file: topical-lessons-u-kino-105-1753196586.mp3
       -
         id: m8tx2vtw
         ukrainian_word: джунглі
         english_definition: jungle
+        audio_file: topical-lessons-u-kino-106-1753196593.mp3
     type: new_set
     enabled: true
   -
@@ -41,6 +47,7 @@ word_group:
         id: m8tx3ej5
         ukrainian_word: рекомендувати
         english_definition: 'to recommend'
+        audio_file: topical-lessons-u-kino-107-1753196599.mp3
     type: new_set
     enabled: true
   -
@@ -51,10 +58,12 @@ word_group:
         id: m8tx3xdi
         ukrainian_word: пригодницький
         english_definition: adventurous
+        audio_file: topical-lessons-u-kino-108-1753196605.mp3
       -
         id: m8tx5ssn
         ukrainian_word: кумедний
         english_definition: funny
+        audio_file: topical-lessons-u-kino-109.mp3
     type: new_set
     enabled: true
 long_reading_text:
@@ -127,34 +136,42 @@ phrases_and_questions:
     id: m8tx97iz
     ukrainian_phrase: 'Які фільми у вас є сьогодні на вечірній сеанс?'
     english_definition: 'What movies do you have today for an evening session?'
+    audio_file: topical-lessons-u-kino-301.mp3
   -
     id: m8tx9qtn
     ukrainian_phrase: 'Який фільм ти міг би порекомендувати?'
     english_definition: 'What movie could you recommend? (asking a man)'
+    audio_file: topical-lessons-u-kino-302.mp3
   -
     id: m8txa73p
     ukrainian_phrase: 'Який фільм ти могла би порекомендувати?'
     english_definition: 'What movie could you recommend? (asking a woman)'
+    audio_file: topical-lessons-u-kino-303.mp3
   -
     id: m8txb8d0
     ukrainian_phrase: 'Рекомендую цей фільм до перегляду!'
     english_definition: 'I recommend this film for viewing!'
+    audio_file: topical-lessons-u-kino-304.mp3
   -
     id: m8txbe8g
     ukrainian_phrase: 'Тобі сподобався фільм?'
     english_definition: 'Did you like the movie?'
+    audio_file: topical-lessons-u-kino-304-1753197406.mp3
   -
     id: m8txbmvc
     ukrainian_phrase: 'Мені дуже сподобалося!'
     english_definition: 'I loved it!'
+    audio_file: topical-lessons-u-kino-305.mp3
   -
     id: m8txbvwi
     ukrainian_phrase: 'Я хотів би взяти два квитки.'
     english_definition: 'I’d like to take two tickets. (male speaker)'
+    audio_file: topical-lessons-u-kino-307.mp3
   -
     id: m8txc5rd
     ukrainian_phrase: 'Я хотіла би взяти два квитки.'
     english_definition: "I'd like to take two tickets. (female speaker)"
+    audio_file: topical-lessons-u-kino-308.mp3
 dialogue:
   -
     id: m8txcn0e
@@ -204,6 +221,6 @@ dialogue:
     speaker: Кінолюб
     ukrainian_speech: 'Так, дуже! Дякую!'
     english_translation: 'Yes, very much! Thank you!'
-updated_by: 1
-updated_at: 1745159778
+updated_by: 4378
+updated_at: 1753197482
 ---
