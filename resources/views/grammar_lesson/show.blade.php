@@ -89,12 +89,12 @@
         <!-- Title -->
         <div class="modern-panel p-3 p-md-5 text-graphite-black">
             <h1 class=""> {{$page->title}} </h1>
-            <img class="rounded" src="{{ $page->hero_photo }}" style="max-width: 100%; height: auto;" />
+            <!-- <img class="rounded" src="{{ $page->hero_photo }}" style="max-width: 100%; height: auto;" /> -->
         </div>
 
         <!-- Readings -->
         <div class="modern-panel p-3 p-md-5 mt-1 text-graphite-black">
-            Content
+            {!! $page->content !!}
         </div>
 
     </div>
