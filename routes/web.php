@@ -112,5 +112,12 @@ Route::statamic('/news-articles', 'news_articles.index', [
     ->get(),
 ]);
 
+Route::statamic('/grammar-lessons', 'grammar_lesson.index', [
+    'entries' => Entry::query()
+    ->where('collection', 'grammar_lesson')
+    ->where('status', 'published')
+    ->orderBy('order')
+    ->get(),
+]);
 
 ;
