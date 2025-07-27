@@ -63,6 +63,44 @@ tabs:
               visibility: visible
               replicator_preview: true
               hide_display: false
+              sets:
+                fancy_table:
+                  display: 'Fancy Table'
+                  instructions: null
+                  icon: layout-grid-dots
+                  sets:
+                    new_set:
+                      display: 'New Set'
+                      instructions: null
+                      icon: null
+                      fields:
+                        -
+                          handle: table_field
+                          field:
+                            type: table
+                            display: 'Table Field'
+                            listable: hidden
+                            instructions_position: above
+                            visibility: visible
+                            replicator_preview: true
+                            hide_display: false
+                    raw_html:
+                      display: 'Raw HTML'
+                      instructions: null
+                      icon: programming-script-code-brackets
+                      fields:
+                        -
+                          handle: html_code
+                          field:
+                            placeholder: '<div></div>'
+                            antlers: false
+                            type: textarea
+                            display: 'HTML code'
+                            listable: hidden
+                            instructions_position: above
+                            visibility: visible
+                            replicator_preview: true
+                            hide_display: false
   sidebar:
     display: Sidebar
     sections:
