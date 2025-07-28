@@ -39,7 +39,7 @@ tabs:
                 - alignright
                 - alignjustify
               smart_typography: false
-              save_html: false
+              save_html: true
               inline: false
               toolbar_mode: fixed
               reading_time: false
@@ -53,7 +53,7 @@ tabs:
               link_noopener: false
               link_noreferrer: false
               target_blank: false
-              always_show_set_button: false
+              always_show_set_button: true
               collapse: false
               previews: true
               type: bard
@@ -63,6 +63,27 @@ tabs:
               visibility: visible
               replicator_preview: true
               hide_display: false
+              sets:
+                raw_html:
+                  display: 'Raw HTML'
+                  instructions: null
+                  icon: programming-script-code-brackets
+                  sets:
+                    new_set:
+                      display: 'New Set'
+                      instructions: null
+                      icon: null
+                      fields:
+                        -
+                          handle: html_field
+                          field:
+                            type: html
+                            display: 'HTML Field'
+                            listable: hidden
+                            instructions_position: above
+                            visibility: visible
+                            replicator_preview: true
+                            hide_display: false
   sidebar:
     display: Sidebar
     sections:
