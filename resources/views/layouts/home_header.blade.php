@@ -26,9 +26,9 @@
                 <a class="nav-link" href={{ URL::to('lessons') }} >Dialogues</a>
               </li>
 
-              <li class="nav-item">
+              <!-- <li class="nav-item">
                 <a class="nav-link" href={{ URL::to('grammar') }} >Grammar</a>
-              </li>
+              </li> -->
 
               <!-- <li class="nav-item">
                 <a class="nav-link" href= {{ URL::to('about') }} >About</a>
@@ -81,7 +81,7 @@
                 <a class="nav-link" href={{ URL::to('news-articles') }} >News Articles</a>
                 <a class="nav-link" href={{ URL::to('topical-lessons') }} >Lessons</a>
                 <a class="nav-link" href={{ URL::to('lessons') }} >Dialogues</a>
-                <a class="nav-link" href={{ URL::to('grammar') }} >Grammar</a>
+                <!-- <a class="nav-link" href={{ URL::to('grammar') }} >Grammar</a> -->
                 <!-- <a class="nav-link" href= {{ URL::to('about') }} >About</a> -->
 
                 <div class="dropdown-divider"></div>
