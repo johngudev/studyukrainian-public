@@ -81,6 +81,38 @@
 
 </style>
 
+<!-- Extra Bard Styles -->
+<style>
+    .bard table {
+        width: 100%;
+    }
+
+    .bard table, 
+    .bard th, 
+    .bard td {
+        border: 1px solid #dee2e6; /* light gray */
+        border-collapse: collapse;
+    }
+
+    .bard th,
+    .bard td {
+        padding-top: 8px; /* optional for spacing */
+        padding-bottom: 8px;
+        padding-left: 1.25rem;
+        padding-right: 1.25rem;
+    }
+
+    .bard table p {
+        margin: 0;
+    }
+
+    /* Header row styling */
+    /* .bard table tr:first-child td {
+        background-color: #f0f4f8; /* soft blue-gray */
+        font-weight: bold;
+    } */
+</style>
+
 @endsection
 
 @section('content')
@@ -93,8 +125,26 @@
         </div>
 
         <!-- Readings -->
-        <div class="modern-panel p-3 p-md-5 mt-1 text-graphite-black">
-            {!! $page->content !!}
+        <div class="modern-panel p-3 p-md-5 mt-1 text-graphite-black bard">
+        @foreach ($page->content as $block)
+            @php
+                $type = $block['type'];
+            @endphp
+
+            {{-- Render raw HTML blocks --}}
+            @if ($type === 'raw_html')
+                {!! $block['html_code'] !!}
+
+            {{-- Render text fields --}}
+            @elseif ($block['text'])
+                {!! $block['text'] !!}
+
+            {{-- Fallback for debugging --}}
+            @else
+                {{-- Optionally show block type or dump --}}
+                {{-- <pre>{{ dd($block->toArray()) }}</pre> --}}
+            @endif
+        @endforeach
         </div>
 
     </div>
