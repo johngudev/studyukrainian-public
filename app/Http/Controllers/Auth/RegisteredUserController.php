@@ -37,14 +37,19 @@ class RegisteredUserController extends Controller
      */
     public function store(Request $request)
     {
+        if (!empty($request->input('name'))) {
+            // Honeypot
+            return redirect(RouteServiceProvider::HOME);
+        }
+
         $request->validate([
-            'name' => ['required', 'string', 'max:255'],
+            // 'name' => ['required', 'string', 'max:255'],
             'email' => ['required', 'string', 'email', 'max:255', 'unique:users'],
             'password' => ['required', 'confirmed', Rules\Password::defaults()],
         ]);
 
         $user = User::create([
-            'name' => $request->name,
+            'name' => 'User',
             'email' => $request->email,
             'password' => Hash::make($request->password),
         ]);
