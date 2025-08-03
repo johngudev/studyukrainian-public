@@ -61,16 +61,27 @@
 .translit-toggle.toggled {
   background-color: #e6f0ff;
 }
+
+/*put at bottom on mobile */
+@media (max-width: 575px) {
+  .translit-toggle {
+    top: auto;
+    bottom: 1.5rem;   
+    right: 1.5rem;
+    left: auto;
+    transform: none;
+  }
+}
 </style>
 
 
- <button id="translit-toggle" class="translit-toggle shadow-sm">
-  <div class="d-none d-sm-inline">Transliterate |</div>
-  <span class="label-left">Київ</span>
-  <span class="toggle-track">
-    <span class="toggle-circle"></span>
-  </span>
-  <span class="label-right">Kyiv</span>
+<button id="translit-toggle" class="translit-toggle shadow-sm">
+    <div class="d-none d-sm-inline">Transliterate |</div>
+    <span class="label-left">Київ</span>
+    <span class="toggle-track">
+        <span class="toggle-circle"></span>
+    </span>
+    <span class="label-right">Kyiv</span>
 </button>
 
 <script>
