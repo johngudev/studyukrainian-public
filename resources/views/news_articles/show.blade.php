@@ -106,7 +106,7 @@
                 </button>
             </p>
             <div class="reading-flex">
-                    <div class="p-3 p-md-5 background-light-gray-box reading-passage">
+                    <div class="p-3 p-md-5 background-light-gray-box reading-passage ukrainian-text">
                             <h3 class="mb-3">{{ $page-> ukrainian_title }}</h3>
                             {!! $page->ukrainian_article  !!}
                     </div>
@@ -154,6 +154,12 @@
         @endif
 
     </div>
+
+    <button id="translit-toggle" class="btn btn-primary shadow rounded"
+        style="position: fixed; top: 5.125rem; right: 1.5rem; z-index: 1000;">
+        <span class="d-none d-md-inline">Transliterate (Київ→Kyiv)</span>
+        <span class="d-inline d-md-none">аб→ab</span>
+        </button>
 @endsection
 
 @section('scripts')
@@ -180,4 +186,7 @@
         });
     }
 </script>
+
+@include('components.transliteration-js')
+
 @endsection
