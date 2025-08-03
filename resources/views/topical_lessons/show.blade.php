@@ -104,7 +104,7 @@
                     <div class="row no-gutters border-top border-left border-gray-300">
                             @foreach($page->nouns as $item)
                                 <div class="col-6 col-md-3 border-right border-bottom border-gray-300 px-2 py-1 px-md-4 py-md-2">
-                                    <div style="color:#029AF7"><b>{{ $item->ukrainian_word }}</b>
+                                    <div style="color:#029AF7" class="ukrainian-text"><b>{{ $item->ukrainian_word }}</b>
                                         @if($item->audio_file)
                                             <button
                                                 class="btn btn-sm btn-light border p-1"
@@ -134,7 +134,7 @@
                     <div class="row no-gutters border-top border-left border-gray-300">
                             @foreach($page->verbs as $item)
                                 <div class="col-6 col-md-3 border-right border-bottom border-gray-300 px-2 py-1 px-md-4 py-md-2">
-                                    <div style="color:#029AF7"><b>{{ $item->ukrainian_word }}</b>
+                                    <div style="color:#029AF7" class="ukrainian-text"><b>{{ $item->ukrainian_word }}</b>
                                         @if($item->audio_file)
                                             <button
                                                 class="btn btn-sm btn-light border p-1"
@@ -164,7 +164,7 @@
                     <div class="row no-gutters border-top border-left border-gray-300">
                             @foreach($page->adjectives_and_adverbs as $item)
                                 <div class="col-6 col-md-3 border-right border-bottom border-gray-300 px-2 py-1 px-md-4 py-md-2">
-                                    <div style="color:#029AF7"><b>{{ $item->ukrainian_word }}</b>
+                                    <div style="color:#029AF7" class="ukrainian-text"><b>{{ $item->ukrainian_word }}</b>
                                         @if($item->audio_file)
                                             <button
                                                 class="btn btn-sm btn-light border p-1"
@@ -194,7 +194,7 @@
                     <div class="row no-gutters border-top border-left border-gray-300">
                             @foreach($page->other_parts_of_speech as $item)
                                 <div class="col-6 col-md-3 border-right border-bottom border-gray-300 px-2 py-1 px-md-4 py-md-2">
-                                    <div style="color:#029AF7"><b>{{ $item->ukrainian_word }}</b>
+                                    <div style="color:#029AF7" class="ukrainian-text"><b>{{ $item->ukrainian_word }}</b>
                                         @if($item->audio_file)
                                             <button
                                                 class="btn btn-sm btn-light border p-1"
@@ -227,7 +227,7 @@
                     <div class="row no-gutters border-top border-left border-gray-300">
                             @foreach($group->vocabulary_item as $index => $item)
                                 <div class="col-6 col-md-3 border-right border-bottom border-gray-300 px-2 py-1 px-md-4 py-md-2">
-                                    <div style="color:#029AF7"><b>{{ $item->ukrainian_word }}</b>
+                                    <div style="color:#029AF7" class="ukrainian-text"><b>{{ $item->ukrainian_word }}</b>
                                 
                                         @if($item->audio_file)
                                             <button
@@ -268,7 +268,7 @@
 
             </h2>
             <div class="reading-flex">
-                <div class="p-3 p-md-5 background-light-gray-box reading-passage">
+                <div class="p-3 p-md-5 background-light-gray-box reading-passage ukrainian-text">
                     @foreach($page->long_reading_text as $text_item)
                         {!! $text_item->ukrainian_paragraph  !!}
                     @endforeach
@@ -289,7 +289,7 @@
                 <tbody>
                     @foreach($page->phrases_and_questions as $item)
                         <tr>
-                            <td style="border-right: 1px dashed rgb(222, 226, 230) !important" class="border border-gray-100 px-4 py-2 ukrainian-word-text">{{ $item->ukrainian_phrase }}
+                            <td style="border-right: 1px dashed rgb(222, 226, 230) !important" class="border border-gray-100 px-4 py-2 ukrainian-word-text ukrainian-text">{{ $item->ukrainian_phrase }}
                                 @if($item->audio_file)
                                     <button
                                         class="btn btn-sm btn-light border p-1"
@@ -333,14 +333,17 @@
                 <tbody class="dialogue-body">
                     @foreach($page->dialogue as $dialogue_item)
                         <tr class="dialogue-row">
-                            <td class=" border-gray-100 px-2 px-md-4 py-2 fw-bold text-graphite-black"> {{ $dialogue_item->speaker }}</td>
-                            <td class=" border-gray-100 px-2 px-md-4 p-1"> <div class="dialogue-bubble p-3 background-light-gray-box rounded rounded-3">{{ $dialogue_item->ukrainian_speech }} </div></td>
+                            <td class=" border-gray-100 px-2 px-md-4 py-2 fw-bold text-graphite-black ukrainian-text"> {{ $dialogue_item->speaker }}</td>
+                            <td class=" border-gray-100 px-2 px-md-4 p-1"> <div class="dialogue-bubble p-3 background-light-gray-box rounded rounded-3 ukrainian-text">{{ $dialogue_item->ukrainian_speech }} </div></td>
                             <td class=" border-gray-100 px-2 px-md-4 py-2 text-graphite-black d-none d-md-table-cell"><div class="translation-bubble">{{ $dialogue_item->english_translation }}</div></td>
                         </tr>
                     @endforeach
                 </tbody>
             </table>
         </div>
+
+    @include('components.transliteration-button')
+
 </div>
 
 @endsection

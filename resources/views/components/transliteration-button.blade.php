@@ -1,7 +1,76 @@
-<button id="translit-toggle" class="btn btn-primary shadow rounded"
-    style="position: fixed; top: 5.125rem; right: 1.5rem; z-index: 1000;">
+<!-- <button id="translit-toggle" class="btn btn-primary rounded shadow-lg"
+    style="position: fixed; top: 5.125rem; right: 1.5rem; z-index: 1000;
+          box-shadow: 0.125rem .25rem .375rem rgba(0, 0, 0, 0.25)  ">
     <span class="d-none d-md-inline">Transliterate | Київ→Kyiv</span>
     <span class="d-inline d-md-none">аб→ab</span>
+</button>
+ -->
+
+ <style>
+.translit-toggle {
+  display: inline-flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0.5rem 0.75rem;
+  background-color: #f8f9fa;
+  border: 2px solid rgba(0, 123, 255, 0.3);
+
+  border-radius: 999px;
+  position: fixed;
+  top: 5.125rem;
+  right: 1.5rem;
+  z-index: 1000;
+  font-size: 0.875rem;
+  color: #007bff;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.translit-toggle .label-left,
+.translit-toggle .label-right {
+  font-weight: bold;
+  padding: 0 0.5rem;
+}
+
+.toggle-track {
+  position: relative;
+  width: 36px;
+  height: 20px;
+  background-color: #e0e0e0;
+  border-radius: 999px;
+  margin: 0 0.25rem;
+  transition: background-color 0.3s ease;
+}
+
+.toggle-circle {
+  position: absolute;
+  top: 2px;
+  left: 2px;
+  width: 16px;
+  height: 16px;
+  background-color: #007bff;
+  border-radius: 50%;
+  transition: left 0.3s ease;
+}
+
+/* Toggled State */
+.translit-toggle.toggled .toggle-circle {
+  left: 18px;
+}
+
+.translit-toggle.toggled {
+  background-color: #e6f0ff;
+}
+</style>
+
+
+ <button id="translit-toggle" class="translit-toggle shadow-sm">
+  <div class="d-none d-sm-inline">Transliterate |</div>
+  <span class="label-left">Київ</span>
+  <span class="toggle-track">
+    <span class="toggle-circle"></span>
+  </span>
+  <span class="label-right">Kyiv</span>
 </button>
 
 <script>
@@ -59,6 +128,8 @@
     const button = document.getElementById("translit-toggle");
 
     button.addEventListener("click", function () {
+      this.classList.toggle('toggled');
+
       const elements = document.querySelectorAll(".ukrainian-text");
 
       elements.forEach(el => {
