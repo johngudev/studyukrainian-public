@@ -67,7 +67,7 @@
   .translit-toggle {
     top: auto;
     bottom: 1.5rem;   
-    right: 1.5rem;
+    right: auto;
     left: auto;
     transform: none;
   }
