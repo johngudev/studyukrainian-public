@@ -69,7 +69,9 @@
     bottom: 1.5rem;   
     right: auto;
     left: auto;
-    transform: none;
+    left: 50%;
+    right: auto;
+    transform: translateX(-50%);
   }
 }
 </style>
