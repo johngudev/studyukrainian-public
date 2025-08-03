@@ -94,8 +94,8 @@
 
         <!-- Readings -->
         <div class="modern-panel p-3 p-md-5 mt-1 text-graphite-black">
-            <p> 
-                <button id="audioPlayBtn" class="btn btn-light border ml-2 d-flex align-items-center" onclick="playAudioFromButton(this)" style="transition: background-color 0.3s; display: inline !important;" data-audio-file-path="{{ $page->audio_file }}">
+            <h2>Article 
+                <button id="audioPlayBtn" class="btn btn-light border ml-2 d-flex align-items-center" onclick="playAudioFromButton(this)" style="margin-bottom:0.5rem; transition: background-color 0.3s; display: inline !important;" data-audio-file-path="{{ $page->audio_file }}">
                 <!-- Speaker SVG -->
                     <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" class="bi bi-volume-up" viewBox="0 0 16 16">
                         <path d="M11.536 14.01a.5.5 0 0 1-.992-.117 5.985 5.985 0 0 0 0-11.786.5.5 0 1 1 .992-.117 6.985 6.985 0 0 1 0 13.02z"/>
@@ -104,7 +104,7 @@
                         <path d="M7.017 3.072A.5.5 0 0 1 7.5 3.5v9a.5.5 0 0 1-.83.377L3.825 9H2.5A.5.5 0 0 1 2 8.5v-1A.5.5 0 0 1 2.5 7h1.325l2.845-3.877a.5.5 0 0 1 .347-.17z"/>
                     </svg>
                 </button>
-            </p>
+            </h2>
             <div class="reading-flex">
                     <div class="p-3 p-md-5 background-light-gray-box reading-passage ukrainian-text">
                             <h3 class="mb-3">{{ $page-> ukrainian_title }}</h3>
