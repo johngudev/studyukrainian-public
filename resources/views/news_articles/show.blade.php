@@ -127,7 +127,7 @@
                 <tbody>
                     @foreach($page->vocabulary_item as $item)
                     <tr>
-                        <td style="border-right: 1px dashed rgb(222, 226, 230) !important" class="border border-gray-100 px-4 py-2 ukrainian-word-text">{{ $item->ukrainian_word }}
+                        <td style="border-right: 1px dashed rgb(222, 226, 230) !important" class="border border-gray-100 px-4 py-2 ukrainian-word-text ukrainian-text">{{ $item->ukrainian_word }}
                             @if($item->audio_file)
                                 <button
                                     class="btn btn-sm btn-light border p-1"
