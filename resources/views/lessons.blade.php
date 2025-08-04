@@ -1,13 +1,23 @@
 @extends('layouts.layout')
 
 @section('title')
-- Ukrainian Lesson <?php echo $dialogue_number; ?>
+- Ukrainian Lesson s <?php echo $dialogue_number; ?>
 @endsection
 
 @section('css')
 <link href="../../css/sticky-footer-navbar.css" rel="stylesheet"> <!-- from: http://getbootstrap.com/docs/4.0/examples/sticky-footer-navbar/# -->
 <link href="../../css/tooltip.css" rel="stylesheet">
 <link href="../../css/extra-styles.css" rel="stylesheet">
+
+<style>
+    body {
+        background-color: #F4F4F4 !important;
+    }
+
+    .navbar {
+        border-bottom: 1px solid lightgray;
+    }
+</style>
 
 @endsection
 
@@ -22,7 +32,7 @@
 @endif
 
 <!-- Title -->
-<div class="text-center">
+<div class="text-center mt-3">
   <h1><?php echo "Dialogue $dialogue_number"; ?> </h1>
 </div>
 
@@ -50,13 +60,6 @@
 
 </div>
 
-
-<!-- Transliteration and Translation Buttons / Toggles -->
-<div class="text-center">
-  <button class="btn btn-info" id="toggleTransliterationButton">Toggle Transliteration</button>
-  <!--button class="btn btn-info" onclick="toggleDefinitions()" >Show Literal Translations</button-->
-</div>
-
 @isset($display_flashcards)
   @if($display_flashcards)
     <div class="text-center mt-2">
@@ -70,7 +73,7 @@
 <div class="row justify-content-center">
   <div class="grammar-explanation col-md-10 mt-3">
     <h3>Grammar Notes</h3>
-    <div id="grammar-explanation">
+    <div id="grammar-explanation" class="ukrainian-text">
 
       <?php echo $lesson->getGrammarText(); ?>
 
@@ -87,17 +90,10 @@
     $lesson->buildNextDialogueButton();
   } ?>
 
+@include('components.transliteration-button')
+
 
 </div>
-
-
-<script>
-  $("#toggleTransliterationButton").click(function() {
-    $(".foreign-script").toggle();
-    $(".english-script").toggle();
-  });
-</script>
-
 
 
 <script>
@@ -300,7 +296,7 @@ class Lesson
 
         echo        "<tr> \n";
         echo "        <td><b>$speaker_array[$i]</b></td> \n";
-        echo "        <td>";
+        echo "        <td class='ukrainian-text'>";
         $this->buildForeignPhraseElement($foreign_array[$i], $literal_definitions_array[$i]);
         echo "</td> \n";
         echo "        <td>$english_array[$i]</td> \n";

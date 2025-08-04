@@ -7,6 +7,17 @@
 
 @section('css')
 <link href="css/extra-styles.css" rel="stylesheet">
+
+<style>
+    body {
+        background-color: #F4F4F4 !important;
+    }
+
+    .navbar {
+        border-bottom: 1px solid lightgray;
+    }
+</style>
+
 @endsection
 
 
