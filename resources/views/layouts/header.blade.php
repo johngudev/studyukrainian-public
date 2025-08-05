@@ -8,7 +8,7 @@
           <a class="navbar-brand" href={{ URL::to('') }}>
 
             <img class="logo 	d-none d-sm-inline" src="/img/logo-3.png"></img>
-            <img class="logo d-sm-none nav-link" src="/img/logo-3-sm.png"></img>
+            <img class="logo d-sm-none nav-link" src="/img/logo-3.png"></img>
           </a>
             <ul class="navbar-nav navbar-right  ml-auto">
 
@@ -74,7 +74,7 @@
           <a class="navbar-brand" href={{ URL::to('') }}>
 
             <img class="logo 	d-none d-sm-inline" src="/img/logo-3.png"></img>
-            <img class="logo d-sm-none nav-link" src="/img/logo-3-sm.png"></img>
+            <img class="logo d-sm-none nav-link" src="/img/logo-3.png"></img>
           </a>
 
           <ul class="navbar-nav navbar-right  ml-auto">

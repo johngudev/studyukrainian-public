@@ -74,6 +74,7 @@
 
         <!-- Mobile navbar -->
         <nav class="navbar navbar-expand navbar-light d-sm-none">
+        <img class="logo d-sm-none nav-link" src="/img/logo-3.png"></img>
         <ul class="navbar-nav navbar-right  ml-auto">
             <li class="nav-item dropdown">
               <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">Menu</a>
