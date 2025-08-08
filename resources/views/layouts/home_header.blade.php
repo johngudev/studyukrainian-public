@@ -4,7 +4,7 @@
 
       <header>
         <!-- Fixed navbar -->
-        <nav class="navbar navbar-expand navbar-light d-sm-flex d-none">
+        <nav class="navbar navbar-expand navbar-light d-sm-flex d-none" style="background-color: white">
 
         <a class="navbar-brand" href={{ URL::to('') }}>
 
