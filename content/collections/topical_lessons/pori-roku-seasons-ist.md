@@ -7,60 +7,74 @@ nouns:
     id: m7bneumi
     ukrainian_word: весна
     english_definition: spring
+    audio_file: topical-lesson-pory-roku-1-101.mp3
   -
     id: m7bnf6ni
     ukrainian_word: літо
     english_definition: summer
+    audio_file: topical-lesson-pory-roku-1-102.mp3
   -
     id: m7bnf9w6
     ukrainian_word: ліс
     english_definition: forest
+    audio_file: topical-lesson-pory-roku-1-103.mp3
   -
     id: m7bnfh0l
     ukrainian_word: дерева
     english_definition: tree
+    audio_file: topical-lesson-pory-roku-1-104.mp3
   -
     id: m7bnfnh7
     ukrainian_word: велосипед
     english_definition: bicycle
+    audio_file: topical-lesson-pory-roku-1-105.mp3
 verbs:
   -
     id: m7bnfqrm
     ukrainian_word: 'могти (я можу)'
     english_definition: 'to be able to, can (I can)'
+    audio_file: topical-lesson-pory-roku-1-105-1754721889.mp3
   -
     id: m7bng6s3
     ukrainian_word: гуляти
     english_definition: 'to walk'
+    audio_file: topical-lesson-pory-roku-1-106.mp3
   -
     id: m7bng8ef
     ukrainian_word: 'дивитися на...'
     english_definition: 'look at... to watch something'
+    audio_file: topical-lesson-pory-roku-1-107.mp3
   -
-    id: m7bngg5s
+    id: me3wu4js
     ukrainian_word: 'кататися на...'
     english_definition: 'ride... (a bike, to ski, to go ice-skating)'
+    audio_file: topical-lesson-pory-roku-1-109-1754723149.mp3
 adjectives_and_adverbs:
   -
     id: m7bnh22f
     ukrainian_word: чудовий
     english_definition: 'wonderful (adj)'
+    audio_file: topical-lesson-pory-roku-1-110.mp3
   -
     id: m7bnh874
     ukrainian_word: навесні
     english_definition: 'in the spring'
+    audio_file: topical-lesson-pory-roku-1-111.mp3
   -
     id: m7bnz8mx
     ukrainian_word: улітку
     english_definition: 'in the summer'
+    audio_file: topical-lesson-pory-roku-1-112.mp3
   -
     id: m7bnhae7
     ukrainian_word: 'на природі'
     english_definition: outdoor
+    audio_file: topical-lesson-pory-roku-1-113.mp3
   -
     id: m7bnhde2
     ukrainian_word: тепло
     english_definition: 'warm (adv)'
+    audio_file: topical-lesson-pory-roku-1-114.mp3
 long_reading_text:
   -
     id: m7bnicgi
@@ -147,18 +161,22 @@ phrases_and_questions:
     id: m7bno81t
     ukrainian_phrase: 'Яка твоя улюблена пора року?'
     english_definition: 'What is your favorite time of year?'
+    audio_file: topical-lesson-pory-roku-1-301.mp3
   -
     id: m7bnoasz
     ukrainian_phrase: 'Моя улюблена пора року це…'
     english_definition: 'My favorite time of year is...'
+    audio_file: topical-lesson-pory-roku-1-302.mp3
   -
     id: m7bnogn7
     ukrainian_phrase: 'Чому?'
     english_definition: 'Why?'
+    audio_file: topical-lesson-pory-roku-1-303.mp3
   -
     id: m7bnolm3
     ukrainian_phrase: 'Тому що я можу…'
     english_definition: 'Because I can...'
+    audio_file: topical-lesson-pory-roku-1-304.mp3
 dialogue:
   -
     id: m7bnoxeg
@@ -205,6 +223,7 @@ dialogue:
     speaker: Марко
     ukrainian_speech: Ходімо!
     english_translation: "Let's go!"
-updated_by: 1
-updated_at: 1741200740
+updated_by: 4378
+updated_at: 1754723594
+audio_file: topical-lesson-pory-roku-1-201.mp3
 ---

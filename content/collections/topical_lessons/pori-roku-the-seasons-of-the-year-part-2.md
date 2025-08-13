@@ -11,22 +11,27 @@ word_group:
         id: m7w9vp72
         ukrainian_word: осінь
         english_definition: autumn
+        audio_file: topical-lesson-pory-roku-2-101.mp3
       -
         id: m7w9vx5g
         ukrainian_word: зима
         english_definition: winter
+        audio_file: topical-lesson-pory-roku-2-102.mp3
       -
         id: m7w9w2kd
         ukrainian_word: дощ
         english_definition: rain
+        audio_file: topical-lesson-pory-roku-2-103.mp3
       -
         id: m7w9w7vl
         ukrainian_word: сніг
         english_definition: snow
+        audio_file: topical-lesson-pory-roku-2-104.mp3
       -
         id: m7w9wdfm
         ukrainian_word: лижі
         english_definition: ski
+        audio_file: topical-lesson-pory-roku-2-105.mp3
     type: new_set
     enabled: true
   -
@@ -37,22 +42,26 @@ word_group:
         id: m7w9wr4z
         ukrainian_word: любити
         english_definition: 'to like, to love'
+        audio_file: topical-lesson-pory-roku-2-106.mp3
       -
         id: m7w9xohj
         ukrainian_word: 'проводити час'
         english_definition: 'to spend time'
+        audio_file: topical-lesson-pory-roku-2-107.mp3
       -
         id: m7w9xv3a
         ukrainian_word: спати
         english_definition: 'to sleep'
+        audio_file: topical-lesson-pory-roku-2-108.mp3
       -
         id: m7w9y44e
         ukrainian_word: 'дивитися фільми'
         english_definition: 'to watch movies'
+        audio_file: topical-lesson-pory-roku-2-109.mp3
     type: new_set
     enabled: true
 updated_by: 4378
-updated_at: 1742200392
+updated_at: 1754724220
 long_reading_text:
   -
     id: m7y3mhxg
@@ -155,22 +164,27 @@ phrases_and_questions:
     id: m7y6sbbc
     ukrainian_phrase: 'Ти любиш…?'
     english_definition: 'Do you like...?'
+    audio_file: topical-lesson-pory-roku-2-301.mp3
   -
     id: m7y6t6ve
     ukrainian_phrase: 'Я люблю…'
     english_definition: 'I like...'
+    audio_file: topical-lesson-pory-roku-2-302.mp3
   -
     id: m7y6thx4
     ukrainian_phrase: 'Я теж люблю…'
     english_definition: 'Me too, I also like…'
+    audio_file: topical-lesson-pory-roku-2-303.mp3
   -
     id: m7y6ts0j
     ukrainian_phrase: 'Що ти робиш взимку/ влітку/ восени/ навесні?'
     english_definition: 'What do you do in winter/summer/autumn/spring?'
+    audio_file: topical-lesson-pory-roku-2-304.mp3
   -
     id: m7y6u1md
     ukrainian_phrase: 'Я проводжу час вдома/ на вулиці/ на природі'
     english_definition: 'I spend time at home/outdoors/outdoors'
+    audio_file: topical-lesson-pory-roku-2-305.mp3
 dialogue:
   -
     id: m7y6uav8
@@ -192,4 +206,5 @@ dialogue:
     speaker: Юлю
     ukrainian_speech: 'Я теж катаюся на лижах! А ще багато часу проводжу вдома… дивлюся фільми й багато сплю.'
     english_translation: 'I ski too! And I also spend a lot of time at home: I watch movies and sleep a lot.'
+audio_file: topical-lesson-pory-roku-2-201.mp3
 ---

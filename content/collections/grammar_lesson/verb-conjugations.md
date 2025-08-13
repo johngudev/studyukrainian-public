@@ -3,7 +3,7 @@ id: 6a20105e-50e6-483d-9879-9ab2659b977f
 blueprint: grammar_lesson
 title: 'Verb Conjugations'
 updated_by: 1
-updated_at: 1753751449
+updated_at: 1755027560
 content:
   -
     type: heading
@@ -131,10 +131,6 @@ content:
     type: paragraph
     attrs:
       textAlign: left
-  -
-    type: paragraph
-    attrs:
-      textAlign: left
     content:
       -
         type: text
@@ -244,10 +240,6 @@ content:
                   -
                     type: text
                     text: 'Вони шукають'
-  -
-    type: paragraph
-    attrs:
-      textAlign: left
   -
     type: paragraph
     attrs:

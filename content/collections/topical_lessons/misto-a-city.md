@@ -144,90 +144,110 @@ english_translation:
         type: text
         text: 'Kyiv is a city of history and modernity, it is always interesting here!  I love Kyiv.'
 updated_by: 4378
-updated_at: 1742200183
+updated_at: 1754642168
 phrases_and_questions:
   -
     id: m73pkmz8
     ukrainian_phrase: 'Куди ти зараз йдеш?'
     english_definition: 'Where are you going now? (by foot)'
+    audio_file: topical-lesson-misto-301.mp3
   -
     id: m7a8a3y7
     ukrainian_phrase: 'Я йду в...'
     english_definition: "I'm going to... (by foot)"
+    audio_file: topical-lesson-misto-302.mp3
   -
     id: m7a89vd2
     ukrainian_phrase: 'Куди ти зараз їдеш?'
     english_definition: 'Where are you going now? (by transport)'
+    audio_file: topical-lesson-misto-303.mp3
   -
     id: m7a8a60u
     ukrainian_phrase: 'Я їду в...'
     english_definition: "I'm going to... (by transport)"
+    audio_file: topical-lesson-misto-304.mp3
 nouns:
   -
     id: m7a7valr
     ukrainian_word: місто
     english_definition: city
+    audio_file: topical-lesson-misto-101.mp3
   -
     id: m799l6zc
     ukrainian_word: парк
     english_definition: park
+    audio_file: topical-lesson-misto-102.mp3
   -
     id: m799lec5
     ukrainian_word: школа
     english_definition: school
+    audio_file: topical-lesson-misto-103.mp3
   -
     id: m7a7sh7f
     ukrainian_word: університет
     english_definition: university
+    audio_file: topical-lesson-misto-104.mp3
   -
     id: m7a7spdu
     ukrainian_word: музей
     english_definition: museum
+    audio_file: topical-lesson-misto-105.mp3
   -
     id: m7a7swkq
     ukrainian_word: ресторан
     english_definition: restaurant
+    audio_file: topical-lesson-misto-106.mp3
   -
     id: m7a7t2ob
     ukrainian_word: театр
     english_definition: theatre
+    audio_file: topical-lesson-misto-107.mp3
   -
     id: m7a7tabs
     ukrainian_word: церква
     english_definition: church
+    audio_file: topical-lesson-misto-108.mp3
   -
     id: m7a7tdku
     ukrainian_word: лікарня
     english_definition: hospital
+    audio_file: topical-lesson-misto-109.mp3
   -
     id: m7a7tktr
     ukrainian_word: аптека
     english_definition: pharmacy
+    audio_file: topical-lesson-misto-110.mp3
   -
     id: m7a7tnn4
     ukrainian_word: вокзал
     english_definition: 'railway station'
+    audio_file: topical-lesson-misto-111.mp3
   -
     id: m7a7uabt
     ukrainian_word: кінотеатр
     english_definition: cinema
+    audio_file: topical-lesson-misto-112.mp3
 verbs:
   -
     id: m799lzq2
     ukrainian_word: Йти
     english_definition: 'to go (by foot, directly)'
+    audio_file: topical-lesson-misto-113.mp3
   -
     id: m7a7uebw
     ukrainian_word: Ходити
     english_definition: 'To go (by foot, ussualy, regullary)'
+    audio_file: topical-lesson-misto-114.mp3
   -
     id: m7a7yj06
     ukrainian_word: Їхати
     english_definition: 'To go (by transport, directly)'
+    audio_file: topical-lesson-misto-115.mp3
   -
     id: m7a7zw33
     ukrainian_word: Їздити
     english_definition: 'To go (by transport, ussualy, regullary)'
+    audio_file: topical-lesson-misto-116.mp3
 long_reading_text:
   -
     id: m799nam3
@@ -406,4 +426,5 @@ dialogue:
     speaker: Олег
     ukrainian_speech: 'І тобі! До зустрічі!'
     english_translation: 'You too! See you soon!'
+audio_file: topical-lesson-misto-201.mp3
 ---
