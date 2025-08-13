@@ -108,6 +108,8 @@
         margin: 0;
     }
 
+    {{$page->custom_css}}
+
     /* Header row styling */
     /* .bard table tr:first-child td {
         background-color: #f0f4f8; /* soft blue-gray */
@@ -134,11 +136,11 @@
             @endphp
 
             {{-- Render raw HTML blocks --}}
-            @if ($type === 'raw_html')
-                {!! $block['html_code'] !!}
+            @if ($type === 'new_set')
+                {!! $block['custom_html_field'] !!}
 
             {{-- Render text fields --}}
-            @elseif ($block['text'])
+            @elseif ($type = 'text')
                 {!! $block['text'] !!}
 
             {{-- Fallback for debugging --}}
