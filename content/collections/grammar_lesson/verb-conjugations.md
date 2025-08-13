@@ -3,7 +3,7 @@ id: 6a20105e-50e6-483d-9879-9ab2659b977f
 blueprint: grammar_lesson
 title: 'Verb Conjugations'
 updated_by: 1
-updated_at: 1755027560
+updated_at: 1755051002
 content:
   -
     type: heading
@@ -14,6 +14,25 @@ content:
       -
         type: text
         text: 'Group I: Verbs Ending in -ати'
+  -
+    type: set
+    attrs:
+      id: me9c0ye2
+      values:
+        type: new_set
+        custom_html_field:
+          code: |-
+            <style>
+                .bard th,
+                .bard td {
+                    width: 50%;
+                }
+            </style>
+          mode: htmlmixed
+  -
+    type: paragraph
+    attrs:
+      textAlign: left
   -
     type: paragraph
     attrs:

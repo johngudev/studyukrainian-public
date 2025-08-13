@@ -75,10 +75,19 @@ tabs:
                       icon: null
                       fields:
                         -
-                          handle: html_field
+                          handle: custom_html_field
                           field:
-                            type: html
-                            display: 'HTML Field'
+                            theme: material
+                            mode: htmlmixed
+                            mode_selectable: true
+                            indent_type: tabs
+                            indent_size: 4
+                            key_map: default
+                            line_numbers: true
+                            line_wrapping: true
+                            antlers: false
+                            type: code
+                            display: custom_html_field
                             listable: hidden
                             instructions_position: above
                             visibility: visible
