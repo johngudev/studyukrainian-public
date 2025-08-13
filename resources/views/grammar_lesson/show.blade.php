@@ -85,6 +85,8 @@
 <style>
     .bard table {
         width: 100%;
+        max-width: 800px;
+        margin-bottom: 1rem;
     }
 
     .bard table, 
