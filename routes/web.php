@@ -108,7 +108,7 @@ Route::statamic('/news-articles', 'news_articles.index', [
     'entries' => Entry::query()
     ->where('collection', 'news_articles')
     ->where('status', 'published')
-    ->orderBy('order')
+    ->orderBy('date', 'desc')
     ->get(),
 ]);
 
