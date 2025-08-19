@@ -3,7 +3,7 @@ id: 6a20105e-50e6-483d-9879-9ab2659b977f
 blueprint: grammar_lesson
 title: 'Verb Conjugations'
 updated_by: 1
-updated_at: 1755054327
+updated_at: 1755471554
 custom_css:
   code: |-
     .bard th,
@@ -16,6 +16,14 @@ custom_css:
   mode: css
 content:
   -
+    type: paragraph
+    attrs:
+      textAlign: left
+    content:
+      -
+        type: text
+        text: 'The core conjugations are for verbs that end in -ати, -ити, and -вати.  There are also conjugations for variants of -ати (such as -яти).  Finally'
+  -
     type: heading
     attrs:
       textAlign: left
@@ -23,7 +31,7 @@ content:
     content:
       -
         type: text
-        text: 'Verbs Ending in -ати'
+        text: 'Section I:  Core verb conjugations -ати, -ити, and -вати'
   -
     type: heading
     attrs:
@@ -32,6 +40,17 @@ content:
     content:
       -
         type: text
+        text: 'Verbs Ending in -ати'
+  -
+    type: paragraph
+    attrs:
+      textAlign: left
+    content:
+      -
+        type: text
+        marks:
+          -
+            type: bold
         text: читати
   -
     type: table
@@ -136,13 +155,15 @@ content:
                     type: text
                     text: 'Вони читають'
   -
-    type: heading
+    type: paragraph
     attrs:
       textAlign: left
-      level: 3
     content:
       -
         type: text
+        marks:
+          -
+            type: bold
         text: шукати
   -
     type: table
@@ -247,13 +268,15 @@ content:
                     type: text
                     text: 'Вони шукають'
   -
-    type: heading
+    type: paragraph
     attrs:
       textAlign: left
-      level: 3
     content:
       -
         type: text
+        marks:
+          -
+            type: bold
         text: чекати
   -
     type: table
@@ -363,26 +386,22 @@ content:
     type: heading
     attrs:
       textAlign: left
-      level: 2
+      level: 3
     content:
       -
         type: text
         text: 'Verbs Ending in -ити'
   -
-    type: heading
+    type: paragraph
     attrs:
       textAlign: left
-      level: 3
     content:
-      -
-        type: text
-        text: говорити
       -
         type: text
         marks:
           -
             type: bold
-        text: "\_"
+        text: "говорити\_"
   -
     type: table
     content:
@@ -486,13 +505,15 @@ content:
                     type: text
                     text: 'Вони говорять'
   -
-    type: heading
+    type: paragraph
     attrs:
       textAlign: left
-      level: 3
     content:
       -
         type: text
+        marks:
+          -
+            type: bold
         text: бачити
   -
     type: table
@@ -605,16 +626,131 @@ content:
         type: text
         text: '*Note: Я бачу not Я бачю.  This is a slight irregularity.'
   -
-    type: horizontalRule
-  -
-    type: heading
+    type: paragraph
     attrs:
       textAlign: left
-      level: 2
     content:
       -
         type: text
-        text: 'Verbs Ending in -вати'
+        marks:
+          -
+            type: bold
+        text: робити
+      -
+        type: text
+        text: "\_"
+  -
+    type: table
+    content:
+      -
+        type: tableRow
+        content:
+          -
+            type: tableCell
+            attrs:
+              colspan: 1
+              rowspan: 1
+              colwidth: null
+            content:
+              -
+                type: paragraph
+                attrs:
+                  textAlign: left
+                content:
+                  -
+                    type: text
+                    text: 'Я роблю*'
+          -
+            type: tableCell
+            attrs:
+              colspan: 1
+              rowspan: 1
+              colwidth: null
+            content:
+              -
+                type: paragraph
+                attrs:
+                  textAlign: left
+                content:
+                  -
+                    type: text
+                    text: 'Ми робимо'
+      -
+        type: tableRow
+        content:
+          -
+            type: tableCell
+            attrs:
+              colspan: 1
+              rowspan: 1
+              colwidth: null
+            content:
+              -
+                type: paragraph
+                attrs:
+                  textAlign: left
+                content:
+                  -
+                    type: text
+                    text: 'Ти робиш'
+          -
+            type: tableCell
+            attrs:
+              colspan: 1
+              rowspan: 1
+              colwidth: null
+            content:
+              -
+                type: paragraph
+                attrs:
+                  textAlign: left
+                content:
+                  -
+                    type: text
+                    text: 'Ви робите'
+      -
+        type: tableRow
+        content:
+          -
+            type: tableCell
+            attrs:
+              colspan: 1
+              rowspan: 1
+              colwidth: null
+            content:
+              -
+                type: paragraph
+                attrs:
+                  textAlign: left
+                content:
+                  -
+                    type: text
+                    text: 'Він робить'
+          -
+            type: tableCell
+            attrs:
+              colspan: 1
+              rowspan: 1
+              colwidth: null
+            content:
+              -
+                type: paragraph
+                attrs:
+                  textAlign: left
+                content:
+                  -
+                    type: text
+                    text: 'Вони роблять'
+  -
+    type: paragraph
+    attrs:
+      textAlign: left
+    content:
+      -
+        type: text
+        text: '*Note: Я роблю not Я робю.  This is a slight irregularity.'
+  -
+    type: horizontalRule
   -
     type: heading
     attrs:
@@ -623,7 +759,21 @@ content:
     content:
       -
         type: text
-        text: "працювати\_"
+        text: 'Verbs Ending in -вати'
+  -
+    type: paragraph
+    attrs:
+      textAlign: left
+    content:
+      -
+        type: text
+        marks:
+          -
+            type: bold
+        text: працювати
+      -
+        type: text
+        text: "\_"
   -
     type: table
     content:
@@ -727,13 +877,15 @@ content:
                     type: text
                     text: "Вони працюють\_"
   -
-    type: heading
+    type: paragraph
     attrs:
       textAlign: left
-      level: 3
     content:
       -
         type: text
+        marks:
+          -
+            type: bold
         text: готувати
   -
     type: table
@@ -838,13 +990,15 @@ content:
                     type: text
                     text: "Вони готують\_"
   -
-    type: heading
+    type: paragraph
     attrs:
       textAlign: left
-      level: 3
     content:
       -
         type: text
+        marks:
+          -
+            type: bold
         text: купувати
   -
     type: table
@@ -948,4 +1102,514 @@ content:
                   -
                     type: text
                     text: "Вони купують\_"
+  -
+    type: horizontalRule
+  -
+    type: heading
+    attrs:
+      textAlign: left
+      level: 2
+    content:
+      -
+        type: text
+        text: 'Section II:  Variants of -ати'
+  -
+    type: heading
+    attrs:
+      textAlign: left
+      level: 3
+    content:
+      -
+        type: text
+        text: 'Verbs Ending in -яти'
+  -
+    type: paragraph
+    attrs:
+      textAlign: left
+    content:
+      -
+        type: text
+        marks:
+          -
+            type: bold
+        text: гуляти
+  -
+    type: table
+    content:
+      -
+        type: tableRow
+        content:
+          -
+            type: tableCell
+            attrs:
+              colspan: 1
+              rowspan: 1
+              colwidth: null
+            content:
+              -
+                type: paragraph
+                attrs:
+                  textAlign: left
+                content:
+                  -
+                    type: text
+                    text: 'Я гуляю'
+          -
+            type: tableCell
+            attrs:
+              colspan: 1
+              rowspan: 1
+              colwidth: null
+            content:
+              -
+                type: paragraph
+                attrs:
+                  textAlign: left
+                content:
+                  -
+                    type: text
+                    text: 'Ми гуляємо'
+      -
+        type: tableRow
+        content:
+          -
+            type: tableCell
+            attrs:
+              colspan: 1
+              rowspan: 1
+              colwidth: null
+            content:
+              -
+                type: paragraph
+                attrs:
+                  textAlign: left
+                content:
+                  -
+                    type: text
+                    text: 'Ти гуляєш'
+          -
+            type: tableCell
+            attrs:
+              colspan: 1
+              rowspan: 1
+              colwidth: null
+            content:
+              -
+                type: paragraph
+                attrs:
+                  textAlign: left
+                content:
+                  -
+                    type: text
+                    text: 'Ви гуляєте'
+      -
+        type: tableRow
+        content:
+          -
+            type: tableCell
+            attrs:
+              colspan: 1
+              rowspan: 1
+              colwidth: null
+            content:
+              -
+                type: paragraph
+                attrs:
+                  textAlign: left
+                content:
+                  -
+                    type: text
+                    text: 'Він гуляє'
+          -
+            type: tableCell
+            attrs:
+              colspan: 1
+              rowspan: 1
+              colwidth: null
+            content:
+              -
+                type: paragraph
+                attrs:
+                  textAlign: left
+                content:
+                  -
+                    type: text
+                    text: 'Вони гуляють'
+  -
+    type: horizontalRule
+  -
+    type: heading
+    attrs:
+      textAlign: left
+      level: 2
+    content:
+      -
+        type: text
+        text: 'Section III:  Rare verb forms -ути, -іти, -сти'
+  -
+    type: heading
+    attrs:
+      textAlign: left
+      level: 3
+    content:
+      -
+        type: text
+        text: 'Verbs ending in -ути'
+  -
+    type: paragraph
+    attrs:
+      textAlign: left
+    content:
+      -
+        type: text
+        marks:
+          -
+            type: bold
+        text: повернути
+  -
+    type: table
+    content:
+      -
+        type: tableRow
+        content:
+          -
+            type: tableCell
+            attrs:
+              colspan: 1
+              rowspan: 1
+              colwidth: null
+            content:
+              -
+                type: paragraph
+                attrs:
+                  textAlign: left
+                content:
+                  -
+                    type: text
+                    text: 'Я поверну'
+          -
+            type: tableCell
+            attrs:
+              colspan: 1
+              rowspan: 1
+              colwidth: null
+            content:
+              -
+                type: paragraph
+                attrs:
+                  textAlign: left
+                content:
+                  -
+                    type: text
+                    text: 'Ми повернемо'
+      -
+        type: tableRow
+        content:
+          -
+            type: tableCell
+            attrs:
+              colspan: 1
+              rowspan: 1
+              colwidth: null
+            content:
+              -
+                type: paragraph
+                attrs:
+                  textAlign: left
+                content:
+                  -
+                    type: text
+                    text: 'Ти повернеш'
+          -
+            type: tableCell
+            attrs:
+              colspan: 1
+              rowspan: 1
+              colwidth: null
+            content:
+              -
+                type: paragraph
+                attrs:
+                  textAlign: left
+                content:
+                  -
+                    type: text
+                    text: 'Ви повернете'
+      -
+        type: tableRow
+        content:
+          -
+            type: tableCell
+            attrs:
+              colspan: 1
+              rowspan: 1
+              colwidth: null
+            content:
+              -
+                type: paragraph
+                attrs:
+                  textAlign: left
+                content:
+                  -
+                    type: text
+                    text: 'Він поверне'
+          -
+            type: tableCell
+            attrs:
+              colspan: 1
+              rowspan: 1
+              colwidth: null
+            content:
+              -
+                type: paragraph
+                attrs:
+                  textAlign: left
+                content:
+                  -
+                    type: text
+                    text: "Вони повернуть\_"
+  -
+    type: heading
+    attrs:
+      textAlign: left
+      level: 3
+    content:
+      -
+        type: text
+        text: 'Verbs Ending in -іти'
+  -
+    type: paragraph
+    attrs:
+      textAlign: left
+    content:
+      -
+        type: text
+        marks:
+          -
+            type: bold
+        text: розуміти
+  -
+    type: table
+    content:
+      -
+        type: tableRow
+        content:
+          -
+            type: tableCell
+            attrs:
+              colspan: 1
+              rowspan: 1
+              colwidth: null
+            content:
+              -
+                type: paragraph
+                attrs:
+                  textAlign: left
+                content:
+                  -
+                    type: text
+                    text: 'Я розумію'
+          -
+            type: tableCell
+            attrs:
+              colspan: 1
+              rowspan: 1
+              colwidth: null
+            content:
+              -
+                type: paragraph
+                attrs:
+                  textAlign: left
+                content:
+                  -
+                    type: text
+                    text: 'Ми розуміємо'
+      -
+        type: tableRow
+        content:
+          -
+            type: tableCell
+            attrs:
+              colspan: 1
+              rowspan: 1
+              colwidth: null
+            content:
+              -
+                type: paragraph
+                attrs:
+                  textAlign: left
+                content:
+                  -
+                    type: text
+                    text: 'Ти розумієш'
+          -
+            type: tableCell
+            attrs:
+              colspan: 1
+              rowspan: 1
+              colwidth: null
+            content:
+              -
+                type: paragraph
+                attrs:
+                  textAlign: left
+                content:
+                  -
+                    type: text
+                    text: 'Ви розумієте'
+      -
+        type: tableRow
+        content:
+          -
+            type: tableCell
+            attrs:
+              colspan: 1
+              rowspan: 1
+              colwidth: null
+            content:
+              -
+                type: paragraph
+                attrs:
+                  textAlign: left
+                content:
+                  -
+                    type: text
+                    text: 'Він розуміє'
+          -
+            type: tableCell
+            attrs:
+              colspan: 1
+              rowspan: 1
+              colwidth: null
+            content:
+              -
+                type: paragraph
+                attrs:
+                  textAlign: left
+                content:
+                  -
+                    type: text
+                    text: 'Вони розуміють'
+  -
+    type: heading
+    attrs:
+      textAlign: left
+      level: 3
+    content:
+      -
+        type: text
+        text: 'Verbs Ending in -сти'
+  -
+    type: paragraph
+    attrs:
+      textAlign: left
+    content:
+      -
+        type: text
+        marks:
+          -
+            type: bold
+        text: рости
+  -
+    type: table
+    content:
+      -
+        type: tableRow
+        content:
+          -
+            type: tableCell
+            attrs:
+              colspan: 1
+              rowspan: 1
+              colwidth: null
+            content:
+              -
+                type: paragraph
+                attrs:
+                  textAlign: left
+                content:
+                  -
+                    type: text
+                    text: 'Я росту'
+          -
+            type: tableCell
+            attrs:
+              colspan: 1
+              rowspan: 1
+              colwidth: null
+            content:
+              -
+                type: paragraph
+                attrs:
+                  textAlign: left
+                content:
+                  -
+                    type: text
+                    text: 'Ми ростемо'
+      -
+        type: tableRow
+        content:
+          -
+            type: tableCell
+            attrs:
+              colspan: 1
+              rowspan: 1
+              colwidth: null
+            content:
+              -
+                type: paragraph
+                attrs:
+                  textAlign: left
+                content:
+                  -
+                    type: text
+                    text: 'Ти ростеш'
+          -
+            type: tableCell
+            attrs:
+              colspan: 1
+              rowspan: 1
+              colwidth: null
+            content:
+              -
+                type: paragraph
+                attrs:
+                  textAlign: left
+                content:
+                  -
+                    type: text
+                    text: "Ви ростите\_\_"
+      -
+        type: tableRow
+        content:
+          -
+            type: tableCell
+            attrs:
+              colspan: 1
+              rowspan: 1
+              colwidth: null
+            content:
+              -
+                type: paragraph
+                attrs:
+                  textAlign: left
+                content:
+                  -
+                    type: text
+                    text: 'Він росте'
+          -
+            type: tableCell
+            attrs:
+              colspan: 1
+              rowspan: 1
+              colwidth: null
+            content:
+              -
+                type: paragraph
+                attrs:
+                  textAlign: left
+                content:
+                  -
+                    type: text
+                    text: 'Вони ростуть'
 ---
