@@ -66,11 +66,40 @@
     </div>
 
     <div class="modern-panel px-0 py-5 text-graphite-black mt-1">
-        <ul>
-            @foreach($topical_lessons as $topical_lesson)
-            <li>{{ $topical_lesson->title }}</li>
-            @endforeach
-        </ul>
+        <h2 class="px-5">Beginner I - Level A0</h2>
     </div>
+
+    <div class="modern-panel px-0 py-5 text-graphite-black mt-1">
+        <h2 class="px-5">Beginner II - Level A1</h2>
+    </div>
+
+    <div class="modern-panel px-0 py-5 text-graphite-black mt-1">
+        <h2 class="px-5">Beginner III - Level A2</h2>
+    </div>
+
+    <div class="modern-panel px-0 py-5 text-graphite-black mt-1">
+        <h2 class="px-5">Intermediate I - Level B1</h2>
+    </div>
+
+    <div class="modern-panel px-0 py-5 text-graphite-black mt-1">
+        <h2 class="px-5">Intermediate II - Level B2</h2>
+    </div>
+
+    <div class="modern-panel px-0 py-5 text-graphite-black mt-1">
+        <div class="flex flex-column flex-md-row justify-content-between">
+            <ul class="">
+                @foreach($topical_lessons as $topical_lesson)
+                <li>{{ $topical_lesson->title }}</li>
+                @endforeach
+            </ul>
+
+            <ul class="">
+                @foreach($dialogue_lessons as $dialogue_lesson)
+                <li>Dialogue {{ $dialogue_lesson->dialogue_index }}</li>
+                @endforeach
+            </ul>
+        </div>
+    </div>
+
 </div>
 @endsection
