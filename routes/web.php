@@ -112,6 +112,19 @@ Route::statamic('/news-articles', 'news_articles.index', [
     ->get(),
 ]);
 
+Route::statamic('/road-map', 'road_map', [
+    'topical_lessons' => Entry::query()
+    ->where('collection', 'topical_lessons')
+    ->where('status', 'published')
+    ->orderBy('order')
+    ->get(),
+    'dialogue_lessons' => Entry::query()
+    ->where('collection', 'dialogue_lessons')
+    ->where('status', 'published')
+    ->orderBy('order')
+    ->get()
+]);
+
 Route::statamic('/grammar-lessons', 'grammar_lesson.index', [
     'entries' => Entry::query()
     ->where('collection', 'grammar_lesson')
