@@ -1,0 +1,27 @@
+<!-- intro-meeting.svg -->
+<svg xmlns="http://www.w3.org/2000/svg"
+     width="1rem" height="1rem" viewBox="0 0 24 24"
+     aria-label="Student meets professional">
+  <!-- split-color background -->
+  <rect x="0"  y="0"  width="12" height="12" fill="#FFD54F"/> <!-- yellow -->
+  <rect x="12" y="0"  width="12" height="12" fill="#F06292"/> <!-- pink  -->
+  <rect x="0"  y="12" width="24" height="12" fill="#4FC3F7"/> <!-- cyan  -->
+
+  <!-- student (left) -->
+  <circle cx="6"  cy="6"  r="2"  fill="#FFE0B2"/>            <!-- head  -->
+  <rect  x="4"  y="8"  width="4" height="6" fill="#FF8F00"/> <!-- shirt -->
+  <rect  x="2.5" y="8"  width="1" height="6" rx=".5" fill="#8E24AA"/> <!-- backpack strap -->
+  <rect  x="7.5" y="8"  width="1" height="6" rx=".5" fill="#8E24AA"/>
+  <rect  x="4"  y="14" width="1.5" height="5" fill="#1E88E5"/> <!-- legs -->
+  <rect  x="6.5" y="14" width="1.5" height="5" fill="#1E88E5"/>
+
+  <!-- professional (right) -->
+  <circle cx="18" cy="6"  r="2"  fill="#FFE0B2"/>
+  <rect  x="16" y="8"  width="4" height="6" fill="#FFFFFF"/> <!-- shirt -->
+  <polygon points="18,8 19,12 17,12" fill="#00BCD4"/>        <!-- tie   -->
+  <rect  x="19.5" y="8" width="1" height="6" rx=".5" fill="#263238"/> <!-- strap -->
+  <rect  x="16.5" y="14" width="1.5" height="5" fill="#616161"/> <!-- legs -->
+  <rect  x="18.5" y="14" width="1.5" height="5" fill="#616161"/>
+  <rect  x="15"  y="13" width="3" height="2" fill="#37474F"/> <!-- briefcase -->
+  <rect  x="15"  y="15" width="3" height="2" fill="#263238"/>
+</svg>
