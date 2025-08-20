@@ -112,6 +112,13 @@ Route::statamic('/news-articles', 'news_articles.index', [
     ->get(),
 ]);
 
+Route::statamic('/road-map', 'road_map', [
+    'snippets' => Entry::query()
+    ->where('collection', 'snippets')
+    ->where('title', 'Road Map')
+    ->first(),
+]);
+
 Route::statamic('/grammar-lessons', 'grammar_lesson.index', [
     'entries' => Entry::query()
     ->where('collection', 'grammar_lesson')
