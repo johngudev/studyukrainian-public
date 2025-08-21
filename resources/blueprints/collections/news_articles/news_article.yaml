@@ -154,6 +154,17 @@ tabs:
               visibility: visible
               replicator_preview: true
               hide_display: false
+          -
+            handle: word_for_word_translation
+            field:
+              antlers: false
+              type: textarea
+              display: 'Word for word Translation'
+              listable: hidden
+              instructions_position: above
+              visibility: visible
+              replicator_preview: true
+              hide_display: false
       -
         display: Vocabulary
         fields:

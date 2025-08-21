@@ -621,6 +621,17 @@ tabs:
               replicator_preview: true
               hide_display: false
           -
+            handle: long_reading_word_for_word_translation
+            field:
+              antlers: false
+              type: textarea
+              display: 'Long Reading Word for Word Translation'
+              listable: hidden
+              instructions_position: above
+              visibility: visible
+              replicator_preview: true
+              hide_display: false
+          -
             handle: phrases_and_questions
             field:
               fields:
@@ -754,6 +765,17 @@ tabs:
               show_set_alt: true
               type: assets
               display: 'Dialogue Full Audio'
+              listable: hidden
+              instructions_position: above
+              visibility: visible
+              replicator_preview: true
+              hide_display: false
+          -
+            handle: dialogue_word_for_word_translation
+            field:
+              antlers: false
+              type: textarea
+              display: 'Dialogue Word for Word Translation'
               listable: hidden
               instructions_position: above
               visibility: visible
