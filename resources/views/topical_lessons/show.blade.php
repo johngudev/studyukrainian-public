@@ -373,4 +373,39 @@
         });
     }
 </script>
+
+<script>
+/*
+ * Wrap every contiguous run of Cyrillic characters (i.e., each Ukrainian word)
+ * inside the .ukrainian-text container in:
+ *   <span class="foreign-word foreign-script" id="foreign-script">…</span>
+ *
+ * Note: re-using the same id (“foreign-script”) on many elements is technically
+ * invalid HTML.  If unique ids are required, replace `id="foreign-script"` with
+ * `data-id="foreign-script"` or generate unique ids in the callback.
+ */
+
+const WORD_FOR_WORD_TRANSLITERATION = "{{ $page->long_reading_word_for_word_translation }}";
+
+const transliterationArray = WORD_FOR_WORD_TRANSLITERATION.split(',').map(str => str.trim());
+
+let i = -1;
+
+document.addEventListener('DOMContentLoaded', () => {
+  // Matches words made of Cyrillic letters plus optional apostrophes (’ or ')
+  const ukrWordRegex = /([\p{Script=Cyrillic}’']+)/gu;
+
+  document.querySelectorAll('.ukrainian-text p').forEach(p => {
+    p.innerHTML = p.innerHTML.replace(ukrWordRegex, (match) => {
+
+        i = i+1;
+    
+      return `<span class="foreign-word foreign-script" id="foreign-script">${match}<span class="tooltip"><span class="tooltip-foreign-word">${match}</span><span>${transliterationArray[i]}</span></span></span>`
+        }
+    );
+  });
+
+  
+});
+</script>
 @endsection
