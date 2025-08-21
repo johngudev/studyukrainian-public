@@ -27,7 +27,7 @@
 @section('content')
 
 
-@php $first_visit = "no"; //manually remove first visit modal - jg 08.20.2025 @endphp 
+@php $first_visit = "yes"; //manually remove first visit modal - jg 08.20.2025 @endphp 
 @if($first_visit == "yes")
 @else
   @include('components.lesson-instructions-modal')
