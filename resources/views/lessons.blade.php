@@ -26,6 +26,8 @@
 
 @section('content')
 
+
+@php $first_visit = "no"; //manually remove first visit modal - jg 08.20.2025 @endphp 
 @if($first_visit == "yes")
 @else
   @include('components.lesson-instructions-modal')
@@ -60,6 +62,7 @@
 
 </div>
 
+@php $display_flashcards = false; //manually remove flashcards - jg 08.20.2025 @endphp 
 @isset($display_flashcards)
   @if($display_flashcards)
     <div class="text-center mt-2">
