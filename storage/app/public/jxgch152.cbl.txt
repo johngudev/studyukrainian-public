@@ -1,0 +1,414 @@
+***************************** Top of Data ******************************
+ JXGCH142 WAS LAST MODIFIED ON 25/03/10 AT 10:13:19 BY AD9F95           
+                                                                        
+ CHANGE CODES: TRAINING ON 2025/03/10 AT 10:13:19                       
+       IDENTIFICATION DIVISION.                                         
+       PROGRAM-ID JXGCH142.                                             
+                                                                        
+       ENVIRONMENT DIVISION.                                            
+       INPUT-OUTPUT SECTION.                                            
+       FILE-CONTROL.                                                    
+                                                                        
+           SELECT TRANSACTION-DATA ASSIGN TO UT-S-TRINPUT.              
+           SELECT TRANSACTION-EXCEPT-REPORT                             
+               ASSIGN TO UT-S-TREPORT.                                  
+           SELECT TRANSACTION-VALID ASSIGN TO UT-S-TRVALID.             
+                                                                        
+       DATA DIVISION.                                                   
+       FILE SECTION.                                                    
+                                                                        
+       FD  TRANSACTION-DATA                                             
+           LABEL RECORDS ARE STANDARD                                   
+           RECORD CONTAINS 59 CHARACTERS.                               
+                                                                        
+       01  TD-TRANSACTION-DATA-RECORD.                                  
+      *FILL THIS IN                                                     
+           05  TD-STORE-NUMBER             PIC 99.                      
+           05  TD-STORE-NUMBER-X                                        
+               REDEFINES TD-STORE-NUMBER   PIC X(2).                    
+           05  FILLER                      PIC X(1).                    
+           05  TD-DEPT-MNEMONIC            PIC X(2).                    
+           05  FILLER                      PIC X(1).                    
+           05  TD-ITEM-NUMBER              PIC 999.                     
+           05  TD-ITEM-NUMBER-X                                         
+               REDEFINES TD-ITEM-NUMBER    PIC X(3).                    
+                                                                        
+           05  FILLER                      PIC X(1).                    
+           05  TD-ITEM-DESCRIPTION         PIC X(25).                   
+           05  TD-ITEM-PRICE-COST          PIC 9(6).                    
+           05  FILLER                      PIC X(1).                    
+           05  TD-TRANSACTION-CODE         PIC 9.                       
+           05  TD-TRANSACTION-CODE-X                                    
+               REDEFINES TD-TRANSACTION-CODE                            
+                                           PIC X(1).                    
+           05  FILLER                      PIC X(1).                    
+           05  TD-QUANT-SOLD-PURCH         PIC 9(6).                    
+           05  TD-QUANT-SOLD-PURCH-X                                    
+               REDEFINES TD-QUANT-SOLD-PURCH                            
+                                           PIC X(6).                    
+           05  FILLER                      PIC X(1).                    
+           05  TD-TRANSACTION-DATE         PIC 9(8).                    
+           05  TD-TRANSACTION-DATE-X                                    
+               REDEFINES TD-TRANSACTION-DATE.                           
+               10 TD-TRANSACTION-DT-MM     PIC 9(2).                    
+               10 FILLER                   PIC X(1).                    
+               10 TD-TRANSACTION-DT-DD     PIC 9(2).                    
+               10 FILLER                   PIC X(1).                    
+               10 TD-TRANSACTION-DT-YY     PIC 9(2).                    
+                                                                        
+       FD  TRANSACTION-EXCEPT-REPORT                                    
+           LABEL RECORDS ARE OMITTED                                    
+           RECORD CONTAINS 132 CHARACTERS.                              
+                                                                        
+       01  TR-TRANS-REPORT-OUTPUT-LINE     PIC X(132).                  
+                                                                        
+       FD  TRANSACTION-VALID                                            
+           LABEL RECORDS ARE OMITTED                                    
+           RECORD CONTAINS 132 CHARACTERS.                              
+                                                                        
+       01  TR-TRANS-VALID-OUTPUT-LINE      PIC X(132).                  
+                                                                        
+       WORKING-STORAGE SECTION.                                         
+       01  WS-PROCESSING-INDICATORS.                                    
+                                                                        
+           05  END-OF-FILE-INDICATOR   PIC X(3).                        
+               88  END-OF-FILE         VALUE "END".                     
+                                                                        
+           05  ER-ERROR-CODES.                                          
+               10  WS-ERROR-MESSAGE        PIC X(30).                   
+               10  WS-UNPRINTED-ERROR-FLAG PIC X(1) VALUE SPACE.        
+                   88  RECORD-HAS-UNPRINTED-ERROR  VALUE "1".           
+                                                                        
+               10  WS-FIRST-ERROR-IN-RECORD-FLAG     PIC X(1)           
+                       VALUE SPACE.                                     
+                   88  FIRST-ERROR-IN-RECORD       VALUE "1".           
+                                                                        
+               10  WS-VALID-RECORD-FLAG       PIC X(1)                  
+                       VALUE SPACE.                                     
+                   88  IS-VALID-RECORD     VALUE "1".                   
+                                                                        
+       01  WS-NUMERICAL-VALUES.                                         
+           05  WS-VALID-RECORDS         PIC 99.                         
+           05  WS-INVALID-RECORDS       PIC 99.                         
+                                                                        
+      *01  HD-REPORT-HEADING-1.                                         
+                                                                        
+       01  VR-VALID-TRANS-RECORD-OUTPUT.                                
+           05  FILLER                          PIC X(1) VALUE SPACE.    
+           05  FILLER                          PIC X(1) VALUE SPACE.    
+           05  VR-STORE-NUMBER                 PIC X(2).                
+           05  FILLER                          PIC X(8) VALUE SPACE.    
+           05  VR-DEPT-MNEMONIC                PIC X(2).                
+           05  FILLER                          PIC X(8) VALUE SPACE.    
+           05  VR-ITEM-NUMBER                  PIC X(3).                
+           05  FILLER                          PIC X(1) VALUE SPACE.    
+           05  VR-ITEM-DESCRIPTION             PIC X(25).               
+           05  VR-ITEM-PRICE-COST              PIC X(6).                
+      *    05  FILLER                          PIC X(1) VALUE SPACE.    
+           05  VR-TRANSACTION-CODE             PIC X(1).                
+           05  FILLER                          PIC X(1).                
+           05  VR-QUANT-SOLD-PURCH             PIC X(6).                
+           05  FILLER                          PIC X(1).                
+           05  VR-TRANSACTION-DATE             PIC X(8).                
+                                                                        
+       01  TR-TRANS-REPORT-OUTPUT.                                      
+           05  FILLER                    PIC X(1) VALUE SPACE.          
+           05  TR-STORE-NUMBER           PIC X(2).                      
+           05  FILLER                    PIC X(1) VALUE SPACE.          
+           05  TR-DEPT-MNEMONIC          PIC X(2).                      
+           05  FILLER                    PIC X(1) VALUE SPACE.          
+           05  TR-ITEM-NUMBER            PIC X(3).                      
+           05  FILLER                    PIC X(1) VALUE SPACE.          
+           05  TR-ITEM-DESCRIPTION       PIC X(25).                     
+           05  TR-ITEM-PRICE-COST        PIC X(6).                      
+           05  FILLER                    PIC X(1) VALUE SPACE.          
+           05  TR-TRANSACTION-CODE       PIC X(1).                      
+           05  FILLER                    PIC X(1) VALUE SPACE.          
+           05  TR-QUANT-SOLD-PURCH       PIC X(6).                      
+           05  FILLER                    PIC X(1) VALUE SPACE.          
+           05  TR-ERROR-MESSAGE          PIC X(20).                     
+           05  FILLER                    PIC X(60) VALUE SPACE.         
+                                                                        
+       01  TR-TRANS-REPORT-TOTALS-DETAIL.                               
+           05  FILLER                    PIC X(1) VALUE SPACE.          
+           05  FILLER                    PIC X(15)                      
+               VALUE "VALID RECORDS: ".                                 
+           05  TR-VALID-RECORDS          PIC X(2).                      
+           05  FILLER                    PIC X(10) VALUE SPACE.         
+           05  FILLER                    PIC X(17)                      
+               VALUE "INVALID RECORDS: ".                               
+           05  TR-INVALID-RECORDS        PIC X(2).                      
+                                                                        
+       PROCEDURE DIVISION.                                              
+       A000-TRANSACTION-VALIDATION.                                     
+           PERFORM B100-INITIAL-ROUTINE.                                
+           PERFORM B200-PROCESS-RECORDS                                 
+               UNTIL END-OF-FILE.                                       
+           PERFORM B300-ENDING-ROUTINE.                                 
+           STOP RUN.                                                    
+                                                                        
+       B100-INITIAL-ROUTINE.                                            
+           PERFORM C100-OPEN-FILES.                                     
+           PERFORM C200-INITIALIZE-VARIABLES.                           
+           PERFORM C300-WRITE-HEADING.                                  
+           PERFORM C400-READ-FIRST-RECORD.                              
+                                                                        
+       B200-PROCESS-RECORDS.                                            
+                                                                        
+           MOVE "1" TO WS-VALID-RECORD-FLAG.                            
+           MOVE SPACE TO WS-UNPRINTED-ERROR-FLAG.                       
+           MOVE SPACE TO WS-FIRST-ERROR-IN-RECORD-FLAG.                 
+                                                                        
+           MOVE TD-STORE-NUMBER-X TO VR-STORE-NUMBER.                   
+           MOVE TD-DEPT-MNEMONIC TO VR-DEPT-MNEMONIC.                   
+           MOVE TD-ITEM-NUMBER-X TO VR-ITEM-NUMBER.                     
+           MOVE TD-ITEM-DESCRIPTION TO VR-ITEM-DESCRIPTION.             
+           MOVE TD-ITEM-PRICE-COST TO VR-ITEM-PRICE-COST.               
+           MOVE TD-TRANSACTION-CODE-X TO VR-TRANSACTION-CODE.           
+           MOVE TD-QUANT-SOLD-PURCH-X TO VR-QUANT-SOLD-PURCH.           
+           MOVE TD-TRANSACTION-DATE-X TO VR-TRANSACTION-DATE.           
+                                                                        
+           MOVE TD-STORE-NUMBER-X TO TR-STORE-NUMBER.                   
+           MOVE TD-DEPT-MNEMONIC TO TR-DEPT-MNEMONIC.                   
+           MOVE TD-ITEM-NUMBER-X TO TR-ITEM-NUMBER.                     
+           MOVE TD-ITEM-DESCRIPTION TO TR-ITEM-DESCRIPTION.             
+           MOVE TD-ITEM-PRICE-COST TO TR-ITEM-PRICE-COST.               
+           MOVE TD-TRANSACTION-CODE-X TO TR-TRANSACTION-CODE.           
+           MOVE TD-QUANT-SOLD-PURCH-X TO TR-QUANT-SOLD-PURCH.           
+           MOVE SPACES TO TR-ERROR-MESSAGE.                             
+                                                                        
+           PERFORM C500-VALIDATE-FIELDS.                                
+                                                                        
+           PERFORM C700-OUTPUT.                                         
+                                                                        
+           PERFORM C800-ACCUMULATE-TOTALS.                              
+                                                                        
+           PERFORM Z100-READ-RECORD.                                    
+                                                                        
+       B300-ENDING-ROUTINE.                                             
+           PERFORM C900-PRINT-TOTALS.                                   
+           PERFORM Z300-CLOSE-FILES.                                    
+                                                                        
+       C100-OPEN-FILES.                                                 
+           OPEN INPUT TRANSACTION-DATA.                                 
+           OPEN OUTPUT TRANSACTION-EXCEPT-REPORT.                       
+           OPEN OUTPUT TRANSACTION-VALID.                               
+                                                                        
+       C200-INITIALIZE-VARIABLES.                                       
+           MOVE 1 TO WS-VALID-RECORD-FLAG.                              
+           MOVE SPACE TO WS-ERROR-MESSAGE.                              
+           MOVE SPACE TO WS-FIRST-ERROR-IN-RECORD-FLAG.                 
+           MOVE SPACE TO WS-UNPRINTED-ERROR-FLAG.                       
+           MOVE 0 TO WS-VALID-RECORDS.                                  
+           MOVE 0 TO WS-INVALID-RECORDS.                                
+                                                                        
+       C300-WRITE-HEADING.                                              
+                                                                        
+       C400-READ-FIRST-RECORD.                                          
+           PERFORM Z100-READ-RECORD.                                    
+                                                                        
+       C500-VALIDATE-FIELDS.                                            
+           PERFORM D100-STORE-NUMBER-CHECKS.                            
+           PERFORM D200-DEPARTMENT-CHECKS.                              
+           PERFORM D300-ITEM-NUMBER-CHECKS.                             
+           PERFORM D400-TRANS-CODE-CHECKS.                              
+           PERFORM D500-DATE-CHECKS.                                    
+                                                                        
+       C700-OUTPUT.                                                     
+           IF IS-VALID-RECORD                                           
+               MOVE VR-VALID-TRANS-RECORD-OUTPUT                        
+               TO TR-TRANS-VALID-OUTPUT-LINE                            
+                                                                        
+               WRITE TR-TRANS-VALID-OUTPUT-LINE                         
+               AFTER ADVANCING 1 LINE                                   
+           END-IF.                                                      
+                                                                        
+       C800-ACCUMULATE-TOTALS.                                          
+           IF IS-VALID-RECORD                                           
+               ADD 1 TO WS-VALID-RECORDS                                
+           ELSE                                                         
+               ADD 1 TO WS-INVALID-RECORDS                              
+           END-IF.                                                      
+                                                                        
+       C900-PRINT-TOTALS.                                               
+           MOVE WS-VALID-RECORDS TO TR-VALID-RECORDS.                   
+           MOVE WS-INVALID-RECORDS TO TR-INVALID-RECORDS.               
+                                                                        
+           MOVE TR-TRANS-REPORT-TOTALS-DETAIL                           
+           TO TR-TRANS-REPORT-OUTPUT-LINE.                              
+                                                                        
+           WRITE TR-TRANS-REPORT-OUTPUT-LINE                            
+           AFTER ADVANCING 1 LINE.                                      
+                                                                        
+                                                                        
+       D100-STORE-NUMBER-CHECKS.                                        
+            IF TD-STORE-NUMBER = SPACES                                 
+               MOVE "THERE IS NOT STORE NUMBER" TO WS-ERROR-MESSAGE     
+               MOVE 1 TO WS-UNPRINTED-ERROR-FLAG                        
+            ELSE                                                        
+            IF TD-STORE-NUMBER IS NOT NUMERIC                           
+               MOVE "STORE NUMBER NOT NUMERIC" TO WS-ERROR-MESSAGE      
+               MOVE 1 TO WS-UNPRINTED-ERROR-FLAG                        
+            ELSE                                                        
+            IF (TD-STORE-NUMBER NOT = 10) AND (TD-STORE-NUMBER NOT = 20)
+               MOVE "STORE NUMBER NOT 10, 20" TO WS-ERROR-MESSAGE       
+               MOVE 1 TO WS-UNPRINTED-ERROR-FLAG                        
+            END-IF.                                                     
+                                                                        
+            IF WS-UNPRINTED-ERROR-FLAG = 1                              
+               PERFORM Z200-PRINT-ERROR-MESSAGE                         
+               MOVE 0 TO WS-UNPRINTED-ERROR-FLAG                        
+            END-IF.                                                     
+                                                                        
+                                                                        
+       D200-DEPARTMENT-CHECKS.                                          
+           IF TD-DEPT-MNEMONIC = SPACES                                 
+               MOVE "THERE IS NO DEPT" TO WS-ERROR-MESSAGE              
+               MOVE 1 TO WS-UNPRINTED-ERROR-FLAG                        
+           ELSE                                                         
+           IF (TD-DEPT-MNEMONIC NOT = "AU")                             
+           AND (TD-DEPT-MNEMONIC NOT = "AP")                            
+               MOVE "DEPT NOT AU OR AP" TO WS-ERROR-MESSAGE             
+               MOVE 1 TO WS-UNPRINTED-ERROR-FLAG                        
+           END-IF.                                                      
+                                                                        
+           PERFORM Z500-HANDLE-ERROR.                                   
+                                                                        
+       D300-ITEM-NUMBER-CHECKS.                                         
+           IF TD-ITEM-NUMBER = SPACES                                   
+               MOVE "NO ITEM NUMBER" TO WS-ERROR-MESSAGE                
+               MOVE 1 TO WS-UNPRINTED-ERROR-FLAG                        
+           ELSE                                                         
+           IF TD-ITEM-NUMBER IS NOT NUMERIC                             
+               MOVE "ITEM NUMBER NOT NUMERIC" TO WS-ERROR-MESSAGE       
+               MOVE 1 TO WS-UNPRINTED-ERROR-FLAG                        
+           ELSE                                                         
+           IF TD-ITEM-NUMBER > 890                                      
+               MOVE "ITEM NUMBER >890" TO WS-ERROR-MESSAGE              
+               MOVE 1 TO WS-UNPRINTED-ERROR-FLAG                        
+           END-IF.                                                      
+                                                                        
+           PERFORM Z500-HANDLE-ERROR.                                   
+                                                                        
+       D400-TRANS-CODE-CHECKS.                                          
+           IF TD-TRANSACTION-CODE = SPACES                              
+               MOVE "NO TRANS CODE" TO WS-ERROR-MESSAGE                 
+               MOVE 1 TO WS-UNPRINTED-ERROR-FLAG                        
+           ELSE                                                         
+           IF TD-TRANSACTION-CODE IS NOT NUMERIC                        
+               MOVE "TRANS CODE NOT NUMERIC" TO WS-ERROR-MESSAGE        
+               MOVE 1 TO WS-UNPRINTED-ERROR-FLAG                        
+           ELSE                                                         
+           IF (TD-TRANSACTION-CODE) < 1 OR (TD-TRANSACTION-CODE > 7)    
+               MOVE "INVALID TRANS CODE" TO WS-ERROR-MESSAGE            
+               MOVE 1 TO WS-UNPRINTED-ERROR-FLAG                        
+           ELSE                                                         
+           IF (TD-TRANSACTION-CODE = 1) OR (TD-TRANSACTION-CODE = 3)    
+              PERFORM E100-ITEM-DESCRIPTION-CHECKS                      
+           ELSE                                                         
+           IF (TD-TRANSACTION-CODE = 4) OR (TD-TRANSACTION-CODE = 5)    
+              PERFORM E200-PRICE-COST-CHECKS                            
+           ELSE                                                         
+           IF (TD-TRANSACTION-CODE = 6) OR (TD-TRANSACTION-CODE = 7)    
+              PERFORM E300-QUANTITY-CHECKS                              
+           END-IF.                                                      
+                                                                        
+           PERFORM Z500-HANDLE-ERROR.                                   
+                                                                        
+       D500-DATE-CHECKS.                                                
+           IF (TD-TRANSACTION-DT-MM = 10)                               
+               AND (TD-TRANSACTION-DT-YY = 86)                          
+               AND (TD-TRANSACTION-DT-DD > 0)                           
+               AND (TD-TRANSACTION-DT-DD < 32)                          
+               NEXT SENTENCE                                            
+           ELSE                                                         
+               MOVE "INVALID TRANS DATE" TO WS-ERROR-MESSAGE            
+               MOVE 1 TO WS-UNPRINTED-ERROR-FLAG                        
+           END-IF.                                                      
+                                                                        
+           PERFORM Z500-HANDLE-ERROR.                                   
+                                                                        
+       E100-ITEM-DESCRIPTION-CHECKS.                                    
+           IF TD-ITEM-DESCRIPTION = SPACES                              
+              MOVE "NO ITEM DESCRIPTION" TO WS-ERROR-MESSAGE            
+              MOVE 1 TO WS-UNPRINTED-ERROR-FLAG                         
+           END-IF.                                                      
+       E200-PRICE-COST-CHECKS.                                          
+           IF TD-ITEM-PRICE-COST = SPACES                               
+               MOVE "NO PRICE/COST" TO WS-ERROR-MESSAGE                 
+               MOVE 1 TO WS-UNPRINTED-ERROR-FLAG                        
+           ELSE                                                         
+           INSPECT TD-ITEM-PRICE-COST                                   
+           REPLACING LEADING SPACES BY ZEROES                           
+           IF TD-ITEM-PRICE-COST IS NOT NUMERIC                         
+               MOVE "PRICE/COST NOT NUM" TO WS-ERROR-MESSAGE            
+               MOVE 1 TO WS-UNPRINTED-ERROR-FLAG                        
+           END-IF.                                                      
+       E300-QUANTITY-CHECKS.                                            
+           IF TD-QUANT-SOLD-PURCH = SPACES                              
+               MOVE "NO QUANTITY" TO WS-ERROR-MESSAGE                   
+               MOVE 1 TO WS-UNPRINTED-ERROR-FLAG                        
+           ELSE                                                         
+           INSPECT TD-QUANT-SOLD-PURCH                                  
+           REPLACING LEADING SPACES BY ZEROES                           
+           IF TD-QUANT-SOLD-PURCH IS NOT NUMERIC                        
+               MOVE "QUANT NOT NUM" TO WS-ERROR-MESSAGE                 
+               MOVE 1 TO WS-UNPRINTED-ERROR-FLAG                        
+           END-IF.                                                      
+                                                                        
+       Z100-READ-RECORD.                                                
+           READ TRANSACTION-DATA                                        
+               AT END MOVE 'END' TO END-OF-FILE-INDICATOR.              
+                                                                        
+       Z200-PRINT-ERROR-MESSAGE.                                        
+           IF WS-UNPRINTED-ERROR-FLAG = 1                               
+               AND IS-VALID-RECORD                                      
+               MOVE 1 TO WS-FIRST-ERROR-IN-RECORD-FLAG                  
+               MOVE SPACES TO WS-VALID-RECORD-FLAG                      
+           END-IF.                                                      
+                                                                        
+           MOVE WS-ERROR-MESSAGE TO TR-ERROR-MESSAGE.                   
+                                                                        
+           IF FIRST-ERROR-IN-RECORD                                     
+               MOVE TD-STORE-NUMBER                                     
+               TO  TR-STORE-NUMBER                                      
+                                                                        
+               MOVE TR-TRANS-REPORT-OUTPUT                              
+               TO TR-TRANS-REPORT-OUTPUT-LINE                           
+               WRITE TR-TRANS-REPORT-OUTPUT-LINE                        
+               AFTER ADVANCING 1 LINE                                   
+                                                                        
+               MOVE SPACE TO WS-FIRST-ERROR-IN-RECORD-FLAG              
+           ELSE                                                         
+                                                                        
+           MOVE SPACES TO TR-STORE-NUMBER                               
+           MOVE SPACES TO TR-DEPT-MNEMONIC                              
+           MOVE SPACES TO TR-ITEM-NUMBER                                
+           MOVE SPACES TO TR-ITEM-DESCRIPTION                           
+           MOVE SPACES TO TR-ITEM-PRICE-COST                            
+           MOVE SPACES TO TR-TRANSACTION-CODE                           
+           MOVE SPACES TO TR-QUANT-SOLD-PURCH                           
+           MOVE WS-ERROR-MESSAGE TO TR-ERROR-MESSAGE                    
+                                                                        
+           MOVE TR-TRANS-REPORT-OUTPUT                                  
+           TO TR-TRANS-REPORT-OUTPUT-LINE                               
+           WRITE TR-TRANS-REPORT-OUTPUT-LINE                            
+           AFTER ADVANCING 1 LINE                                       
+           END-IF.                                                      
+                                                                        
+       Z300-CLOSE-FILES.                                                
+           CLOSE TRANSACTION-DATA.                                      
+           CLOSE TRANSACTION-EXCEPT-REPORT.                             
+           CLOSE TRANSACTION-VALID.                                     
+                                                                        
+                                                                        
+       Z500-HANDLE-ERROR.                                               
+           IF WS-UNPRINTED-ERROR-FLAG = 1                               
+               PERFORM Z200-PRINT-ERROR-MESSAGE                         
+               MOVE 0 TO WS-UNPRINTED-ERROR-FLAG                        
+           END-IF.                                                      
+                                                                        
+                                                                        
+                                                                        
+                                                                        
+**************************** Bottom of Data ****************************

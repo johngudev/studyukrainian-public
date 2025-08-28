@@ -219,7 +219,8 @@ dialogue:
     speaker: Данило
     ukrainian_speech: Дякую!
     english_translation: 'Thank you!'
-updated_by: 4378
-updated_at: 1749134637
-audio_file: topical-lesson-yak-spravy-201.mp3
+updated_by: 1
+updated_at: 1755917041
+audio_file: topical-lesson-yak-spravy-301-1749134438.mp3
+long_reading_word_for_word_translation: 'Hello,At,me,today,day off,So,at,me,wonderful,mood,everything,good,And,how,your,things'
 ---

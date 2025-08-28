@@ -60,8 +60,8 @@ word_group:
         audio_file: topical-lesson-pory-roku-2-109.mp3
     type: new_set
     enabled: true
-updated_by: 4378
-updated_at: 1754724220
+updated_by: 1
+updated_at: 1755916056
 long_reading_text:
   -
     id: m7y3mhxg
@@ -207,4 +207,5 @@ dialogue:
     ukrainian_speech: 'Я теж катаюся на лижах! А ще багато часу проводжу вдома… дивлюся фільми й багато сплю.'
     english_translation: 'I ski too! And I also spend a lot of time at home: I watch movies and sleep a lot.'
 audio_file: topical-lesson-pory-roku-2-201.mp3
+long_reading_word_for_word_translation: 'You,like,winter,I,love,warmth,therefore,autumn,and,winter,not,very,pleasant,times,of year,for,me,in autumn,goes,rain,I,not,can,often,walk,I,spend,more,time,at home,I,a lot,sleep,and,watch,films,in winter,cold,but,much,snow,and,we,can,ride,on,skis'
 ---

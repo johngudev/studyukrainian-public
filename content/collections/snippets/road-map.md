@@ -4,10 +4,15 @@ blueprint: snippet
 title: 'Road Map'
 html:
   code: |-
-    <div class="modern-panel px-5 py-5 text-graphite-black mt-1" style="img { max-height: 1rem }">
+    <style>
+      img { max-width: 100%; height: auto; display: inline; }
+      .icon-images img  { height: 1rem; width: 1rem;}
+    </style>
+
+    <div class="modern-panel px-5 px-md-5 py-5 text-graphite-black mt-1" style="img { max-height: 1rem }">
       <h2 class="mb-3">Beginner I - Level A0</h2>
 
-      <div class="row">
+      <div class="row icon-images">
     	<div class="col-12 col-md-6 col-lg-4">
     	  <div class="mt-0">
     		<img src="/img/01.svg"> <a href="/lessons/1/">Dialogue: Introductions I</a>
@@ -49,9 +54,9 @@ html:
 
     </div>
 
-    <div class="modern-panel px-5 py-5 text-graphite-black mt-1">
+    <div class="modern-panel px-5 px-md-5 py-5 text-graphite-black mt-1">
       <h2 class="">Beginner II - Level A1</h2>
-      <div class="row">
+      <div class="row icon-images">
     	<div class="col-12 col-md-6 col-lg-4">
     	  	  <div class="mt-0">
     		      <img src="/img/01.svg"> <a href="/lessons/11">Dialogue: Family I</a>
@@ -96,19 +101,7 @@ html:
     	</div>
       </div>
     </div>
-
-    <div class="modern-panel px-0 py-5 text-graphite-black mt-1">
-      <h2 class="px-5">Beginner III - Level A2</h2>
-    </div>
-
-    <div class="modern-panel px-0 py-5 text-graphite-black mt-1">
-      <h2 class="px-5">Intermediate I - Level B1</h2>
-    </div>
-
-    <div class="modern-panel px-0 py-5 text-graphite-black mt-1">
-      <h2 class="px-5">Intermediate II - Level B2</h2>
-    </div>
   mode: htmlmixed
 updated_by: 1
-updated_at: 1755693372
+updated_at: 1756348724
 ---

@@ -126,8 +126,8 @@ word_group:
         audio_file: topical-lessons-yaki-mayesh-khobi-118.mp3
     type: new_set
     enabled: true
-updated_by: 4378
-updated_at: 1746359928
+updated_by: 1
+updated_at: 1755916165
 long_reading_text:
   -
     id: m7llbct4
@@ -325,4 +325,5 @@ dialogue:
     ukrainian_speech: 'Гарна ідея!'
     english_translation: 'Good idea!'
 audio_file: topical-lessons-yaki-mayesh-khobi-201.mp3
+long_reading_word_for_word_translation: 'What,you,do,in,free,time,I,for example,love,draw,This,very,relaxes,Another,my,hobby,read,This,very,useful,and,interesting,I,love,detectives,and,historical,novels,My,friend,loves,play,on,guitar,and,also,read,We,a lot,talk,with,him,about,books,My,brother,loves,play,in,computer,games,and,watch,films,To me,also,likes,watch,films'
 ---

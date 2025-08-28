@@ -212,6 +212,7 @@ dialogue:
     ukrainian_speech: 'У мене теж є двоюрідний брат.  Він дорослий. Я люблю розмовляти з ним.'
     english_translation: "I also have a cousin. He's an adult. I love talking to him."
 updated_by: 1
-updated_at: 1745978076
+updated_at: 1755866427
 audio_file: topical-lesson-moya-simya-part-2-201.mp3
+long_reading_word_for_word_translation: 'I,love,talk,about,my,family,at,me,wonderful,grandmother,and,grandfather,They,wise,and,very,kind,Grandmother,and,grandfather,like,go,to,park,and,watch,at,birds,and,lake,Grandfather,also,likes,play,on,guitar,and,grandmother,read,I,have,cousin,sister,and,cousin,brother,My,sister,already,adult,she,likes,write,poems,and,brother,still,small,he,likes,play,in,basketball'
 ---

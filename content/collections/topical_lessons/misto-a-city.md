@@ -143,8 +143,8 @@ english_translation:
       -
         type: text
         text: 'Kyiv is a city of history and modernity, it is always interesting here!  I love Kyiv.'
-updated_by: 4378
-updated_at: 1754642168
+updated_by: 1
+updated_at: 1755866969
 phrases_and_questions:
   -
     id: m73pkmz8
@@ -427,4 +427,5 @@ dialogue:
     ukrainian_speech: 'І тобі! До зустрічі!'
     english_translation: 'You too! See you soon!'
 audio_file: topical-lesson-misto-201.mp3
+long_reading_word_for_word_translation: 'Kyiv,very,beautiful,city,I,love,to walk,to,park,especially,in spring,in,Kyiv,many,museums,there,can,learn,about,history,of Ukraine,If,I,want,to watch,film,go,to,cinema,in,Kyiv,also,many,shops,and,wonderful,restaurants,There,can,tasty,eat,If,to me,need,go,to,other,city,I,go,to,station,Kyiv,wonderful,city'
 ---

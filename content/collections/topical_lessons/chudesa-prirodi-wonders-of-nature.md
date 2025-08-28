@@ -228,7 +228,8 @@ dialogue:
     speaker: Сашко
     ukrainian_speech: 'Подорожі завжди залишають чудові спогади!'
     english_translation: 'Travel always leaves great memories!'
-updated_by: 4378
-updated_at: 1748215789
+updated_by: 1
+updated_at: 1755916432
 audio_file: topical-lesson-chudesa-pryrody-201.mp3
+long_reading_word_for_word_translation: 'I,very,love,nature,Ukraine,incredibly,picturesque,land,Here,is,many,beautiful,places,for,travels,Every,season,I,travel,to,mountains,With,friends,we,go,to,hikes,to,Carpathians,We,go,past,mountain,rivers,and,lakes,We observe,incredibly,beautiful,landscapes,Travels,excite,and,leave,wonderful,memories'
 ---

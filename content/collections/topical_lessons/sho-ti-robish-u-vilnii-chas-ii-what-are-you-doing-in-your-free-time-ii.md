@@ -238,8 +238,9 @@ dialogue:
     speaker: Богдан
     ukrainian_speech: 'Тоді запрошую😉'
     english_translation: 'Then I invite you!😉'
-updated_by: 4378
-updated_at: 1746950741
+updated_by: 1
+updated_at: 1755916374
 dialogue_full_audio: topical-lessons-chym-ty-zakhopluyesa-401.mp3
 audio_file: topical-lessons-chym-ty-zakhopluyesa-201.mp3
+long_reading_word_for_word_translation: 'We,with,my,female friend,very,love,to travel,This,our,biggest,passion,Also,we,love,to dance,bachata,attend,classes,every,Friday,My,female friend,not,very,loves,to go,to,gym,therefore,much,dances,runs,I,love,to do,sports,And,still,I,love,sometimes,to go,to,theater,and,to visit,museums,This,very,exciting'
 ---

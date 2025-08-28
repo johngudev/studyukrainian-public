@@ -180,5 +180,6 @@ dialogue:
     ukrainian_speech: 'Так само! Рятувати життя й захищати людей – це дуже цінно. Я пишаюся своєю професією.'
     english_translation: 'Same! Saving lives and protecting people is very valuable. I am proud of my profession.'
 updated_by: 1
-updated_at: 1745790741
+updated_at: 1755959151
+long_reading_word_for_word_translation: 'I,psychologist,I,engage in,private,practice,To work,as psychologist,this,not easy,but,very,interesting,To help,people,this,very,valuable,My,husband,military,Of course,I,worry,for,him,to him,very,difficult,But,that,which,he,does,incredibly,valuable,and,important,for,country,in,our,time,He,protects,us,I,am proud,of him'
 ---

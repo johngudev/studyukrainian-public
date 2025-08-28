@@ -223,7 +223,8 @@ dialogue:
     speaker: Марко
     ukrainian_speech: Ходімо!
     english_translation: "Let's go!"
-updated_by: 4378
-updated_at: 1754723594
+updated_by: 1
+updated_at: 1755873026
 audio_file: topical-lesson-pory-roku-1-201.mp3
+long_reading_word_for_word_translation: 'Spring, and, summer, wonderful, seasons, of the year, in spring, we, can, more, walk, in, nature, I, usually, go, to, forest, and, look, at, beautiful, trees, in summer, warm, so, we, can, ride, on, bicycle, in spring, and, in summer, more, sun, it, pleasant'
 ---

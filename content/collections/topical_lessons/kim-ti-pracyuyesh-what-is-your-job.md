@@ -163,5 +163,6 @@ dialogue:
   -
     id: m9wlnmzn
 updated_by: 1
-updated_at: 1745790144
+updated_at: 1755917830
+long_reading_word_for_word_translation: 'I,teacher,I,work,in,school,Sometimes,this,difficult,but,always,interesting,My,husband,doctor,He,works,in,hospital,This,also,important,profession,although,and,sometimes,difficult'
 ---

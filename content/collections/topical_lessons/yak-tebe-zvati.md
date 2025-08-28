@@ -180,7 +180,8 @@ dialogue:
     speaker: Гонза
     ukrainian_speech: 'Навзаєм! 😊'
     english_translation: 'For me too! 😊'
-updated_by: 4378
-updated_at: 1748778385
+updated_by: 1
+updated_at: 1755917357
 audio_file: topical-lesson-jak-tebe-zvaty-201.mp3
+long_reading_word_for_word_translation: 'Hello,Come on,get acquainted,Me,call,Julia,I,from,Ukraine,How,you,call'
 ---

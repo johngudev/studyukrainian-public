@@ -279,7 +279,8 @@ dialogue:
     speaker: Микола
     ukrainian_speech: 'Дякую! Навзаєм!'
     english_translation: 'Thank you! To you too!'
-updated_by: 4378
-updated_at: 1750417546
+updated_by: 1
+updated_at: 1756317057
 audio_file: topical-lesson-yaka-sogodni-pohoda-201.mp3
+long_reading_word_for_word_translation: 'We,want,to go,in,long,trip,to,mountains,Need,to find out,what,there,weather,If,there,cloudy,and,goes,rain,need,to take,umbrella,If,there,frost,need,to take,warm,clothes,and,warmly,dress,Nice,news,there,no,fog,Want,to see,mountains'
 ---

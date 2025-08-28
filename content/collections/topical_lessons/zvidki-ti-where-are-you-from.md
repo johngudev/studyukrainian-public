@@ -216,7 +216,8 @@ dialogue:
     speaker: Семюель
     ukrainian_speech: Дякую!
     english_translation: 'Thank you!'
-updated_by: 4378
-updated_at: 1749134882
+updated_by: 1
+updated_at: 1755917640
 audio_file: topical-lesson-zvidky-ty-201.mp3
+long_reading_word_for_word_translation: 'Hello,Me,call,Daniel,I,from,America,but,live,in,Ukraine,I,speak,English,and,long time,study,Ukrainian,language,And,how,you,call,Where,you,live'
 ---

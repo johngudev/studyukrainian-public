@@ -265,7 +265,8 @@ dialogue:
     speaker: Давид
     ukrainian_speech: 'У мене є алергія на яйця, а сьогодні я би з’їв салату та м’яса. Ходімо!'
     english_translation: 'I am allergic to eggs, and today I would eat salad and meat. Come!'
-updated_by: 4378
-updated_at: 1748777429
+updated_by: 1
+updated_at: 1755917710
 audio_file: topical-lesson-shcho-ty-lubysh-jisty-201.mp3
+long_reading_word_for_word_translation: 'Love,tasty,to eat,But,also,try,to eat,healthy,food,For,breakfast,I,eat,porridge,and,eggs,For,lunch,love,meat,or,fish,and,vegetables,My,dinner,very,tasty,fruits,and,tea,My,friend,has,allergy,to,fish,therefore,he,it,not,eats'
 ---

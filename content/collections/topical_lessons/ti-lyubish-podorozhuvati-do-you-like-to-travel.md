@@ -234,7 +234,8 @@ dialogue:
     speaker: Давид
     ukrainian_speech: Цікаво!
     english_translation: Interesting!
-updated_by: 4378
-updated_at: 1748215628
+updated_by: 1
+updated_at: 1755916641
 audio_file: topical-lesson-ty-lubysh-podorozhuvaty-201.mp3
+long_reading_word_for_word_translation: 'You,knew,that,in,Ukraine,is,deserts,For example,Oleshky,sands,in,Kherson,region,This,desert,is located,not far,from,Black,sea,and,stretches,for,km,from,its,shores,And,also,in,south,of Ukraine,also,near,sea,coast,is located,pink,lake,Syvash,In,it,very,much,salt,therefore,body of water,has,pink,color,Also,in,Ukraine,is,small,canyons,and,waterfalls,In,we have,wonderful,and,very,picturesque,land'
 ---
