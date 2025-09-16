@@ -1,0 +1,31 @@
+<!-- intro-meeting-man-woman-skirt.svg -->
+<svg xmlns="http://www.w3.org/2000/svg"
+     width="1rem" height="1rem" viewBox="0 0 24 24"
+     aria-label="Man meets woman (skirt)">
+  <!-- split-color background -->
+  <rect x="0"  y="0"  width="12" height="12" fill="#81C784"/> <!-- green -->
+  <rect x="12" y="0"  width="12" height="12" fill="#BA68C8"/> <!-- purple -->
+  <rect x="0"  y="12" width="24" height="12" fill="#FFB74D"/> <!-- orange -->
+
+  <!-- man (left) -->
+  <circle cx="6"  cy="6"  r="2"  fill="#FFE0B2"/>              <!-- head -->
+  <rect  x="4"  y="8"  width="4" height="6" fill="#42A5F5"/>   <!-- shirt -->
+  <rect  x="4"  y="14" width="1.5" height="5" fill="#6D4C41"/> <!-- legs -->
+  <rect  x="6.5" y="14" width="1.5" height="5" fill="#6D4C41"/>
+  <rect  x="2.5" y="8"  width="1" height="3" rx=".5" fill="#1E88E5"/> <!-- bag strap -->
+  <circle cx="5" cy="12.5" r="0.7" fill="#FFEB3B"/>            <!-- notebook -->
+
+  <!-- woman (right, now with skirt) -->
+  <circle cx="18" cy="6"  r="2"  fill="#FFE0B2"/>
+  <!-- upper body (blouse) -->
+  <rect x="16.75" y="8" width="2.5" height="2.5" rx="1" fill="#F48FB1"/>
+  <!-- skirt (triangle) -->
+  <polygon points="18,10.5 15.75,14 20.25,14" fill="#EC407A"/>
+  <!-- legs -->
+  <rect  x="17" y="14" width="0.8" height="5" fill="#6A1B9A"/>
+  <rect  x="19" y="14" width="0.8" height="5" fill="#6A1B9A"/>
+  <!-- earring -->
+  <circle cx="20.5" cy="7.8" r="0.4" fill="#FDD835"/>
+  <!-- purse/handbag -->
+  <rect  x="20.2" y="12.5" width="1.2" height="1.6" rx="0.5" fill="#00897B"/>
+</svg>
