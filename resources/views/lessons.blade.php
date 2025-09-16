@@ -35,7 +35,7 @@
 
 <!-- Title -->
 <div class="text-center mt-3">
-  <h1><?php echo "Dialogue $dialogue_number"; ?> </h1>
+  <h1><?php echo "Dialogue"; ?> </h1>
 </div>
 
 <!-- Image -->
@@ -84,7 +84,7 @@
   </div>
 </div>
 
-<div class="text-center">
+<!-- remove next dialogues div class="text-center">
 
   <?php if ($lesson->dialogue_number >  1) {
     $lesson->buildPreviousDialogueButton();
@@ -96,7 +96,7 @@
 @include('components.transliteration-button')
 
 
-</div>
+</div -->
 
 
 <script>

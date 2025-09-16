@@ -112,7 +112,7 @@ Route::statamic('/news-articles', 'news_articles.index', [
     ->get(),
 ]);
 
-Route::statamic('/road-map', 'road_map', [
+Route::statamic('/course', 'road_map', [
     'snippets' => Entry::query()
     ->where('collection', 'snippets')
     ->where('title', 'Road Map')

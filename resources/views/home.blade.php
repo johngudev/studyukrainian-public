@@ -87,7 +87,7 @@
 
             </ul>
             <div class="text-center">
-              <a href="/lessons" class="btn hero__cta-button mx-auto">Start learning now</a>
+              <a href="/course" class="btn hero__cta-button mx-auto">Start learning now</a>
             </div>
           </div>
 
