@@ -260,6 +260,7 @@ dialogue:
     ukrainian_speech: 'Звісно, домовилися!'
     english_translation: 'Of course, deal!'
 updated_by: 4378
-updated_at: 1750924864
+updated_at: 1757005117
 audio_file: topical-lesson-de-ty-zhivesh-201.mp3
+long_reading_word_for_word_translation: 'Hi!,My name is,My name is,Mark,I,live,in,Kyiv,My,house,is placed,in,Pechersk,district,and,in,What,city,you,live,wether,we,can,meet,Where,for you,convenient'
 ---

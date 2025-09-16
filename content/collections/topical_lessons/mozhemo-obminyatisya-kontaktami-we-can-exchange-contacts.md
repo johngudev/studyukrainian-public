@@ -271,6 +271,7 @@ dialogue:
     ukrainian_speech: Навзаєм!
     english_translation: 'Me too!'
 updated_by: 4378
-updated_at: 1752079795
+updated_at: 1757257889
 audio_file: topical-lesson-mozhemo-obminyatisya-kontaktami-201.mp3
+long_reading_word_for_word_translation: "Situation,you,meet,with,nice,person,at,concert,It's,your,favorite,band,you,wonderfully,have a conversation,listen,together,But,suddenly,you,lose,this,person,in,the crowd,and,trouble,you,didn’t exchange,didn’t exchange,contacts,It a shame,because,you,wonderfully,wonderfully,had a conversation,Later,at the bar,at the bar,again,you hear,familiar,voice"
 ---

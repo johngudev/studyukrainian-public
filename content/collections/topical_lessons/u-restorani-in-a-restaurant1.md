@@ -288,6 +288,7 @@ dialogue:
     speaker: Василь
     ukrainian_speech: Дякуємо!
     english_translation: 'Thank you!'
-updated_by: 4378
-updated_at: 1743764693
+updated_by: 1
+updated_at: 1757260198
+long_reading_word_for_word_translation: 'Today,I,was,at,restaurant,meni,wanted,to eat,something,meat,so,I,ordered,ribs,in,honey,sauce,me,really,loved it,Veal,and,sauce,were,delicious,and,I,not long,waited,to, order,I,was,very,hungry,so,I ordered,more,dumplings,with,cheese,they,also,were,good,And,from,drinks,I,ordered,uzvar,It,was,very,cold,and,not quite,not quite,that one,as,I,expected,but,also,not bad'
 ---

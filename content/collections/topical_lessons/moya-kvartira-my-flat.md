@@ -224,5 +224,6 @@ dialogue:
     ukrainian_speech: 'Приходь у гості!'
     english_translation: 'Come visit!'
 updated_by: 4378
-updated_at: 1746096584
+updated_at: 1757274547
+long_reading_word_for_word_translation: 'my,apartment,very,cozy,and,spacious,in,her,are,two,big,rooms,living room,and,bedroom,next to,is placed,small,kitchen,I,not,really,love,to cook,in,kitchen,there is,big,table,so,this is,also,dining room,when,come,friends,or,family,we,together,have dinner,in,apartment,also,is,bathroom,and,separate,toilet'
 ---

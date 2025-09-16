@@ -273,6 +273,7 @@ dialogue:
     speaker: Василь
     ukrainian_speech: 'Добре, тоді купую квитки!'
     english_translation: 'Okay, then I buy tickets!'
-updated_by: 1
-updated_at: 1743441024
+updated_by: 4378
+updated_at: 1757224549
+long_reading_word_for_word_translation: "I,very much,love,biographical,films.,Especially,about,different,singers,Ukrainian,and,foreign,Thanks to,films,biographies,it's possible to,find out,about,life,famous,people,and,as if,live,it.,Also,I,adore,action films,In,them,always,interesting,plot,and,many,fast,events.,Need to,go,to,cinema,next,Saturday!,There,now,show,historical,film,biography.,I think,it will be,interesting."
 ---

@@ -274,6 +274,7 @@ dialogue:
     ukrainian_speech: 'Чудово! Тоді наступного разу подивимося фентезі.😊'
     english_translation: "That's great! Then next time we'll watch a fantasy movie.😊"
 updated_by: 4378
-updated_at: 1753262492
+updated_at: 1757181698
 audio_file: topical-lessons-ya-lyublyu-fentezi-201.mp3
+long_reading_word_for_word_translation: "I,very much,love,historical,dramas,Thanks to,them,it's possible,to visit,in,the past,without,time machine,time machine,and,to feel,that,atmosphere,and,also,I,love, science,fiction.,There,people,do,exciting,things,and,in,time machine,time machine,in particular,To,feel,strong,emotions,I watch,psychological,dramas,or,horrors,And,rarely,I have,I have,I have,mood,for,comedy,Such,films,help,to relax,and,rest."
 ---

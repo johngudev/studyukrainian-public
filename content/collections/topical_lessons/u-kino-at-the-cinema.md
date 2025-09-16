@@ -222,5 +222,6 @@ dialogue:
     ukrainian_speech: 'Так, дуже! Дякую!'
     english_translation: 'Yes, very much! Thank you!'
 updated_by: 4378
-updated_at: 1753197482
+updated_at: 1757223007
+long_reading_word_for_word_translation: 'Today,I,was,in,cinema,at,adventurous,comedy,Train,to,Darjeeling,director,Wes,Anderson.,I really liked it,I really liked it!,I really liked it!,I,love,style,of this,director.,It is,beautiful,and,funny,film.,And,also,there,plays,my,favorite,actor,Adrien, Brody.,I recommend,to you,it,for,watching!'
 ---

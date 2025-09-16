@@ -90,7 +90,7 @@ long_reading_text:
         content:
           -
             type: text
-            text: "У моїй кімнаті дуже затишно.\_"
+            text: 'У моїй кімнаті дуже затишно.'
     english_paragraph:
       -
         type: paragraph
@@ -106,7 +106,7 @@ long_reading_text:
         content:
           -
             type: text
-            text: "Біля великого вікна стоїть стіл і зручний стілець.\_"
+            text: 'Біля великого вікна стоїть стіл і зручний стілець.'
     english_paragraph:
       -
         type: paragraph
@@ -138,7 +138,7 @@ long_reading_text:
         content:
           -
             type: text
-            text: 'На стіні висить дзеркало, а біля нього — ліжко.'
+            text: 'На стіні висить дзеркало, а біля нього ліжко.'
     english_paragraph:
       -
         type: paragraph
@@ -154,7 +154,7 @@ long_reading_text:
         content:
           -
             type: text
-            text: "У кутку стоїть шафа для одягу.\_"
+            text: 'У кутку стоїть шафа для одягу.'
     english_paragraph:
       -
         type: paragraph
@@ -170,7 +170,7 @@ long_reading_text:
         content:
           -
             type: text
-            text: 'На вікні — гарні фіранки. Люблю свою кімнату.'
+            text: 'На вікні гарні фіранки. Люблю свою кімнату.'
     english_paragraph:
       -
         type: paragraph
@@ -229,6 +229,7 @@ dialogue:
     speaker: Павло
     ukrainian_speech: 'Чудова кімната!'
     english_translation: 'Great room!'
-updated_by: 4378
-updated_at: 1746095316
+updated_by: 1
+updated_at: 1757261215
+long_reading_word_for_word_translation: 'In,my,room,very,cozy,Near,big,window,stands,table,and,comfortable,chair,on,table,lie,notebooks,pens,and,lamp,on,wall,hangs,mirror,and,near,it,bed,in,corner,stands,wardrobe,for,clothes,on,window,beautiful,curtains,I love,my,room'
 ---

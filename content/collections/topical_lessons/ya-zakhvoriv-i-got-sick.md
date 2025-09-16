@@ -87,7 +87,7 @@ long_reading_text:
         content:
           -
             type: text
-            text: 'My head and throat hurt. I have a high temperature.'
+            text: 'I have a headache,and,a sore throat. I have a high temperature.'
   -
     id: m9lophzm
     ukrainian_paragraph:
@@ -200,6 +200,7 @@ dialogue:
     speaker: Оленка
     ukrainian_speech: 'Добре, дякую за турботу!'
     english_translation: 'All right, thanks for caring!'
-updated_by: 4378
-updated_at: 1744914519
+updated_by: 1
+updated_at: 1757261840
+long_reading_word_for_word_translation: 'I,got sick,I feel,very,bad,in, me,pain,in head (headache),and,in throat,I have,high,temperature,Now,spring,everyone,are sick,it is,unpleasant,I need,to ask,friend,to buy,medicine,to,quickly,recover'
 ---

@@ -279,5 +279,6 @@ dialogue:
     ukrainian_speech: Навзаєм!
     english_translation: 'For you too!'
 updated_by: 4378
-updated_at: 1744909241
+updated_at: 1757258719
+long_reading_word_for_word_translation: 'I,love,go,to,coffee shops,and,read,there,In,coffee shop,I,relax,and,enjoy,atmosphere,I,often,order,different,types,coffee,with,milk,sometimes,I take,cappuccino,sometimes,latte,or,raf,I like,I like,to drink,coffee,slowly,Then,there is,time,to think,or,chat,with,friends,My,friend,likes,to drink,strong,coffee,espresso,or,drip coffee'
 ---

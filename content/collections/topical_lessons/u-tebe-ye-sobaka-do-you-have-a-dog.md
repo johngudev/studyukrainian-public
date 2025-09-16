@@ -149,5 +149,6 @@ dialogue:
     ukrainian_speech: 'Зрозуміло:)'
     english_translation: "I've got it:)"
 updated_by: 4378
-updated_at: 1746993918
+updated_at: 1757275333
+long_reading_word_for_word_translation: 'In,me,is,home,animal,dog,he,cheerful,and,loves,to walk,in,my,sister,lives,cat,she,beautiful,and,a lot,sleeps,and,in,grandfather,is, parrot,he,can,talk,I,love,animals,but,I have,allergy,to,fur,so,sometimes,just,I play,with,parrot'
 ---

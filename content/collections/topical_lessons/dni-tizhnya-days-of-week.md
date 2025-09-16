@@ -225,5 +225,6 @@ dialogue:
     ukrainian_speech: Гайда!
     english_translation: 'Let’s go!'
 updated_by: 4378
-updated_at: 1746996413
+updated_at: 1757275559
+long_reading_word_for_word_translation: 'on,Monday,I,meet,with,friend,after,school,on,Tuesday,I,go,to,dancing,it is,very,funny,on,Wednesday,I,go,to,swimming,because,I love,water,on,Thursday,I,visit,grandmother,we,drink,tea,and,talk,on,Friday,I,again,meet,with,friend,and,we,play,in,board,games'
 ---

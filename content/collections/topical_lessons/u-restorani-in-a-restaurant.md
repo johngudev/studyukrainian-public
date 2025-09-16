@@ -293,6 +293,7 @@ dialogue:
     speaker: Покупець
     ukrainian_speech: 'Дякую, навзаєм!'
     english_translation: 'Thank you, come on!'
-updated_by: 4378
-updated_at: 1743763220
+updated_by: 1
+updated_at: 1757260696
+long_reading_word_for_word_translation: 'When,I,go,to,store,usually,I write,list,products,So,I,definitely,will not forget,will not forget,what is,necessary to,buy,Today,I,wanted,to cook,salad,Caesar,So,I buy,cherry,tomatoes,eggs,bacon,chicken,fillet,and,leaves of salad,leaves of salad,I,forgot,at home,card,so,I will pay,I will pay,by cash,In the evening,I,plan,to watch,film,therefore,I look for,in,store,popcorn.,In no way,not,can,it, find,therefore,I ask,to,consultant,Tell me,please,please,and,where,do you have,do you have,is placed,popcorn,And,she,also,does not,know,It seems to,I will, watch,film,and,eat,leaves,of salad'
 ---
