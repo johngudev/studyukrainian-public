@@ -224,7 +224,7 @@ dialogue:
     ukrainian_speech: 'До зустрічі!'
     english_translation: 'See you!'
 updated_by: 4378
-updated_at: 1757257755
+updated_at: 1759083243
 audio_file: topical-lesson-na-vulici-sonyachno-201.mp3
-long_reading_word_for_word_translation: "Outside,Outside,it's so,sunny,I want,to go,on,running(jogging),I’ll find out,what,there,the weather.,I hope,the temperature,isn’t,too,high,and,I,won’t be,too,hot,Wow,In the evening, There’s going to be,a thunderstorm,and,cool,Then,quickly,I get dressed,and,go out"
+long_reading_word_for_word_translation: "Outside,Outside,it's so,sunny,I want,to go,on,running(jogging),I’ll find out,what,there,the weather.,I hope,the temperature,isn’t,too,high,and,I,won’t be,too,hot,wow,In the evening, there’s going to be,a thunderstorm,and,cool,then,quickly,I get dressed,and,go out"
 ---

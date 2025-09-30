@@ -146,7 +146,7 @@ long_reading_text:
         content:
           -
             type: text
-            text: 'In good detectives are always interesting pazzles.'
+            text: 'In good detectives are always interesting puzzles.'
   -
     id: m8hhgyiz
     ukrainian_paragraph:
@@ -249,7 +249,7 @@ dialogue:
     speaker: Влад
     ukrainian_speech: 'Круто! Наступної суботи йдемо в кіно! 😉'
     english_translation: 'Cool! Next Saturday we go to the cinema! 😉'
-updated_by: 4378
-updated_at: 1757005450
-long_reading_word_for_word_translation: 'Every,Saturday,in the evening,I,watch,movies,It,helps,to relax,and,to rest,I,watch,films,different,genres,but,most of all,I like,detective stories,horrors,and,thrillers,In,good,detectives,always,interesting,pazzles,And,in,thrillers,and,horrors,exciting,plot,Sometimes,I,go,to watch,movies,in,cinema,There is, special,atmosphere'
+updated_by: 1
+updated_at: 1758663325
+long_reading_word_for_word_translation: 'Every,Saturday,in the evening,I,watch,movies,It,helps,to relax,and,to rest,I,watch,films,different,genres,but,most of all,I like,detective stories,horrors,and,thrillers,In,good,detectives,always,interesting,puzzles,And,in,thrillers,and,horrors,exciting,plot,Sometimes,I,go,to watch,movies,in,cinema,There is, special,atmosphere'
 ---

@@ -3,15 +3,21 @@ id: 8cfc7205-3e9a-4753-ac9b-10af9cc539ff
 blueprint: grammar_lesson
 title: 'Genitive Case - Singular'
 custom_css:
-  code: null
+  code: |-
+    h2 {
+      color: #13aff0;
+      font-size: 1.5rem;
+      text-align: center;
+    }
   mode: css
 updated_by: 1
-updated_at: 1756316427
+updated_at: 1758130861
 content:
   -
-    type: paragraph
+    type: heading
     attrs:
-      textAlign: center
+      textAlign: left
+      level: 2
     content:
       -
         type: text
@@ -634,9 +640,10 @@ content:
         type: text
         text: "\_"
   -
-    type: paragraph
+    type: heading
     attrs:
-      textAlign: center
+      textAlign: left
+      level: 2
     content:
       -
         type: text

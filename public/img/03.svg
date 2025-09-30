@@ -1,0 +1,28 @@
+<svg xmlns="http://www.w3.org/2000/svg"
+     width="1rem" height="1rem" viewBox="0 0 24 24"
+     aria-label="Friends meet (overalls and hoodie)">
+  <!-- split-color background -->
+  <rect x="0"  y="0"  width="12" height="12" fill="#90CAF9"/> <!-- light blue -->
+  <rect x="12" y="0"  width="12" height="12" fill="#FF7043"/> <!-- coral -->
+  <rect x="0"  y="12" width="24" height="12" fill="#AED581"/> <!-- green -->
+
+  <!-- person 1 (left, overalls) -->
+  <circle cx="6" cy="6" r="2" fill="#FFE0B2"/>                 <!-- head -->
+  <rect  x="4" y="8" width="4" height="2.5" fill="#4DD0E1"/>   <!-- shirt -->
+  <rect  x="4" y="10.5" width="4" height="3.5" fill="#1976D2"/> <!-- overalls -->
+  <rect  x="5.3" y="10.5" width="1.4" height="3.5" fill="#1565C0"/> <!-- strap detail -->
+  <rect  x="4" y="14" width="1.5" height="5" fill="#5D4037"/> <!-- legs -->
+  <rect  x="6.5" y="14" width="1.5" height="5" fill="#5D4037"/>
+  <!-- pocket -->
+  <rect  x="5.1" y="11.7" width="1.8" height="1.2" fill="#64B5F6"/>
+
+  <!-- person 2 (right, hoodie) -->
+  <circle cx="18" cy="6" r="2" fill="#FFE0B2"/>                 <!-- head -->
+  <rect  x="16" y="8" width="4" height="6" rx="1" fill="#8E24AA"/> <!-- hoodie body -->
+  <rect  x="17.7" y="8" width="0.6" height="2.2" fill="#6A1B9A"/>  <!-- hoodie strings -->
+  <rect  x="18.7" y="8" width="0.6" height="2.2" fill="#6A1B9A"/>
+  <rect  x="16.5" y="14" width="1.5" height="5" fill="#212121"/>   <!-- legs -->
+  <rect  x="18.5" y="14" width="1.5" height="5" fill="#212121"/>
+  <!-- phone in hand -->
+  <rect  x="20.2" y="11.5" width="1" height="2" rx="0.2" fill="#00ACC1"/>
+</svg>
