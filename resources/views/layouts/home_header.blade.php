@@ -18,9 +18,9 @@
                 <a class="nav-link" href={{ URL::to('news-articles') }} >News Articles</a>
               </li>
 
-              <li class="nav-item">
+              <!-- li class="nav-item">
                 <a class="nav-link" href={{ URL::to('topical-lessons') }} >Lessons</a>
-              </li>
+              </li -->
 
               <li class="nav-item">
                 <a class="nav-link" href={{ URL::to('course') }} >Course</a>
@@ -80,7 +80,7 @@
               <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">Menu</a>
               <div class="dropdown-menu" style="margin-left: -5rem;">
                 <a class="nav-link" href={{ URL::to('news-articles') }} >News Articles</a>
-                <a class="nav-link" href={{ URL::to('topical-lessons') }} >Lessons</a>
+                <!-- a class="nav-link" href={{ URL::to('topical-lessons') }} >Lessons</a -->
                 <a class="nav-link" href={{ URL::to('course') }} >Course</a>
                 <!-- <a class="nav-link" href={{ URL::to('grammar') }} >Grammar</a> -->
                 <!-- <a class="nav-link" href= {{ URL::to('about') }} >About</a> -->
