@@ -9,9 +9,12 @@ custom_css:
       font-size: 1.5rem;
       text-align: center;
     }
+    +a {
+      color: #13aff0;
+    } +a
   mode: css
-updated_by: 1
-updated_at: 1758130861
+updated_by: 4378
+updated_at: 1759325537
 content:
   -
     type: heading
