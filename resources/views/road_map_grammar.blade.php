@@ -1,7 +1,7 @@
 @extends('layouts.layout-modern')
 
 @section('title')
-- Ukrainian Course Road Map
+- Grammar Guide
 @endsection
 
 @section('css')
@@ -62,7 +62,7 @@
 <div class="container">
 
     <div class="modern-panel px-0 py-5 text-graphite-black">
-        <h1 class="px-5">Ukrainian Course</h1>
+        <h1 class="px-5">Grammar Guide</h1>
     </div>
 
     {!! $snippets->html !!}

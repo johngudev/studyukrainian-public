@@ -127,4 +127,9 @@ Route::statamic('/grammar-lessons', 'grammar_lesson.index', [
     ->get(),
 ]);
 
-;
+Route::statamic('/grammar-guide', 'road_map', [
+    'snippets' => Entry::query()
+    ->where('collection', 'snippets')
+    ->where('title', 'Grammar')
+    ->first(),
+]);
