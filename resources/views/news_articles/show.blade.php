@@ -108,10 +108,13 @@
             <div class="reading-flex">
                     <div class="p-3 p-md-5 background-light-gray-box reading-passage ukrainian-text">
                             <h3 class="mb-3">{{ $page-> ukrainian_title }}</h3>
+                            <hr>
                             {!! $page->ukrainian_article  !!}
                     </div>
+                    
                     <div class="p-3 p-md-5 border border-gray-100 reading-passage">
                             <h3 class="mb-3">{{ $page-> english_title }}</h3>
+                            <hr>
                             {!! $page->english_article !!}
                     </div>
             </div>
