@@ -195,7 +195,7 @@
  * `data-id="foreign-script"` or generate unique ids in the callback.
  */
 
-const WORD_FOR_WORD_TRANSLITERATION = "{{ Hello,Come on,get acquainted,Me,call,Julia,I,from,Ukraine,How,you,call }}";
+const WORD_FOR_WORD_TRANSLITERATION = "Hello,Come on,get acquainted,Me,call,Julia,I,from,Ukraine,How,you,call";
 
 const transliterationArray = WORD_FOR_WORD_TRANSLITERATION.split(',').map(str => str.trim());
 
