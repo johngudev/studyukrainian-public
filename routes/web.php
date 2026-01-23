@@ -21,6 +21,9 @@ use App\Http\Controllers\AdminTopicalLessonsController;
 
 use Statamic\Facades\Entry;
 
+use App\Http\Controllers\BillingController;
+
+
 
 /*
 |--------------------------------------------------------------------------
@@ -133,3 +136,21 @@ Route::statamic('/grammar-guide', 'road_map_grammar', [
     ->where('title', 'Grammar')
     ->first(),
 ]);
+
+Route::middleware('auth')->group(function () {
+
+    Route::get('/subscribe', [BillingController::class, 'start'])
+        ->name('billing.subscribe');
+
+    Route::get('/billing/success', [BillingController::class, 'success'])
+        ->name('billing.success');
+
+    Route::get('/billing/cancel', [BillingController::class, 'cancel'])
+        ->name('billing.cancel');
+
+    Route::get('/billing/portal', [BillingController::class, 'portal'])
+        ->name('billing.portal');
+
+    Route::post('/billing/refresh', [BillingController::class, 'refresh'])
+        ->name('billing.refresh'); // optional safety button
+});
