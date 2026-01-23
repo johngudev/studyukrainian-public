@@ -44,6 +44,7 @@ return array(
     'Symfony\\Component\\ErrorHandler\\' => array($vendorDir . '/symfony/error-handler'),
     'Symfony\\Component\\CssSelector\\' => array($vendorDir . '/symfony/css-selector'),
     'Symfony\\Component\\Console\\' => array($vendorDir . '/symfony/console'),
+    'Stripe\\' => array($vendorDir . '/stripe/stripe-php/lib'),
     'Stringy\\' => array($vendorDir . '/statamic/stringy/src'),
     'Statamic\\' => array($vendorDir . '/statamic/cms/src'),
     'Spatie\\ShikiPhp\\' => array($vendorDir . '/spatie/shiki-php/src'),

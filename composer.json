@@ -14,7 +14,8 @@
         "laravel/framework": "^9.0",
         "laravel/sanctum": "^2.11",
         "laravel/tinker": "^2.5",
-        "statamic/cms": "^4.0"
+        "statamic/cms": "^4.0",
+        "stripe/stripe-php": "^19.2"
     },
     "require-dev": {
         "spatie/laravel-ignition": "1.0",
