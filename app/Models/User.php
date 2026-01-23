@@ -41,4 +41,14 @@ class User extends Authenticatable
     protected $casts = [
         'email_verified_at' => 'datetime',
     ];
+
+    /**
+     * Premium subscription status for this user.
+     *
+     * Links to the premium_status table (1 row per user).
+     */
+    public function premiumStatus()
+    {
+        return $this->hasOne(\App\Models\PremiumStatus::class);
+    }
 }
